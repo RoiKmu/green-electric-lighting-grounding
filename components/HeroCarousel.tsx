@@ -64,7 +64,7 @@ export default function HeroCarousel() {
         <div
           key={slide.id}
           className={`absolute inset-0 transition-all duration-1000 ${
-            index === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
+            index === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-105 pointer-events-none'
           }`}
         >
           {/* Background Image */}
