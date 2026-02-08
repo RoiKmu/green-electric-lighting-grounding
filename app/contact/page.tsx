@@ -22,6 +22,7 @@ export default function ContactPage() {
               </div>
             </Link>
             <div className="hidden lg:flex items-center space-x-8">
+              <Link href="/" className="text-industrial-300 hover:text-green-electric-400 font-medium transition-colors">Home</Link>
               <Link href="/about" className="text-industrial-300 hover:text-green-electric-400 font-medium transition-colors">About Us</Link>
               <Link href="/products/machines" className="text-industrial-300 hover:text-green-electric-400 font-medium transition-colors">Machines</Link>
               <Link href="/products/tools" className="text-industrial-300 hover:text-green-electric-400 font-medium transition-colors">Tools</Link>
