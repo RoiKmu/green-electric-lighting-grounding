@@ -1,138 +1,262 @@
 import Link from "next/link";
 import Image from "next/image";
 import HeroCarousel from "@/components/HeroCarousel";
+import ScrollNav from "@/components/ScrollNav";
+import ScrollSnapHandler from "@/components/ScrollSnapHandler";
+import { ROUTES } from "@/lib/routes";
+import { getProductDetailPath } from "@/data/products";
+const ecosystemSteps = [
+  {
+    id: 'step-1-interception',
+    step: '01',
+    title: 'Interception (接闪)',
+    description: 'Intercept direct lightning strikes safely with our advanced lightning rods and early discharge systems.',
+    href: '/products/lightning-protection',
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+      </svg>
+    )
+  },
+  {
+    id: 'step-2-connection',
+    step: '02',
+    title: 'Connection (传导与连接)',
+    description: 'Ensure seamless electrical continuity with our specialized fittings, brackets, and copper/steel conductors.',
+    href: '/products/specialized',
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+      </svg>
+    )
+  },
+  {
+    id: 'step-3-grounding',
+    step: '03',
+    title: 'Grounding (接地释放)',
+    description: 'Safely dissipate electrical energy into the earth using our high-performance grounding electrodes and nano-carbon systems.',
+    href: '/products/grounding',
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+      </svg>
+    )
+  },
+  {
+    id: 'step-4-monitoring',
+    step: '04',
+    title: 'Monitoring & Installation (监测与施工)',
+    description: 'Verify system integrity with our detection terminals and achieve molecular-level bonds with our exothermic welding kits.',
+    href: '/products/detection',
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    )
+  }
+];
 
-const categories = [
+const featuredProducts = [
   {
-    id: 'machines',
-    title: 'Machines',
-    description: 'CNC lathes, milling machines, and precision manufacturing equipment',
-    href: '/products/machines',
-    hoverColor: 'group-hover:text-green-electric-500',
-    image: '/images/products/machines/aluminum-zheng-ji-sxtClAGwRck-unsplash.jpg',
-  },
-  {
-    id: 'tools',
-    title: 'Tools',
-    description: 'Carbide inserts, HSS tools, and diamond cutting solutions',
-    href: '/products/tools',
+    id: 'lightning-warning',
+    title: 'Lightning Warning Systems',
+    subtitle: '雷电预警系统',
+    description: 'Advanced detection and early warning solutions to proactively manage lightning risks before strikes occur.',
+    categoryId: 'lightning-warning',
+    productId: 'lightning-warning-system',
     hoverColor: 'group-hover:text-blue-500',
-    image: '/images/products/tools/greg-rosenke-xoxnfVIE7Qw-unsplash.jpg',
+    image: '/images/products/materials/Steel Tube/4de48a4b-7087-4c0f-8577-9c97bafa0077.png',
   },
   {
-    id: 'materials',
-    title: 'Raw Materials',
-    description: 'Steel, aluminum, copper, and specialty alloys',
-    href: '/products/materials',
-    hoverColor: 'group-hover:text-amber-500',
-    image: '/images/products/materials/zoshua-colah-Lew_uz-UnRs-unsplash.jpg',
+    id: 'copper-clad-steel',
+    title: 'Copper-Clad Steel (CCS)',
+    subtitle: '铜包钢 (接地棒/极/绞线)',
+    description: 'High-conductivity ground rods, electrodes, and stranded wires for durable and efficient underground grounding.',
+    categoryId: 'copper-clad-steel',
+    productId: 'copper-clad-rod',
+    hoverColor: 'group-hover:text-amber-600',
+    image: '/images/products/materials/Steel Round Bar/af15a1a9-071d-4f50-ba12-9beac1c7c625.png',
   },
   {
-    id: 'accessories',
-    title: 'Accessories',
-    description: 'Toolholders, workholding, and machine components',
-    href: '/products/accessories',
-    hoverColor: 'group-hover:text-purple-500',
-    image: '/images/products/le-trung-fBCQz7OUUww-unsplash.jpg',
+    id: 'ese-lightning-rod',
+    title: 'ESE Lightning Rods',
+    subtitle: '提前放电避雷针',
+    description: 'Early Streamer Emission technology for an expanded radius of protection and enhanced strike interception.',
+    categoryId: 'early-discharge-system',
+    productId: 'early-discharge',
+    hoverColor: 'group-hover:text-green-electric-500',
+    image: '/images/products/materials/Aluminium Plate/2e897f8b-4248-4a89-a6db-7d82b19c8251.png',
+  },
+  {
+    id: 'exothermic-welding',
+    title: 'Exothermic Welding',
+    subtitle: '熔焊接头',
+    description: 'Achieve permanent, molecular-level bonds that never loosen or corrode, ensuring lifelong electrical conductivity.',
+    categoryId: 'exothermic-welding',
+    productId: 'welding',
+    hoverColor: 'group-hover:text-orange-500',
+    image: '/images/products/materials/Stainless Bar/3d99c6d3-daa9-4fb7-93d0-f6fcaea4b1bc.png',
   },
 ];
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-white">
-      {/* Header/Navigation */}
-      <header className="bg-industrial-950 text-white sticky top-0 z-50">
-        {/* Main Navigation */}
-        <nav className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            {/* Logo */}
-            <Link href="/" className="flex items-center">
-              <div>
-                <h1 className="text-2xl font-bold text-green-electric-400 flex items-start">
-                  Green Electric
-                  <sup className="text-[10px] ml-0.5 mt-1 text-green-electric-400">®</sup>
-                </h1>
-                <p className="text-xs text-industrial-400 tracking-wider uppercase">Industrial Supply</p>
-              </div>
-            </Link>
-
-            {/* Navigation Links */}
-            <div className="hidden lg:flex items-center space-x-8">
-              <Link href="/" className="text-industrial-300 hover:text-green-electric-400 font-medium transition-colors">
-                Home
-              </Link>
-              <Link href="/about" className="text-industrial-300 hover:text-green-electric-400 font-medium transition-colors">
-                About Us
-              </Link>
-              <Link href="/products/machines" className="text-industrial-300 hover:text-green-electric-400 font-medium transition-colors">
-                Machines
-              </Link>
-              <Link href="/products/tools" className="text-industrial-300 hover:text-green-electric-400 font-medium transition-colors">
-                Tools
-              </Link>
-              <Link href="/products/materials" className="text-industrial-300 hover:text-green-electric-400 font-medium transition-colors">
-                Raw Materials
-              </Link>
-              <Link href="/products/accessories" className="text-industrial-300 hover:text-green-electric-400 font-medium transition-colors">
-                Accessories
-              </Link>
-              <Link href="/contact" className="text-industrial-300 hover:text-green-electric-400 font-medium transition-colors">
-                Contact
-              </Link>
-            </div>
-
-            {/* CTA Button */}
-            <div className="flex items-center space-x-4">
-              <Link
-                href="/contact"
-                className="px-6 py-2.5 bg-green-electric-600 text-white rounded-lg hover:bg-green-electric-500 font-medium transition-all duration-300 shadow-lg shadow-green-electric-900/20"
-              >
-                Get Quote
-              </Link>
-            </div>
-          </div>
-        </nav>
-      </header>
-
+      <ScrollSnapHandler />
+      <ScrollNav />
+      
       {/* Hero Carousel */}
       <HeroCarousel />
 
-      {/* Product Categories */}
-      <section className="py-24 bg-gradient-to-b from-industrial-50 to-white">
+      {/* One-Stop Ecosystem Section */}
+      <section id="ecosystem" className="py-24 bg-white relative overflow-hidden scroll-mt-0">
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-industrial-50 rounded-l-full opacity-50 -z-10 transform translate-x-1/3"></div>
+
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-industrial-900 mb-4">
-              Powering Your Production
-            </h2>
-            <p className="text-xl text-industrial-600 max-w-2xl mx-auto">
-              Your One-Stop Industrial Supply Partner
-            </p>
+          <div className="flex flex-col lg:flex-row justify-between items-end mb-16 gap-8">
+            <div className="max-w-3xl">
+              <span className="inline-block px-4 py-1.5 bg-green-electric-100 text-green-electric-700 rounded-full text-sm font-semibold mb-4">
+                Our One-Stop Ecosystem
+              </span>
+              <h2 className="text-4xl md:text-5xl font-bold text-industrial-900 mb-6">
+                End-to-End Lightning & <br className="hidden md:block" />Grounding Solutions
+              </h2>
+              <p className="text-xl text-industrial-600 leading-relaxed">
+                From interception to grounding — everything you need in one place. We don't just sell components; we provide perfectly compatible, complete safety systems to streamline your procurement and installation.
+              </p>
+            </div>
+            <div className="flex-shrink-0">
+              <Link
+                href="/products"
+                className="inline-flex items-center font-semibold text-green-electric-600 hover:text-green-electric-700 transition-colors group"
+              >
+                Explore Full Catalog
+                <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {categories.map((category) => (
-              <Link key={category.id} href={category.href} className="group">
-                <div className="bg-white rounded-2xl shadow-lg overflow-hidden card-hover border border-industrial-100 h-full flex flex-col">
-                  <div className="h-48 relative overflow-hidden flex-shrink-0">
-                    <Image
-                      src={category.image}
-                      alt={category.title}
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+            <div className="hidden lg:block absolute top-12 left-[10%] right-[10%] h-0.5 bg-industrial-200 -z-10"></div>
+
+            {ecosystemSteps.map((item) => (
+              <Link key={item.id} href={item.href} className="group relative">
+                <div className="bg-white rounded-2xl p-8 border border-industrial-100 shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col hover:-translate-y-1">
+                  <div className="flex justify-between items-start mb-6">
+                    <div className="w-16 h-16 rounded-2xl bg-industrial-50 text-green-electric-600 flex items-center justify-center group-hover:bg-green-electric-600 group-hover:text-white transition-colors duration-300 shadow-sm">
+                      {item.icon}
+                    </div>
+                    <span className="text-4xl font-black text-industrial-100 group-hover:text-industrial-200 transition-colors">
+                      {item.step}
+                    </span>
                   </div>
+
+                  <h3 className="text-xl font-bold text-industrial-900 mb-3 group-hover:text-green-electric-600 transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-industrial-600 leading-relaxed text-sm flex-grow">
+                    {item.description}
+                  </p>
+
+                  <div className="mt-6 pt-6 border-t border-industrial-100 text-sm font-medium text-industrial-900 flex items-center">
+                    View Components
+                    <svg className="w-4 h-4 ml-2 text-green-electric-500 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="mt-16 bg-industrial-900 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 border border-industrial-800">
+            <div className="flex items-center gap-6">
+              <div className="w-16 h-16 rounded-full bg-green-electric-600/20 flex items-center justify-center flex-shrink-0">
+                <svg className="w-8 h-8 text-green-electric-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                </svg>
+              </div>
+              <div>
+                <h4 className="text-2xl font-bold text-white mb-2">Supported by Premium Raw Materials</h4>
+                <p className="text-industrial-400">
+                  Need extra steel tubes, copper coils, or stainless bars for your project? We supply the foundational materials alongside our finished components.
+                </p>
+              </div>
+            </div>
+            <Link
+              href="/products/materials"
+              className="px-6 py-3 bg-white text-industrial-900 font-semibold rounded-lg hover:bg-green-electric-50 transition-colors whitespace-nowrap"
+            >
+              Browse Materials
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Gradient Divider */}
+      <div className="relative">
+        <div className="absolute inset-0 flex items-center">
+          <div className="w-full border-t border-industrial-200"></div>
+        </div>
+        <div className="relative flex justify-center">
+          <div className="px-4 bg-white">
+            <div className="w-16 h-1 bg-gradient-to-r from-transparent via-green-electric-500 to-transparent rounded-full"></div>
+          </div>
+        </div>
+      </div>
+
+      {/* Featured Core Products Section */}
+      <section id="core-technologies" className="py-24 bg-gradient-to-b from-industrial-50 to-white scroll-mt-0">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="inline-block px-4 py-1.5 bg-green-electric-100 text-green-electric-700 rounded-full text-sm font-semibold mb-4">
+              Core Technologies
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-industrial-900 mb-6">
+              Engineered Protection. <br className="hidden md:block" />Integrated Supply.
+            </h2>
+            <p className="text-xl text-industrial-600 max-w-2xl mx-auto">
+              Your complete supply chain for advanced lightning systems, precision grounding materials, and reliable construction accessories.
+            </p>
+          </div>
+          <div className="text-center mb-9">
+          <p className="text-xl text-industrial-600 max-w-2xl mx-auto">
+              Core Solutions & Featured Products
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {featuredProducts.map((product) => (
+              <Link key={product.id} href={getProductDetailPath(product.categoryId, product.productId)} className="group">
+                <div className="bg-white rounded-2xl shadow-sm hover:shadow-xl overflow-hidden card-hover border border-industrial-100 h-full flex flex-col transition-all duration-300">
+                  <div className="h-48 relative overflow-hidden flex-shrink-0 bg-industrial-100">
+                    <Image
+                      src={product.image}
+                      alt={product.title}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-industrial-900/80 via-industrial-900/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
+                    
+                    <div className="absolute bottom-4 left-6 right-6">
+                      <span className="text-white/90 font-medium text-sm tracking-wide">
+                        {product.subtitle}
+                      </span>
+                    </div>
+                  </div>
+                  
                   <div className="p-6 flex flex-col flex-grow">
-                    <h3 className={`text-2xl font-bold mb-2 text-industrial-900 ${category.hoverColor} transition-colors`}>
-                      {category.title}
+                    <h3 className={`text-xl font-bold mb-3 text-industrial-900 ${product.hoverColor} transition-colors`}>
+                      {product.title}
                     </h3>
-                    <p className="text-industrial-600 leading-relaxed flex-grow">
-                      {category.description}
+                    <p className="text-industrial-600 leading-relaxed flex-grow text-sm">
+                      {product.description}
                     </p>
-                    <div className="mt-4 flex items-center text-green-electric-600 font-medium">
-                      <span>View Products</span>
+                    <div className="mt-6 pt-4 border-t border-industrial-50 flex items-center text-industrial-900 font-semibold text-sm group-hover:text-green-electric-600 transition-colors">
+                      <span>View Specifications</span>
                       <svg className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
                     </div>
                   </div>
@@ -144,7 +268,7 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-24 bg-industrial-900 text-white">
+      <section id="why-choose-us" className="py-24 bg-industrial-900 text-white scroll-mt-0">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <span className="inline-block px-4 py-1.5 bg-green-electric-600/20 text-green-electric-400 rounded-full text-sm font-semibold mb-4">
@@ -203,13 +327,13 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
-              href="/contact"
+              href={ROUTES.CONTACT}
               className="px-8 py-4 bg-white text-green-electric-700 rounded-lg hover:bg-industrial-50 font-semibold text-lg transition-all duration-300 shadow-lg"
             >
               Contact Us
             </Link>
             <Link
-              href="/about"
+              href={ROUTES.ABOUT}
               className="px-8 py-4 border-2 border-white text-white rounded-lg hover:bg-white hover:text-green-electric-700 font-semibold text-lg transition-all duration-300"
             >
               Learn More
@@ -217,75 +341,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-industrial-950 text-white pt-16 pb-8">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-            {/* Company Info */}
-            <div>
-              <div className="mb-6">
-                <h3 className="font-bold text-white text-lg">Green Electric</h3>
-                <p className="text-xs text-industrial-500">Industrial Supply</p>
-              </div>
-              <p className="text-industrial-400 leading-relaxed">
-                Your trusted partner for industrial machinery, tools, and materials since 1993.
-              </p>
-            </div>
-
-            {/* Products */}
-            <div>
-              <h4 className="font-semibold text-white mb-6">Products</h4>
-              <ul className="space-y-3 text-industrial-400">
-                <li><Link href="/products/machines" className="hover:text-green-electric-400 transition-colors">Machines</Link></li>
-                <li><Link href="/products/tools" className="hover:text-green-electric-400 transition-colors">Tools</Link></li>
-                <li><Link href="/products/materials" className="hover:text-green-electric-400 transition-colors">Raw Materials</Link></li>
-                <li><Link href="/products/accessories" className="hover:text-green-electric-400 transition-colors">Accessories</Link></li>
-              </ul>
-            </div>
-
-            {/* Company */}
-            <div>
-              <h4 className="font-semibold text-white mb-6">Company</h4>
-              <ul className="space-y-3 text-industrial-400">
-                <li><Link href="/about" className="hover:text-green-electric-400 transition-colors">About Us</Link></li>
-                <li><Link href="/contact" className="hover:text-green-electric-400 transition-colors">Contact</Link></li>
-              </ul>
-            </div>
-
-            {/* Contact */}
-            <div>
-              <h4 className="font-semibold text-white mb-6">Contact Us</h4>
-              <ul className="space-y-3 text-industrial-400">
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 mr-3 text-green-electric-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  grace.wang@wuxigreen.com
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 mr-3 text-green-electric-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                  +86 177 6635 3591
-                </li>
-                <li className="flex items-start">
-                  <svg className="w-5 h-5 mr-3 mt-0.5 text-green-electric-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                  No.9, Su Tie Rd, Binhu District, Wuxi, China
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Bottom Bar */}
-          <div className="border-t border-industrial-800 pt-8 text-center text-industrial-500">
-            <p>&copy; 2026 Green Electric Industrial Supply. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </main>
   );
 }

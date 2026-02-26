@@ -1,56 +1,82 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { ROUTES, PRODUCT_CATEGORY_ROUTES } from '@/lib/routes';
 
 const slides = [
   {
     id: 1,
-    title: 'Precision Machining Excellence',
-    subtitle: 'CNC Lathes, Milling Machines & Industrial Equipment',
-    description: 'High-performance machinery engineered for modern manufacturing demands',
-    category: 'Machines',
-    href: '/products/machines',
+    title: 'End-to-End Lightning Ecosystem',
+    subtitle: '一站式防雷接地解决方案',
+    description: '从方案设计、产品供应到施工指导，我们提供完美兼容的完整安全系统，让您的采购与安装流程更高效、更省心。',
+    category: 'One-Stop Solution',
+    href: '/products', // 引导去查看完整产品线
     image: '/images/hero/hero-1.jpg',
   },
   {
     id: 2,
-    title: 'Professional Cutting Tools',
-    subtitle: 'Carbide, HSS & Diamond Tooling Solutions',
-    description: 'Precision tools designed for optimal performance and extended tool life',
-    category: 'Tools',
-    href: '/products/tools',
+    title: 'Expert Engineering & Problem Solving',
+    subtitle: '专业驱动，攻克复杂防护难题',
+    description: '30年深耕制造与工业领域，针对高风险、易燃易爆及极端环境，提供定制化的高性能防雷与静电防护技术。',
+    category: 'Professional Expertise',
+    href: ROUTES.ABOUT, // 引导去了解公司实力
     image: '/images/hero/hero-2.jpg',
   },
   {
     id: 3,
-    title: 'Quality Raw Materials',
-    subtitle: 'Premium Metals, Alloys & Industrial Materials',
-    description: 'Sourced from trusted suppliers for manufacturing excellence',
-    category: 'Raw Materials',
-    href: '/products/materials',
+    title: 'Uncompromising System Reliability',
+    subtitle: '高品质材料与精湛工艺',
+    description: '精选优质原材，结合领先的提前放电（ESE）与放热焊接技术，确保分子级连接，保障系统终身导电连续性与安全性。',
+    category: 'Premium Quality',
+    href: '/products/specialized', // 引导去查看核心技术/工艺
     image: '/images/hero/hero-3.jpg',
   },
   {
     id: 4,
-    title: 'Industrial Accessories',
-    subtitle: 'Components, Parts & Essential Supplies',
-    description: 'Everything you need to keep your operations running smoothly',
-    category: 'Accessories',
-    href: '/products/accessories',
+    title: 'Dedicated Lifecycle Support',
+    subtitle: '全生命周期技术与售后保障',
+    description: '从现场勘测、安装监测到售后维护，我们的技术专家团队为您提供全方位的快速响应与专业支持，免除后顾之忧。',
+    category: 'After-Sales Service',
+    href: ROUTES.CONTACT, // 引导去联系技术支持
     image: '/images/hero/hero-4.jpg',
   },
 ];
 
 export default function HeroCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [scale, setScale] = useState(1.08);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 3000);
+    }, 5000);
     return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const sectionHeight = sectionRef.current?.offsetHeight || windowHeight;
+      
+      if (scrollY <= 0) {
+        setScale(1.12);
+      } else if (scrollY < sectionHeight * 0.8) {
+        const progress = scrollY / (sectionHeight * 0.8);
+        const newScale = 1.12 - progress * 0.12;
+        setScale(Math.max(1, newScale));
+      } else {
+        setScale(1);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const goToSlide = (index: number) => {
@@ -58,8 +84,14 @@ export default function HeroCarousel() {
   };
 
   return (
-    <section className="relative h-[650px] md:h-[750px] overflow-hidden">
-      {/* Slides */}
+    <section ref={sectionRef} id="hero" className="relative h-screen md:h-screen overflow-hidden">
+      <div 
+        className="absolute -inset-[6%] w-[112%] h-[112%] transition-transform duration-700 ease-out"
+        style={{ 
+          transform: `scale(${scale})`,
+          transformOrigin: 'center center'
+        }}
+      >
       {slides.map((slide, index) => (
         <div
           key={slide.id}
@@ -117,7 +149,7 @@ export default function HeroCarousel() {
                   </svg>
                 </Link>
                 <Link
-                  href="/contact"
+                  href={ROUTES.CONTACT}
                   className="px-8 py-4 border-2 border-white/30 text-white rounded-lg hover:bg-white hover:text-industrial-900 font-semibold text-lg transition-all duration-300 backdrop-blur-sm"
                 >
                   Request Quote
@@ -127,6 +159,7 @@ export default function HeroCarousel() {
           </div>
         </div>
       ))}
+      </div>
 
       {/* Navigation Dots */}
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex items-center space-x-3 z-20">
