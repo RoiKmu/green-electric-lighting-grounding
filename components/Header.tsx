@@ -79,7 +79,7 @@ export default function Header() {
       >
         <div className="container mx-auto px-6 pt-6">
           <div className="grid grid-cols-6 gap-8">
-            {PRODUCT_CATEGORIES.map((category) => (
+            {[...PRODUCT_CATEGORIES].sort((a, b) => a.items.length - b.items.length).map((category) => (
               <div key={category.id} className="product-category">
                 <h4 className="text-lg font-semibold text-green-electric-400 mb-4">{category.name}</h4>
                 <ul className="space-y-2">

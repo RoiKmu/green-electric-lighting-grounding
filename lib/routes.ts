@@ -25,8 +25,10 @@ export const NAV_LINKS = [
 ] as const;
 
 export const FOOTER_PRODUCT_LINKS = [
-  { label: 'Materials', href: PRODUCT_CATEGORY_ROUTES.MATERIALS },
-  { label: 'Accessories', href: PRODUCT_CATEGORY_ROUTES.ACCESSORIES },
+  { label: 'Lightning Protection', href: '/products/lightning-protection' },
+  { label: 'Grounding Systems', href: '/products/grounding' },
+  { label: 'ESE Lightning Rods', href: '/products/early-discharge-system' },
+  { label: 'Raw Materials', href: PRODUCT_CATEGORY_ROUTES.MATERIALS },
 ] as const;
 
 export const FOOTER_COMPANY_LINKS = [

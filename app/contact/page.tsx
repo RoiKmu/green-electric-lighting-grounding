@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ContactForm from "./ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact Us - Green Electric Industrial Supply",
@@ -111,113 +112,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div>
-              <div className="bg-white rounded-2xl shadow-xl border border-industrial-100 p-8">
-                <h2 className="text-2xl font-bold text-industrial-900 mb-6">
-                  Send Us a Message
-                </h2>
-
-                <form className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-industrial-700 mb-2">
-                        Your Name *
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        required
-                        className="w-full px-4 py-3 border border-industrial-200 rounded-lg focus:ring-2 focus:ring-green-electric-500 focus:border-transparent transition-all"
-                        placeholder="John Doe"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="company" className="block text-sm font-medium text-industrial-700 mb-2">
-                        Company
-                      </label>
-                      <input
-                        type="text"
-                        id="company"
-                        name="company"
-                        className="w-full px-4 py-3 border border-industrial-200 rounded-lg focus:ring-2 focus:ring-green-electric-500 focus:border-transparent transition-all"
-                        placeholder="Your Company"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-industrial-700 mb-2">
-                        Email Address *
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        required
-                        className="w-full px-4 py-3 border border-industrial-200 rounded-lg focus:ring-2 focus:ring-green-electric-500 focus:border-transparent transition-all"
-                        placeholder="john@example.com"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-industrial-700 mb-2">
-                        Phone Number
-                      </label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        className="w-full px-4 py-3 border border-industrial-200 rounded-lg focus:ring-2 focus:ring-green-electric-500 focus:border-transparent transition-all"
-                        placeholder="+1 234 567 8900"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-industrial-700 mb-2">
-                      Subject *
-                    </label>
-                    <select
-                      id="subject"
-                      name="subject"
-                      required
-                      className="w-full px-4 py-3 border border-industrial-200 rounded-lg focus:ring-2 focus:ring-green-electric-500 focus:border-transparent transition-all"
-                    >
-                      <option value="">Select a subject</option>
-                      <option value="quote">Request a Quote</option>
-                      <option value="machines">Machines Inquiry</option>
-                      <option value="tools">Tools Inquiry</option>
-                      <option value="materials">Raw Materials Inquiry</option>
-                      <option value="accessories">Accessories Inquiry</option>
-                      <option value="support">Technical Support</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-industrial-700 mb-2">
-                      Message *
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={5}
-                      required
-                      className="w-full px-4 py-3 border border-industrial-200 rounded-lg focus:ring-2 focus:ring-green-electric-500 focus:border-transparent transition-all resize-none"
-                      placeholder="Tell us about your requirements..."
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="w-full px-8 py-4 bg-green-electric-600 text-white rounded-lg hover:bg-green-electric-500 font-semibold text-lg transition-all duration-300 shadow-lg shadow-green-electric-900/20"
-                  >
-                    Send Message
-                  </button>
-                </form>
-              </div>
-            </div>
+            <ContactForm />
           </div>
         </div>
       </section>

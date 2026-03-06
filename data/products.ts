@@ -31,26 +31,26 @@ export interface ProductTier {
 export const PRODUCT_TIERS: ProductTier[] = [
   {
     id: 'flagship',
-    name: '旗舰技术解决方案',
+    name: 'Flagship Technology Solutions',
     nameEn: 'Flagship Technology Solutions',
-    description: '核心竞争力，高毛利、高技术壁垒',
-    position: '核心竞争力，高毛利、高技术壁垒',
+    description: 'Core competitiveness, high margin, high technical barriers',
+    position: 'Core competitiveness, high margin, high technical barriers',
     color: 'gold',
   },
   {
     id: 'core',
-    name: '核心接地与直击雷防护',
+    name: 'Core Grounding & Lightning Protection',
     nameEn: 'Core Grounding & Lightning Protection',
-    description: '工程刚需，成套供应',
-    position: '工程刚需，成套供应',
+    description: 'Engineering essentials, complete supply',
+    position: 'Engineering essentials, complete supply',
     color: 'silver',
   },
   {
     id: 'support',
-    name: '工业安防与工程配套',
+    name: 'Industrial Safety & Engineering Support',
     nameEn: 'Industrial Safety & Engineering Support',
-    description: '配套设备与辅助工具',
-    position: '配套设备与辅助工具',
+    description: 'Supporting equipment and auxiliary tools',
+    position: 'Supporting equipment and auxiliary tools',
     color: 'bronze',
   },
 ];
@@ -58,102 +58,102 @@ export const PRODUCT_TIERS: ProductTier[] = [
 export const PRODUCT_CATEGORIES: ProductCategory[] = [
   {
     id: "lightning-warning",
-    name: "雷电预警系统",
+    name: "Lightning Warning System",
     nameEn: "Lightning Warning System",
-    description: "全方位大气电场监测，提供 20 分钟预警时间",
+    description: "Comprehensive atmospheric electric field monitoring, providing 20-minute early warning",
     tier: "flagship",
     items: [
       { 
         id: "lightning-warning-system", 
-        name: "雷电预警系统", 
+        name: "Lightning Warning System", 
         nameEn: "Lightning Warning System",
         image: "/images/products/materials/Steel Round Bar/af15a1a9-071d-4f50-ba12-9beac1c7c625.png",
-        description: "全方位大气电场监测，提供 20 分钟预警时间",
+        description: "Comprehensive atmospheric electric field monitoring, providing 20-minute early warning",
         isFeatured: true,
       },
     ],
   },
   {
     id: "early-discharge-system",
-    name: "提前放电避雷针",
+    name: "Early Streamer Emission (ESE)",
     nameEn: "Early Streamer Emission (ESE)",
-    description: "主动式引雷技术，扩大保护半径",
+    description: "Active lightning attraction technology, expanded protection radius",
     tier: "flagship",
     items: [
       { 
         id: "early-discharge", 
-        name: "提前放电避雷针 (ESE)", 
+        name: "Early Streamer Emission Lightning Rod (ESE)", 
         nameEn: "Early Streamer Emission Lightning Rod",
         image: "/images/products/materials/Aluminium Plate/2e897f8b-4248-4a89-a6db-7d82b19c8251.png",
-        description: "主动式引雷技术，扩大保护半径",
+        description: "Active lightning attraction technology, expanded protection radius",
         isFeatured: true,
       },
     ],
   },
   {
     id: "copper-clad-steel",
-    name: "铜包钢系列",
+    name: "Copper-Clad Steel Series",
     nameEn: "Copper-Clad Steel Series",
-    description: "分子级结合工艺，兼顾导电性与 50 年长寿命",
+    description: "Molecular-level bonding process, combining conductivity with 50-year long service life",
     tier: "flagship",
     items: [
       { 
         id: "copper-clad-rod", 
-        name: "铜包钢接地棒", 
+        name: "Copper-Clad Steel Grounding Rod", 
         nameEn: "Copper-Clad Steel Grounding Rod",
         image: "/images/products/materials/Stainless Bar/3d99c6d3-daa9-4fb7-93d0-f6fcaea4b1bc.png",
-        description: "分子级结合工艺，兼顾导电性与 50 年长寿命",
+        description: "Molecular-level bonding process, combining conductivity with 50-year long service life",
         isFeatured: true,
       },
       { 
         id: "copper-clad-electrode", 
-        name: "铜包钢接地极", 
+        name: "Copper-Clad Steel Grounding Electrode", 
         nameEn: "Copper-Clad Steel Grounding Electrode",
         image: "/images/products/materials/Steel Tube/4de48a4b-7087-4c0f-8577-9c97bafa0077.png",
-        description: "分子级结合工艺，兼顾导电性与 50 年长寿命",
+        description: "Molecular-level bonding process, combining conductivity with 50-year long service life",
       },
     ],
   },
   {
     id: "exothermic-welding",
-    name: "熔焊系列",
+    name: "Exothermic Welding Series",
     nameEn: "Exothermic Welding Series",
-    description: "实现分子级连接，电气连续性极佳，施工安全可靠",
+    description: "Achieves molecular-level connections, excellent electrical continuity, safe and reliable construction",
     tier: "flagship",
     items: [
       { 
         id: "welding", 
-        name: "熔焊系列（放热焊接）", 
+        name: "Exothermic Welding Series", 
         nameEn: "Exothermic Welding",
         image: "/images/products/materials/Stainless Bar/3d99c6d3-daa9-4fb7-93d0-f6fcaea4b1bc.png",
-        description: "实现分子级连接，电气连续性极佳，施工安全可靠",
+        description: "Achieves molecular-level connections, excellent electrical continuity, safe and reliable construction",
         isFeatured: true,
       },
       { 
         id: "remote-welding", 
-        name: "遥控放热焊接引燃器", 
+        name: "Remote Exothermic Welding Igniter", 
         nameEn: "Remote Exothermic Welding Igniter",
         image: "/images/products/materials/Steel Round Bar/af15a1a9-071d-4f50-ba12-9beac1c7c625.png",
-        description: "施工安全工具",
+        description: "Construction safety tool",
       },
     ],
   },
   {
     id: "lightning-protection",
-    name: "闪接器系统",
+    name: "Lightning Protection",
     nameEn: "Lightning Protection",
-    description: "这类设备负责直接拦截雷击或将雷电流引向地下",
+    description: "These devices are responsible for directly intercepting lightning strikes or directing lightning current underground",
     tier: "core",
     items: [
       { 
         id: "lightning-rod", 
-        name: "防腐型钢管(杆)避雷针", 
+        name: "Corrosion-Resistant Steel Pipe Lightning Rod", 
         nameEn: "Corrosion-Resistant Steel Pipe Lightning Rod",
         image: "/images/products/materials/Steel Round Bar/af15a1a9-071d-4f50-ba12-9beac1c7c625.png" 
       },
       { 
         id: "grounding-wire", 
-        name: "接地线", 
+        name: "Grounding Wire", 
         nameEn: "Grounding Wire",
         image: "/images/products/materials/Aluminium Coil/39ad30ad-d156-4761-a758-0962f10b7be2.png" 
       },
@@ -161,38 +161,38 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
   },
   {
     id: "grounding",
-    name: "接地导体系统",
+    name: "Grounding Conductors",
     nameEn: "Grounding Conductors",
-    description: "这些是埋入土壤中，负责将电流扩散到大地里的核心部分",
+    description: "These are the core components buried in soil, responsible for dispersing current into the earth",
     tier: "core",
     items: [
       { 
         id: "grounding-electrode", 
-        name: "接地体", 
+        name: "Grounding Electrode", 
         nameEn: "Grounding Electrode",
         image: "/images/products/materials/Stainless Bar/3d99c6d3-daa9-4fb7-93d0-f6fcaea4b1bc.png" 
       },
       { 
         id: "ion-electrode", 
-        name: "电解离子接地极", 
+        name: "Electrolytic Ion Grounding Electrode", 
         nameEn: "Electrolytic Ion Grounding Electrode",
         image: "/images/products/materials/Aluminium Coil/39ad30ad-d156-4761-a758-0962f10b7be2.png" 
       },
       { 
         id: "energy-storage", 
-        name: "储能型接地装置", 
+        name: "Energy Storage Grounding Device", 
         nameEn: "Energy Storage Grounding Device",
         image: "/images/products/materials/Stainless Bar/3d99c6d3-daa9-4fb7-93d0-f6fcaea4b1bc.png" 
       },
       { 
         id: "nano-carbon", 
-        name: "全能型纳米碳接地系列", 
+        name: "All-Around Nano-Carbon Grounding Series", 
         nameEn: "Nano-Carbon Grounding Series",
         image: "/images/products/materials/Steel Tube/4de48a4b-7087-4c0f-8577-9c97bafa0077.png" 
       },
       { 
         id: "lightning-system", 
-        name: "立体式防雷系统与接地装置", 
+        name: "3D Lightning Protection System & Grounding Device", 
         nameEn: "3D Lightning Protection System",
         image: "/images/products/materials/Aluminium Plate/2e897f8b-4248-4a89-a6db-7d82b19c8251.png" 
       },
@@ -200,33 +200,33 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
   },
   {
     id: "static-protection",
-    name: "静电防护系列",
+    name: "Static Protection Series",
     nameEn: "Static Protection Series",
-    description: "针对易燃易爆场所（如油库、化工厂）的专用设备",
+    description: "Specialized equipment for flammable and explosive locations (such as oil depots, chemical plants)",
     tier: "support",
     items: [
       { 
         id: "static-alarm", 
-        name: "静电接地报警器", 
+        name: "Static Grounding Alarm", 
         nameEn: "Static Grounding Alarm",
         image: "/images/products/materials/Steel Round Bar/af15a1a9-071d-4f50-ba12-9beac1c7c625.png" 
       },
       { 
         id: "static-elimination", 
-        name: "静电消除装置", 
+        name: "Static Elimination Device", 
         nameEn: "Static Elimination Device",
         image: "/images/products/materials/Steel Tube/4de48a4b-7087-4c0f-8577-9c97bafa0077.png" 
       },
       { 
         id: "floating-roof", 
-        name: "自动收线浮顶罐用接地装置", 
+        name: "Auto-Rewind Floating Roof Tank Grounding Device", 
         nameEn: "Auto-Rewind Floating Roof Tank Grounding",
-        description: "专门用于大型油罐",
+        description: "Specially designed for large oil tanks",
         image: "/images/products/materials/Aluminium Coil/39ad30ad-d156-4761-a758-0962f10b7be2.png" 
       },
       { 
         id: "mobile-grounding", 
-        name: "移动式接地仪", 
+        name: "Mobile Grounding Meter", 
         nameEn: "Mobile Grounding Meter",
         image: "/images/products/materials/Aluminium Plate/2e897f8b-4248-4a89-a6db-7d82b19c8251.png" 
       },
@@ -234,47 +234,47 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
   },
   {
     id: "detection",
-    name: "接地检测终端",
+    name: "Grounding Detection Terminal",
     nameEn: "Grounding Detection Terminal",
-    description: "用于检测和监控接地系统的状态",
+    description: "Used for detecting and monitoring the status of grounding systems",
     tier: "support",
     items: [
       { 
         id: "grounding-box", 
-        name: "接地端子箱", 
+        name: "Grounding Terminal Box", 
         nameEn: "Grounding Terminal Box",
-        description: "集中连接点",
+        description: "Centralized connection point",
         image: "/images/products/materials/Stainless Bar/3d99c6d3-daa9-4fb7-93d0-f6fcaea4b1bc.png" 
       },
       { 
         id: "detection-well", 
-        name: "接地检测井", 
+        name: "Grounding Detection Well", 
         nameEn: "Grounding Detection Well",
-        description: "用于后期测量接地电阻",
+        description: "Used for measuring grounding resistance later",
         image: "/images/products/materials/Steel Tube/4de48a4b-7087-4c0f-8577-9c97bafa0077.png" 
       },
       { 
         id: "equipotential", 
-        name: "等电位联接组件", 
+        name: "Equipotential Connection Components", 
         nameEn: "Equipotential Connection Components",
-        description: "防止电位差的关键工艺",
+        description: "Key process for preventing potential difference",
         image: "/images/products/materials/Steel Round Bar/af15a1a9-071d-4f50-ba12-9beac1c7c625.png" 
       },
       { 
         id: "grounding-terminal", 
-        name: "接地端子座(接地点)", 
+        name: "Grounding Terminal Block (Grounding Point)", 
         nameEn: "Grounding Terminal Block",
         image: "/images/products/materials/Steel Thick Plate/9a9c9fba-3853-46a6-a069-2239d4fd51bf.png" 
       },
       { 
         id: "grounding-plate", 
-        name: "接地柱板", 
+        name: "Grounding Column Plate", 
         nameEn: "Grounding Column Plate",
         image: "/images/products/materials/Aluminium Plate/2e897f8b-4248-4a89-a6db-7d82b19c8251.png" 
       },
       { 
         id: "grounding-center", 
-        name: "接地中心", 
+        name: "Grounding Center", 
         nameEn: "Grounding Center",
         image: "/images/products/materials/Aluminium Coil/39ad30ad-d156-4761-a758-0962f10b7be2.png" 
       },
@@ -282,32 +282,32 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
   },
   {
     id: "specialized",
-    name: "连接、紧固与导电金具",
+    name: "Specialized Fittings",
     nameEn: "Specialized Fittings",
-    description: "用于将各个防雷组件牢固地连接在一起，确保导电连续性",
+    description: "Used for firmly connecting various lightning protection components, ensuring electrical continuity",
     tier: "support",
     items: [
       { 
         id: "connector", 
-        name: "连接器", 
+        name: "Connector", 
         nameEn: "Connector",
         image: "/images/products/materials/Steel Tube/4de48a4b-7087-4c0f-8577-9c97bafa0077.png" 
       },
       { 
         id: "rod-clamp", 
-        name: "棒夹（连接接地棒）", 
+        name: "Rod Clamp (For Grounding Rods)", 
         nameEn: "Rod Clamp",
         image: "/images/products/materials/Aluminium Tube/3d41fd82-fc64-48b2-8faa-fd209170dd29.png" 
       },
       { 
         id: "tube-clamp", 
-        name: "管夹（连接钢管）", 
+        name: "Tube Clamp (For Steel Pipes)", 
         nameEn: "Tube Clamp",
         image: "/images/products/materials/Steel Channel/bfca186c-3ef0-462a-8f6b-4e2e588d1d22.png" 
       },
       { 
         id: "brackets", 
-        name: "支架、带夹（固定接地带/线）", 
+        name: "Brackets & Clamps (For Grounding Strips/Wires)", 
         nameEn: "Brackets & Clamps",
         image: "/images/products/materials/Aluminium Tube/3d41fd82-fc64-48b2-8faa-fd209170dd29.png" 
       },
@@ -315,20 +315,20 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
   },
   {
     id: "measuring-tools",
-    name: "精密测量工具",
+    name: "Precision Measuring Tools",
     nameEn: "Precision Measuring Tools",
-    description: "用于施工和质量检测的精密测量仪器",
+    description: "Precision measuring instruments for construction and quality inspection",
     tier: "support",
     items: [
       { 
         id: "resistance-meter", 
-        name: "接地电阻测试仪", 
+        name: "Grounding Resistance Meter", 
         nameEn: "Grounding Resistance Meter",
         image: "/images/products/materials/Steel Round Bar/af15a1a9-071d-4f50-ba12-9beac1c7c625.png" 
       },
       { 
         id: "soil-resistivity", 
-        name: "土壤电阻率测试仪", 
+        name: "Soil Resistivity Meter", 
         nameEn: "Soil Resistivity Meter",
         image: "/images/products/materials/Aluminium Plate/2e897f8b-4248-4a89-a6db-7d82b19c8251.png" 
       },

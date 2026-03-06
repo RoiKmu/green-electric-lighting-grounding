@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
@@ -115,13 +115,13 @@ function TierSection({ tierId, tierName, tierDescription, categories }: {
   const colors = tierColors[tierId] || tierColors.support;
 
   const tierNamesEn: Record<string, string> = {
-    flagship: 'Flagship Technology Solutions',
+    flagship: 'Featured Products',
     core: 'Core Grounding & Lightning Protection',
     support: 'Industrial Safety & Engineering Support',
   };
 
   const tierDescriptionsEn: Record<string, string> = {
-    flagship: 'Core competitiveness, high margin, high technical barriers',
+    flagship: 'Our most popular products trusted by customers worldwide',
     core: 'Engineering essentials, complete supply',
     support: 'Supporting equipment and auxiliary tools',
   };
@@ -146,11 +146,11 @@ function Breadcrumb({ categoryName }: { categoryName: string }) {
   return (
     <nav className="flex items-center mb-8 text-sm text-industrial-600">
       <Link href={ROUTES.PRODUCTS} className="hover:text-green-electric-600 transition-colors">
-        首页
+        Home
       </Link>
       <span className="mx-2">/</span>
       <Link href={ROUTES.PRODUCTS} className="hover:text-green-electric-600 transition-colors">
-        产品中心
+        Products
       </Link>
       <span className="mx-2">/</span>
       <span className="text-industrial-900 font-medium">{categoryName}</span>
@@ -169,19 +169,31 @@ function ProductList({ selectedCategoryId = null }: ProductListProps) {
 
     return (
       <main className="min-h-screen bg-white">
-        <section className="py-16 bg-gradient-to-b from-industrial-50 to-white">
-          <div className="container mx-auto px-6">
+        <section className="relative py-24 bg-gradient-to-br from-industrial-900 via-industrial-800 to-green-electric-900">
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute inset-0" style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            }} />
+          </div>
+          <div className="container mx-auto px-6 relative z-10">
             <Breadcrumb categoryName={selectedCategory.name} />
             
-            <div className="mb-12">
-              <h1 className="text-4xl md:text-5xl font-bold text-industrial-900 mb-4">
+            <div className="max-w-3xl">
+              <span className="inline-block px-4 py-1.5 bg-green-electric-600/20 text-green-electric-400 rounded-full text-sm font-semibold mb-6">
+                {selectedCategory.name}
+              </span>
+              <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
                 {selectedCategory.name}
               </h1>
-              <p className="text-xl text-industrial-600 max-w-2xl">
+              <p className="text-xl text-industrial-300 leading-relaxed">
                 {selectedCategory.description}
               </p>
             </div>
+          </div>
+        </section>
 
+        <section className="py-24">
+          <div className="container mx-auto px-6">
             <div className="bg-white rounded-2xl shadow-lg p-6 border border-industrial-100">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {selectedCategory.items.map((product) => (
@@ -201,49 +213,83 @@ function ProductList({ selectedCategoryId = null }: ProductListProps) {
 
   return (
     <main className="min-h-screen bg-white">
-      <section className="py-12 bg-gradient-to-b from-industrial-50 to-white">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-10">
-            <h1 className="text-4xl md:text-5xl font-bold text-industrial-900 mb-4">
+      <section className="relative py-24 bg-gradient-to-br from-industrial-900 via-industrial-800 to-green-electric-900">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }} />
+        </div>
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-3xl">
+            <span className="inline-block px-4 py-1.5 bg-green-electric-600/20 text-green-electric-400 rounded-full text-sm font-semibold mb-6">
               Products
+            </span>
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+              Professional Lightning Protection & Grounding Solutions
             </h1>
-            <p className="text-xl text-industrial-600 max-w-2xl mx-auto">
-              Professional lightning protection and grounding solutions with a three-tier product system
+            <p className="text-xl text-industrial-300 leading-relaxed">
+              Explore our comprehensive three-tier product system, from flagship technology solutions to core grounding equipment and industrial safety support.
             </p>
           </div>
+        </div>
+      </section>
 
-          <div className="mb-12">
-            <ProductCarousel />
-          </div>
+      <section className="py-24">
+        <div className="container mx-auto px-6">
+          <ProductCarousel />
+        </div>
+      </section>
 
-          <div className="space-y-12">
-            {flagshipCategories.length > 0 && (
-              <TierSection 
-                tierId="flagship"
-                tierName="旗舰技术解决方案"
-                tierDescription="核心竞争力，高毛利、高技术壁垒"
-                categories={flagshipCategories}
-              />
-            )}
+      <section className="py-24 bg-industrial-50">
+        <div className="container mx-auto px-6">
+          {flagshipCategories.length > 0 && (
+            <TierSection 
+              tierId="flagship"
+              tierName="Flagship Technology Solutions"
+              tierDescription="Core competitiveness, high margin, high technical barriers"
+              categories={flagshipCategories}
+            />
+          )}
+        </div>
+      </section>
 
-            {coreCategories.length > 0 && (
-              <TierSection 
-                tierId="core"
-                tierName="核心接地与直击雷防护"
-                tierDescription="工程刚需，成套供应"
-                categories={coreCategories}
-              />
-            )}
+      <section className="py-24">
+        <div className="container mx-auto px-6">
+          {coreCategories.length > 0 && (
+            <TierSection 
+              tierId="core"
+              tierName="Core Grounding & Lightning Protection"
+              tierDescription="Engineering essentials, complete supply"
+              categories={coreCategories}
+            />
+          )}
+        </div>
+      </section>
 
-            {supportCategories.length > 0 && (
-              <TierSection 
-                tierId="support"
-                tierName="工业安防与工程配套"
-                tierDescription="配套设备与辅助工具"
-                categories={supportCategories}
-              />
-            )}
-          </div>
+      <section className="py-24 bg-industrial-50">
+        <div className="container mx-auto px-6">
+          {supportCategories.length > 0 && (
+            <TierSection 
+              tierId="support"
+              tierName="Industrial Safety & Engineering Support"
+              tierDescription="Supporting equipment and auxiliary tools"
+              categories={supportCategories}
+            />
+          )}
+        </div>
+      </section>
+
+      <section className="py-20 bg-gradient-to-r from-green-electric-700 to-green-electric-600">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Need Custom Solutions?
+          </h2>
+          <p className="text-xl text-green-electric-100 mb-8 max-w-2xl mx-auto">
+            Contact our technical team for personalized product recommendations and comprehensive project support.
+          </p>
+          <Link href={ROUTES.CONTACT} className="inline-block px-8 py-4 bg-white text-green-electric-700 rounded-lg hover:bg-industrial-50 font-semibold text-lg transition-all duration-300 shadow-lg">
+            Contact Us for Quote
+          </Link>
         </div>
       </section>
     </main>
@@ -255,6 +301,22 @@ interface ProductListProps {
 }
 
 export default function ProductsPage() {
+  return (
+    <Suspense fallback={<ProductsPageLoading />}>
+      <ProductsPageContent />
+    </Suspense>
+  );
+}
+
+function ProductsPageLoading() {
+  return (
+    <main className="min-h-screen bg-white flex items-center justify-center">
+      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-electric-600"></div>
+    </main>
+  );
+}
+
+function ProductsPageContent() {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const router = useRouter();
