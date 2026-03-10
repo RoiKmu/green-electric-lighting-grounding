@@ -1,0 +1,434 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About Us",
+    "contact": "Contact",
+    "projects": "Projects"
+  },
+  "footer": {
+    "companyName": "Green Electric",
+    "tagline": "Lightning & Grounding Solutions",
+    "description": "Your one-stop partner for advanced lightning protection, precision grounding systems, and industrial materials since 1993. From interception to grounding — complete safety Systems with perfect compatibility.",
+    "oneStopSolutions": "One-Stop Solutions",
+    "designSupplySupport": "Design · Supply · Support",
+    "contactUs": "Contact Us",
+    "email": "Email",
+    "phone": "Phone",
+    "wechat": "WeChat",
+    "location": "Location",
+    "availableOnRequest": "Available on request",
+    "scanQR": "Scan QR code or add by phone number",
+    "servingWorldwide": "Serving customers worldwide",
+    "copyright": "© 2026 Green Electric Industrial Supply. All rights reserved.",
+    "specializing": "Specializing in Lightning Protection & Grounding Solutions",
+    "productLinks": {
+      "lightningProtection": "Lightning Protection",
+      "groundingSystems": "Grounding Systems",
+      "eseLightningRods": "ESE Lightning Rods",
+      "rawMaterials": "Raw Materials"
+    },
+    "companyLinks": {
+      "aboutUs": "About Us",
+      "contact": "Contact"
+    }
+  },
+  "home": {
+    "hero": {
+      "badge": "For EPC Contractors & Industrial Projects",
+      "title": "Complete Lightning Protection Systems",
+      "subtitle": "ESE · Grounding ≤1Ω · Lightning Warning",
+      "description": "We deliver engineered solutions that meet IEC 62561 standards — from product selection to installation supervision."
+    },
+    "capabilities": {
+      "title": "Complete Lightning Protection Systems",
+      "exploreAll": "Explore All Components",
+      "items": {
+        "interception": {
+          "title": "Lightning Interception Systems",
+          "description": "ESE early discharge technology for expanded protection radius and reliable direct strike interception."
+        },
+        "grounding": {
+          "title": "Grounding & Equipotential Bonding",
+          "description": "Achieve ≤1Ω ground resistance with nano-carbon materials and exothermic welding for permanent connections."
+        },
+        "warning": {
+          "title": "Lightning Detection & Early Warning",
+          "description": "Real-time monitoring and intelligent warning systems for proactive risk management before strikes occur."
+        },
+        "epc": {
+          "title": "EPC Engineering Support",
+          "description": "From product selection to installation supervision — technical support throughout your project lifecycle."
+        }
+      }
+    },
+    "challenges": {
+      "badge": "Engineering Challenges",
+      "title": "Sound Familiar?",
+      "description": "These are the real problems EPC contractors face on lightning protection projects. We solve them.",
+      "items": {
+        "groundResistance": {
+          "title": "Ground Resistance Too High?",
+          "description": "Achieve ≤1Ω even in high resistivity soil. Our deep-well grounding with nano-carbon backfill solves the toughest soil conditions."
+        },
+        "designMismatch": {
+          "title": "Design vs. Site Conditions Mismatch?",
+          "description": "Standard designs often fail in real-world conditions. We provide customized solutions that adapt to your actual soil resistivity and site constraints."
+        },
+        "unpredictableRisk": {
+          "title": "Unpredictable Lightning Risk?",
+          "description": "Real-time lightning early warning systems give you 15-30 minutes advance notice to protect personnel and critical operations."
+        },
+        "coastalCorrosion": {
+          "title": "Coastal Corrosion Eating Your System?",
+          "description": "Salt-spray environments destroy standard grounding in years. Our copper-clad steel and specialized coatings ensure 30+ year service life."
+        },
+        "explosionProof": {
+          "title": "Explosion-Proof Compliance Required?",
+          "description": "Petrochemical and hazardous area projects demand intrinsically safe designs. We deliver CE, ISO and IEC certified protection systems."
+        },
+        "zeroDowntime": {
+          "title": "Need Zero-Downtime Protection?",
+          "description": "Airports, power plants, and critical facilities cannot afford lightning-related shutdowns. Our multi-layer protection ensures continuous operation."
+        }
+      }
+    },
+    "industries": {
+      "badge": "Industry Solutions",
+      "title": "Trusted Across Critical Industries",
+      "description": "We protect the infrastructure that powers modern society — from petrochemical facilities to international airports.",
+      "viewAllProjects": "View All Projects",
+      "sectors": {
+        "petrochemical": {
+          "title": "Petrochemical",
+          "description": "Explosion-proof protection for oil depots, refineries, and chemical plants with strict safety compliance.",
+          "project1": "National Reserve Oil Depot",
+          "project2": "Refinery Complex Protection"
+        },
+        "transportation": {
+          "title": "Transportation",
+          "description": "Critical protection for airports, railways, and transit hubs where safety and continuity are non-negotiable.",
+          "project1": "International Airport",
+          "project2": "High-Speed Rail Station"
+        },
+        "powerEnergy": {
+          "title": "Power & Energy",
+          "description": "UHV substation protection and grid-scale grounding for national power infrastructure.",
+          "project1": "UHV Substation",
+          "project2": "Solar Farm Protection"
+        },
+        "infrastructure": {
+          "title": "Infrastructure",
+          "description": "Protection solutions for commercial buildings, stadiums, and public facilities.",
+          "project1": "Commercial Complex",
+          "project2": "Public Facility"
+        }
+      }
+    },
+    "featuredProjects": {
+      "badge": "Featured Projects",
+      "title": "Landmark Projects Worldwide",
+      "trustedProjects": "Trusted in 300+ Industrial Lightning Protection Projects",
+      "servingProjects": "Serving petrochemical, power, transportation and infrastructure projects worldwide.",
+      "viewAllProjects": "View All Projects",
+      "projects": {
+        "oilDepot": {
+          "title": "National Reserve Oil Depot",
+          "industry": "Petrochemical",
+          "location": "Zhoushan, Zhejiang",
+          "description": "Comprehensive lightning and grounding system for one of China's largest national oil reserves.",
+          "coverage": "Coverage",
+          "safety": "Safety"
+        },
+        "airport": {
+          "title": "International Airport Terminal",
+          "industry": "Transportation",
+          "location": "Major Hub City",
+          "description": "Multi-layer lightning protection ensuring zero disruption to flight operations and passenger safety.",
+          "flights": "Flights/day",
+          "uptime": "Uptime"
+        },
+        "uhv": {
+          "title": "UHV Substation",
+          "industry": "Power & Energy",
+          "location": "Xinjiang",
+          "description": "Custom-engineered surge protection for ±800 kV ultra-high voltage infrastructure.",
+          "voltage": "Voltage",
+          "resistance": "Resistance"
+        }
+      }
+    },
+    "coreProducts": {
+      "badge": "System Components",
+      "title": "Lightning Protection & Grounding Components",
+      "description": "Key components for complete lightning protection systems — all tested and certified to international standards.",
+      "viewSpecifications": "View Specifications",
+      "needRawMaterials": "Need Raw Materials?",
+      "rawMaterialsDescription": "Steel tubes, copper coils, stainless bars — we supply foundational materials alongside finished components.",
+      "browseMaterials": "Browse Materials",
+      "products": {
+        "lightningWarning": {
+          "title": "Lightning Warning Systems",
+          "subtitle": "Lightning Warning System",
+          "description": "Advanced detection and early warning solutions to proactively manage lightning risks before strikes occur."
+        },
+        "copperCladSteel": {
+          "title": "Copper-Clad Steel (CCS)",
+          "subtitle": "Ground Rods / Electrodes / Stranded Wires",
+          "description": "High-conductivity ground rods, electrodes, and stranded wires for durable and efficient underground grounding."
+        },
+        "eseLightningRod": {
+          "title": "ESE Lightning Rods",
+          "subtitle": "Early Streamer Emission Lightning Rod",
+          "description": "Early Streamer Emission technology for an expanded radius of protection and enhanced strike interception."
+        },
+        "exothermicWelding": {
+          "title": "Exothermic Welding",
+          "subtitle": "Exothermic Welding Joints",
+          "description": "Achieve permanent, molecular-level bonds that never loosen or corrode, ensuring lifelong electrical conductivity."
+        }
+      }
+    },
+    "cta": {
+      "badge": "Why Choose Us",
+      "title": "Professional Excellence, Safety Guaranteed",
+      "description": "30+ years of expertise in lightning protection and grounding solutions for critical infrastructure",
+      "features": {
+        "oneStop": {
+          "title": "One-Stop System Solutions",
+          "description": "From design, product supply to installation guidance — complete safety systems with perfect compatibility"
+        },
+        "technology": {
+          "title": "Proprietary Core Technology",
+          "description": "ESE early discharge technology, lightning warning systems, and nano-carbon grounding with multiple patents"
+        },
+        "lifecycle": {
+          "title": "Full Lifecycle Support",
+          "description": "Site survey, installation guidance, system testing, and after-sales maintenance with rapid response"
+        }
+      },
+      "stats": {
+        "years": "Years of Industry Expertise",
+        "patents": "Patent Certifications",
+        "iso": "Certified Quality System",
+        "support": "Technical Support"
+      },
+      "readyToStart": "Ready to Start Your Project?",
+      "sendRequirements": "Send us your project requirements — we'll provide a tailored solution within 48 hours.",
+      "contactToday": "Contact us today for competitive pricing and expert consultation",
+      "submitInquiry": "Submit Project Inquiry",
+      "browseComponents": "Browse Components"
+    }
+  },
+  "about": {
+    "badge": "About Us",
+    "title": "Building a Solid Line of Industrial Safety",
+    "description": "Since our founding in 1993, Green Electric has been committed to becoming a global leader in one-stop lightning protection and grounding systems, providing comprehensive safety solutions for your facilities.",
+    "story": {
+      "badge": "Our Story",
+      "title": "Thirty Years of Craftsmanship, Achieving Systematic Safety",
+      "paragraph1": "Green Electric was founded in 1993 in Wuxi, China, initially focusing on electrical equipment manufacturing. With an unwavering commitment to safety standards, we have established a first-class reputation in the industry.",
+      "paragraph2": "As industrial safety needs evolved, we strategically integrated Lightning Protection Systems and Grounding Solutions. We realized that true safety comes from perfect synergy between components, not just stacking individual products.",
+      "paragraph3": "Today, Green Electric has grown into a leading enterprise with one-stop supply capabilities. From lightning rods and electrolytic ion grounding electrodes to exothermic welding construction accessories, and even the steel and aluminum profiles that support foundation engineering, we provide complete material support covering the entire project lifecycle.",
+      "yearsExcellence": "Years of Industrial Excellence"
+    },
+    "advantages": {
+      "title": "Advantages of One-Stop Solutions",
+      "description": "We are not just a material supplier, but your systematic safety partner",
+      "compatibility": {
+        "title": "System Compatibility Assurance",
+        "description": "From interception terminals to grounding electrodes, all components are designed following unified technical specifications, ensuring optimal electrical continuity and corrosion resistance."
+      },
+      "procurement": {
+        "title": "Simplified Procurement Process",
+        "description": "A single supplier can cover all lightning protection consumables, foundation steel materials, and precision accessories, significantly reducing communication, logistics, and time costs."
+      },
+      "engineering": {
+        "title": "Professional Engineering Support",
+        "description": "We provide specialized static protection recommendations for hazardous locations such as flammable and explosive areas, and support material matching solutions for critical processes like exothermic welding."
+      }
+    },
+    "timeline": {
+      "badge": "Development History",
+      "title": "Milestones",
+      "events": {
+        "1993": {
+          "title": "Company Founded",
+          "description": "Green Electric was established in Wuxi, focusing on power equipment manufacturing and industrial electrical R&D."
+        },
+        "2010": {
+          "title": "Lightning Protection Division Established",
+          "description": "Began developing high-performance corrosion-resistant lightning rods and grounding bodies, providing safety defense for infrastructure."
+        },
+        "2018": {
+          "title": "Integrated Solutions Upgrade",
+          "description": "Launched all-around nano-carbon grounding series and automatic monitoring systems, achieving product intelligence and systematization."
+        },
+        "today": {
+          "title": "One-Stop Procurement Leader",
+          "description": "Service scope expanded globally, providing comprehensive solutions from interception to grounding, from raw materials to construction tools."
+        }
+      }
+    },
+    "values": {
+      "badge": "Core Values",
+      "title": "The Force That Drives Us Forward",
+      "safety": {
+        "title": "Safety First",
+        "description": "Whether for conventional buildings or high-risk locations like petrochemical facilities, our commitment to quality remains unwavering."
+      },
+      "innovation": {
+        "title": "Innovative Technology",
+        "description": "Continuously developing new technologies such as electrolytic ion grounding and remote-controlled welding, elevating traditional engineering to technological heights."
+      },
+      "service": {
+        "title": "Integrated Service",
+        "description": "Perfectly connecting raw material supply with professional lightning protection components, providing the most worry-free B2B procurement experience."
+      }
+    },
+    "cta": {
+      "title": "Start Your One-Stop Procurement Journey",
+      "description": "Experience Green Electric's systematic solutions. Contact us now and let our professional technical team provide comprehensive support for your project.",
+      "button": "Contact Us for Quote"
+    }
+  },
+  "contact": {
+    "badge": "Contact Us",
+    "title": "Get In Touch",
+    "description": "Have questions about our products or need a quote? We're here to help. Reach out to our team today.",
+    "info": {
+      "title": "Contact Information",
+      "email": {
+        "title": "Email",
+        "response": "We typically respond within 24 hours"
+      },
+      "phone": {
+        "title": "Phone",
+        "hours": "Monday - Friday, 9:00 AM - 6:00 PM (CST)"
+      },
+      "wechat": {
+        "title": "WeChat",
+        "available": "Available on request",
+        "info": "Scan QR code or add by phone number"
+      },
+      "location": {
+        "title": "Location",
+        "address": "No.9, Su Tie Rd, Binhu District, Wuxi, China",
+        "serving": "Serving customers worldwide"
+      }
+    },
+    "businessHours": {
+      "title": "Business Hours",
+      "weekdays": "Monday - Friday",
+      "weekdaysTime": "9:00 AM - 6:00 PM",
+      "saturday": "Saturday",
+      "saturdayTime": "9:00 AM - 12:00 PM",
+      "sunday": "Sunday",
+      "sundayTime": "Closed",
+      "note": "* All times are China Standard Time (CST/UTC+8)"
+    },
+    "form": {
+      "title": "Send Us a Message",
+      "name": "Your Name",
+      "namePlaceholder": "John Doe",
+      "company": "Company",
+      "companyPlaceholder": "Your Company",
+      "email": "Email Address",
+      "emailPlaceholder": "john@example.com",
+      "phone": "Phone Number",
+      "phonePlaceholder": "+1 234 567 8900",
+      "subject": "Subject",
+      "subjectPlaceholder": "Select a subject",
+      "subjects": {
+        "quote": "Request a Quote",
+        "machines": "Machines Inquiry",
+        "tools": "Tools Inquiry",
+        "support": "Technical Support",
+        "other": "Other"
+      },
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your requirements...",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "error": "Something went wrong. Please try again later.",
+      "success": {
+        "title": "Message Sent!",
+        "description": "Thank you for reaching out. We will get back to you within 24 hours.",
+        "another": "Send another message"
+      }
+    }
+  },
+  "products": {
+    "badge": "Products",
+    "title": "Professional Lightning Protection & Grounding Solutions",
+    "description": "Explore our comprehensive three-tier product system, from flagship technology solutions to core grounding equipment and industrial safety support.",
+    "tiers": {
+      "flagship": {
+        "title": "Featured Products",
+        "description": "Our most popular products trusted by customers worldwide"
+      },
+      "core": {
+        "title": "Core Grounding & Lightning Protection",
+        "description": "Engineering essentials, complete supply"
+      },
+      "support": {
+        "title": "Industrial Safety & Engineering Support",
+        "description": "Supporting equipment and auxiliary tools"
+      }
+    },
+    "more": "more",
+    "needCustom": "Need Custom Solutions?",
+    "customDescription": "Contact our technical team for personalized product recommendations and comprehensive project support.",
+    "contactForQuote": "Contact Us for Quote",
+    "detail": {
+      "notFound": "Product Not Found",
+      "notFoundDescription": "The product you are looking for does not exist.",
+      "backToProducts": "Back to Products",
+      "features": "Features",
+      "feature1": "Premium materials and exquisite craftsmanship",
+      "feature2": "Reliable performance in demanding environments",
+      "feature3": "Easy installation and maintenance",
+      "feature4": "Compliant with international standards",
+      "applications": "Applications",
+      "app1": "Industrial Facilities",
+      "app2": "Construction Projects",
+      "app3": "Power Systems",
+      "app4": "Communication Base Stations",
+      "relatedProducts": "Related Products",
+      "viewDetails": "View Details",
+      "needQuote": "Need a Custom Quote?",
+      "quoteDescription": "Contact us for competitive pricing and professional consultation tailored to your specific needs.",
+      "requestQuote": "Request Quote"
+    }
+  },
+  "projects": {
+    "badge": "Project Portfolio",
+    "title": "Delivering Excellence Across Industries",
+    "description": "From petrochemical facilities to international airports, our solutions protect critical infrastructure worldwide.",
+    "viewCaseStudy": "View Case Study",
+    "whyChooseUs": "Why Choose Us",
+    "trackRecord": "Proven Track Record Across Industries",
+    "trackRecordDescription": "Our expertise spans multiple high-stakes sectors where safety and reliability are non-negotiable.",
+    "stats": {
+      "projects": "Projects Delivered",
+      "countries": "Countries Served",
+      "satisfaction": "Client Satisfaction",
+      "incidents": "Safety Incidents"
+    },
+    "challenges": "Challenges",
+    "solutions": "Our Solutions",
+    "readyToStart": "Ready to Start Your Project?",
+    "sendRequirements": "Send us your project requirements — we'll provide a tailored solution within 48 hours.",
+    "contactToday": "Contact us today for competitive pricing and expert consultation.",
+    "submitInquiry": "Submit Project Inquiry",
+    "browseComponents": "Browse Components"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous"
+  }
+}

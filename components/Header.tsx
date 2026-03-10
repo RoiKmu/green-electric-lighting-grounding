@@ -1,12 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
-import { ROUTES } from "@/lib/routes";
+import { Link } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 import { PRODUCT_CATEGORIES, getProductDetailPath } from "@/data/products";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Header() {
   const [isProductsOpen, setIsProductsOpen] = useState(false);
+  const t = useTranslations('nav');
 
   return (
     <header 
@@ -17,11 +19,11 @@ export default function Header() {
         <div className="flex items-center justify-between">
           
           <div className="flex items-center min-w-[180px]">
-            <Link href={ROUTES.HOME} className="flex items-center">
+            <Link href="/" className="flex items-center">
               <div>
                 <h1 className="text-2xl font-bold text-green-electric-400 flex items-start">
                   Green Electric
-                  <sup className="text-[10px] ml-0.5 mt-1 text-green-electric-400">®</sup>
+                  <sup className="text-[10px] ms-0.5 mt-1 text-green-electric-400">®</sup>
                 </h1>
               </div>
             </Link>
@@ -34,10 +36,10 @@ export default function Header() {
                 className="nav-link relative group px-8"
                 onMouseEnter={() => setIsProductsOpen(false)}
               >
-                <Link href={ROUTES.HOME} className="text-industrial-300 hover:text-green-electric-400 font-medium transition-colors duration-300 py-2 block text-center">
-                  Home
+                <Link href="/" className="text-industrial-300 hover:text-green-electric-400 font-medium transition-colors duration-300 py-2 block text-center">
+                  {t('home')}
                 </Link>
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-electric-400 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute bottom-0 start-0 w-0 h-0.5 bg-green-electric-400 transition-all duration-300 group-hover:w-full"></span>
               </div>
               
               <div className="h-6 w-px bg-industrial-700"></div>
@@ -46,10 +48,10 @@ export default function Header() {
                 className="products-nav relative group px-8"
                 onMouseEnter={() => setIsProductsOpen(true)}
               >
-                <Link href={ROUTES.PRODUCTS} className={`font-medium transition-colors duration-300 py-2 block text-center ${isProductsOpen ? 'text-green-electric-400' : 'text-industrial-300 hover:text-green-electric-400'}`}>
-                  Products
+                <Link href="/products" className={`font-medium transition-colors duration-300 py-2 block text-center ${isProductsOpen ? 'text-green-electric-400' : 'text-industrial-300 hover:text-green-electric-400'}`}>
+                  {t('products')}
                 </Link>
-                <span className={`absolute bottom-0 left-0 h-0.5 bg-green-electric-400 transition-all duration-300 ${isProductsOpen ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+                <span className={`absolute bottom-0 start-0 h-0.5 bg-green-electric-400 transition-all duration-300 ${isProductsOpen ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
               </div>
               
               <div className="h-6 w-px bg-industrial-700"></div>
@@ -58,16 +60,18 @@ export default function Header() {
                 className="nav-link relative group px-8"
                 onMouseEnter={() => setIsProductsOpen(false)}
               >
-                <Link href={ROUTES.ABOUT} className="text-industrial-300 hover:text-green-electric-400 font-medium transition-colors duration-300 py-2 block text-center">
-                  About Us
+                <Link href="/about" className="text-industrial-300 hover:text-green-electric-400 font-medium transition-colors duration-300 py-2 block text-center">
+                  {t('about')}
                 </Link>
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-green-electric-400 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute bottom-0 start-0 w-0 h-0.5 bg-green-electric-400 transition-all duration-300 group-hover:w-full"></span>
               </div>
               <div className="h-6 w-px bg-industrial-700"></div>
             </div>
           </div>
 
-          <div className="min-w-[180px]"></div>
+          <div className="flex items-center gap-4">
+            <LanguageSwitcher />
+          </div>
 
         </div>
       </nav>

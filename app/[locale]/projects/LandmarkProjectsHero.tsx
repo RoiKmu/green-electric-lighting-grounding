@@ -1,10 +1,10 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
+import { Link } from "@/i18n/routing";
+import { useTranslations } from 'next-intl';
 
-// 模拟项目数据：贴合防雷接地解决方案的真实场景
 const projects = [
   {
     id: 1,
@@ -54,8 +54,8 @@ export default function LandmarkProjectsHero() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [scale, setScale] = useState(1.08);
   const sectionRef = useRef<HTMLElement>(null);
+  const t = useTranslations('projects');
 
-  // 轮播逻辑（稍微延长了时间，因为需要阅读数据）
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % projects.length);
@@ -63,7 +63,6 @@ export default function LandmarkProjectsHero() {
     return () => clearInterval(timer);
   }, []);
 
-  // 滚动视差缩放逻辑（沿用首页的惊艳效果）
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -115,37 +114,32 @@ export default function LandmarkProjectsHero() {
             priority={index === 0}
           />
 
-          {/* 渐变遮罩：左侧更深以保证文字和数据的可读性 */}
           <div className="absolute inset-0 bg-gradient-to-r from-industrial-950/95 via-industrial-900/85 to-transparent" />
 
           <div className="relative container mx-auto px-6 h-full flex items-center z-10">
             <div className="max-w-3xl">
-              {/* 行业标签 */}
               <div className="inline-flex items-center px-4 py-2 bg-industrial-800/80 backdrop-blur-sm rounded-full mb-6 border border-industrial-700">
-                <div className="w-2 h-2 bg-green-electric-400 rounded-full mr-3 animate-pulse shadow-[0_0_8px_rgba(var(--color-green-electric-400),0.8)]" />
+                <div className="w-2 h-2 bg-green-electric-400 rounded-full me-3 animate-pulse shadow-[0_0_8px_rgba(var(--color-green-electric-400),0.8)]" />
                 <span className="text-sm font-semibold text-green-electric-300 uppercase tracking-wider">
                   {project.industry}
                 </span>
               </div>
 
-              {/* 项目标题与位置 */}
               <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white leading-tight tracking-tight">
                 {project.title}
               </h1>
               <div className="flex items-center mb-6 text-green-electric-200 font-medium">
-                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
                 {project.subtitle}
               </div>
 
-              {/* 项目描述 */}
-              <p className="text-lg md:text-xl mb-10 text-gray-300 leading-relaxed border-l-2 border-green-electric-600/50 pl-4">
+              <p className="text-lg md:text-xl mb-10 text-gray-300 leading-relaxed border-s-2 border-green-electric-600/50 ps-4">
                 {project.description}
               </p>
 
-              {/* 核心数据指标 (新加入的模块，展示硬核实力) */}
               <div className="grid grid-cols-3 gap-4 mb-10">
                 {project.stats.map((stat, i) => (
                   <div key={i} className="bg-industrial-900/50 backdrop-blur-sm border border-white/5 p-4 rounded-lg">
@@ -159,8 +153,8 @@ export default function LandmarkProjectsHero() {
                 href={project.href}
                 className="group inline-flex px-8 py-4 bg-transparent border border-green-electric-500 text-green-electric-400 rounded-lg hover:bg-green-electric-600 hover:text-white font-semibold text-lg transition-all duration-300 items-center"
               >
-                View Case Study
-                <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {t('viewCaseStudy')}
+                <svg className="w-5 h-5 ms-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </Link>
@@ -170,8 +164,7 @@ export default function LandmarkProjectsHero() {
       ))}
       </div>
 
-      {/* 进度条指示器 (替换了原本的圆点，更具现代工业感) */}
-      <div className="absolute bottom-10 left-6 md:left-auto md:right-10 flex flex-col space-y-3 z-20 w-48">
+      <div className="absolute bottom-10 start-6 md:start-auto md:end-10 flex flex-col space-y-3 z-20 w-48">
         <div className="text-white/60 text-sm font-medium mb-2">
           0{currentSlide + 1} / 0{projects.length}
         </div>
@@ -193,8 +186,7 @@ export default function LandmarkProjectsHero() {
         </div>
       </div>
 
-      {/* 箭头导航 (稍微下移到右下角，避免遮挡主要内容) */}
-      <div className="absolute bottom-10 right-6 md:right-64 flex space-x-2 z-20">
+      <div className="absolute bottom-10 end-6 md:end-64 flex space-x-2 z-20">
         <button
           onClick={() => goToSlide((currentSlide - 1 + projects.length) % projects.length)}
           className="w-12 h-12 bg-industrial-900/80 hover:bg-green-electric-600 backdrop-blur-sm rounded-lg flex items-center justify-center text-white transition-all duration-300 border border-white/10 hover:border-transparent"
@@ -213,8 +205,7 @@ export default function LandmarkProjectsHero() {
         </button>
       </div>
 
-      {/* 底部渐变过滤 */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-industrial-950 to-transparent z-10 pointer-events-none" />
+      <div className="absolute bottom-0 start-0 end-0 h-40 bg-gradient-to-t from-industrial-950 to-transparent z-10 pointer-events-none" />
     </section>
   );
 }

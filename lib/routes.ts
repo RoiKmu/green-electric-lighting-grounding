@@ -19,21 +19,21 @@ export const PRODUCT_CATEGORY_ROUTES = {
 export { PRODUCT_CATEGORIES, getProductCategoryPath, getProductDetailPath };
 
 export const NAV_LINKS = [
-  { label: 'Home', href: ROUTES.HOME },
-  { label: 'Products', href: ROUTES.PRODUCTS },
-  { label: 'About Us', href: ROUTES.ABOUT },
+  { labelKey: 'nav.home', href: ROUTES.HOME },
+  { labelKey: 'nav.products', href: ROUTES.PRODUCTS },
+  { labelKey: 'nav.about', href: ROUTES.ABOUT },
 ] as const;
 
 export const FOOTER_PRODUCT_LINKS = [
-  { label: 'Lightning Protection', href: '/products/lightning-protection' },
-  { label: 'Grounding Systems', href: '/products/grounding' },
-  { label: 'ESE Lightning Rods', href: '/products/early-discharge-system' },
-  { label: 'Raw Materials', href: PRODUCT_CATEGORY_ROUTES.MATERIALS },
+  { labelKey: 'footer.productLinks.lightningProtection', href: '/products/lightning-protection' },
+  { labelKey: 'footer.productLinks.groundingSystems', href: '/products/grounding' },
+  { labelKey: 'footer.productLinks.eseLightningRods', href: '/products/early-discharge-system' },
+  { labelKey: 'footer.productLinks.rawMaterials', href: PRODUCT_CATEGORY_ROUTES.MATERIALS },
 ] as const;
 
 export const FOOTER_COMPANY_LINKS = [
-  { label: 'About Us', href: ROUTES.ABOUT },
-  { label: 'Contact', href: ROUTES.CONTACT },
+  { labelKey: 'footer.companyLinks.aboutUs', href: ROUTES.ABOUT },
+  { labelKey: 'footer.companyLinks.contact', href: ROUTES.CONTACT },
 ] as const;
 
 export type AppRoute = typeof ROUTES[keyof typeof ROUTES];

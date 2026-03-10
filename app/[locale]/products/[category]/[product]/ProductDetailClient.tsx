@@ -1,16 +1,20 @@
-import Link from 'next/link';
+'use client';
+
 import Image from 'next/image';
 import { use } from 'react';
-import { ROUTES, getProductCategoryPath, getProductDetailPath } from '@/lib/routes';
+import { Link } from "@/i18n/routing";
+import { getProductDetailPath } from '@/lib/routes';
 import { getCategoryById, getProductById } from '@/data/products';
 import { EarlyDischargeLightningRod, LightningWarningSystem } from '@/components/product-templates';
+import { useTranslations } from 'next-intl';
 
 interface ProductDetailClientProps {
-  params: Promise<{ category: string; product: string }>;
+  params: Promise<{ category: string; product: string; locale: string }>;
 }
 
 export default function ProductDetailClient({ params }: ProductDetailClientProps) {
   const { category, product } = use(params);
+  const t = useTranslations('products.detail');
 
   const currentCategory = getCategoryById(category);
   const currentProduct = getProductById(category, product);
@@ -21,13 +25,13 @@ export default function ProductDetailClient({ params }: ProductDetailClientProps
         <section className="py-16 bg-gradient-to-b from-industrial-50 to-white">
           <div className="container mx-auto px-6">
             <div className="text-center">
-              <h1 className="text-4xl font-bold text-industrial-900 mb-4">Product Not Found</h1>
-              <p className="text-xl text-industrial-600 mb-8">The product you are looking for does not exist.</p>
+              <h1 className="text-4xl font-bold text-industrial-900 mb-4">{t('notFound')}</h1>
+              <p className="text-xl text-industrial-600 mb-8">{t('notFoundDescription')}</p>
               <Link
-                href={ROUTES.PRODUCTS}
+                href="/products"
                 className="px-6 py-3 bg-green-electric-600 text-white rounded-lg hover:bg-green-electric-500 font-medium transition-colors"
               >
-                Back to Products
+                {t('backToProducts')}
               </Link>
             </div>
           </div>
@@ -52,11 +56,11 @@ export default function ProductDetailClient({ params }: ProductDetailClientProps
       <section className="py-16 bg-gradient-to-b from-industrial-50 to-white">
         <div className="container mx-auto px-6">
           <div className="flex items-center mb-8 text-sm text-industrial-600">
-            <Link href={ROUTES.HOME} className="hover:text-green-electric-400 transition-colors">Home</Link>
+            <Link href="/" className="hover:text-green-electric-400 transition-colors">Home</Link>
             <span className="mx-2">/</span>
-            <Link href={ROUTES.PRODUCTS} className="hover:text-green-electric-400 transition-colors">Products</Link>
+            <Link href="/products" className="hover:text-green-electric-400 transition-colors">Products</Link>
             <span className="mx-2">/</span>
-            <Link href={getProductCategoryPath(category)} className="hover:text-green-electric-400 transition-colors">{currentCategory.name}</Link>
+            <Link href={`/products/${category}`} className="hover:text-green-electric-400 transition-colors">{currentCategory.name}</Link>
             <span className="mx-2">/</span>
             <span className="text-industrial-900 font-medium">{currentProduct.name}</span>
           </div>
@@ -82,45 +86,45 @@ export default function ProductDetailClient({ params }: ProductDetailClientProps
               <p className="text-industrial-600 mb-6">
                 This is the {currentProduct.name} product from the {currentCategory.name} series. The product is designed to meet the highest industry standards and provides reliable performance in various application scenarios.
               </p>
-              <h3 className="text-xl font-bold text-industrial-900 mb-4">Features</h3>
+              <h3 className="text-xl font-bold text-industrial-900 mb-4">{t('features')}</h3>
               <ul className="space-y-2 mb-6">
                 <li className="flex items-center text-industrial-700">
-                  <svg className="w-5 h-5 text-green-electric-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-green-electric-500 me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  Premium materials and exquisite craftsmanship
+                  {t('feature1')}
                 </li>
                 <li className="flex items-center text-industrial-700">
-                  <svg className="w-5 h-5 text-green-electric-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-green-electric-500 me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  Reliable performance in demanding environments
+                  {t('feature2')}
                 </li>
                 <li className="flex items-center text-industrial-700">
-                  <svg className="w-5 h-5 text-green-electric-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-green-electric-500 me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  Easy installation and maintenance
+                  {t('feature3')}
                 </li>
                 <li className="flex items-center text-industrial-700">
-                  <svg className="w-5 h-5 text-green-electric-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-green-electric-500 me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  Compliant with international standards
+                  {t('feature4')}
                 </li>
               </ul>
-              <h3 className="text-xl font-bold text-industrial-900 mb-4">Applications</h3>
+              <h3 className="text-xl font-bold text-industrial-900 mb-4">{t('applications')}</h3>
               <div className="grid grid-cols-2 gap-3">
-                <div className="bg-industrial-50 rounded-lg p-3 text-center text-industrial-700">Industrial Facilities</div>
-                <div className="bg-industrial-50 rounded-lg p-3 text-center text-industrial-700">Construction Projects</div>
-                <div className="bg-industrial-50 rounded-lg p-3 text-center text-industrial-700">Power Systems</div>
-                <div className="bg-industrial-50 rounded-lg p-3 text-center text-industrial-700">Communication Base Stations</div>
+                <div className="bg-industrial-50 rounded-lg p-3 text-center text-industrial-700">{t('app1')}</div>
+                <div className="bg-industrial-50 rounded-lg p-3 text-center text-industrial-700">{t('app2')}</div>
+                <div className="bg-industrial-50 rounded-lg p-3 text-center text-industrial-700">{t('app3')}</div>
+                <div className="bg-industrial-50 rounded-lg p-3 text-center text-industrial-700">{t('app4')}</div>
               </div>
             </div>
           </div>
 
           <div className="mt-16">
-            <h2 className="text-2xl font-bold text-industrial-900 mb-8">Related Products</h2>
+            <h2 className="text-2xl font-bold text-industrial-900 mb-8">{t('relatedProducts')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {currentCategory.items
                 .filter(item => item.id !== product)
@@ -139,8 +143,8 @@ export default function ProductDetailClient({ params }: ProductDetailClientProps
                     <div className="p-4">
                       <h4 className="font-medium text-industrial-900 mb-2">{item.name}</h4>
                       <div className="text-green-electric-600 hover:text-green-electric-500 font-medium text-sm inline-flex items-center">
-                        View Details
-                        <svg className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        {t('viewDetails')}
+                        <svg className="w-4 h-4 ms-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
                       </div>
@@ -155,12 +159,12 @@ export default function ProductDetailClient({ params }: ProductDetailClientProps
 
       <section className="py-20 bg-gradient-to-r from-green-electric-700 to-green-electric-600">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Need a Custom Quote?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{t('needQuote')}</h2>
           <p className="text-xl text-green-electric-100 mb-8 max-w-2xl mx-auto">
-            Contact us for competitive pricing and professional consultation tailored to your specific needs.
+            {t('quoteDescription')}
           </p>
-          <Link href={ROUTES.CONTACT} className="inline-block px-8 py-4 bg-white text-green-electric-700 rounded-lg hover:bg-industrial-50 font-semibold text-lg transition-all duration-300 shadow-lg">
-            Request Quote
+          <Link href="/contact" className="inline-block px-8 py-4 bg-white text-green-electric-700 rounded-lg hover:bg-industrial-50 font-semibold text-lg transition-all duration-300 shadow-lg">
+            {t('requestQuote')}
           </Link>
         </div>
       </section>

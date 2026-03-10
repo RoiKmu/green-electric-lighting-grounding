@@ -1,23 +1,23 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
+  const t = useTranslations('contact.form');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     setErrorMsg('');
 
-    // 获取表单数据
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData.entries());
 
     try {
-      // 这里的 API 路由我们在下一步配置，目前先模拟请求
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -27,10 +27,9 @@ export default function ContactForm() {
       if (!response.ok) throw new Error('Submission failed');
       
       setIsSuccess(true);
-      // 可选：清空表单
       (e.target as HTMLFormElement).reset();
     } catch (error) {
-      setErrorMsg('Something went wrong. Please try again later.');
+      setErrorMsg(t('error'));
     } finally {
       setIsSubmitting(false);
     }
@@ -44,13 +43,13 @@ export default function ContactForm() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-2xl font-bold text-industrial-900 mb-2">Message Sent!</h3>
-        <p className="text-industrial-600 mb-6">Thank you for reaching out. We will get back to you within 24 hours.</p>
+        <h3 className="text-2xl font-bold text-industrial-900 mb-2">{t('success.title')}</h3>
+        <p className="text-industrial-600 mb-6">{t('success.description')}</p>
         <button 
           onClick={() => setIsSuccess(false)}
           className="text-green-electric-600 font-medium hover:underline"
         >
-          Send another message
+          {t('success.another')}
         </button>
       </div>
     );
@@ -58,7 +57,7 @@ export default function ContactForm() {
 
   return (
     <div className="bg-white rounded-2xl shadow-xl border border-industrial-100 p-8">
-      <h2 className="text-2xl font-bold text-industrial-900 mb-6">Send Us a Message</h2>
+      <h2 className="text-2xl font-bold text-industrial-900 mb-6">{t('title')}</h2>
       
       {errorMsg && (
         <div className="mb-6 p-4 bg-red-50 text-red-600 rounded-lg text-sm">
@@ -69,63 +68,63 @@ export default function ContactForm() {
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-industrial-700 mb-2">Your Name *</label>
+            <label htmlFor="name" className="block text-sm font-medium text-industrial-700 mb-2">{t('name')} *</label>
             <input
               type="text" id="name" name="name" required disabled={isSubmitting}
               className="w-full px-4 py-3 border border-industrial-200 rounded-lg focus:ring-2 focus:ring-green-electric-500 focus:border-transparent transition-all disabled:opacity-50 disabled:bg-gray-50"
-              placeholder="John Doe"
+              placeholder={t('namePlaceholder')}
             />
           </div>
           <div>
-            <label htmlFor="company" className="block text-sm font-medium text-industrial-700 mb-2">Company</label>
+            <label htmlFor="company" className="block text-sm font-medium text-industrial-700 mb-2">{t('company')}</label>
             <input
               type="text" id="company" name="company" disabled={isSubmitting}
               className="w-full px-4 py-3 border border-industrial-200 rounded-lg focus:ring-2 focus:ring-green-electric-500 focus:border-transparent transition-all disabled:opacity-50 disabled:bg-gray-50"
-              placeholder="Your Company"
+              placeholder={t('companyPlaceholder')}
             />
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-industrial-700 mb-2">Email Address *</label>
+            <label htmlFor="email" className="block text-sm font-medium text-industrial-700 mb-2">{t('email')} *</label>
             <input
               type="email" id="email" name="email" required disabled={isSubmitting}
               className="w-full px-4 py-3 border border-industrial-200 rounded-lg focus:ring-2 focus:ring-green-electric-500 focus:border-transparent transition-all disabled:opacity-50 disabled:bg-gray-50"
-              placeholder="john@example.com"
+              placeholder={t('emailPlaceholder')}
             />
           </div>
           <div>
-            <label htmlFor="phone" className="block text-sm font-medium text-industrial-700 mb-2">Phone Number</label>
+            <label htmlFor="phone" className="block text-sm font-medium text-industrial-700 mb-2">{t('phone')}</label>
             <input
               type="tel" id="phone" name="phone" disabled={isSubmitting}
               className="w-full px-4 py-3 border border-industrial-200 rounded-lg focus:ring-2 focus:ring-green-electric-500 focus:border-transparent transition-all disabled:opacity-50 disabled:bg-gray-50"
-              placeholder="+1 234 567 8900"
+              placeholder={t('phonePlaceholder')}
             />
           </div>
         </div>
 
         <div>
-          <label htmlFor="subject" className="block text-sm font-medium text-industrial-700 mb-2">Subject *</label>
+          <label htmlFor="subject" className="block text-sm font-medium text-industrial-700 mb-2">{t('subject')} *</label>
           <select
             id="subject" name="subject" required disabled={isSubmitting}
             className="w-full px-4 py-3 border border-industrial-200 rounded-lg focus:ring-2 focus:ring-green-electric-500 focus:border-transparent transition-all disabled:opacity-50 disabled:bg-gray-50"
           >
-            <option value="">Select a subject</option>
-            <option value="quote">Request a Quote</option>
-            <option value="machines">Machines Inquiry</option>
-            <option value="tools">Tools Inquiry</option>
-            <option value="support">Technical Support</option>
-            <option value="other">Other</option>
+            <option value="">{t('subjectPlaceholder')}</option>
+            <option value="quote">{t('subjects.quote')}</option>
+            <option value="machines">{t('subjects.machines')}</option>
+            <option value="tools">{t('subjects.tools')}</option>
+            <option value="support">{t('subjects.support')}</option>
+            <option value="other">{t('subjects.other')}</option>
           </select>
         </div>
 
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-industrial-700 mb-2">Message *</label>
+          <label htmlFor="message" className="block text-sm font-medium text-industrial-700 mb-2">{t('message')} *</label>
           <textarea
             id="message" name="message" rows={5} required disabled={isSubmitting}
             className="w-full px-4 py-3 border border-industrial-200 rounded-lg focus:ring-2 focus:ring-green-electric-500 focus:border-transparent transition-all resize-none disabled:opacity-50 disabled:bg-gray-50"
-            placeholder="Tell us about your requirements..."
+            placeholder={t('messagePlaceholder')}
           />
         </div>
 
@@ -136,14 +135,14 @@ export default function ContactForm() {
         >
           {isSubmitting ? (
             <>
-              <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <svg className="animate-spin -me-1 ms-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
               </svg>
-              Sending...
+              {t('sending')}
             </>
           ) : (
-            'Send Message'
+            t('send')
           )}
         </button>
       </form>

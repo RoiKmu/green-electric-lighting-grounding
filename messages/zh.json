@@ -1,0 +1,434 @@
+{
+  "nav": {
+    "home": "首页",
+    "products": "产品中心",
+    "about": "关于我们",
+    "contact": "联系我们",
+    "projects": "项目案例"
+  },
+  "footer": {
+    "companyName": "格林电气",
+    "tagline": "防雷接地解决方案",
+    "description": "自1993年以来，您的一站式先进防雷保护、精密接地系统和工业材料合作伙伴。从接闪到接地——完美兼容的完整安全系统。",
+    "oneStopSolutions": "一站式解决方案",
+    "designSupplySupport": "设计 · 供应 · 支持",
+    "contactUs": "联系我们",
+    "email": "电子邮箱",
+    "phone": "电话",
+    "wechat": "微信",
+    "location": "地址",
+    "availableOnRequest": "可应要求提供",
+    "scanQR": "扫描二维码或通过手机号添加",
+    "servingWorldwide": "服务全球客户",
+    "copyright": "© 2026 格林电气工业供应。保留所有权利。",
+    "specializing": "专注于防雷保护与接地解决方案",
+    "productLinks": {
+      "lightningProtection": "防雷保护",
+      "groundingSystems": "接地系统",
+      "eseLightningRods": "ESE提前放电避雷针",
+      "rawMaterials": "原材料"
+    },
+    "companyLinks": {
+      "aboutUs": "关于我们",
+      "contact": "联系我们"
+    }
+  },
+  "home": {
+    "hero": {
+      "badge": "为EPC承包商和工业项目服务",
+      "title": "完整防雷保护系统",
+      "subtitle": "ESE提前放电 · 接地≤1Ω · 雷电预警",
+      "description": "我们提供符合IEC 62561标准的工程解决方案——从产品选型到安装指导。"
+    },
+    "capabilities": {
+      "title": "完整防雷保护系统",
+      "exploreAll": "浏览所有组件",
+      "items": {
+        "interception": {
+          "title": "雷电接闪系统",
+          "description": "ESE提前放电技术，扩大保护半径，可靠拦截直击雷。"
+        },
+        "grounding": {
+          "title": "接地与等电位连接",
+          "description": "采用纳米碳材料和放热焊接实现≤1Ω接地电阻，确保永久连接。"
+        },
+        "warning": {
+          "title": "雷电检测与预警",
+          "description": "实时监控和智能预警系统，在雷击发生前进行主动风险管理。"
+        },
+        "epc": {
+          "title": "EPC工程支持",
+          "description": "从产品选型到安装指导——项目全生命周期的技术支持。"
+        }
+      }
+    },
+    "challenges": {
+      "badge": "工程挑战",
+      "title": "这些问题困扰您吗？",
+      "description": "这些是EPC承包商在防雷保护项目中面临的真正问题。我们来解决它们。",
+      "items": {
+        "groundResistance": {
+          "title": "接地电阻过高？",
+          "description": "即使在高电阻率土壤中也能实现≤1Ω。我们的深井接地配合纳米碳回填料解决最困难的土壤条件。"
+        },
+        "designMismatch": {
+          "title": "设计与现场条件不匹配？",
+          "description": "标准设计往往在实际条件下失效。我们提供定制化解决方案，适应您的实际土壤电阻率和现场约束。"
+        },
+        "unpredictableRisk": {
+          "title": "雷电风险难以预测？",
+          "description": "实时雷电预警系统为您提供15-30分钟的提前通知，保护人员和关键运营。"
+        },
+        "coastalCorrosion": {
+          "title": "沿海腐蚀正在侵蚀您的系统？",
+          "description": "盐雾环境在数年内就会破坏标准接地。我们的铜包钢和专用涂层确保30年以上的使用寿命。"
+        },
+        "explosionProof": {
+          "title": "需要防爆合规？",
+          "description": "石化和危险区域项目需要本质安全设计。我们提供CE、ISO和IEC认证的保护系统。"
+        },
+        "zeroDowntime": {
+          "title": "需要零停机保护？",
+          "description": "机场、发电厂和关键设施无法承受雷电相关停机。我们的多层保护确保持续运营。"
+        }
+      }
+    },
+    "industries": {
+      "badge": "行业解决方案",
+      "title": "值得关键行业信赖",
+      "description": "我们保护驱动现代社会的关键基础设施——从石化设施到国际机场。",
+      "viewAllProjects": "查看所有项目",
+      "sectors": {
+        "petrochemical": {
+          "title": "石化行业",
+          "description": "为油库、炼油厂和化工厂提供符合严格安全合规的防爆保护。",
+          "project1": "国家储备油库",
+          "project2": "炼化综合体保护"
+        },
+        "transportation": {
+          "title": "交通运输",
+          "description": "为机场、铁路和交通枢纽提供关键保护，安全和连续性不可妥协。",
+          "project1": "国际机场",
+          "project2": "高铁站"
+        },
+        "powerEnergy": {
+          "title": "电力能源",
+          "description": "为特高压变电站和国家电网基础设施提供保护和大规模接地。",
+          "project1": "特高压变电站",
+          "project2": "光伏电站保护"
+        },
+        "infrastructure": {
+          "title": "基础设施",
+          "description": "为商业建筑、体育场馆和公共设施提供保护解决方案。",
+          "project1": "商业综合体",
+          "project2": "公共设施"
+        }
+      }
+    },
+    "featuredProjects": {
+      "badge": "精选项目",
+      "title": "全球标杆项目",
+      "trustedProjects": "服务300+工业防雷保护项目",
+      "servingProjects": "服务石化、电力、交通和基础设施项目遍布全球。",
+      "viewAllProjects": "查看所有项目",
+      "projects": {
+        "oilDepot": {
+          "title": "国家储备油库",
+          "industry": "石化",
+          "location": "浙江舟山",
+          "description": "为中国最大的国家石油储备之一提供综合防雷和接地系统。",
+          "coverage": "覆盖面积",
+          "safety": "安全记录"
+        },
+        "airport": {
+          "title": "国际机场航站楼",
+          "industry": "交通",
+          "location": "主要枢纽城市",
+          "description": "多层防雷保护确保航班运营和旅客安全零中断。",
+          "flights": "每日航班",
+          "uptime": "正常运行时间"
+        },
+        "uhv": {
+          "title": "特高压变电站",
+          "industry": "电力能源",
+          "location": "新疆",
+          "description": "为±800 kV特高压基础设施定制工程浪涌保护。",
+          "voltage": "电压等级",
+          "resistance": "接地电阻"
+        }
+      }
+    },
+    "coreProducts": {
+      "badge": "系统组件",
+      "title": "防雷保护与接地组件",
+      "description": "完整防雷保护系统的关键组件——全部经过国际标准测试认证。",
+      "viewSpecifications": "查看规格",
+      "needRawMaterials": "需要原材料？",
+      "rawMaterialsDescription": "钢管、铜卷、不锈钢棒——我们在提供成品组件的同时也供应基础材料。",
+      "browseMaterials": "浏览原材料",
+      "products": {
+        "lightningWarning": {
+          "title": "雷电预警系统",
+          "subtitle": "雷电预警系统",
+          "description": "先进的检测和预警解决方案，在雷击发生前主动管理雷电风险。"
+        },
+        "copperCladSteel": {
+          "title": "铜包钢(CCS)",
+          "subtitle": "接地棒 / 电极 / 绞线",
+          "description": "高导电性接地棒、电极和绞线，用于耐用高效的地下接地。"
+        },
+        "eseLightningRod": {
+          "title": "ESE提前放电避雷针",
+          "subtitle": "提前放电避雷针",
+          "description": "提前放电技术，扩大保护半径，增强雷击拦截能力。"
+        },
+        "exothermicWelding": {
+          "title": "放热焊接",
+          "subtitle": "放热焊接接头",
+          "description": "实现永久性分子级结合，永不松动或腐蚀，确保终身导电性。"
+        }
+      }
+    },
+    "cta": {
+      "badge": "为什么选择我们",
+      "title": "专业卓越，安全保证",
+      "description": "30多年关键基础设施防雷保护和接地解决方案专业经验",
+      "features": {
+        "oneStop": {
+          "title": "一站式系统解决方案",
+          "description": "从设计、产品供应到安装指导——完美兼容的完整安全系统"
+        },
+        "technology": {
+          "title": "核心技术",
+          "description": "ESE提前放电技术、雷电预警系统、纳米碳接地，拥有多项专利"
+        },
+        "lifecycle": {
+          "title": "全生命周期支持",
+          "description": "现场勘测、安装指导、系统测试和售后维护，快速响应"
+        }
+      },
+      "stats": {
+        "years": "年行业经验",
+        "patents": "项专利认证",
+        "iso": "认证质量体系",
+        "support": "技术支持"
+      },
+      "readyToStart": "准备开始您的项目？",
+      "sendRequirements": "发送您的项目需求——我们将在48小时内提供定制解决方案。",
+      "contactToday": "立即联系我们，获取有竞争力的价格和专业咨询",
+      "submitInquiry": "提交项目咨询",
+      "browseComponents": "浏览组件"
+    }
+  },
+  "about": {
+    "badge": "关于我们",
+    "title": "构建工业安全坚实防线",
+    "description": "自1993年成立以来，格林电气一直致力于成为全球领先的一站式防雷保护和接地系统供应商，为您的设施提供全面的安全解决方案。",
+    "story": {
+      "badge": "我们的故事",
+      "title": "三十年匠心，成就系统安全",
+      "paragraph1": "格林电气于1993年在无锡成立，最初专注于电气设备制造。凭借对安全标准的坚定承诺，我们在行业内树立了一流的声誉。",
+      "paragraph2": "随着工业安全需求的发展，我们战略性地整合了防雷保护系统和接地解决方案。我们意识到，真正的安全来自于组件之间的完美协同，而不仅仅是堆砌单个产品。",
+      "paragraph3": "如今，格林电气已成长为具有一站式供应能力的领先企业。从避雷针和电解离子接地极到放热焊接施工配件，乃至支撑基础工程的钢铝型材，我们提供覆盖整个项目生命周期的完整材料支持。",
+      "yearsExcellence": "年工业卓越历程"
+    },
+    "advantages": {
+      "title": "一站式解决方案优势",
+      "description": "我们不仅是材料供应商，更是您的系统安全合作伙伴",
+      "compatibility": {
+        "title": "系统兼容性保证",
+        "description": "从接闪端子到接地电极，所有组件均按照统一技术规范设计，确保最佳电气连续性和耐腐蚀性。"
+      },
+      "procurement": {
+        "title": "简化采购流程",
+        "description": "单一供应商即可覆盖所有防雷耗材、基础钢材和精密配件，显著降低沟通、物流和时间成本。"
+      },
+      "engineering": {
+        "title": "专业工程支持",
+        "description": "我们为易燃易爆等危险场所提供专业的静电防护建议，并支持放热焊接等关键工艺的材料匹配方案。"
+      }
+    },
+    "timeline": {
+      "badge": "发展历程",
+      "title": "里程碑",
+      "events": {
+        "1993": {
+          "title": "公司成立",
+          "description": "格林电气在无锡成立，专注于电力设备制造和工业电气研发。"
+        },
+        "2010": {
+          "title": "防雷事业部成立",
+          "description": "开始开发高性能耐腐蚀避雷针和接地体，为基础设施提供安全防护。"
+        },
+        "2018": {
+          "title": "综合解决方案升级",
+          "description": "推出全方位纳米碳接地系列和自动监控系统，实现产品智能化和系统化。"
+        },
+        "today": {
+          "title": "一站式采购领军者",
+          "description": "服务范围扩展至全球，提供从接闪到接地、从原材料到施工工具的综合解决方案。"
+        }
+      }
+    },
+    "values": {
+      "badge": "核心价值观",
+      "title": "驱动我们前进的力量",
+      "safety": {
+        "title": "安全至上",
+        "description": "无论是常规建筑还是石化设施等高风险场所，我们对质量的承诺始终如一。"
+      },
+      "innovation": {
+        "title": "技术创新",
+        "description": "持续开发电解离子接地、远程控制焊接等新技术，将传统工程提升到技术高度。"
+      },
+      "service": {
+        "title": "综合服务",
+        "description": "完美连接原材料供应与专业防雷组件，提供最省心的B2B采购体验。"
+      }
+    },
+    "cta": {
+      "title": "开启您的一站式采购之旅",
+      "description": "体验格林电气的系统化解决方案。立即联系我们，让我们的专业技术团队为您的项目提供全面支持。",
+      "button": "联系我们获取报价"
+    }
+  },
+  "contact": {
+    "badge": "联系我们",
+    "title": "与我们联系",
+    "description": "对我们的产品有疑问或需要报价？我们随时为您提供帮助。立即联系我们的团队。",
+    "info": {
+      "title": "联系信息",
+      "email": {
+        "title": "电子邮箱",
+        "response": "我们通常在24小时内回复"
+      },
+      "phone": {
+        "title": "电话",
+        "hours": "周一至周五，上午9:00 - 下午6:00（北京时间）"
+      },
+      "wechat": {
+        "title": "微信",
+        "available": "可应要求提供",
+        "info": "扫描二维码或通过手机号添加"
+      },
+      "location": {
+        "title": "地址",
+        "address": "中国无锡市滨湖区苏铁路9号",
+        "serving": "服务全球客户"
+      }
+    },
+    "businessHours": {
+      "title": "营业时间",
+      "weekdays": "周一至周五",
+      "weekdaysTime": "上午9:00 - 下午6:00",
+      "saturday": "周六",
+      "saturdayTime": "上午9:00 - 中午12:00",
+      "sunday": "周日",
+      "sundayTime": "休息",
+      "note": "* 所有时间均为北京时间（CST/UTC+8）"
+    },
+    "form": {
+      "title": "给我们留言",
+      "name": "您的姓名",
+      "namePlaceholder": "张三",
+      "company": "公司名称",
+      "companyPlaceholder": "您的公司",
+      "email": "电子邮箱",
+      "emailPlaceholder": "example@company.com",
+      "phone": "电话号码",
+      "phonePlaceholder": "+86 138 0000 0000",
+      "subject": "主题",
+      "subjectPlaceholder": "请选择主题",
+      "subjects": {
+        "quote": "请求报价",
+        "machines": "设备咨询",
+        "tools": "工具咨询",
+        "support": "技术支持",
+        "other": "其他"
+      },
+      "message": "留言内容",
+      "messagePlaceholder": "请告诉我们您的需求...",
+      "send": "发送留言",
+      "sending": "发送中...",
+      "error": "出错了，请稍后重试。",
+      "success": {
+        "title": "留言已发送！",
+        "description": "感谢您的联系。我们将在24小时内回复您。",
+        "another": "发送另一条留言"
+      }
+    }
+  },
+  "products": {
+    "badge": "产品中心",
+    "title": "专业防雷保护与接地解决方案",
+    "description": "探索我们全面的三层产品体系，从旗舰技术解决方案到核心接地设备和工业安全支持。",
+    "tiers": {
+      "flagship": {
+        "title": "明星产品",
+        "description": "深受全球客户信赖的热门产品"
+      },
+      "core": {
+        "title": "核心接地与防雷保护",
+        "description": "工程必备，供应齐全"
+      },
+      "support": {
+        "title": "工业安全与工程支持",
+        "description": "配套设备及辅助工具"
+      }
+    },
+    "more": "更多",
+    "needCustom": "需要定制解决方案？",
+    "customDescription": "联系我们的技术团队，获取个性化产品推荐和全面项目支持。",
+    "contactForQuote": "联系我们获取报价",
+    "detail": {
+      "notFound": "产品未找到",
+      "notFoundDescription": "您查找的产品不存在。",
+      "backToProducts": "返回产品列表",
+      "features": "产品特点",
+      "feature1": "优质材料，精湛工艺",
+      "feature2": "苛刻环境下可靠性能",
+      "feature3": "安装维护便捷",
+      "feature4": "符合国际标准",
+      "applications": "应用场景",
+      "app1": "工业设施",
+      "app2": "建筑工程",
+      "app3": "电力系统",
+      "app4": "通信基站",
+      "relatedProducts": "相关产品",
+      "viewDetails": "查看详情",
+      "needQuote": "需要定制报价？",
+      "quoteDescription": "联系我们获取有竞争力的价格和针对您特定需求的专业咨询。",
+      "requestQuote": "请求报价"
+    }
+  },
+  "projects": {
+    "badge": "项目组合",
+    "title": "跨行业交付卓越",
+    "description": "从石化设施到国际机场，我们的解决方案保护全球关键基础设施。",
+    "viewCaseStudy": "查看案例研究",
+    "whyChooseUs": "为什么选择我们",
+    "trackRecord": "跨行业验证的业绩记录",
+    "trackRecordDescription": "我们的专业知识跨越多个高风险行业，在这些行业中安全和可靠性是不可妥协的。",
+    "stats": {
+      "projects": "已交付项目",
+      "countries": "服务国家",
+      "satisfaction": "客户满意度",
+      "incidents": "安全事故"
+    },
+    "challenges": "挑战",
+    "solutions": "我们的解决方案",
+    "readyToStart": "准备开始您的项目？",
+    "sendRequirements": "发送您的项目需求——我们将在48小时内提供定制解决方案。",
+    "contactToday": "立即联系我们，获取有竞争力的价格和专业咨询。",
+    "submitInquiry": "提交项目咨询",
+    "browseComponents": "浏览组件"
+  },
+  "common": {
+    "loading": "加载中...",
+    "error": "发生错误",
+    "retry": "重试",
+    "back": "返回",
+    "next": "下一个",
+    "previous": "上一个"
+  }
+}

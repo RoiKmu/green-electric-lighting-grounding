@@ -1,13 +1,11 @@
-"use client";
-
-import { useState, useEffect, Suspense } from "react";
-import Link from "next/link";
+import { setRequestLocale } from 'next-intl/server';
+import { Suspense } from "react";
 import Image from "next/image";
-import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import CategoryButton from "@/components/CategoryButton";
 import ProductCarousel from "@/components/ProductCarousel";
 import { PRODUCT_CATEGORIES, getProductsByTier, getProductDetailPath, Product, ProductCategory } from "@/data/products";
-import { ROUTES } from "@/lib/routes";
+import { Link } from "@/i18n/routing";
+import { getTranslations } from 'next-intl/server';
 
 function ProductCard({ product, categoryId }: { product: Product; categoryId: string }) {
   return (
@@ -53,7 +51,7 @@ function CategoryCard({ category }: { category: ProductCategory }) {
           />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-industrial-900/70 to-transparent" />
-        <div className="absolute bottom-4 left-4 right-4">
+        <div className="absolute bottom-4 start-4 end-4">
           <h4 className="font-bold text-white text-lg">{category.name}</h4>
           {category.nameEn && (
             <p className="text-sm text-gray-300">{category.nameEn}</p>
@@ -85,12 +83,13 @@ function CategoryCard({ category }: { category: ProductCategory }) {
   );
 }
 
-function TierSection({ tierId, tierName, tierDescription, categories }: { 
+async function TierSection({ tierId, locale }: { 
   tierId: string; 
-  tierName: string; 
-  tierDescription: string;
-  categories: ProductCategory[];
+  locale: string;
 }) {
+  const t = await getTranslations({ locale, namespace: 'products' });
+  const categories = getProductsByTier(tierId as 'flagship' | 'core' | 'support');
+
   const tierColors: Record<string, { bg: string; border: string; text: string; badge: string }> = {
     flagship: {
       bg: 'bg-gradient-to-r from-amber-50 to-yellow-50',
@@ -114,23 +113,23 @@ function TierSection({ tierId, tierName, tierDescription, categories }: {
 
   const colors = tierColors[tierId] || tierColors.support;
 
-  const tierNamesEn: Record<string, string> = {
-    flagship: 'Featured Products',
-    core: 'Core Grounding & Lightning Protection',
-    support: 'Industrial Safety & Engineering Support',
+  const tierNames: Record<string, string> = {
+    flagship: t('tiers.flagship.title'),
+    core: t('tiers.core.title'),
+    support: t('tiers.support.title'),
   };
 
-  const tierDescriptionsEn: Record<string, string> = {
-    flagship: 'Our most popular products trusted by customers worldwide',
-    core: 'Engineering essentials, complete supply',
-    support: 'Supporting equipment and auxiliary tools',
+  const tierDescriptions: Record<string, string> = {
+    flagship: t('tiers.flagship.description'),
+    core: t('tiers.core.description'),
+    support: t('tiers.support.description'),
   };
 
   return (
     <section className={`rounded-2xl p-8 ${colors.bg} border ${colors.border}`}>
       <div className="mb-6">
-        <h2 className={`text-2xl font-bold ${colors.text}`}>{tierNamesEn[tierId]}</h2>
-        <p className="text-sm text-industrial-500">{tierDescriptionsEn[tierId]}</p>
+        <h2 className={`text-2xl font-bold ${colors.text}`}>{tierNames[tierId]}</h2>
+        <p className="text-sm text-industrial-500">{tierDescriptions[tierId]}</p>
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -142,14 +141,16 @@ function TierSection({ tierId, tierName, tierDescription, categories }: {
   );
 }
 
-function Breadcrumb({ categoryName }: { categoryName: string }) {
+function Breadcrumb({ categoryName, locale }: { categoryName: string; locale: string }) {
+  const t = Promise.resolve('products').then(() => null);
+  
   return (
     <nav className="flex items-center mb-8 text-sm text-industrial-600">
-      <Link href={ROUTES.PRODUCTS} className="hover:text-green-electric-600 transition-colors">
+      <Link href="/" className="hover:text-green-electric-600 transition-colors">
         Home
       </Link>
       <span className="mx-2">/</span>
-      <Link href={ROUTES.PRODUCTS} className="hover:text-green-electric-600 transition-colors">
+      <Link href="/products" className="hover:text-green-electric-600 transition-colors">
         Products
       </Link>
       <span className="mx-2">/</span>
@@ -158,7 +159,8 @@ function Breadcrumb({ categoryName }: { categoryName: string }) {
   );
 }
 
-function ProductList({ selectedCategoryId = null }: ProductListProps) {
+async function ProductList({ selectedCategoryId, locale }: { selectedCategoryId?: string | null; locale: string }) {
+  const t = await getTranslations({ locale, namespace: 'products' });
   const flagshipCategories = getProductsByTier('flagship');
   const coreCategories = getProductsByTier('core');
   const supportCategories = getProductsByTier('support');
@@ -176,7 +178,7 @@ function ProductList({ selectedCategoryId = null }: ProductListProps) {
             }} />
           </div>
           <div className="container mx-auto px-6 relative z-10">
-            <Breadcrumb categoryName={selectedCategory.name} />
+            <Breadcrumb categoryName={selectedCategory.name} locale={locale} />
             
             <div className="max-w-3xl">
               <span className="inline-block px-4 py-1.5 bg-green-electric-600/20 text-green-electric-400 rounded-full text-sm font-semibold mb-6">
@@ -222,13 +224,13 @@ function ProductList({ selectedCategoryId = null }: ProductListProps) {
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-3xl">
             <span className="inline-block px-4 py-1.5 bg-green-electric-600/20 text-green-electric-400 rounded-full text-sm font-semibold mb-6">
-              Products
+              {t('badge')}
             </span>
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              Professional Lightning Protection & Grounding Solutions
+              {t('title')}
             </h1>
             <p className="text-xl text-industrial-300 leading-relaxed">
-              Explore our comprehensive three-tier product system, from flagship technology solutions to core grounding equipment and industrial safety support.
+              {t('description')}
             </p>
           </div>
         </div>
@@ -243,12 +245,7 @@ function ProductList({ selectedCategoryId = null }: ProductListProps) {
       <section className="py-24 bg-industrial-50">
         <div className="container mx-auto px-6">
           {flagshipCategories.length > 0 && (
-            <TierSection 
-              tierId="flagship"
-              tierName="Flagship Technology Solutions"
-              tierDescription="Core competitiveness, high margin, high technical barriers"
-              categories={flagshipCategories}
-            />
+            <TierSection tierId="flagship" locale={locale} />
           )}
         </div>
       </section>
@@ -256,12 +253,7 @@ function ProductList({ selectedCategoryId = null }: ProductListProps) {
       <section className="py-24">
         <div className="container mx-auto px-6">
           {coreCategories.length > 0 && (
-            <TierSection 
-              tierId="core"
-              tierName="Core Grounding & Lightning Protection"
-              tierDescription="Engineering essentials, complete supply"
-              categories={coreCategories}
-            />
+            <TierSection tierId="core" locale={locale} />
           )}
         </div>
       </section>
@@ -269,12 +261,7 @@ function ProductList({ selectedCategoryId = null }: ProductListProps) {
       <section className="py-24 bg-industrial-50">
         <div className="container mx-auto px-6">
           {supportCategories.length > 0 && (
-            <TierSection 
-              tierId="support"
-              tierName="Industrial Safety & Engineering Support"
-              tierDescription="Supporting equipment and auxiliary tools"
-              categories={supportCategories}
-            />
+            <TierSection tierId="support" locale={locale} />
           )}
         </div>
       </section>
@@ -282,29 +269,17 @@ function ProductList({ selectedCategoryId = null }: ProductListProps) {
       <section className="py-20 bg-gradient-to-r from-green-electric-700 to-green-electric-600">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Need Custom Solutions?
+            {t('needCustom')}
           </h2>
           <p className="text-xl text-green-electric-100 mb-8 max-w-2xl mx-auto">
-            Contact our technical team for personalized product recommendations and comprehensive project support.
+            {t('customDescription')}
           </p>
-          <Link href={ROUTES.CONTACT} className="inline-block px-8 py-4 bg-white text-green-electric-700 rounded-lg hover:bg-industrial-50 font-semibold text-lg transition-all duration-300 shadow-lg">
-            Contact Us for Quote
+          <Link href="/contact" className="inline-block px-8 py-4 bg-white text-green-electric-700 rounded-lg hover:bg-industrial-50 font-semibold text-lg transition-all duration-300 shadow-lg">
+            {t('contactForQuote')}
           </Link>
         </div>
       </section>
     </main>
-  );
-}
-
-interface ProductListProps {
-  selectedCategoryId?: string | null;
-}
-
-export default function ProductsPage() {
-  return (
-    <Suspense fallback={<ProductsPageLoading />}>
-      <ProductsPageContent />
-    </Suspense>
   );
 }
 
@@ -316,33 +291,25 @@ function ProductsPageLoading() {
   );
 }
 
-function ProductsPageContent() {
-  const searchParams = useSearchParams();
-  const pathname = usePathname();
-  const router = useRouter();
-  
-  const categoryFromUrl = searchParams.get('category');
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(categoryFromUrl);
-
-  useEffect(() => {
-    setSelectedCategory(categoryFromUrl);
-  }, [categoryFromUrl]);
-
-  const handleCategoryChange = (categoryId: string | null) => {
-    setSelectedCategory(categoryId);
-    if (categoryId) {
-      router.push(`${pathname}?category=${categoryId}`, { scroll: false });
-    } else {
-      router.push(pathname, { scroll: false });
-    }
-  };
+async function ProductsPageContent({ locale }: { locale: string }) {
+  const flagshipCategories = getProductsByTier('flagship');
+  const coreCategories = getProductsByTier('core');
+  const supportCategories = getProductsByTier('support');
 
   return (
-    <CategoryButton 
-      currentCategoryId={selectedCategory ?? undefined} 
-      onCategoryChange={handleCategoryChange}
-    >
-      <ProductList selectedCategoryId={selectedCategory} />
-    </CategoryButton>
+    <main className="min-h-screen bg-white">
+      <ProductList locale={locale} />
+    </main>
+  );
+}
+
+export default async function ProductsPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
+  return (
+    <Suspense fallback={<ProductsPageLoading />}>
+      <ProductsPageContent locale={locale} />
+    </Suspense>
   );
 }
