@@ -40,6 +40,32 @@
       "subtitle": "ESE · Grounding ≤1Ω · Lightning Warning",
       "description": "We deliver engineered solutions that meet IEC 62561 standards — from product selection to installation supervision."
     },
+    "carousel": {
+      "slide1": {
+        "title": "EPC Total Lightning Protection",
+        "subtitle": "Complete Supply · Installation Support · System Integration",
+        "description": "Your one-stop solution for EPC projects. We seamlessly integrate with your workflow, providing complete equipment supply and on-site installation guidance.",
+        "category": "EPC Solutions"
+      },
+      "slide2": {
+        "title": "Petrochemical & Tank Farm Protection",
+        "subtitle": "Defending High-Risk & Explosive Environments",
+        "description": "Specialized lightning protection for volatile areas. We deliver certified explosion-proof systems, robust equipotential bonding, and ultra-low resistance grounding (≤1Ω) to ensure absolute facility safety.",
+        "category": "Hazardous Areas"
+      },
+      "slide3": {
+        "title": "Power & New Energy Systems",
+        "subtitle": "Comprehensive Power Station Security",
+        "description": "Safeguarding wind, solar, and traditional power infrastructure. Our systems offer robust direct strike interception, advanced SPD integration, and long-lasting grounding networks.",
+        "category": "Energy Sector"
+      },
+      "slide4": {
+        "title": "End-to-End Engineering Services",
+        "subtitle": "Expert Technical Support at Every Step",
+        "description": "From product selection and system configuration to on-site installation guidance and final acceptance testing, our 30-year expert team guarantees your project meets every standard.",
+        "category": "Technical Support"
+      }
+    },
     "capabilities": {
       "title": "Complete Lightning Protection Systems",
       "exploreAll": "Explore All Components",
@@ -380,6 +406,79 @@
     "needCustom": "Need Custom Solutions?",
     "customDescription": "Contact our technical team for personalized product recommendations and comprehensive project support.",
     "contactForQuote": "Contact Us for Quote",
+    "categories": {
+      "lightning-warning": {
+        "name": "Lightning Warning System",
+        "description": "Comprehensive atmospheric electric field monitoring, providing 20-minute early warning"
+      },
+      "early-discharge-system": {
+        "name": "Early Streamer Emission (ESE)",
+        "description": "Active lightning attraction technology, expanded protection radius"
+      },
+      "copper-clad-steel": {
+        "name": "Copper-Clad Steel Series",
+        "description": "Molecular-level bonding process, combining conductivity with 50-year long service life"
+      },
+      "exothermic-welding": {
+        "name": "Exothermic Welding Series",
+        "description": "Achieves molecular-level connections, excellent electrical continuity, safe and reliable construction"
+      },
+      "lightning-protection": {
+        "name": "Lightning Protection",
+        "description": "These devices are responsible for directly intercepting lightning strikes or directing lightning current underground"
+      },
+      "grounding": {
+        "name": "Grounding Conductors",
+        "description": "These are the core components buried in soil, responsible for dispersing current into the earth"
+      },
+      "static-protection": {
+        "name": "Static Protection Series",
+        "description": "Specialized equipment for flammable and explosive locations (such as oil depots, chemical plants)"
+      },
+      "detection": {
+        "name": "Grounding Detection Terminal",
+        "description": "Used for detecting and monitoring the status of grounding systems"
+      },
+      "specialized": {
+        "name": "Specialized Fittings",
+        "description": "Used for firmly connecting various lightning protection components, ensuring electrical continuity"
+      },
+      "measuring-tools": {
+        "name": "Precision Measuring Tools",
+        "description": "Precision measuring instruments for construction and quality inspection"
+      }
+    },
+    "items": {
+      "lightning-warning-system": "Lightning Warning System",
+      "early-discharge": "Early Streamer Emission Lightning Rod (ESE)",
+      "copper-clad-rod": "Copper-Clad Steel Grounding Rod",
+      "copper-clad-electrode": "Copper-Clad Steel Grounding Electrode",
+      "welding": "Exothermic Welding Series",
+      "remote-welding": "Remote Exothermic Welding Igniter",
+      "lightning-rod": "Corrosion-Resistant Steel Pipe Lightning Rod",
+      "grounding-wire": "Grounding Wire",
+      "grounding-electrode": "Grounding Electrode",
+      "ion-electrode": "Electrolytic Ion Grounding Electrode",
+      "energy-storage": "Energy Storage Grounding Device",
+      "nano-carbon": "All-Around Nano-Carbon Grounding Series",
+      "lightning-system": "3D Lightning Protection System & Grounding Device",
+      "static-alarm": "Static Grounding Alarm",
+      "static-elimination": "Static Elimination Device",
+      "floating-roof": "Auto-Rewind Floating Roof Tank Grounding Device",
+      "mobile-grounding": "Mobile Grounding Meter",
+      "grounding-box": "Grounding Terminal Box",
+      "detection-well": "Grounding Detection Well",
+      "equipotential": "Equipotential Connection Components",
+      "grounding-terminal": "Grounding Terminal Block (Grounding Point)",
+      "grounding-plate": "Grounding Column Plate",
+      "grounding-center": "Grounding Center",
+      "connector": "Connector",
+      "rod-clamp": "Rod Clamp (For Grounding Rods)",
+      "tube-clamp": "Tube Clamp (For Steel Pipes)",
+      "brackets": "Brackets & Clamps (For Grounding Strips/Wires)",
+      "resistance-meter": "Grounding Resistance Meter",
+      "soil-resistivity": "Soil Resistivity Meter"
+    },
     "detail": {
       "notFound": "Product Not Found",
       "notFoundDescription": "The product you are looking for does not exist.",

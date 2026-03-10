@@ -9,6 +9,8 @@ import LanguageSwitcher from "./LanguageSwitcher";
 export default function Header() {
   const [isProductsOpen, setIsProductsOpen] = useState(false);
   const t = useTranslations('nav');
+  const tCategories = useTranslations('products.categories');
+  const tItems = useTranslations('products.items');
 
   return (
     <header 
@@ -85,7 +87,9 @@ export default function Header() {
           <div className="grid grid-cols-6 gap-8">
             {[...PRODUCT_CATEGORIES].sort((a, b) => a.items.length - b.items.length).map((category) => (
               <div key={category.id} className="product-category">
-                <h4 className="text-lg font-semibold text-green-electric-400 mb-4">{category.name}</h4>
+                <h4 className="text-lg font-semibold text-green-electric-400 mb-4">
+                  {tCategories(`${category.id}.name`)}
+                </h4>
                 <ul className="space-y-2">
                   {category.items.slice(0, 5).map((product) => (
                     <li key={product.id}>
@@ -93,7 +97,7 @@ export default function Header() {
                         href={getProductDetailPath(category.id, product.id)} 
                         className="text-industrial-300 hover:text-green-electric-400 text-sm transition-colors block py-1"
                       >
-                        {product.name}
+                        {tItems(product.id)}
                       </Link>
                     </li>
                   ))}

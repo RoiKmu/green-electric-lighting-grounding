@@ -40,6 +40,32 @@
       "subtitle": "ESE提前放电 · 接地≤1Ω · 雷电预警",
       "description": "我们提供符合IEC 62561标准的工程解决方案——从产品选型到安装指导。"
     },
+    "carousel": {
+      "slide1": {
+        "title": "EPC总承包防雷保护",
+        "subtitle": "完整供应 · 安装支持 · 系统集成",
+        "description": "您的一站式EPC项目解决方案。我们与您的工作流程无缝对接，提供完整的设备供应和现场安装指导。",
+        "category": "EPC解决方案"
+      },
+      "slide2": {
+        "title": "石化与油库保护",
+        "subtitle": "守护高风险与易爆环境",
+        "description": "为易燃易爆区域提供专业防雷保护。我们提供认证防爆系统、坚固的等电位连接和超低电阻接地（≤1Ω），确保设施绝对安全。",
+        "category": "危险区域"
+      },
+      "slide3": {
+        "title": "电力与新能源系统",
+        "subtitle": "全面电站安全保障",
+        "description": "保护风电、光伏和传统电力基础设施。我们的系统提供坚固的直击雷拦截、先进的SPD集成和持久的接地网络。",
+        "category": "能源领域"
+      },
+      "slide4": {
+        "title": "端到端工程服务",
+        "subtitle": "每一步的专业技术支持",
+        "description": "从产品选型和系统配置到现场安装指导和最终验收测试，我们30年的专家团队确保您的项目符合每一项标准。",
+        "category": "技术支持"
+      }
+    },
     "capabilities": {
       "title": "完整防雷保护系统",
       "exploreAll": "浏览所有组件",
@@ -380,6 +406,79 @@
     "needCustom": "需要定制解决方案？",
     "customDescription": "联系我们的技术团队，获取个性化产品推荐和全面项目支持。",
     "contactForQuote": "联系我们获取报价",
+    "categories": {
+      "lightning-warning": {
+        "name": "雷电预警系统",
+        "description": "全面大气电场监测，提供20分钟提前预警"
+      },
+      "early-discharge-system": {
+        "name": "提前放电避雷针(ESE)",
+        "description": "主动引雷技术，扩大保护半径"
+      },
+      "copper-clad-steel": {
+        "name": "铜包钢系列",
+        "description": "分子级结合工艺，兼具导电性与50年长寿命"
+      },
+      "exothermic-welding": {
+        "name": "放热焊接系列",
+        "description": "实现分子级连接，电气连续性优异，施工安全可靠"
+      },
+      "lightning-protection": {
+        "name": "防雷保护",
+        "description": "负责直接拦截雷击或将雷电电流导入地下的装置"
+      },
+      "grounding": {
+        "name": "接地导体",
+        "description": "埋入土壤中的核心组件，负责将电流散入大地"
+      },
+      "static-protection": {
+        "name": "静电防护系列",
+        "description": "专为易燃易爆场所（如油库、化工厂）设计的专用设备"
+      },
+      "detection": {
+        "name": "接地检测端子",
+        "description": "用于检测和监测接地系统状态"
+      },
+      "specialized": {
+        "name": "专用配件",
+        "description": "用于牢固连接各种防雷组件，确保电气连续性"
+      },
+      "measuring-tools": {
+        "name": "精密测量工具",
+        "description": "用于施工和质量检测的精密测量仪器"
+      }
+    },
+    "items": {
+      "lightning-warning-system": "雷电预警系统",
+      "early-discharge": "提前放电避雷针(ESE)",
+      "copper-clad-rod": "铜包钢接地棒",
+      "copper-clad-electrode": "铜包钢接地极",
+      "welding": "放热焊接系列",
+      "remote-welding": "远程放热焊接点火器",
+      "lightning-rod": "耐腐蚀钢管避雷针",
+      "grounding-wire": "接地线",
+      "grounding-electrode": "接地极",
+      "ion-electrode": "电解离子接地极",
+      "energy-storage": "储能接地装置",
+      "nano-carbon": "全方位纳米碳接地系列",
+      "lightning-system": "三维防雷系统与接地装置",
+      "static-alarm": "静电接地报警器",
+      "static-elimination": "静电消除装置",
+      "floating-roof": "自动卷绕浮顶罐接地装置",
+      "mobile-grounding": "移动接地仪",
+      "grounding-box": "接地端子箱",
+      "detection-well": "接地检测井",
+      "equipotential": "等电位连接组件",
+      "grounding-terminal": "接地端子板（接地点）",
+      "grounding-plate": "接地柱板",
+      "grounding-center": "接地中心",
+      "connector": "连接器",
+      "rod-clamp": "接地棒夹具",
+      "tube-clamp": "钢管夹具",
+      "brackets": "支架与夹具（用于接地排/线）",
+      "resistance-meter": "接地电阻测试仪",
+      "soil-resistivity": "土壤电阻率测试仪"
+    },
     "detail": {
       "notFound": "产品未找到",
       "notFoundDescription": "您查找的产品不存在。",

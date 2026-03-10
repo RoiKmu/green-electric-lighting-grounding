@@ -2,50 +2,25 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
-const slides = [
-  {
-    id: 1,
-    title: 'EPC Total Lightning Protection',
-    subtitle: 'Complete Supply · Installation Support · System Integration',
-    description: 'Your one-stop solution for EPC projects. We seamlessly integrate with your workflow, providing complete equipment supply and on-site installation guidance.',
-    category: 'EPC Solutions',
-    image: '/images/hero/hero-1.jpg',
-  },
-  {
-    id: 2,
-    title: 'Petrochemical & Tank Farm Protection',
-    subtitle: 'Defending High-Risk & Explosive Environments',
-    description: 'Specialized lightning protection for volatile areas. We deliver certified explosion-proof systems, robust equipotential bonding, and ultra-low resistance grounding (≤1Ω) to ensure absolute facility safety.',
-    category: 'Hazardous Areas',
-    image: '/images/hero/hero-2.jpg',
-  },
-  {
-    id: 3,
-    title: 'Power & New Energy Systems',
-    subtitle: 'Comprehensive Power Station Security',
-    description: 'Safeguarding wind, solar, and traditional power infrastructure. Our systems offer robust direct strike interception, advanced SPD integration, and long-lasting grounding networks.',
-    category: 'Energy Sector',
-    image: '/images/hero/hero-3.jpg',
-  },
-  {
-    id: 4,
-    title: 'End-to-End Engineering Services',
-    subtitle: 'Expert Technical Support at Every Step',
-    description: 'From product selection and system configuration to on-site installation guidance and final acceptance testing, our 30-year expert team guarantees your project meets every standard.',
-    category: 'Technical Support',
-    image: '/images/hero/hero-4.jpg',
-  },
+const slideKeys = ['slide1', 'slide2', 'slide3', 'slide4'] as const;
+const slideImages = [
+  '/images/hero/hero-1.jpg',
+  '/images/hero/hero-2.jpg',
+  '/images/hero/hero-3.jpg',
+  '/images/hero/hero-4.jpg',
 ];
 
 export default function HeroCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [scale, setScale] = useState(1.08);
   const sectionRef = useRef<HTMLElement>(null);
+  const t = useTranslations('home.carousel');
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
+      setCurrentSlide((prev) => (prev + 1) % slideKeys.length);
     }, 10000);
     return () => clearInterval(timer);
   }, []);
@@ -86,16 +61,16 @@ export default function HeroCarousel() {
           transformOrigin: 'center center'
         }}
       >
-      {slides.map((slide, index) => (
+      {slideKeys.map((slideKey, index) => (
         <div
-          key={slide.id}
+          key={slideKey}
           className={`absolute inset-0 transition-all duration-1000 ${
             index === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-105 pointer-events-none'
           }`}
         >
           <Image
-            src={slide.image}
-            alt={slide.title}
+            src={slideImages[index]}
+            alt={t(`${slideKey}.title`)}
             fill
             className="object-cover"
             priority={index === 0}
@@ -108,20 +83,20 @@ export default function HeroCarousel() {
               <div className="inline-flex items-center px-4 py-2 bg-green-electric-600/90 backdrop-blur-sm rounded-full mb-6 border border-green-electric-500/30">
                 <div className="w-2 h-2 bg-green-electric-300 rounded-full mr-3 animate-pulse" />
                 <span className="text-sm font-semibold text-white uppercase tracking-wider">
-                  {slide.category}
+                  {t(`${slideKey}.category`)}
                 </span>
               </div>
 
               <h2 className="text-5xl md:text-7xl font-bold mb-6 text-white leading-tight tracking-tight">
-                {slide.title}
+                {t(`${slideKey}.title`)}
               </h2>
 
               <p className="text-xl md:text-2xl mb-4 text-green-electric-200 font-medium">
-                {slide.subtitle}
+                {t(`${slideKey}.subtitle`)}
               </p>
 
               <p className="text-lg mb-10 text-gray-300 max-w-2xl leading-relaxed">
-                {slide.description}
+                {t(`${slideKey}.description`)}
               </p>
             </div>
           </div>
@@ -129,25 +104,23 @@ export default function HeroCarousel() {
       ))}
       </div>
 
-      {/* Navigation Dots */}
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex items-center space-x-3 z-20">
-        {slides.map((slide, index) => (
+        {slideKeys.map((slideKey, index) => (
           <button
-            key={index}
+            key={slideKey}
             onClick={() => goToSlide(index)}
             className={`transition-all duration-300 ${
               index === currentSlide
                 ? 'w-12 h-3 bg-green-electric-500 rounded-full'
                 : 'w-3 h-3 bg-white/40 rounded-full hover:bg-white/60'
             }`}
-            aria-label={`Go to ${slide.category} slide`}
+            aria-label={`Go to ${t(`${slideKey}.category`)} slide`}
           />
         ))}
       </div>
 
-      {/* Arrow Navigation */}
       <button
-        onClick={() => goToSlide((currentSlide - 1 + slides.length) % slides.length)}
+        onClick={() => goToSlide((currentSlide - 1 + slideKeys.length) % slideKeys.length)}
         className="absolute left-6 top-1/2 transform -translate-y-1/2 w-14 h-14 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all duration-300 z-20 border border-white/10"
         aria-label="Previous slide"
       >
@@ -156,7 +129,7 @@ export default function HeroCarousel() {
         </svg>
       </button>
       <button
-        onClick={() => goToSlide((currentSlide + 1) % slides.length)}
+        onClick={() => goToSlide((currentSlide + 1) % slideKeys.length)}
         className="absolute right-6 top-1/2 transform -translate-y-1/2 w-14 h-14 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all duration-300 z-20 border border-white/10"
         aria-label="Next slide"
       >
@@ -165,7 +138,6 @@ export default function HeroCarousel() {
         </svg>
       </button>
 
-      {/* Bottom Gradient Fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-industrial-950/50 to-transparent z-10" />
     </section>
   );
