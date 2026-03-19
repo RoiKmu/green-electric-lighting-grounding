@@ -4,7 +4,17 @@
     "products": "Products",
     "about": "About Us",
     "contact": "Contact",
-    "projects": "Projects"
+    "projects": "Projects",
+    "allProjects": "All Projects",
+    "allProjectsDesc": "View all project cases",
+    "petrochemical": "Petrochemical",
+    "petrochemicalDesc": "Explosion-proof protection for extreme heat and high corrosion environments",
+    "powerEnergy": "Power & Energy",
+    "powerEnergyDesc": "High-voltage grid and solar grounding systems across deserts and rainforests",
+    "transportation": "Transportation",
+    "transportationDesc": "Zero-interruption operation for cross-border HSR and heavy-haul railways",
+    "infrastructure": "Infrastructure",
+    "infrastructureDesc": "System-level protection for commercial centers, stadiums, and data centers"
   },
   "footer": {
     "companyName": "Green Electric",
@@ -35,17 +45,17 @@
   },
   "home": {
     "hero": {
-      "badge": "For EPC Contractors & Industrial Projects",
+      "badge": "Expert Support for EPC Projects",
       "title": "Complete Lightning Protection Systems",
       "subtitle": "ESE · Grounding ≤1Ω · Lightning Warning",
-      "description": "We deliver engineered solutions that meet IEC 62561 standards — from product selection to installation supervision."
+      "description": "We deliver integrated engineering solutions that meet IEC 62561 and UL 467 standards — from design to installation support."
     },
     "carousel": {
       "slide1": {
-        "title": "EPC Total Lightning Protection",
+        "title": "EPC Project-Specific Lightning Protection",
         "subtitle": "Complete Supply · Installation Support · System Integration",
-        "description": "Your one-stop solution for EPC projects. We seamlessly integrate with your workflow, providing complete equipment supply and on-site installation guidance.",
-        "category": "EPC Solutions"
+        "description": "Your reliable delivery partner for EPC contractors. We seamlessly integrate with your workflow, providing complete equipment supply and on-site installation guidance.",
+        "category": "EPC Project Support"
       },
       "slide2": {
         "title": "Petrochemical & Tank Farm Protection",
@@ -62,7 +72,7 @@
       "slide4": {
         "title": "End-to-End Engineering Services",
         "subtitle": "Expert Technical Support at Every Step",
-        "description": "From product selection and system configuration to on-site installation guidance and final acceptance testing, our 30-year expert team guarantees your project meets every standard.",
+        "description": "From product selection and system configuration to on-site installation guidance and final acceptance testing, including FAT/SAT test support, our 30-year expert team guarantees your project meets every standard.",
         "category": "Technical Support"
       }
     },
@@ -83,15 +93,15 @@
           "description": "Real-time monitoring and intelligent warning systems for proactive risk management before strikes occur."
         },
         "epc": {
-          "title": "EPC Engineering Support",
-          "description": "From product selection to installation supervision — technical support throughout your project lifecycle."
+          "title": "Deep Collaboration for EPCs",
+          "description": "More than material supply, we are your technical backbone. From material procurement, FAT/SAT test coordination to on-site supervision, we assist general contractors throughout to achieve delivery goals."
         }
       }
     },
     "challenges": {
       "badge": "Engineering Challenges",
       "title": "Sound Familiar?",
-      "description": "These are the real problems EPC contractors face on lightning protection projects. We solve them.",
+      "description": "These are common pain points EPC contractors encounter in lightning protection and grounding projects. We help you solve them efficiently.",
       "items": {
         "groundResistance": {
           "title": "Ground Resistance Too High?",
@@ -106,8 +116,8 @@
           "description": "Real-time lightning early warning systems give you 15-30 minutes advance notice to protect personnel and critical operations."
         },
         "coastalCorrosion": {
-          "title": "Coastal Corrosion Eating Your System?",
-          "description": "Salt-spray environments destroy standard grounding in years. Our copper-clad steel and specialized coatings ensure 30+ year service life."
+          "title": "Harsh Gulf & Desert Environment Corrosion?",
+          "description": "High salinity and extreme heat environments destroy standard grounding. We provide copper-clad steel solutions ensuring 30+ year service life in the harshest Middle East conditions."
         },
         "explosionProof": {
           "title": "Explosion-Proof Compliance Required?",
@@ -255,18 +265,18 @@
       "title": "Thirty Years of Craftsmanship, Achieving Systematic Safety",
       "paragraph1": "Green Electric was founded in 1993 in Wuxi, China, initially focusing on electrical equipment manufacturing. With an unwavering commitment to safety standards, we have established a first-class reputation in the industry.",
       "paragraph2": "As industrial safety needs evolved, we strategically integrated Lightning Protection Systems and Grounding Solutions. We realized that true safety comes from perfect synergy between components, not just stacking individual products.",
-      "paragraph3": "Today, Green Electric has grown into a leading enterprise with one-stop supply capabilities. From lightning rods and electrolytic ion grounding electrodes to exothermic welding construction accessories, and even the steel and aluminum profiles that support foundation engineering, we provide complete material support covering the entire project lifecycle.",
+      "paragraph3": "Today, Green Electric has grown into the preferred one-stop specialist for EPC projects. From lightning rods and electrolytic ion grounding electrodes to exothermic welding construction accessories, and even the steel and aluminum profiles that support foundation engineering, we provide complete material support covering the entire project lifecycle.",
       "yearsExcellence": "Years of Industrial Excellence"
     },
     "advantages": {
-      "title": "Advantages of One-Stop Solutions",
-      "description": "We are not just a material supplier, but your systematic safety partner",
+      "title": "Integrated Supply Value for EPCs",
+      "description": "Reducing management overhead for EPC contractors",
       "compatibility": {
         "title": "System Compatibility Assurance",
         "description": "From interception terminals to grounding electrodes, all components are designed following unified technical specifications, ensuring optimal electrical continuity and corrosion resistance."
       },
       "procurement": {
-        "title": "Simplified Procurement Process",
+        "title": "Simplified EPC Procurement & Material Management",
         "description": "A single supplier can cover all lightning protection consumables, foundation steel materials, and precision accessories, significantly reducing communication, logistics, and time costs."
       },
       "engineering": {
@@ -503,10 +513,10 @@
   "projects": {
     "badge": "Project Portfolio",
     "title": "Delivering Excellence Across Industries",
-    "description": "From petrochemical facilities to international airports, our solutions protect critical infrastructure worldwide.",
+    "description": "We are deeply involved in landmark EPC projects worldwide, providing high-standard lightning protection and grounding solutions for critical infrastructure.",
     "viewCaseStudy": "View Case Study",
     "whyChooseUs": "Why Choose Us",
-    "trackRecord": "Proven Track Record Across Industries",
+    "trackRecord": "Proven Support for Global EPC Deliveries",
     "trackRecordDescription": "Our expertise spans multiple high-stakes sectors where safety and reliability are non-negotiable.",
     "stats": {
       "projects": "Projects Delivered",

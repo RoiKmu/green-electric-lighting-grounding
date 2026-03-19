@@ -1,278 +1,293 @@
 import { setRequestLocale } from 'next-intl/server';
 import Image from "next/image";
 import type { Metadata } from "next";
-import LandmarkProjectsHero from "./LandmarkProjectsHero";
 import { Link } from "@/i18n/routing";
-import { getTranslations } from 'next-intl/server';
+import WorldMap from "@/components/WorldMap";
 
 export const metadata: Metadata = {
-  title: "Landmark Projects - Green Electric Lightning Protection & Grounding Solutions",
-  description: "Explore our landmark projects in petrochemical, transportation, and power energy sectors. See how Green Electric delivers comprehensive lightning protection and grounding solutions.",
+  title: "Projects - Green Electric Lightning Protection & Grounding Solutions",
+  description: "Empowering Global EPC Deliveries - Deep involvement in 265+ landmark EPC projects worldwide, specializing in Middle East and Southeast Asia harsh environment lightning protection delivery.",
 };
+
+export function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'zh' }, { locale: 'ar' }];
+}
+
+const industries = [
+  {
+    id: 'petrochemical',
+    title: '石油与化工',
+    titleEn: 'Petrochemical',
+    description: '应对极热与高腐蚀环境的防爆级保护',
+    descriptionEn: 'Explosion-proof protection for extreme heat and high corrosion environments',
+    image: '/images/hero/hero-1.jpg',
+    href: '/projects/petrochemical',
+    stats: { projects: '80+', countries: '15' },
+  },
+  {
+    id: 'power-energy',
+    title: '电力与新能源',
+    titleEn: 'Power & Energy',
+    description: '跨越沙漠与雨林的高压电网与光伏接地体系',
+    descriptionEn: 'High-voltage grid and solar grounding systems across deserts and rainforests',
+    image: '/images/hero/hero-3.jpg',
+    href: '/projects/power-energy',
+    stats: { projects: '65+', countries: '12' },
+  },
+  {
+    id: 'transportation',
+    title: '轨道交通',
+    titleEn: 'Transportation',
+    description: '保障跨国高铁与重载铁路的零中断运行',
+    descriptionEn: 'Ensuring zero-interruption operation for cross-border HSR and heavy-haul railways',
+    image: '/images/hero/hero-2.jpg',
+    href: '/projects/transportation',
+    stats: { projects: '50+', countries: '8' },
+  },
+  {
+    id: 'infrastructure',
+    title: '基础设施',
+    titleEn: 'Infrastructure',
+    description: '商业中心、场馆与大型基础设施的系统级防护',
+    descriptionEn: 'System-level protection for commercial centers, stadiums, and large infrastructure',
+    image: '/images/hero/hero-1.jpg',
+    href: '/projects/infrastructure',
+    stats: { projects: '70+', countries: '18' },
+  },
+];
+
+const globalStats = [
+  { value: '265+', label: '头部EPC项目', labelEn: 'Top EPC Projects' },
+  { value: '30+', label: '服务国家', labelEn: 'Countries Served' },
+  { value: '100%', label: '验收通过率', labelEn: 'Acceptance Rate' },
+  { value: '0', label: '安全事故', labelEn: 'Safety Incidents' },
+];
+
+const highlightedCountries = [
+  { name: '沙特阿拉伯', nameEn: 'Saudi Arabia', region: '中东', regionEn: 'Middle East' },
+  { name: '阿联酋', nameEn: 'UAE', region: '中东', regionEn: 'Middle East' },
+  { name: '印度尼西亚', nameEn: 'Indonesia', region: '东南亚', regionEn: 'Southeast Asia' },
+  { name: '马来西亚', nameEn: 'Malaysia', region: '东南亚', regionEn: 'Southeast Asia' },
+  { name: '尼日利亚', nameEn: 'Nigeria', region: '非洲', regionEn: 'Africa' },
+  { name: '埃及', nameEn: 'Egypt', region: '非洲', regionEn: 'Africa' },
+  { name: '巴基斯坦', nameEn: 'Pakistan', region: '西亚', regionEn: 'West Asia' },
+  { name: '巴西', nameEn: 'Brazil', region: '拉丁美洲', regionEn: 'Latin America' },
+];
 
 export default async function ProjectsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  
-  const t = await getTranslations({ locale, namespace: 'projects' });
-
-  const projectDetails = [
-    {
-      id: 'zhoushan-oil-depot',
-      title: 'National Reserve Oil Depot Protection',
-      subtitle: 'Zhoushan, Zhejiang | Completed 2023',
-      description: 'Designed and implemented a comprehensive direct strike lightning and intelligent grounding system for one of the largest national oil reserves, overcoming extreme coastal salt-spray corrosion challenges.',
-      industry: 'Petrochemical',
-      stats: [
-        { label: 'Coverage Area', value: '500,000 m²' },
-        { label: 'Safety Record', value: '100% Incident-Free' },
-        { label: 'Design Life', value: '30+ Years' }
-      ],
-      challenges: [
-        'Extreme coastal salt-spray corrosion environment',
-        'High safety requirements for flammable storage',
-        'Large-scale facility requiring unified protection',
-      ],
-      solutions: [
-        'Corrosion-resistant copper-clad steel grounding system',
-        'ESE lightning rods with extended protection radius',
-        'Intelligent monitoring for real-time system status',
-      ],
-      image: '/images/hero/hero-1.jpg',
-    },
-    {
-      id: 'airport-project',
-      title: 'International Airport Terminal Protection',
-      subtitle: 'Major Hub City | Completed 2024',
-      description: 'Delivered a multi-layer lightning protection system for a major international airport, ensuring zero disruption to flight operations and passenger safety during severe thunderstorm seasons.',
-      industry: 'Transportation',
-      stats: [
-        { label: 'Daily Flights', value: '1000+' },
-        { label: 'Uptime', value: '99.99%' },
-        { label: 'Protection Zones', value: '50+' }
-      ],
-      challenges: [
-        'Continuous operation requirements — no flight disruptions allowed',
-        'Complex airside and landside protection coordination',
-        'Tall control tower and hangar structures requiring specialized protection',
-      ],
-      solutions: [
-        'ESE lightning rods with overlapping protection zones',
-        'Real-time lightning warning system for ground operations',
-        'Equipotential bonding across all critical facilities',
-      ],
-      image: '/images/hero/hero-2.jpg',
-    },
-    {
-      id: 'xinjiang-uhv',
-      title: 'Ultra-High Voltage (UHV) Substation',
-      subtitle: 'Xinjiang | Completed 2022',
-      description: 'Custom-engineered high-performance surge protection devices (SPDs) and deep-well grounding systems adapted for extreme desert climates, safeguarding the backbone of the national power grid.',
-      industry: 'Power & Energy',
-      stats: [
-        { label: 'Voltage Level', value: '±800 kV' },
-        { label: 'Ground Resistance', value: '< 0.5 Ω' },
-        { label: 'Soil Type', value: 'High Resistivity' }
-      ],
-      challenges: [
-        'Extreme desert climate with temperature swings',
-        'High soil resistivity requiring deep grounding',
-        'Critical infrastructure with national importance',
-      ],
-      solutions: [
-        'Deep-well grounding electrodes with nano-carbon backfill',
-        'High-energy SPDs rated for UHV applications',
-        'Exothermic welding for permanent connections',
-      ],
-      image: '/images/hero/hero-3.jpg',
-    },
-  ];
+  const isZh = locale === 'zh';
 
   return (
-    <main className="min-h-screen bg-white">
-      <LandmarkProjectsHero />
-
-      <section className="py-16 bg-industrial-50">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
-            <span className="inline-block px-4 py-1.5 bg-green-electric-100 text-green-electric-700 rounded-full text-sm font-semibold mb-4">
-              {t('badge')}
-            </span>
-            <h2 className="text-4xl font-bold text-industrial-900 mb-4">
-              {t('title')}
-            </h2>
-            <p className="text-xl text-industrial-600 max-w-3xl mx-auto">
-              {t('description')}
-            </p>
-          </div>
-
-          <div className="flex flex-wrap justify-center gap-4">
-            <span className="px-4 py-2 bg-industrial-900 text-white rounded-full text-sm font-medium">
-              Petrochemical
-            </span>
-            <span className="px-4 py-2 bg-industrial-900 text-white rounded-full text-sm font-medium">
-              Transportation
-            </span>
-            <span className="px-4 py-2 bg-industrial-900 text-white rounded-full text-sm font-medium">
-              Power & Energy
-            </span>
-            <span className="px-4 py-2 bg-industrial-900 text-white rounded-full text-sm font-medium">
-              Infrastructure
-            </span>
-          </div>
+    <main className="min-h-screen bg-industrial-950">
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero/hero-1.jpg"
+            alt="Global EPC Projects"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-industrial-950/95 via-industrial-900/80 to-industrial-950/70" />
         </div>
-      </section>
 
-      {projectDetails.map((project, index) => (
-        <section
-          key={project.id}
-          id={project.id}
-          className={`py-24 scroll-mt-20 ${index % 2 === 0 ? 'bg-white' : 'bg-industrial-50'}`}
-        >
-          <div className="container mx-auto px-6">
-            <div className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
-              <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                <div className="inline-flex items-center px-4 py-2 bg-industrial-800/80 backdrop-blur-sm rounded-full mb-6 border border-industrial-700">
-                  <div className="w-2 h-2 bg-green-electric-400 rounded-full me-3 animate-pulse" />
-                  <span className="text-sm font-semibold text-green-electric-300 uppercase tracking-wider">
-                    {project.industry}
-                  </span>
+        <div className="relative container mx-auto px-6 z-10">
+          <div className="max-w-4xl">
+            <div className="inline-flex items-center px-4 py-2 bg-green-electric-600/20 backdrop-blur-sm rounded-full mb-6 border border-green-electric-500/30">
+              <div className="w-2 h-2 bg-green-electric-400 rounded-full me-3 animate-pulse" />
+              <span className="text-sm font-semibold text-green-electric-300 uppercase tracking-wider">
+                {isZh ? '中国EPC出海金牌防雷配套商' : 'Premier Lightning Protection Partner for Chinese EPCs Going Global'}
+              </span>
+            </div>
+
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white leading-tight">
+              {isZh ? (
+                <>
+                  护航中国 <span className="text-green-electric-400">EPC</span>
+                  <br />
+                  走向世界
+                </>
+              ) : (
+                <>
+                  Empowering Global
+                  <br />
+                  <span className="text-green-electric-400">EPC</span> Deliveries
+                </>
+              )}
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-gray-300 mb-10 leading-relaxed max-w-3xl">
+              {isZh 
+                ? '深度参与全球 265+ 头部EPC的工程项目，聚焦中东与东南亚严苛环境防雷交付。'
+                : 'Deep involvement in 265+ landmark EPC projects worldwide, specializing in Middle East and Southeast Asia harsh environment lightning protection delivery.'
+              }
+            </p>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
+              {globalStats.map((stat, index) => (
+                <div key={index} className="bg-industrial-900/50 backdrop-blur-sm border border-white/10 p-5 rounded-xl">
+                  <div className="text-3xl md:text-4xl font-bold text-green-electric-400 mb-1">{stat.value}</div>
+                  <div className="text-sm text-gray-400">{isZh ? stat.label : stat.labelEn}</div>
                 </div>
+              ))}
+            </div>
 
-                <h2 className="text-3xl md:text-4xl font-bold text-industrial-900 mb-4">
-                  {project.title}
-                </h2>
-                <p className="text-green-electric-600 font-medium mb-6">
-                  {project.subtitle}
-                </p>
-                <p className="text-lg text-industrial-600 leading-relaxed mb-8">
-                  {project.description}
-                </p>
-
-                <div className="grid grid-cols-3 gap-4 mb-8">
-                  {project.stats.map((stat, i) => (
-                    <div key={i} className="bg-industrial-900 text-white p-4 rounded-lg text-center">
-                      <div className="text-xl font-bold text-green-electric-400 mb-1">{stat.value}</div>
-                      <div className="text-xs text-gray-400 uppercase tracking-wider">{stat.label}</div>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <h4 className="font-bold text-industrial-900 mb-3 flex items-center">
-                      <svg className="w-5 h-5 text-red-500 me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                      </svg>
-                      {t('challenges')}
-                    </h4>
-                    <ul className="space-y-2">
-                      {project.challenges.map((challenge, i) => (
-                        <li key={i} className="text-industrial-600 text-sm flex items-start">
-                          <span className="w-1.5 h-1.5 bg-industrial-400 rounded-full mt-2 me-2 flex-shrink-0" />
-                          {challenge}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-industrial-900 mb-3 flex items-center">
-                      <svg className="w-5 h-5 text-green-electric-500 me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      {t('solutions')}
-                    </h4>
-                    <ul className="space-y-2">
-                      {project.solutions.map((solution, i) => (
-                        <li key={i} className="text-industrial-600 text-sm flex items-start">
-                          <span className="w-1.5 h-1.5 bg-green-electric-500 rounded-full mt-2 me-2 flex-shrink-0" />
-                          {solution}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
-                <div className="relative rounded-2xl overflow-hidden h-96 lg:h-[500px] shadow-2xl">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-industrial-900/60 to-transparent" />
-                  <div className="absolute bottom-6 start-6 end-6">
-                    <span className="text-white/80 text-sm font-medium">
-                      {project.industry} Sector
-                    </span>
-                  </div>
-                </div>
-              </div>
+            <div className="flex flex-wrap gap-4">
+              <Link
+                href="/projects/petrochemical"
+                className="group px-8 py-4 bg-green-electric-600 hover:bg-green-electric-500 text-white rounded-lg font-semibold text-lg transition-all duration-300 flex items-center"
+              >
+                {isZh ? '探索项目案例' : 'Explore Projects'}
+                <svg className="w-5 h-5 ms-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+              <Link
+                href="/contact"
+                className="px-8 py-4 border-2 border-white/30 hover:border-green-electric-400 text-white rounded-lg font-semibold text-lg transition-all duration-300"
+              >
+                {isZh ? '联系我们' : 'Contact Us'}
+              </Link>
             </div>
           </div>
-        </section>
-      ))}
+        </div>
 
-      <section className="py-24 bg-industrial-900 text-white">
+        <div className="absolute bottom-0 start-0 end-0 h-40 bg-gradient-to-t from-industrial-950 to-transparent z-10 pointer-events-none" />
+      </section>
+
+      <section className="py-24 bg-industrial-950">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <span className="inline-block px-4 py-1.5 bg-green-electric-600/20 text-green-electric-400 rounded-full text-sm font-semibold mb-4">
-              {t('whyChooseUs')}
+              {isZh ? '行业解决方案' : 'Industry Solutions'}
             </span>
-            <h2 className="text-4xl font-bold mb-4">
-              {t('trackRecord')}
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+              {isZh ? '聚焦核心行业' : 'Focus on Core Industries'}
             </h2>
-            <p className="text-xl text-industrial-400 max-w-2xl mx-auto">
-              {t('trackRecordDescription')}
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              {isZh 
+                ? '为全球关键基础设施提供专业防雷接地解决方案'
+                : 'Providing professional lightning protection and grounding solutions for critical infrastructure worldwide'
+              }
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-5xl font-bold text-green-electric-400 mb-2">300+</div>
-              <div className="text-industrial-400">{t('stats.projects')}</div>
-            </div>
-            <div>
-              <div className="text-5xl font-bold text-green-electric-400 mb-2">30+</div>
-              <div className="text-industrial-400">{t('stats.countries')}</div>
-            </div>
-            <div>
-              <div className="text-5xl font-bold text-green-electric-400 mb-2">99.9%</div>
-              <div className="text-industrial-400">{t('stats.satisfaction')}</div>
-            </div>
-            <div>
-              <div className="text-5xl font-bold text-green-electric-400 mb-2">0</div>
-              <div className="text-industrial-400">{t('stats.incidents')}</div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {industries.map((industry) => (
+              <Link
+                key={industry.id}
+                href={industry.href}
+                className="group relative h-80 rounded-2xl overflow-hidden"
+              >
+                <Image
+                  src={industry.image}
+                  alt={isZh ? industry.title : industry.titleEn}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-industrial-950 via-industrial-900/60 to-transparent" />
+                
+                <div className="absolute bottom-0 start-0 end-0 p-8">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-2xl md:text-3xl font-bold text-white">
+                      {isZh ? industry.title : industry.titleEn}
+                    </h3>
+                    <div className="flex gap-4 text-sm">
+                      <span className="px-3 py-1 bg-green-electric-600/30 text-green-electric-300 rounded-full">
+                        {industry.stats.projects} {isZh ? '项目' : 'Projects'}
+                      </span>
+                    </div>
+                  </div>
+                  <p className="text-gray-300 text-lg mb-4">
+                    {isZh ? industry.description : industry.descriptionEn}
+                  </p>
+                  <div className="flex items-center text-green-electric-400 font-medium">
+                    {isZh ? '查看案例' : 'View Cases'}
+                    <svg className="w-5 h-5 ms-2 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-industrial-900">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="inline-block px-4 py-1.5 bg-green-electric-600/20 text-green-electric-400 rounded-full text-sm font-semibold mb-4">
+              {isZh ? '全球出海版图' : 'Global Footprint'}
+            </span>
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+              {isZh ? '一带一路沿线亮点' : 'Belt & Road Highlights'}
+            </h2>
+            <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              {isZh 
+                ? '熟悉主流国际标准（IEC/UL），无缝对接中国头部 EPC 总包方工作流，提供从深化设计、物资集采到海外现场督导的一站式闭环服务。'
+                : 'Familiar with mainstream international standards (IEC/UL), seamlessly integrating with Chinese top EPC contractors workflow, providing one-stop closed-loop service from detailed design, material procurement to overseas on-site supervision.'
+              }
+            </p>
+          </div>
+
+          <div className="relative bg-industrial-800/50 rounded-3xl p-8 md:p-12 border border-industrial-700">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+              <div className="lg:col-span-1 pt-0">
+                <div className="space-y-4">
+                  {highlightedCountries.map((country, index) => (
+                    <div key={index} className="flex items-center justify-between p-4 bg-industrial-900/50 rounded-xl border border-industrial-700 hover:border-green-electric-500/50 transition-colors">
+                      <div className="flex items-center">
+                        <div className="w-3 h-3 bg-green-electric-400 rounded-full me-4" />
+                        <span className="text-white font-medium">{isZh ? country.name : country.nameEn}</span>
+                      </div>
+                      <span className="text-sm text-gray-400 px-3 py-1 bg-industrial-800 rounded-full">
+                        {isZh ? country.region : country.regionEn}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="lg:col-span-2 relative h-[450px] md:h-[600px] bg-industrial-800 rounded-2xl overflow-hidden">
+                <WorldMap locale={locale} />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-r from-green-electric-700 to-green-electric-600">
+      <section className="py-24 bg-gradient-to-r from-green-electric-700 to-green-electric-600">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            {t('readyToStart')}
+            {isZh ? '准备开始您的项目？' : 'Ready to Start Your Project?'}
           </h2>
           <p className="text-xl text-green-electric-100 mb-4 max-w-2xl mx-auto">
-            {t('sendRequirements')}
+            {isZh 
+              ? '发送您的项目需求——我们将在48小时内提供定制解决方案。'
+              : 'Send us your project requirements — we\'ll provide a tailored solution within 48 hours.'
+            }
           </p>
           <p className="text-lg text-green-electric-200 mb-8">
-            {t('contactToday')}
+            {isZh 
+              ? '立即联系我们，获取有竞争力的价格和专业咨询'
+              : 'Contact us today for competitive pricing and expert consultation'
+            }
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               href="/contact"
               className="px-8 py-4 bg-white text-green-electric-700 rounded-lg hover:bg-industrial-50 font-semibold text-lg transition-all duration-300 shadow-lg"
             >
-              {t('submitInquiry')}
+              {isZh ? '提交项目咨询' : 'Submit Project Inquiry'}
             </Link>
             <Link
               href="/products"
               className="px-8 py-4 border-2 border-white text-white rounded-lg hover:bg-white hover:text-green-electric-700 font-semibold text-lg transition-all duration-300"
             >
-              {t('browseComponents')}
+              {isZh ? '浏览产品组件' : 'Browse Components'}
             </Link>
           </div>
         </div>

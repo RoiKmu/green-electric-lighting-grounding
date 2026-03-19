@@ -16,13 +16,27 @@ export default function HeroCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [scale, setScale] = useState(1.08);
   const sectionRef = useRef<HTMLElement>(null);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
   const t = useTranslations('home.carousel');
 
-  useEffect(() => {
-    const timer = setInterval(() => {
+  const AUTOPLAY_INTERVAL = 15000;
+
+  const resetAutoplayTimer = () => {
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+    }
+    timerRef.current = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slideKeys.length);
-    }, 10000);
-    return () => clearInterval(timer);
+    }, AUTOPLAY_INTERVAL);
+  };
+
+  useEffect(() => {
+    resetAutoplayTimer();
+    return () => {
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
+      }
+    };
   }, []);
 
   useEffect(() => {
@@ -50,6 +64,7 @@ export default function HeroCarousel() {
 
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
+    resetAutoplayTimer();
   };
 
   return (

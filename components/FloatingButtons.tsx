@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
-import Link from "next/link";
-import { ROUTES } from "@/lib/routes";
+import { Link } from "@/i18n/routing";
 
 interface TooltipProps {
   visible: boolean;
@@ -27,7 +26,7 @@ function Tooltip({ visible, title, content, onMouseEnter, onMouseLeave }: Toolti
       <h4 className="font-semibold text-industrial-900 mb-1">{title}</h4>
       <p className="text-industrial-600 text-sm mb-2">{content}</p>
       <Link
-        href={ROUTES.CONTACT}
+        href="/contact"
         className="text-green-electric-600 hover:text-green-electric-500 text-sm font-medium flex items-center gap-1 transition-colors"
       >
         <span>Go to Contact Page</span>

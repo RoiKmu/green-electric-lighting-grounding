@@ -176,6 +176,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       id: 'zhoushan-oil-depot',
       title: t('featuredProjects.projects.oilDepot.title'),
       industry: t('featuredProjects.projects.oilDepot.industry'),
+      industrySlug: 'petrochemical',
       location: t('featuredProjects.projects.oilDepot.location'),
       description: t('featuredProjects.projects.oilDepot.description'),
       image: '/images/hero/hero-1.jpg',
@@ -186,6 +187,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       id: 'airport-project',
       title: t('featuredProjects.projects.airport.title'),
       industry: t('featuredProjects.projects.airport.industry'),
+      industrySlug: 'infrastructure',
       location: t('featuredProjects.projects.airport.location'),
       description: t('featuredProjects.projects.airport.description'),
       image: '/images/hero/hero-2.jpg',
@@ -196,6 +198,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       id: 'xinjiang-uhv',
       title: t('featuredProjects.projects.uhv.title'),
       industry: t('featuredProjects.projects.uhv.industry'),
+      industrySlug: 'power-energy',
       location: t('featuredProjects.projects.uhv.location'),
       description: t('featuredProjects.projects.uhv.description'),
       image: '/images/hero/hero-3.jpg',
@@ -355,7 +358,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {industrySolutions.map((item) => (
-              <Link key={item.id} href={`/projects#${item.id}`} className="group">
+              <Link key={item.id} href={`/solutions/${item.id}`} className="group">
                 <div className="relative rounded-2xl overflow-hidden h-80">
                   <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-90`}></div>
                   <div className="absolute inset-0 bg-industrial-900/20 group-hover:bg-industrial-900/40 transition-colors duration-300"></div>
@@ -433,7 +436,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {featuredProjects.map((project) => (
-              <Link key={project.id} href={`/projects#${project.id}`} className="group">
+              <Link key={project.id} href={`/projects/${project.industrySlug}`} className="group">
                 <div className="bg-white rounded-2xl shadow-sm hover:shadow-xl overflow-hidden border border-industrial-100 h-full flex flex-col transition-all duration-300">
                   <div className="h-56 relative overflow-hidden">
                     <Image

@@ -1,9 +1,8 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import Image from 'next/image';
-import { ROUTES } from '@/lib/routes';
 
 interface FlagshipProductTemplateProps {
   product: {
@@ -110,7 +109,7 @@ export default function FlagshipProductTemplate({ product }: FlagshipProductTemp
 
               <div className="flex flex-wrap gap-4">
                 <Link 
-                  href={ROUTES.CONTACT}
+                  href="/contact"
                   className="px-8 py-4 bg-gradient-to-r from-green-electric-600 to-green-electric-500 text-white rounded-xl font-semibold text-lg hover:shadow-lg hover:shadow-green-electric-500/25 transition-all duration-300 transform hover:-translate-y-1"
                 >
                   Get Quote
@@ -289,7 +288,7 @@ export default function FlagshipProductTemplate({ product }: FlagshipProductTemp
             Contact our technical experts for professional solutions tailored to your specific needs
           </p>
           <Link 
-            href={ROUTES.CONTACT}
+            href="/contact"
             className="inline-block px-10 py-4 bg-white text-green-electric-800 rounded-xl font-bold text-lg hover:bg-industrial-50 transition-all duration-300 shadow-lg"
           >
             Contact Us Now
