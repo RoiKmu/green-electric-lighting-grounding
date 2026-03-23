@@ -7,8 +7,8 @@
     "projects": "Projects",
     "allProjects": "All Projects",
     "allProjectsDesc": "View all project cases",
-    "petrochemical": "Petrochemical",
-    "petrochemicalDesc": "Explosion-proof protection for extreme heat and high corrosion environments",
+    "petrochemical": "Petrochemical & Natural Gas",
+    "petrochemicalDesc": "Explosion-proof protection for extreme heat and high corrosion environments, covering natural gas storage facilities",
     "powerEnergy": "Power & Energy",
     "powerEnergyDesc": "High-voltage grid and solar grounding systems across deserts and rainforests",
     "transportation": "Transportation",
@@ -58,9 +58,9 @@
         "category": "EPC Project Support"
       },
       "slide2": {
-        "title": "Petrochemical & Tank Farm Protection",
+        "title": "Petrochemical & Natural Gas Protection",
         "subtitle": "Defending High-Risk & Explosive Environments",
-        "description": "Specialized lightning protection for volatile areas. We deliver certified explosion-proof systems, robust equipotential bonding, and ultra-low resistance grounding (≤1Ω) to ensure absolute facility safety.",
+        "description": "Specialized lightning protection for volatile areas, covering refineries, chemical plants, and natural gas storage facilities. We deliver certified explosion-proof systems, robust equipotential bonding, and ultra-low resistance grounding (≤1Ω) to ensure absolute facility safety.",
         "category": "Hazardous Areas"
       },
       "slide3": {
@@ -121,7 +121,7 @@
         },
         "explosionProof": {
           "title": "Explosion-Proof Compliance Required?",
-          "description": "Petrochemical and hazardous area projects demand intrinsically safe designs. We deliver CE, ISO and IEC certified protection systems."
+          "description": "Petrochemical, natural gas and hazardous area projects demand intrinsically safe designs. We deliver CE, ISO and IEC certified protection systems."
         },
         "zeroDowntime": {
           "title": "Need Zero-Downtime Protection?",
@@ -132,12 +132,12 @@
     "industries": {
       "badge": "Industry Solutions",
       "title": "Trusted Across Critical Industries",
-      "description": "We protect the infrastructure that powers modern society — from petrochemical facilities to international airports.",
+      "description": "We protect the infrastructure that powers modern society — from petrochemical & natural gas facilities to international airports.",
       "viewAllProjects": "View All Projects",
       "sectors": {
         "petrochemical": {
-          "title": "Petrochemical",
-          "description": "Explosion-proof protection for oil depots, refineries, and chemical plants with strict safety compliance.",
+          "title": "Petrochemical & Natural Gas",
+          "description": "Explosion-proof protection for oil depots, refineries, chemical plants, and natural gas storage facilities with strict safety compliance.",
           "project1": "National Reserve Oil Depot",
           "project2": "Refinery Complex Protection"
         },
@@ -165,16 +165,16 @@
       "badge": "Featured Projects",
       "title": "Landmark Projects Worldwide",
       "trustedProjects": "Trusted in 300+ Industrial Lightning Protection Projects",
-      "servingProjects": "Serving petrochemical, power, transportation and infrastructure projects worldwide.",
+      "servingProjects": "Serving petrochemical & natural gas, power, transportation and infrastructure projects worldwide.",
       "viewAllProjects": "View All Projects",
       "projects": {
         "oilDepot": {
-          "title": "National Reserve Oil Depot",
-          "industry": "Petrochemical",
-          "location": "Zhoushan, Zhejiang",
-          "description": "Comprehensive lightning and grounding system for one of China's largest national oil reserves.",
-          "coverage": "Coverage",
-          "safety": "Safety"
+          "title": "Qinghai LNG Liquefied Natural Gas",
+          "industry": "Petrochemical & Natural Gas",
+          "location": "Qinghai",
+          "description": "Comprehensive lightning protection and grounding system solutions for a large-scale LNG receiving station in Qinghai.",
+          "coverage": "Coverage Area",
+          "safety": "Safety Record"
         },
         "airport": {
           "title": "International Airport Terminal",
@@ -257,6 +257,11 @@
     }
   },
   "about": {
+    "hero": {
+      "badge": "About Us",
+      "title": "30 Years of Industrial Safety",
+      "subtitle": "From interception to grounding, building complete lightning protection systems"
+    },
     "badge": "About Us",
     "title": "Building a Solid Line of Industrial Safety",
     "description": "Since our founding in 1993, Green Electric has been committed to becoming a global leader in one-stop lightning protection and grounding systems, providing comprehensive safety solutions for your facilities.",
@@ -311,7 +316,7 @@
       "title": "The Force That Drives Us Forward",
       "safety": {
         "title": "Safety First",
-        "description": "Whether for conventional buildings or high-risk locations like petrochemical facilities, our commitment to quality remains unwavering."
+        "description": "Whether for conventional buildings or high-risk locations like petrochemical & natural gas facilities, our commitment to quality remains unwavering."
       },
       "innovation": {
         "title": "Innovative Technology",
@@ -325,7 +330,9 @@
     "cta": {
       "title": "Start Your One-Stop Procurement Journey",
       "description": "Experience Green Electric's systematic solutions. Contact us now and let our professional technical team provide comprehensive support for your project.",
-      "button": "Contact Us for Quote"
+      "button": "Contact Us for Quote",
+      "contactUs": "Contact Us",
+      "browseProducts": "Browse Products"
     }
   },
   "contact": {
@@ -416,83 +423,70 @@
     "needCustom": "Need Custom Solutions?",
     "customDescription": "Contact our technical team for personalized product recommendations and comprehensive project support.",
     "contactForQuote": "Contact Us for Quote",
+    "needCustomSolution": "Need a Custom Solution?",
+    "customSolutionDescription": "We provide customized lightning protection and grounding solutions for your specific requirements.",
+    "contactForCustomQuote": "Contact Us for a Quote",
     "categories": {
-      "lightning-warning": {
-        "name": "Lightning Warning System",
-        "description": "Comprehensive atmospheric electric field monitoring, providing 20-minute early warning"
+      "lightning-capture-warning": {
+        "name": "Lightning Capture & Warning Systems",
+        "description": "Early sensing and safe interception - corresponds to ERICO Air Terminals and System 3000 series"
       },
-      "early-discharge-system": {
-        "name": "Early Streamer Emission (ESE)",
-        "description": "Active lightning attraction technology, expanded protection radius"
+      "down-conductors-bonding": {
+        "name": "Down Conductors & Equipotential Bonding",
+        "description": "Safely conducts lightning current to ground and eliminates potential differences"
       },
-      "copper-clad-steel": {
-        "name": "Copper-Clad Steel Series",
-        "description": "Molecular-level bonding process, combining conductivity with 50-year long service life"
+      "earthing-grounding-systems": {
+        "name": "Earthing / Grounding Systems",
+        "description": "Core business line - efficiently disperses current into the earth (IEC: Earthing, IEEE: Grounding)"
       },
-      "exothermic-welding": {
-        "name": "Exothermic Welding Series",
-        "description": "Achieves molecular-level connections, excellent electrical continuity, safe and reliable construction"
+      "exothermic-welding-connections": {
+        "name": "Exothermic Welding & Electrical Connections",
+        "description": "Corresponds to ERICO CADWELD series - high profit, high repurchase core consumables"
       },
-      "lightning-protection": {
-        "name": "Lightning Protection",
-        "description": "These devices are responsible for directly intercepting lightning strikes or directing lightning current underground"
+      "industrial-static-protection": {
+        "name": "Industrial Static Protection",
+        "description": "Specialized equipment for petrochemical, energy and other industrial applications"
       },
-      "grounding": {
-        "name": "Grounding Conductors",
-        "description": "These are the core components buried in soil, responsible for dispersing current into the earth"
-      },
-      "static-protection": {
-        "name": "Static Protection Series",
-        "description": "Specialized equipment for flammable and explosive locations (such as oil depots, chemical plants)"
-      },
-      "detection": {
-        "name": "Grounding Detection Terminal",
-        "description": "Used for detecting and monitoring the status of grounding systems"
-      },
-      "specialized": {
-        "name": "Specialized Fittings",
-        "description": "Used for firmly connecting various lightning protection components, ensuring electrical continuity"
-      },
-      "measuring-tools": {
-        "name": "Precision Measuring Tools",
-        "description": "Precision measuring instruments for construction and quality inspection"
+      "testing-fasteners-support": {
+        "name": "Fasteners, Testing & Support Materials",
+        "description": "Corresponds to ERICO CADDY fastener brand and testing tools"
       }
     },
     "items": {
       "lightning-warning-system": "Lightning Warning System",
-      "early-discharge": "Early Streamer Emission Lightning Rod (ESE)",
-      "copper-clad-rod": "Copper-Clad Steel Grounding Rod",
-      "copper-clad-electrode": "Copper-Clad Steel Grounding Electrode",
-      "welding": "Exothermic Welding Series",
-      "remote-welding": "Remote Exothermic Welding Igniter",
-      "lightning-rod": "Corrosion-Resistant Steel Pipe Lightning Rod",
-      "grounding-wire": "Grounding Wire",
-      "grounding-electrode": "Grounding Electrode",
-      "ion-electrode": "Electrolytic Ion Grounding Electrode",
-      "energy-storage": "Energy Storage Grounding Device",
-      "nano-carbon": "All-Around Nano-Carbon Grounding Series",
-      "lightning-system": "3D Lightning Protection System & Grounding Device",
-      "static-alarm": "Static Grounding Alarm",
-      "static-elimination": "Static Elimination Device",
-      "floating-roof": "Auto-Rewind Floating Roof Tank Grounding Device",
-      "mobile-grounding": "Mobile Grounding Meter",
-      "grounding-box": "Grounding Terminal Box",
-      "detection-well": "Grounding Detection Well",
-      "equipotential": "Equipotential Connection Components",
-      "grounding-terminal": "Grounding Terminal Block (Grounding Point)",
-      "grounding-plate": "Grounding Column Plate",
-      "grounding-center": "Grounding Center",
-      "connector": "Connector",
-      "rod-clamp": "Rod Clamp (For Grounding Rods)",
-      "tube-clamp": "Tube Clamp (For Steel Pipes)",
-      "brackets": "Brackets & Clamps (For Grounding Strips/Wires)",
-      "resistance-meter": "Grounding Resistance Meter",
-      "soil-resistivity": "Soil Resistivity Meter"
+      "ese-air-terminal": "Early Streamer Emission (ESE) Air Terminal",
+      "conventional-air-terminal": "Corrosion-Resistant Steel Pipe Air Terminal",
+      "3d-lightning-system": "3D Lightning Protection System",
+      "grounding-wire": "Grounding Wire / Down Conductor",
+      "equipotential-connector": "Equipotential Connection Components",
+      "grounding-terminal-box": "Grounding Terminal Box",
+      "grounding-terminal-block": "Grounding Terminal Block",
+      "grounding-busbar": "Grounding Busbar / Grounding Center",
+      "copper-bonded-rod": "Copper-Bonded Steel Grounding Rod",
+      "copper-bonded-electrode": "Copper-Bonded Steel Grounding Electrode",
+      "electrolytic-ion-electrode": "Electrolytic Ion Grounding Electrode",
+      "nano-carbon-grounding": "All-Around Nano-Carbon Grounding Series",
+      "energy-storage-grounding": "Energy Storage Grounding Device",
+      "grounding-column-plate": "Grounding Column Plate",
+      "exothermic-welding": "Exothermic Welding Series",
+      "remote-igniter": "Remote Exothermic Welding Igniter",
+      "mechanical-connector": "Mechanical Connector",
+      "rod-clamp": "Rod Clamp",
+      "tube-clamp": "Tube Clamp",
+      "static-grounding-alarm": "Static Grounding Alarm",
+      "static-eliminator": "Static Elimination Device",
+      "rga-floating-tank": "RGA - Retractable Grounding Assembly",
+      "mobile-grounding-meter": "Mobile Grounding Meter",
+      "grounding-detection-well": "Grounding Detection Well",
+      "grounding-resistance-meter": "Grounding Resistance Meter",
+      "soil-resistivity-meter": "Soil Resistivity Meter",
+      "brackets-clamps": "Brackets & Clamps"
     },
     "detail": {
       "notFound": "Product Not Found",
       "notFoundDescription": "The product you are looking for does not exist.",
       "backToProducts": "Back to Products",
+      "productDescription": "This is the {name} product from the {category} series. The product is designed to meet the highest industry standards and provides reliable performance in various application scenarios.",
       "features": "Features",
       "feature1": "Premium materials and exquisite craftsmanship",
       "feature2": "Reliable performance in demanding environments",
@@ -508,6 +502,80 @@
       "needQuote": "Need a Custom Quote?",
       "quoteDescription": "Contact us for competitive pricing and professional consultation tailored to your specific needs.",
       "requestQuote": "Request Quote"
+    },
+    "sidebar": {
+      "allProducts": "All Products",
+      "categories": "Categories",
+      "toggleCategories": "Toggle categories"
+    },
+    "flagship": {
+      "badge": "Flagship Technology Solutions",
+      "getQuote": "Get Quote",
+      "learnTechnology": "Learn Technology",
+      "productIntroduction": "Product Introduction",
+      "learnAbout": "Learn about the core technology advantages of {product}",
+      "features": "Features",
+      "productModels": "Product Models",
+      "customSolutionDescription": "Contact our technical experts for professional solutions tailored to your specific needs",
+      "contactUsNow": "Contact Us Now",
+      "lws": {
+        "title": "Lightning Warning System",
+        "subtitle": "Atmospheric Electric Field Monitoring",
+        "coreParameterLabel": "Core Parameter",
+        "coreParameterValue": "Warning Time 20 min",
+        "description": "Comprehensive atmospheric electric field monitoring, providing 20 minutes advance warning time for lightning activities.",
+        "introduction1": "The Green Lightning Warning System is an advanced atmospheric electric field monitoring device that can detect changes in atmospheric electric field intensity in real-time and accurately predict the occurrence of lightning activities. Through high-precision sensors and intelligent algorithms, the system can issue early warnings 20 minutes before lightning strikes, providing valuable time for personnel evacuation and equipment protection.",
+        "introduction2": "The system adopts a multi-level warning mechanism, automatically triggering different levels of alarms based on the intensity of atmospheric electric field changes. When the electric field intensity reaches a preset threshold, the system will issue sound and light alarms and can be linked with other safety systems to achieve automatic power-off, equipment shutdown and other protective measures, minimizing the losses caused by lightning.",
+        "feature1": "Real-time monitoring of atmospheric electric field intensity changes, accurately capturing lightning formation signals.",
+        "feature2": "AI intelligent algorithm based on big data analysis, accurately predicting lightning activity 20 minutes in advance.",
+        "feature3": "Multi-level graded warning mechanism, providing different levels of alerts based on lightning intensity.",
+        "feature4": "Supports multiple alarm methods including sound, light, SMS and network push notifications.",
+        "feature5": "Can be linked with automation systems to achieve automatic power-off and equipment protection.",
+        "feature6": "Remote monitoring and management via web platform and mobile APP.",
+        "tech1Title": "Atmospheric Field Monitoring",
+        "tech1Desc": "Real-time monitoring of atmospheric electric field intensity changes, accurately capturing lightning formation signals",
+        "tech2Title": "Intelligent Warning Algorithm",
+        "tech2Desc": "AI algorithm based on big data, accurately warning of lightning activity 20 minutes in advance",
+        "tech3Title": "Multi-level Alarm Mechanism",
+        "tech3Desc": "Graded warning system, providing different levels of alerts based on lightning intensity",
+        "model": "Model",
+        "detectionRange": "Detection Range",
+        "warningTime": "Warning Time",
+        "communication": "Communication",
+        "warningLevelTitle": "Warning Level Configuration",
+        "warningLevelSubtitle": "Electric field intensity threshold and corresponding warning level",
+        "warningLevelStandards": "Warning Level Standards",
+        "systemResponseTime": "System Response Time"
+      },
+      "ese": {
+        "title": "Early Streamer Emission Lightning Rod",
+        "subtitle": "Active Lightning Attraction Technology",
+        "coreParameterLabel": "Core Parameter",
+        "coreParameterValue": "Protection Radius 120m",
+        "description": "Active lightning attraction technology, expanding protection radius through early streamer emission.",
+        "introduction1": "The RZ-T Green Early Streamer Emission Lightning Rod works by generating an upward leader faster than ordinary lightning rods. Before the natural upward leader forms, the RZ-T ESE lightning rod will first generate a leader that quickly propagates towards the lightning direction until it captures the lightning and conducts it to the ground. Laboratory tests have confirmed that the earlier generation of the upward leader, known as the initiation advance time ΔT, gives the RZ-T ESE lightning rod a more effective lightning protection function.",
+        "introduction2": "Note: This description only describes negative downward lightning strikes. Under the same conditions, the rapidly approaching upward leader discharge potential is also tens of thousands of volts lower than ordinary lightning rods, meaning the RZ-T ESE lightning rod has lower lightning discharge energy and lower instantaneous grounding impulse current, which is the only application example of the electrical-geometric model. So far, this type of lightning strike is the most frequent.",
+        "feature1": "Complies with GB50057 Building Lightning Protection Design Code and NFC17-102 French National Lightning Protection Standard.",
+        "feature2": "Stainless steel material, corrosion resistant.",
+        "feature3": "Maintenance-free, passive, no radiation.",
+        "feature4": "Lightweight, easy installation.",
+        "feature5": "Fully compatible with \"Green\" lightning protection system accessories, optional metal strips, wires and anti-cable down conductors.",
+        "tech1Title": "Early Discharge Technology",
+        "tech1Desc": "Actively generates upward leader, intercepts lightning current in advance, expands protection radius",
+        "tech2Title": "High Efficiency Lightning Attraction",
+        "tech2Desc": "Optimized electrode design, significantly improving lightning attraction efficiency and reliability",
+        "tech3Title": "Corrosion Resistant Material",
+        "tech3Desc": "Aviation grade stainless steel, ensuring long-term stable operation in harsh environments",
+        "model": "Model",
+        "advanceTime": "Advance Time ΔT",
+        "length": "Length",
+        "weight": "Weight",
+        "protectionRadiusTitle": "Protection Radius for Different Building Classes (Unit: m)",
+        "protectionRadiusSubtitle": "h = Height above the protected object plane (Unit: m)",
+        "class1": "Class I Lightning Protection Buildings",
+        "class2": "Class II Lightning Protection Buildings",
+        "class3": "Class III Lightning Protection Buildings"
+      }
     }
   },
   "projects": {

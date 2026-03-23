@@ -7,8 +7,8 @@
     "projects": "项目案例",
     "allProjects": "项目总览",
     "allProjectsDesc": "查看所有项目案例",
-    "petrochemical": "石油与化工",
-    "petrochemicalDesc": "应对极热与高腐蚀环境的防爆级保护",
+    "petrochemical": "石化与天然气",
+    "petrochemicalDesc": "应对极热与高腐蚀环境的防爆级保护，覆盖天然气存储设施",
     "powerEnergy": "电力与新能源",
     "powerEnergyDesc": "跨越沙漠与雨林的高压电网与光伏接地体系",
     "transportation": "轨道交通",
@@ -58,9 +58,9 @@
         "category": "EPC 项目支持"
       },
       "slide2": {
-        "title": "石化与油库保护",
+        "title": "石化与天然气保护",
         "subtitle": "守护高风险与易爆环境",
-        "description": "为易燃易爆区域提供专业防雷保护。我们提供认证防爆系统、坚固的等电位连接和超低电阻接地（≤1Ω），确保设施绝对安全。",
+        "description": "为易燃易爆区域提供专业防雷保护，覆盖炼油厂、化工厂及天然气存储设施。我们提供认证防爆系统、坚固的等电位连接和超低电阻接地（≤1Ω），确保设施绝对安全。",
         "category": "危险区域"
       },
       "slide3": {
@@ -121,7 +121,7 @@
         },
         "explosionProof": {
           "title": "需要防爆合规？",
-          "description": "石化和危险区域项目需要本质安全设计。我们提供CE、ISO和IEC认证的保护系统。"
+          "description": "石化、天然气和危险区域项目需要本质安全设计。我们提供CE、ISO和IEC认证的保护系统。"
         },
         "zeroDowntime": {
           "title": "需要零停机保护？",
@@ -132,12 +132,12 @@
     "industries": {
       "badge": "行业解决方案",
       "title": "值得关键行业信赖",
-      "description": "我们保护驱动现代社会的关键基础设施——从石化设施到国际机场。",
+      "description": "我们保护驱动现代社会的关键基础设施——从石化与天然气设施到国际机场。",
       "viewAllProjects": "查看所有项目",
       "sectors": {
         "petrochemical": {
-          "title": "石化行业",
-          "description": "为油库、炼油厂和化工厂提供符合严格安全合规的防爆保护。",
+          "title": "石化与天然气",
+          "description": "为油库、炼油厂、化工厂和天然气存储设施提供符合严格安全合规的防爆保护。",
           "project1": "国家储备油库",
           "project2": "炼化综合体保护"
         },
@@ -165,14 +165,14 @@
       "badge": "精选项目",
       "title": "全球标杆项目",
       "trustedProjects": "服务300+工业防雷保护项目",
-      "servingProjects": "服务石化、电力、交通和基础设施项目遍布全球。",
+      "servingProjects": "服务石化与天然气、电力、交通和基础设施项目遍布全球。",
       "viewAllProjects": "查看所有项目",
       "projects": {
         "oilDepot": {
-          "title": "国家储备油库",
-          "industry": "石化",
-          "location": "浙江舟山",
-          "description": "为中国最大的国家石油储备之一提供综合防雷和接地系统。",
+          "title": "青海LNG液化天然气",
+          "industry": "石化与天然气",
+          "location": "青海",
+          "description": "为青海大型液化天然气接收站提供综合防雷和接地系统解决方案。",
           "coverage": "覆盖面积",
           "safety": "安全记录"
         },
@@ -257,6 +257,11 @@
     }
   },
   "about": {
+    "hero": {
+      "badge": "关于我们",
+      "title": "守护工业安全30年",
+      "subtitle": "从接闪到接地，构建完整防雷保护体系"
+    },
     "badge": "关于我们",
     "title": "构建工业安全坚实防线",
     "description": "自1993年成立以来，格林电气一直致力于成为全球领先的一站式防雷保护和接地系统供应商，为您的设施提供全面的安全解决方案。",
@@ -311,7 +316,7 @@
       "title": "驱动我们前进的力量",
       "safety": {
         "title": "安全至上",
-        "description": "无论是常规建筑还是石化设施等高风险场所，我们对质量的承诺始终如一。"
+        "description": "无论是常规建筑还是石化与天然气设施等高风险场所，我们对质量的承诺始终如一。"
       },
       "innovation": {
         "title": "技术创新",
@@ -325,7 +330,9 @@
     "cta": {
       "title": "开启您的一站式采购之旅",
       "description": "体验格林电气的系统化解决方案。立即联系我们，让我们的专业技术团队为您的项目提供全面支持。",
-      "button": "联系我们获取报价"
+      "button": "联系我们获取报价",
+      "contactUs": "联系我们",
+      "browseProducts": "浏览产品"
     }
   },
   "contact": {
@@ -416,83 +423,70 @@
     "needCustom": "需要定制解决方案？",
     "customDescription": "联系我们的技术团队，获取个性化产品推荐和全面项目支持。",
     "contactForQuote": "联系我们获取报价",
+    "needCustomSolution": "需要定制解决方案？",
+    "customSolutionDescription": "我们为您的特定需求提供定制的防雷保护和接地解决方案。",
+    "contactForCustomQuote": "联系我们获取报价",
     "categories": {
-      "lightning-warning": {
-        "name": "雷电预警系统",
-        "description": "全面大气电场监测，提供20分钟提前预警"
+      "lightning-capture-warning": {
+        "name": "智能预警与接闪系统",
+        "description": "提前感知与安全拦截——对应 ERICO 空域接闪终端和 System 3000 系列"
       },
-      "early-discharge-system": {
-        "name": "提前放电避雷针(ESE)",
-        "description": "主动引雷技术，扩大保护半径"
+      "down-conductors-bonding": {
+        "name": "引下与等电位连接方案",
+        "description": "安全引导雷电电流入地并消除电位差"
       },
-      "copper-clad-steel": {
-        "name": "铜包钢系列",
-        "description": "分子级结合工艺，兼具导电性与50年长寿命"
+      "earthing-grounding-systems": {
+        "name": "高性能接地系统",
+        "description": "核心业务线——高效将电流散入大地（IEC: Earthing, IEEE: Grounding）"
       },
-      "exothermic-welding": {
-        "name": "放热焊接系列",
-        "description": "实现分子级连接，电气连续性优异，施工安全可靠"
+      "exothermic-welding-connections": {
+        "name": "放热焊接与电气连接",
+        "description": "对应 ERICO CADWELD 系列——高利润、高复购核心消耗品"
       },
-      "lightning-protection": {
-        "name": "防雷保护",
-        "description": "负责直接拦截雷击或将雷电电流导入地下的装置"
+      "industrial-static-protection": {
+        "name": "工业静电防护专区",
+        "description": "石化、天然气与能源等工业应用专用设备"
       },
-      "grounding": {
-        "name": "接地导体",
-        "description": "埋入土壤中的核心组件，负责将电流散入大地"
-      },
-      "static-protection": {
-        "name": "静电防护系列",
-        "description": "专为易燃易爆场所（如油库、化工厂）设计的专用设备"
-      },
-      "detection": {
-        "name": "接地检测端子",
-        "description": "用于检测和监测接地系统状态"
-      },
-      "specialized": {
-        "name": "专用配件",
-        "description": "用于牢固连接各种防雷组件，确保电气连续性"
-      },
-      "measuring-tools": {
-        "name": "精密测量工具",
-        "description": "用于施工和质量检测的精密测量仪器"
+      "testing-fasteners-support": {
+        "name": "紧固件、检测与基建辅材",
+        "description": "对应 ERICO CADDY 紧固件品牌及测试工具"
       }
     },
     "items": {
       "lightning-warning-system": "雷电预警系统",
-      "early-discharge": "提前放电避雷针(ESE)",
-      "copper-clad-rod": "铜包钢接地棒",
-      "copper-clad-electrode": "铜包钢接地极",
-      "welding": "放热焊接系列",
-      "remote-welding": "远程放热焊接点火器",
-      "lightning-rod": "耐腐蚀钢管避雷针",
+      "ese-air-terminal": "提前放电避雷针 (ESE)",
+      "conventional-air-terminal": "防腐钢管避雷针",
+      "3d-lightning-system": "3D 防雷系统",
       "grounding-wire": "接地线",
-      "grounding-electrode": "接地极",
-      "ion-electrode": "电解离子接地极",
-      "energy-storage": "储能接地装置",
-      "nano-carbon": "全方位纳米碳接地系列",
-      "lightning-system": "三维防雷系统与接地装置",
-      "static-alarm": "静电接地报警器",
-      "static-elimination": "静电消除装置",
-      "floating-roof": "自动卷绕浮顶罐接地装置",
-      "mobile-grounding": "移动接地仪",
-      "grounding-box": "接地端子箱",
-      "detection-well": "接地检测井",
-      "equipotential": "等电位连接组件",
-      "grounding-terminal": "接地端子板（接地点）",
-      "grounding-plate": "接地柱板",
-      "grounding-center": "接地中心",
-      "connector": "连接器",
-      "rod-clamp": "接地棒夹具",
-      "tube-clamp": "钢管夹具",
-      "brackets": "支架与夹具（用于接地排/线）",
-      "resistance-meter": "接地电阻测试仪",
-      "soil-resistivity": "土壤电阻率测试仪"
+      "equipotential-connector": "等电位连接件",
+      "grounding-terminal-box": "接地端子箱",
+      "grounding-terminal-block": "接地端子排/接地点",
+      "grounding-busbar": "接地汇流排",
+      "copper-bonded-rod": "镀铜钢接地棒",
+      "copper-bonded-electrode": "镀铜钢接地极",
+      "electrolytic-ion-electrode": "电解离子接地极",
+      "nano-carbon-grounding": "全方位纳米碳接地系列",
+      "energy-storage-grounding": "储能接地装置",
+      "grounding-column-plate": "接地柱/板",
+      "exothermic-welding": "放热焊接系列",
+      "remote-igniter": "电子/远程点火器",
+      "mechanical-connector": "连接器",
+      "rod-clamp": "接地棒线夹",
+      "tube-clamp": "管卡",
+      "static-grounding-alarm": "静电接地报警器",
+      "static-eliminator": "静电消除装置",
+      "rga-floating-tank": "自动收卷浮顶罐接地装置 (RGA)",
+      "mobile-grounding-meter": "移动接地仪",
+      "grounding-detection-well": "接地观测井",
+      "grounding-resistance-meter": "接地电阻测试仪",
+      "soil-resistivity-meter": "土壤电阻率测试仪",
+      "brackets-clamps": "支架与夹具"
     },
     "detail": {
       "notFound": "产品未找到",
       "notFoundDescription": "您查找的产品不存在。",
       "backToProducts": "返回产品列表",
+      "productDescription": "这是来自{category}系列的{name}产品。该产品设计符合最高行业标准，在各种应用场景中提供可靠性能。",
       "features": "产品特点",
       "feature1": "优质材料，精湛工艺",
       "feature2": "苛刻环境下可靠性能",
@@ -508,6 +502,80 @@
       "needQuote": "需要定制报价？",
       "quoteDescription": "联系我们获取有竞争力的价格和针对您特定需求的专业咨询。",
       "requestQuote": "请求报价"
+    },
+    "sidebar": {
+      "allProducts": "全部产品",
+      "categories": "产品分类",
+      "toggleCategories": "切换分类"
+    },
+    "flagship": {
+      "badge": "明星技术解决方案",
+      "getQuote": "获取报价",
+      "learnTechnology": "了解技术",
+      "productIntroduction": "产品介绍",
+      "learnAbout": "了解{product}的核心技术优势",
+      "features": "产品特点",
+      "productModels": "产品型号",
+      "customSolutionDescription": "联系我们的技术专家，获取针对您特定需求的专业解决方案",
+      "contactUsNow": "立即联系我们",
+      "lws": {
+        "title": "雷电预警系统",
+        "subtitle": "大气电场监测",
+        "coreParameterLabel": "核心参数",
+        "coreParameterValue": "预警时间 20 分钟",
+        "description": "全面大气电场监测，提前20分钟预警雷电活动。",
+        "introduction1": "Green雷电预警系统是一款先进的大气电场监测设备，能够实时检测大气电场强度变化，准确预测雷电活动的发生。通过高精度传感器和智能算法，系统可在雷电来临前20分钟发出预警，为人员疏散和设备保护提供宝贵时间。",
+        "introduction2": "系统采用多级预警机制，根据大气电场变化强度自动触发不同级别的警报。当电场强度达到预设阈值时，系统将发出声光报警，并可与其他安全系统联动，实现自动断电、设备停机等保护措施，最大限度降低雷电造成的损失。",
+        "feature1": "实时监测大气电场强度变化，准确捕捉雷电形成信号。",
+        "feature2": "基于大数据分析的AI智能算法，提前20分钟准确预警雷电活动。",
+        "feature3": "多级分级预警机制，根据雷电强度提供不同级别的警报。",
+        "feature4": "支持声光、短信、网络推送等多种报警方式。",
+        "feature5": "可与自动化系统联动，实现自动断电、设备保护。",
+        "feature6": "通过网页平台和手机APP实现远程监控管理。",
+        "tech1Title": "大气电场监测",
+        "tech1Desc": "实时监测大气电场强度变化，准确捕捉雷电形成信号",
+        "tech2Title": "智能预警算法",
+        "tech2Desc": "基于大数据的AI算法，提前20分钟准确预警雷电活动",
+        "tech3Title": "多级报警机制",
+        "tech3Desc": "分级预警系统，根据雷电强度提供不同级别的警报",
+        "model": "型号",
+        "detectionRange": "检测范围",
+        "warningTime": "预警时间",
+        "communication": "通信方式",
+        "warningLevelTitle": "预警等级配置",
+        "warningLevelSubtitle": "电场强度阈值与对应预警等级",
+        "warningLevelStandards": "预警等级标准",
+        "systemResponseTime": "系统响应时间"
+      },
+      "ese": {
+        "title": "提前放电避雷针",
+        "subtitle": "主动引雷技术",
+        "coreParameterLabel": "核心参数",
+        "coreParameterValue": "保护半径 120m",
+        "description": "主动引雷技术，通过提前放电扩大保护半径。",
+        "introduction1": "RZ-T Green提前放电避雷针的工作原理是比普通避雷针更快地产生上行先导。在自然上行先导形成之前，RZ-T ESE避雷针将首先产生一个快速向雷电方向传播的先导，直到捕获雷电并将其引导至地面。实验室测试已证实，上行先导的更早产生，即启动提前时间ΔT，使RZ-T ESE避雷针具有更有效的防雷功能。",
+        "introduction2": "注意：此描述仅描述负下行雷击。在相同条件下，快速接近的上行先导放电电位也比普通避雷针低数万伏，这意味着RZ-T ESE避雷针具有更低的雷电放电能量和更低的瞬时接地冲击电流，这是电气几何模型的唯一应用实例。迄今为止，这种雷击类型是最频繁的。",
+        "feature1": "符合GB50057建筑物防雷设计规范和NFC17-102法国国家防雷标准。",
+        "feature2": "不锈钢材质，耐腐蚀。",
+        "feature3": "免维护，无源，无辐射。",
+        "feature4": "重量轻，安装便捷。",
+        "feature5": "完全兼容\"Green\"防雷系统配件，可选金属带、导线和防缆引下线。",
+        "tech1Title": "提前放电技术",
+        "tech1Desc": "主动产生上行先导，提前拦截雷电流，扩大保护半径",
+        "tech2Title": "高效引雷",
+        "tech2Desc": "优化电极设计，显著提高引雷效率和可靠性",
+        "tech3Title": "耐腐蚀材料",
+        "tech3Desc": "航空级不锈钢，确保在恶劣环境下长期稳定运行",
+        "model": "型号",
+        "advanceTime": "提前时间ΔT",
+        "length": "长度",
+        "weight": "重量",
+        "protectionRadiusTitle": "不同建筑类别的保护半径（单位：m）",
+        "protectionRadiusSubtitle": "h = 被保护物体平面上方高度（单位：m）",
+        "class1": "第一类防雷建筑物",
+        "class2": "第二类防雷建筑物",
+        "class3": "第三类防雷建筑物"
+      }
     }
   },
   "projects": {

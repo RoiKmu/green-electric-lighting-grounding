@@ -1,7 +1,6 @@
 import { setRequestLocale } from 'next-intl/server';
 import Image from "next/image";
 import HeroCarousel from "@/components/HeroCarousel";
-import ScrollNav from "@/components/ScrollNav";
 import ScrollSnapHandler from "@/components/ScrollSnapHandler";
 import { Link } from "@/i18n/routing";
 import { getProductDetailPath } from "@/data/products";
@@ -179,7 +178,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       industrySlug: 'petrochemical',
       location: t('featuredProjects.projects.oilDepot.location'),
       description: t('featuredProjects.projects.oilDepot.description'),
-      image: '/images/hero/hero-1.jpg',
+      image: '/images/projects/xinjianglng.jpg',
       stats: { coverage: '500,000 m²', safety: '100% Incident-Free' },
       statsLabels: { coverage: t('featuredProjects.projects.oilDepot.coverage'), safety: t('featuredProjects.projects.oilDepot.safety') }
     },
@@ -190,7 +189,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       industrySlug: 'infrastructure',
       location: t('featuredProjects.projects.airport.location'),
       description: t('featuredProjects.projects.airport.description'),
-      image: '/images/hero/hero-2.jpg',
+      image: '/images/projects/airpot-terminal.jpg',
       stats: { flights: '1000+/day', uptime: '99.99%' },
       statsLabels: { flights: t('featuredProjects.projects.airport.flights'), uptime: t('featuredProjects.projects.airport.uptime') }
     },
@@ -201,7 +200,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       industrySlug: 'power-energy',
       location: t('featuredProjects.projects.uhv.location'),
       description: t('featuredProjects.projects.uhv.description'),
-      image: '/images/hero/hero-3.jpg',
+      image: '/images/projects/substation%202.jpg',
       stats: { voltage: '±800 kV', resistance: '< 0.5 Ω' },
       statsLabels: { voltage: t('featuredProjects.projects.uhv.voltage'), resistance: t('featuredProjects.projects.uhv.resistance') }
     },
@@ -213,18 +212,18 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       title: t('coreProducts.products.lightningWarning.title'),
       subtitle: t('coreProducts.products.lightningWarning.subtitle'),
       description: t('coreProducts.products.lightningWarning.description'),
-      categoryId: 'lightning-warning',
+      categoryId: 'lightning-capture-warning',
       productId: 'lightning-warning-system',
       hoverColor: 'group-hover:text-blue-500',
       image: '/images/products/materials/Steel Tube/4de48a4b-7087-4c0f-8577-9c97bafa0077.png',
     },
     {
-      id: 'copper-clad-steel',
+      id: 'copper-bonded-steel',
       title: t('coreProducts.products.copperCladSteel.title'),
       subtitle: t('coreProducts.products.copperCladSteel.subtitle'),
       description: t('coreProducts.products.copperCladSteel.description'),
-      categoryId: 'copper-clad-steel',
-      productId: 'copper-clad-rod',
+      categoryId: 'earthing-grounding-systems',
+      productId: 'copper-bonded-rod',
       hoverColor: 'group-hover:text-amber-600',
       image: '/images/products/materials/Steel Round Bar/af15a1a9-071d-4f50-ba12-9beac1c7c625.png',
     },
@@ -233,8 +232,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       title: t('coreProducts.products.eseLightningRod.title'),
       subtitle: t('coreProducts.products.eseLightningRod.subtitle'),
       description: t('coreProducts.products.eseLightningRod.description'),
-      categoryId: 'early-discharge-system',
-      productId: 'early-discharge',
+      categoryId: 'lightning-capture-warning',
+      productId: 'ese-air-terminal',
       hoverColor: 'group-hover:text-green-electric-500',
       image: '/images/products/materials/Aluminium Plate/2e897f8b-4248-4a89-a6db-7d82b19c8251.png',
     },
@@ -243,8 +242,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       title: t('coreProducts.products.exothermicWelding.title'),
       subtitle: t('coreProducts.products.exothermicWelding.subtitle'),
       description: t('coreProducts.products.exothermicWelding.description'),
-      categoryId: 'exothermic-welding',
-      productId: 'welding',
+      categoryId: 'exothermic-welding-connections',
+      productId: 'exothermic-welding',
       hoverColor: 'group-hover:text-orange-500',
       image: '/images/products/materials/Stainless Bar/3d99c6d3-daa9-4fb7-93d0-f6fcaea4b1bc.png',
     },
@@ -253,7 +252,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   return (
     <main className="min-h-screen bg-white">
       <ScrollSnapHandler />
-      <ScrollNav />
       
       <HeroCarousel />
 
@@ -263,20 +261,20 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row justify-between items-end mb-16 gap-8">
             <div className="max-w-3xl">
-              <span className="inline-block px-4 py-1.5 bg-green-electric-100 text-green-electric-700 rounded-full text-sm font-semibold mb-4">
+              <span className="animate-scale-in inline-block px-4 py-1.5 bg-green-electric-100 text-green-electric-700 rounded-full text-sm font-semibold mb-4">
                 {t('hero.badge')}
               </span>
-              <h2 className="text-4xl md:text-5xl font-bold text-industrial-900 mb-4">
+              <h2 className="animate-slide-up text-4xl md:text-5xl font-bold text-industrial-900 mb-4" style={{ transitionDelay: '100ms' }}>
                 {t('capabilities.title')}
               </h2>
-              <p className="text-xl text-green-electric-600 font-medium mb-4">
+              <p className="animate-slide-up text-xl text-green-electric-600 font-medium mb-4" style={{ transitionDelay: '200ms' }}>
                 {t('hero.subtitle')}
               </p>
-              <p className="text-lg text-industrial-600 leading-relaxed">
+              <p className="animate-slide-up text-lg text-industrial-600 leading-relaxed" style={{ transitionDelay: '300ms' }}>
                 {t('hero.description')}
               </p>
             </div>
-            <div className="flex-shrink-0">
+            <div className="animate-fade-in flex-shrink-0" style={{ transitionDelay: '400ms' }}>
               <Link
                 href="/products"
                 className="inline-flex items-center font-semibold text-green-electric-600 hover:text-green-electric-700 transition-colors group"
@@ -290,8 +288,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {coreCapabilities.map((item) => (
-              <div key={item.id} className="group relative">
+            {coreCapabilities.map((item, index) => (
+              <div key={item.id} className="animate-zoom-in group relative" style={{ transitionDelay: `${(index + 1) * 100}ms` }}>
                 <div className="bg-white rounded-2xl p-8 border border-industrial-100 shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col hover:-translate-y-1">
                   <div className="w-16 h-16 rounded-2xl bg-industrial-50 text-green-electric-600 flex items-center justify-center group-hover:bg-green-electric-600 group-hover:text-white transition-colors duration-300 shadow-sm mb-6">
                     {item.icon}
@@ -313,20 +311,20 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <section id="engineering-challenges" className="py-24 bg-industrial-900 text-white scroll-mt-0">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="inline-block px-4 py-1.5 bg-green-electric-600/20 text-green-electric-400 rounded-full text-sm font-semibold mb-4">
+            <span className="animate-scale-in inline-block px-4 py-1.5 bg-green-electric-600/20 text-green-electric-400 rounded-full text-sm font-semibold mb-4">
               {t('challenges.badge')}
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="animate-slide-up text-4xl md:text-5xl font-bold mb-6" style={{ transitionDelay: '100ms' }}>
               {t('challenges.title')}
             </h2>
-            <p className="text-xl text-industrial-400 max-w-3xl mx-auto">
+            <p className="animate-slide-up text-xl text-industrial-400 max-w-3xl mx-auto" style={{ transitionDelay: '200ms' }}>
               {t('challenges.description')}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {engineeringChallenges.map((item) => (
-              <div key={item.id} className="group p-6 rounded-2xl bg-industrial-800/50 border border-industrial-700 hover:border-green-electric-500/50 transition-all duration-300">
+            {engineeringChallenges.map((item, index) => (
+              <div key={item.id} className="animate-zoom-in group p-6 rounded-2xl bg-industrial-800/50 border border-industrial-700 hover:border-green-electric-500/50 transition-all duration-300" style={{ transitionDelay: `${(index + 1) * 80}ms` }}>
                 <div className="w-12 h-12 rounded-xl bg-industrial-700 text-green-electric-400 flex items-center justify-center mb-4 group-hover:bg-green-electric-600 group-hover:text-white transition-colors duration-300">
                   {item.icon}
                 </div>
@@ -345,21 +343,21 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <section id="industry-solutions" className="py-24 bg-gradient-to-b from-industrial-50 to-white scroll-mt-0">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="inline-block px-4 py-1.5 bg-green-electric-100 text-green-electric-700 rounded-full text-sm font-semibold mb-4">
+            <span className="animate-scale-in inline-block px-4 py-1.5 bg-green-electric-100 text-green-electric-700 rounded-full text-sm font-semibold mb-4">
               {t('industries.badge')}
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-industrial-900 mb-6">
+            <h2 className="animate-slide-up text-4xl md:text-5xl font-bold text-industrial-900 mb-6" style={{ transitionDelay: '100ms' }}>
               {t('industries.title')}
             </h2>
-            <p className="text-xl text-industrial-600 max-w-3xl mx-auto">
+            <p className="animate-slide-up text-xl text-industrial-600 max-w-3xl mx-auto" style={{ transitionDelay: '200ms' }}>
               {t('industries.description')}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {industrySolutions.map((item) => (
-              <Link key={item.id} href={`/solutions/${item.id}`} className="group">
-                <div className="relative rounded-2xl overflow-hidden h-80">
+            {industrySolutions.map((item, index) => (
+              <Link key={item.id} href={`/solutions/${item.id}`} className="animate-zoom-in" style={{ transitionDelay: `${(index + 1) * 100}ms` }}>
+                <div className="group relative rounded-2xl overflow-hidden h-80">
                   <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-90`}></div>
                   <div className="absolute inset-0 bg-industrial-900/20 group-hover:bg-industrial-900/40 transition-colors duration-300"></div>
                   
@@ -389,55 +387,30 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               </Link>
             ))}
           </div>
-
-          <div className="text-center mt-12">
-            <Link
-              href="/projects"
-              className="inline-flex items-center px-6 py-3 bg-industrial-900 text-white rounded-lg hover:bg-industrial-800 font-semibold transition-colors group"
-            >
-              {t('industries.viewAllProjects')}
-              <svg className="w-5 h-5 ms-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
-          </div>
         </div>
       </section>
 
-      <section id="featured-projects" className="py-24 bg-white scroll-mt-0">
+      <section id="featured-projects" className="py-16 bg-white scroll-mt-0">
         <div className="container mx-auto px-6">
-          <div className="flex flex-col lg:flex-row justify-between items-end mb-16 gap-8">
-            <div className="max-w-3xl">
-              <span className="inline-block px-4 py-1.5 bg-green-electric-100 text-green-electric-700 rounded-full text-sm font-semibold mb-4">
-                {t('featuredProjects.badge')}
-              </span>
-              <h2 className="text-4xl md:text-5xl font-bold text-industrial-900 mb-4">
-                {t('featuredProjects.title')}
-              </h2>
-              <p className="text-xl text-industrial-600 leading-relaxed mb-2">
-                {t('featuredProjects.trustedProjects')}
-              </p>
-              <p className="text-lg text-industrial-500">
-                {t('featuredProjects.servingProjects')}
-              </p>
-            </div>
-            <div className="flex-shrink-0">
-              <Link
-                href="/projects"
-                className="inline-flex items-center font-semibold text-green-electric-600 hover:text-green-electric-700 transition-colors group"
-              >
-                {t('featuredProjects.viewAllProjects')}
-                <svg className="w-5 h-5 ms-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
-            </div>
+          <div className="mb-16">
+            <span className="animate-scale-in inline-block px-4 py-1.5 bg-green-electric-100 text-green-electric-700 rounded-full text-sm font-semibold mb-4">
+              {t('featuredProjects.badge')}
+            </span>
+            <h2 className="animate-slide-up text-4xl md:text-5xl font-bold text-industrial-900 mb-4" style={{ transitionDelay: '100ms' }}>
+              {t('featuredProjects.title')}
+            </h2>
+            <p className="animate-slide-up text-xl text-industrial-600 leading-relaxed mb-2" style={{ transitionDelay: '200ms' }}>
+              {t('featuredProjects.trustedProjects')}
+            </p>
+            <p className="animate-slide-up text-lg text-industrial-500" style={{ transitionDelay: '300ms' }}>
+              {t('featuredProjects.servingProjects')}
+            </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {featuredProjects.map((project) => (
-              <Link key={project.id} href={`/projects/${project.industrySlug}`} className="group">
-                <div className="bg-white rounded-2xl shadow-sm hover:shadow-xl overflow-hidden border border-industrial-100 h-full flex flex-col transition-all duration-300">
+            {featuredProjects.map((project, index) => (
+              <Link key={project.id} href={`/projects/${project.industrySlug}`} className="animate-zoom-in" style={{ transitionDelay: `${(index + 1) * 150}ms` }}>
+                <div className="group bg-white rounded-2xl shadow-sm hover:shadow-xl overflow-hidden border border-industrial-100 h-full flex flex-col transition-all duration-300">
                   <div className="h-56 relative overflow-hidden">
                     <Image
                       src={project.image}
@@ -481,27 +454,39 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               </Link>
             ))}
           </div>
+
+          <div className="animate-scale-in text-center mt-12" style={{ transitionDelay: '400ms' }}>
+            <Link
+              href="/projects"
+              className="inline-flex items-center px-6 py-3 bg-industrial-900 text-white rounded-lg hover:bg-industrial-800 font-semibold transition-colors group"
+            >
+              {t('industries.viewAllProjects')}
+              <svg className="w-5 h-5 ms-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </div>
         </div>
       </section>
 
       <section id="core-products" className="py-24 bg-gradient-to-b from-industrial-50 to-white scroll-mt-0">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="inline-block px-4 py-1.5 bg-green-electric-100 text-green-electric-700 rounded-full text-sm font-semibold mb-4">
+            <span className="animate-scale-in inline-block px-4 py-1.5 bg-green-electric-100 text-green-electric-700 rounded-full text-sm font-semibold mb-4">
               {t('coreProducts.badge')}
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-industrial-900 mb-6">
+            <h2 className="animate-slide-up text-4xl md:text-5xl font-bold text-industrial-900 mb-6" style={{ transitionDelay: '100ms' }}>
               {t('coreProducts.title')}
             </h2>
-            <p className="text-xl text-industrial-600 max-w-2xl mx-auto">
+            <p className="animate-slide-up text-xl text-industrial-600 max-w-2xl mx-auto" style={{ transitionDelay: '200ms' }}>
               {t('coreProducts.description')}
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {coreProducts.map((product) => (
-              <Link key={product.id} href={getProductDetailPath(product.categoryId, product.productId)} className="group">
-                <div className="bg-white rounded-2xl shadow-sm hover:shadow-xl overflow-hidden card-hover border border-industrial-100 h-full flex flex-col transition-all duration-300">
+            {coreProducts.map((product, index) => (
+              <Link key={product.id} href={getProductDetailPath(product.categoryId, product.productId)} className="animate-zoom-in" style={{ transitionDelay: `${(index + 1) * 100}ms` }}>
+                <div className="group bg-white rounded-2xl shadow-sm hover:shadow-xl overflow-hidden card-hover border border-industrial-100 h-full flex flex-col transition-all duration-300">
                   <div className="h-48 relative overflow-hidden flex-shrink-0 bg-industrial-100">
                     <Image
                       src={product.image}
@@ -537,7 +522,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             ))}
           </div>
 
-          <div className="mt-16 bg-industrial-900 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 border border-industrial-800">
+          <div className="animate-zoom-in mt-16 bg-industrial-900 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 border border-industrial-800" style={{ transitionDelay: '300ms' }}>
             <div className="flex items-center gap-6">
               <div className="w-16 h-16 rounded-full bg-green-electric-600/20 flex items-center justify-center flex-shrink-0">
                 <svg className="w-8 h-8 text-green-electric-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -564,19 +549,19 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <section id="cta" className="py-24 bg-industrial-900 text-white scroll-mt-0">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="inline-block px-4 py-1.5 bg-green-electric-600/20 text-green-electric-400 rounded-full text-sm font-semibold mb-4">
+            <span className="animate-scale-in inline-block px-4 py-1.5 bg-green-electric-600/20 text-green-electric-400 rounded-full text-sm font-semibold mb-4">
               {t('cta.badge')}
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="animate-slide-up text-4xl md:text-5xl font-bold mb-4" style={{ transitionDelay: '100ms' }}>
               {t('cta.title')}
             </h2>
-            <p className="text-xl text-industrial-400 max-w-2xl mx-auto">
+            <p className="animate-slide-up text-xl text-industrial-400 max-w-2xl mx-auto" style={{ transitionDelay: '200ms' }}>
               {t('cta.description')}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <div className="text-center p-8 rounded-2xl bg-industrial-800/50 border border-industrial-700">
+            <div className="animate-zoom-in text-center p-8 rounded-2xl bg-industrial-800/50 border border-industrial-700" style={{ transitionDelay: '100ms' }}>
               <div className="w-16 h-16 bg-green-electric-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -586,7 +571,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               <p className="text-industrial-400">{t('cta.features.oneStop.description')}</p>
             </div>
 
-            <div className="text-center p-8 rounded-2xl bg-industrial-800/50 border border-industrial-700">
+            <div className="animate-zoom-in text-center p-8 rounded-2xl bg-industrial-800/50 border border-industrial-700" style={{ transitionDelay: '200ms' }}>
               <div className="w-16 h-16 bg-green-electric-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
@@ -596,7 +581,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               <p className="text-industrial-400">{t('cta.features.technology.description')}</p>
             </div>
 
-            <div className="text-center p-8 rounded-2xl bg-industrial-800/50 border border-industrial-700">
+            <div className="animate-zoom-in text-center p-8 rounded-2xl bg-industrial-800/50 border border-industrial-700" style={{ transitionDelay: '300ms' }}>
               <div className="w-16 h-16 bg-green-electric-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
@@ -607,26 +592,21 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             </div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center mb-16">
-            <div>
-              <div className="text-4xl md:text-5xl font-bold text-green-electric-400 mb-2">30+</div>
-              <div className="text-industrial-400">{t('cta.stats.years')}</div>
-            </div>
-            <div>
-              <div className="text-4xl md:text-5xl font-bold text-green-electric-400 mb-2">50+</div>
-              <div className="text-industrial-400">{t('cta.stats.patents')}</div>
-            </div>
-            <div>
-              <div className="text-4xl md:text-5xl font-bold text-green-electric-400 mb-2">ISO</div>
-              <div className="text-industrial-400">{t('cta.stats.iso')}</div>
-            </div>
-            <div>
-              <div className="text-4xl md:text-5xl font-bold text-green-electric-400 mb-2">24/7</div>
-              <div className="text-industrial-400">{t('cta.stats.support')}</div>
-            </div>
+          <div className="animate-scale-in grid grid-cols-2 md:grid-cols-4 gap-8 text-center mb-16">
+            {[
+              { value: '30+', label: t('cta.stats.years') },
+              { value: '50+', label: t('cta.stats.patents') },
+              { value: 'ISO', label: t('cta.stats.iso') },
+              { value: '24/7', label: t('cta.stats.support') },
+            ].map((stat, index) => (
+              <div key={index} style={{ transitionDelay: `${(index + 1) * 100}ms` }}>
+                <div className="text-4xl md:text-5xl font-bold text-green-electric-400 mb-2">{stat.value}</div>
+                <div className="text-industrial-400">{stat.label}</div>
+              </div>
+            ))}
           </div>
 
-          <div className="bg-gradient-to-r from-green-electric-700 to-green-electric-600 rounded-2xl p-8 md:p-12 text-center">
+          <div className="animate-zoom-in bg-gradient-to-r from-green-electric-700 to-green-electric-600 rounded-2xl p-8 md:p-12 text-center" style={{ transitionDelay: '300ms' }}>
             <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
               {t('cta.readyToStart')}
             </h3>

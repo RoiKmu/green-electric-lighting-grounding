@@ -3,27 +3,28 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from '@/i18n/routing';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 interface FlagshipProductTemplateProps {
   product: {
-    title: string;
-    subtitle?: string;
-    coreParameterLabel: string;
-    coreParameterValue: string;
-    description: string;
+    titleKey: string;
+    subtitleKey?: string;
+    coreParameterLabelKey: string;
+    coreParameterValueKey: string;
+    descriptionKey: string;
     image: string;
-    introduction: string[];
-    features: string[];
-    techPrinciples: Array<{ title: string; description: string }>;
+    introductionKeys: string[];
+    featureKeys: string[];
+    techPrincipleKeys: Array<{ titleKey: string; descriptionKey: string }>;
     productModels?: {
-      headers: string[];
-      rows: Array<string[]>;
+      headersKey: string[];
+      rows: string[][];
     };
     protectionRadiusTables?: {
-      title: string;
-      subtitle?: string;
+      titleKey: string;
+      subtitleKey?: string;
       classes: Array<{
-        title: string;
+        titleKey: string;
         headers: string[];
         rows: Array<{ label: string; values: (string | number)[] }>;
       }>;
@@ -37,6 +38,8 @@ export default function FlagshipProductTemplate({ product }: FlagshipProductTemp
   const [isVisible, setIsVisible] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
   const techRef = useRef<HTMLDivElement>(null);
+  const t = useTranslations('products.flagship');
+  const tCommon = useTranslations('products');
 
   useEffect(() => {
     setIsVisible(true);
@@ -82,29 +85,29 @@ export default function FlagshipProductTemplate({ product }: FlagshipProductTemp
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className={`transform transition-all duration-1200 ease-out ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-40 opacity-0'}`}>
               <div className="inline-block px-4 py-2 bg-green-electric-500/20 border border-green-electric-500/30 rounded-full mb-6">
-                <span className="text-green-electric-400 text-sm font-medium">Flagship Technology Solutions</span>
+                <span className="text-green-electric-400 text-sm font-medium">{t('badge')}</span>
               </div>
               
               <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 leading-tight">
-                {product.title}
+                {t(product.titleKey)}
               </h1>
-              {product.subtitle && (
+              {product.subtitleKey && (
                 <p className="text-xl md:text-2xl text-industrial-400 mb-6 font-light">
-                  {product.subtitle}
+                  {t(product.subtitleKey)}
                 </p>
               )}
               
               <div className="mb-8">
                 <div className="inline-block px-8 py-6 bg-gradient-to-r from-green-electric-600/20 to-green-electric-500/20 border-2 border-green-electric-500/40 rounded-2xl backdrop-blur-sm">
-                  <div className="text-green-electric-400 text-sm font-medium mb-2">{product.coreParameterLabel}</div>
+                  <div className="text-green-electric-400 text-sm font-medium mb-2">{t(product.coreParameterLabelKey)}</div>
                   <div className="text-4xl md:text-5xl font-bold text-white">
-                    {product.coreParameterValue}
+                    {t(product.coreParameterValueKey)}
                   </div>
                 </div>
               </div>
 
               <p className="text-lg text-industrial-300 mb-8 leading-relaxed max-w-xl">
-                {product.description}
+                {t(product.descriptionKey)}
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -112,13 +115,13 @@ export default function FlagshipProductTemplate({ product }: FlagshipProductTemp
                   href="/contact"
                   className="px-8 py-4 bg-gradient-to-r from-green-electric-600 to-green-electric-500 text-white rounded-xl font-semibold text-lg hover:shadow-lg hover:shadow-green-electric-500/25 transition-all duration-300 transform hover:-translate-y-1"
                 >
-                  Get Quote
+                  {t('getQuote')}
                 </Link>
                 <button 
                   onClick={() => techRef.current?.scrollIntoView({ behavior: 'smooth' })}
                   className="px-8 py-4 bg-transparent border-2 border-industrial-600 text-white rounded-xl font-semibold text-lg hover:bg-industrial-800 transition-all duration-300"
                 >
-                  Learn Technology
+                  {t('learnTechnology')}
                 </button>
               </div>
             </div>
@@ -128,7 +131,7 @@ export default function FlagshipProductTemplate({ product }: FlagshipProductTemp
               <div className="relative h-full rounded-3xl overflow-hidden border border-industrial-700/50">
                 <Image
                   src={product.image}
-                  alt={product.title}
+                  alt={t(product.titleKey)}
                   fill
                   className="object-cover"
                   priority
@@ -154,34 +157,34 @@ export default function FlagshipProductTemplate({ product }: FlagshipProductTemp
         
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Product Introduction</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">{t('productIntroduction')}</h2>
             <p className="text-xl text-industrial-400 max-w-3xl mx-auto">
-              Learn about the core technology advantages of {product.title}
+              {t('learnAbout', { product: t(product.titleKey) })}
             </p>
           </div>
 
           <div className="bg-industrial-800/50 border border-industrial-700 rounded-2xl p-8 mb-12">
-            {product.introduction.map((paragraph, index) => (
+            {product.introductionKeys.map((key, index) => (
               <p key={index} className="text-industrial-300 mb-4 leading-relaxed">
-                {paragraph}
+                {t(key)}
               </p>
             ))}
 
-            <h3 className="text-2xl font-bold text-white mt-8 mb-6">Features</h3>
+            <h3 className="text-2xl font-bold text-white mt-8 mb-6">{t('features')}</h3>
             <ul className="space-y-3 mb-6">
-              {product.features.map((feature, index) => (
+              {product.featureKeys.map((key, index) => (
                 <li key={index} className="flex items-start text-industrial-300">
-                  <svg className="w-5 h-5 text-green-electric-500 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-green-electric-500 me-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  {feature}
+                  {t(key)}
                 </li>
               ))}
             </ul>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-            {product.techPrinciples.map((principle, index) => (
+            {product.techPrincipleKeys.map((principle, index) => (
               <div 
                 key={index}
                 className={`group p-8 bg-industrial-800/50 border border-industrial-700 rounded-2xl hover:border-green-electric-500/50 transition-all duration-500 transform hover:-translate-y-2 ${activeSection >= 1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
@@ -192,8 +195,8 @@ export default function FlagshipProductTemplate({ product }: FlagshipProductTemp
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-3">{principle.title}</h3>
-                <p className="text-industrial-400 leading-relaxed">{principle.description}</p>
+                <h3 className="text-2xl font-bold text-white mb-3">{t(principle.titleKey)}</h3>
+                <p className="text-industrial-400 leading-relaxed">{t(principle.descriptionKey)}</p>
               </div>
             ))}
           </div>
@@ -203,15 +206,15 @@ export default function FlagshipProductTemplate({ product }: FlagshipProductTemp
               <div className="p-8">
                 {product.productModels && (
                   <>
-                    <h3 className="text-2xl font-bold text-white mb-6">Product Models</h3>
+                    <h3 className="text-2xl font-bold text-white mb-6">{t('productModels')}</h3>
                     
                     <div className="overflow-x-auto mb-8">
                       <table className="w-full border-collapse">
                         <thead>
                           <tr className="bg-industrial-700">
-                            {product.productModels.headers.map((header, index) => (
+                            {product.productModels.headersKey.map((headerKey, index) => (
                               <th key={index} className="border border-industrial-600 px-4 py-3 text-left text-white font-bold last:text-center">
-                                {header}
+                                {t(headerKey)}
                               </th>
                             ))}
                           </tr>
@@ -234,15 +237,15 @@ export default function FlagshipProductTemplate({ product }: FlagshipProductTemp
 
                 {product.protectionRadiusTables && (
                   <>
-                    <h4 className="text-xl font-bold text-white mb-4">{product.protectionRadiusTables.title}</h4>
-                    {product.protectionRadiusTables.subtitle && (
-                      <p className="text-industrial-400 mb-6">{product.protectionRadiusTables.subtitle}</p>
+                    <h4 className="text-xl font-bold text-white mb-4">{t(product.protectionRadiusTables.titleKey)}</h4>
+                    {product.protectionRadiusTables.subtitleKey && (
+                      <p className="text-industrial-400 mb-6">{t(product.protectionRadiusTables.subtitleKey)}</p>
                     )}
 
                     <div className="space-y-8">
                       {product.protectionRadiusTables.classes.map((classItem, classIndex) => (
                         <div key={classIndex}>
-                          <h5 className="text-lg font-bold text-green-electric-400 mb-3">{classItem.title}</h5>
+                          <h5 className="text-lg font-bold text-green-electric-400 mb-3">{t(classItem.titleKey)}</h5>
                           <div className="overflow-x-auto">
                             <table className="w-full border-collapse text-sm">
                               <thead>
@@ -283,15 +286,15 @@ export default function FlagshipProductTemplate({ product }: FlagshipProductTemp
 
       <div className="py-20 bg-gradient-to-r from-green-electric-900 to-green-electric-800">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Need a Custom Solution?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{tCommon('needCustom')}</h2>
           <p className="text-xl text-green-electric-200 mb-8 max-w-2xl mx-auto">
-            Contact our technical experts for professional solutions tailored to your specific needs
+            {t('customSolutionDescription')}
           </p>
           <Link 
             href="/contact"
             className="inline-block px-10 py-4 bg-white text-green-electric-800 rounded-xl font-bold text-lg hover:bg-industrial-50 transition-all duration-300 shadow-lg"
           >
-            Contact Us Now
+            {t('contactUsNow')}
           </Link>
         </div>
       </div>

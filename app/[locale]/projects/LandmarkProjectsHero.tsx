@@ -11,7 +11,7 @@ const projects = [
     title: 'National Reserve Oil Depot Protection',
     subtitle: 'Zhoushan, Zhejiang | Completed 2023',
     description: 'Designed and implemented a comprehensive direct strike lightning and intelligent grounding system for one of the largest national oil reserves, overcoming extreme coastal salt-spray corrosion challenges.',
-    industry: 'Petrochemical',
+    industry: 'Petrochemical & Natural Gas',
     stats: [
       { label: 'Coverage Area', value: '500,000 m²' },
       { label: 'Safety Record', value: '100% Incident-Free' },

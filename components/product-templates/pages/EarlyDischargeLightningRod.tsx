@@ -8,39 +8,30 @@ interface EarlyDischargeLightningRodProps {
 
 export default function EarlyDischargeLightningRod({ image }: EarlyDischargeLightningRodProps) {
   const product = {
-    title: 'Early Streamer Emission Lightning Rod',
-    subtitle: 'Active Lightning Attraction Technology',
-    coreParameterLabel: 'Core Parameter',
-    coreParameterValue: 'Protection Radius 120m',
-    description: 'Active lightning attraction technology, expanding protection radius through early streamer emission.',
+    titleKey: 'ese.title',
+    subtitleKey: 'ese.subtitle',
+    coreParameterLabelKey: 'ese.coreParameterLabel',
+    coreParameterValueKey: 'ese.coreParameterValue',
+    descriptionKey: 'ese.description',
     image: image,
-    introduction: [
-      'The RZ-T Green Early Streamer Emission Lightning Rod works by generating an upward leader faster than ordinary lightning rods. Before the natural upward leader forms, the RZ-T ESE lightning rod will first generate a leader that quickly propagates towards the lightning direction until it captures the lightning and conducts it to the ground. Laboratory tests have confirmed that the earlier generation of the upward leader, known as the initiation advance time ΔT, gives the RZ-T ESE lightning rod a more effective lightning protection function.',
-      'Note: This description only describes negative downward lightning strikes. Under the same conditions, the rapidly approaching upward leader discharge potential is also tens of thousands of volts lower than ordinary lightning rods, meaning the RZ-T ESE lightning rod has lower lightning discharge energy and lower instantaneous grounding impulse current, which is the only application example of the electrical-geometric model. So far, this type of lightning strike is the most frequent.'
+    introductionKeys: [
+      'ese.introduction1',
+      'ese.introduction2'
     ],
-    features: [
-      'Complies with GB50057 Building Lightning Protection Design Code and NFC17-102 French National Lightning Protection Standard.',
-      'Stainless steel material, corrosion resistant.',
-      'Maintenance-free, passive, no radiation.',
-      'Lightweight, easy installation.',
-      'Fully compatible with "Green" lightning protection system accessories, optional metal strips, wires and anti-cable down conductors.'
+    featureKeys: [
+      'ese.feature1',
+      'ese.feature2',
+      'ese.feature3',
+      'ese.feature4',
+      'ese.feature5'
     ],
-    techPrinciples: [
-      { 
-        title: 'Early Discharge Technology', 
-        description: 'Actively generates upward leader, intercepts lightning current in advance, expands protection radius' 
-      },
-      { 
-        title: 'High Efficiency Lightning Attraction', 
-        description: 'Optimized electrode design, significantly improving lightning attraction efficiency and reliability' 
-      },
-      { 
-        title: 'Corrosion Resistant Material', 
-        description: 'Aviation grade stainless steel, ensuring long-term stable operation in harsh environments' 
-      }
+    techPrincipleKeys: [
+      { titleKey: 'ese.tech1Title', descriptionKey: 'ese.tech1Desc' },
+      { titleKey: 'ese.tech2Title', descriptionKey: 'ese.tech2Desc' },
+      { titleKey: 'ese.tech3Title', descriptionKey: 'ese.tech3Desc' }
     ],
     productModels: {
-      headers: ['Model', 'Advance Time ΔT', 'Length', 'Weight'],
+      headersKey: ['ese.model', 'ese.advanceTime', 'ese.length', 'ese.weight'],
       rows: [
         ['φ22 Standard Rod', '0μs', '0.35m', '2kg'],
         ['RZ-T(25)', '25μs', '0.35m', '2.5kg'],
@@ -49,11 +40,11 @@ export default function EarlyDischargeLightningRod({ image }: EarlyDischargeLigh
       ]
     },
     protectionRadiusTables: {
-      title: 'Protection Radius for Different Building Classes (Unit: m)',
-      subtitle: 'h = Height above the protected object plane (Unit: m)',
+      titleKey: 'ese.protectionRadiusTitle',
+      subtitleKey: 'ese.protectionRadiusSubtitle',
       classes: [
         {
-          title: 'Class I Lightning Protection Buildings',
+          titleKey: 'ese.class1',
           headers: ['Tip Height', '2', '3', '4', '5', '6', '7', '8', '10', '15', '20', '45', '60'],
           rows: [
             { label: 'φ22 Standard', values: [11, 13, 15, 17, 18, 20, 21, 22, 26, 28, '-', '-'] },
@@ -63,7 +54,7 @@ export default function EarlyDischargeLightningRod({ image }: EarlyDischargeLigh
           ]
         },
         {
-          title: 'Class II Lightning Protection Buildings',
+          titleKey: 'ese.class2',
           headers: ['Tip Height', '2', '3', '4', '5', '6', '7', '8', '10', '15', '20', '45', '60'],
           rows: [
             { label: 'φ22 Standard', values: [14, 17, 19, 21, 23, 24, 26, 28, 34, 37, 45, '-'] },
@@ -73,7 +64,7 @@ export default function EarlyDischargeLightningRod({ image }: EarlyDischargeLigh
           ]
         },
         {
-          title: 'Class III Lightning Protection Buildings',
+          titleKey: 'ese.class3',
           headers: ['Tip Height', '2', '3', '4', '5', '6', '7', '8', '10', '15', '20', '45', '60'],
           rows: [
             { label: 'φ22 Standard', values: [16, 19, 22, 24, 26, 66, 67, 69, 72, 75, 84, 85] },

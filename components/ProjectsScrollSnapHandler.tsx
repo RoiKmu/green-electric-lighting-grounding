@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 
-export default function ScrollSnapHandler() {
+export default function ProjectsScrollSnapHandler() {
   const isScrollingRef = useRef(false);
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const lastScrollYRef = useRef(0);
@@ -12,8 +12,8 @@ export default function ScrollSnapHandler() {
   const consecutiveScrollCountRef = useRef(0);
 
   useEffect(() => {
-    const sections = ['hero', 'core-capabilities', 'engineering-challenges', 'industry-solutions', 'featured-projects', 'core-products', 'cta'];
-    const snapSections = ['core-capabilities', 'engineering-challenges', 'industry-solutions', 'featured-projects', 'core-products', 'cta'];
+    const sections = ['hero', 'global-footprint', 'solution-cases', 'cta'];
+    const snapSections = ['global-footprint', 'solution-cases', 'cta'];
     
     const SNAP_DELAY = 350;
     const MIN_SCROLL_SPEED = 3;
@@ -38,7 +38,6 @@ export default function ScrollSnapHandler() {
     const getTargetSectionIndex = (scrollY: number, direction: number, scrollSpeed: number) => {
       const positions = getSectionPositions();
       const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
       
       if (scrollY <= 0) return -1;
       
@@ -65,7 +64,6 @@ export default function ScrollSnapHandler() {
         if (scrollY >= sectionTop && scrollY < sectionBottom) {
           if (isOversized) {
             const visibleBottom = scrollY + windowHeight;
-            const scrollProgress = (scrollY - sectionTop) / (sectionHeight - windowHeight);
             
             if (direction > 0) {
               if (visibleBottom < sectionBottom - 100) {

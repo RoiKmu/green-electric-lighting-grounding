@@ -8,10 +8,12 @@ export const ROUTES = {
 } as const;
 
 export const PRODUCT_CATEGORY_ROUTES = {
-  LIGHTNING_PROTECTION: '/products/lightning-protection',
-  GROUNDING: '/products/grounding',
-  SPECIALIZED: '/products/specialized',
-  ADVANCED: '/products/advanced',
+  LIGHTNING_CAPTURE_WARNING: '/products/lightning-capture-warning',
+  DOWN_CONDUCTORS_BONDING: '/products/down-conductors-bonding',
+  EARTHING_GROUNDING_SYSTEMS: '/products/earthing-grounding-systems',
+  EXOTHERMIC_WELDING_CONNECTIONS: '/products/exothermic-welding-connections',
+  INDUSTRIAL_STATIC_PROTECTION: '/products/industrial-static-protection',
+  TESTING_FASTENERS_SUPPORT: '/products/testing-fasteners-support',
   MATERIALS: '/products/materials',
   ACCESSORIES: '/products/accessories',
 } as const;
@@ -25,9 +27,9 @@ export const NAV_LINKS = [
 ] as const;
 
 export const FOOTER_PRODUCT_LINKS = [
-  { labelKey: 'footer.productLinks.lightningProtection', href: '/products/lightning-protection' },
-  { labelKey: 'footer.productLinks.groundingSystems', href: '/products/grounding' },
-  { labelKey: 'footer.productLinks.eseLightningRods', href: '/products/early-discharge-system' },
+  { labelKey: 'footer.productLinks.lightningProtection', href: '/products/lightning-capture-warning' },
+  { labelKey: 'footer.productLinks.groundingSystems', href: '/products/earthing-grounding-systems' },
+  { labelKey: 'footer.productLinks.eseLightningRods', href: '/products/lightning-capture-warning' },
   { labelKey: 'footer.productLinks.rawMaterials', href: PRODUCT_CATEGORY_ROUTES.MATERIALS },
 ] as const;
 
@@ -37,4 +39,3 @@ export const FOOTER_COMPANY_LINKS = [
 ] as const;
 
 export type AppRoute = typeof ROUTES[keyof typeof ROUTES];
-export type ProductCategoryRoute = typeof PRODUCT_CATEGORY_ROUTES[keyof typeof PRODUCT_CATEGORY_ROUTES];

@@ -23,43 +23,61 @@ const solutionContent = {
     description: '在沙漠或多山地带的电力工程中，不稳定的土壤电阻率是 EPC 交付的最大挑战。我们通过降阻模块与深井接地的组合优化，将不确定的地质条件转化为确定的技术指标。我们追求的不是材料的堆砌，而是通过精确的设计余裕（Design Redundancy），在降低总体拥有成本（TCO）的同时，满足 500kV 以上电网的严苛验收。',
     descriptionEn: 'In power engineering projects in desert or mountainous regions, unstable soil resistivity is the biggest challenge for EPC delivery. Through combined optimization of resistance reduction modules and deep well grounding, we transform uncertain geological conditions into certain technical indicators. We pursue not material stacking, but through precise Design Redundancy, while reducing Total Cost of Ownership (TCO), meeting the stringent acceptance requirements of 500kV+ power grids.',
   },
-  challenge: {
-    title: '挑战',
-    titleEn: 'The Challenge',
-    subtitle: '大型光伏或变电站关注的是大规模交付的效率和长期可靠性。',
-    subtitleEn: 'Large-scale PV or substations focus on delivery efficiency and long-term reliability.',
+  challenges: {
+    title: '挑战与行业痛点',
+    titleEn: 'Challenges & Pain Points',
+    description: '大型光伏或变电站关注的是大规模交付的效率和长期可靠性。新能源（光伏、风电）占地面积巨大，接地网物料成本及物流压力大；海外变电站对接地系统的 50 年长寿命运行有明确要求。',
+    descriptionEn: 'Large-scale PV or substations focus on delivery efficiency and long-term reliability. Renewable energy projects cover vast areas, creating significant pressure on material costs and logistics. Overseas substations have explicit 50-year long-life requirements.',
     items: [
       {
         title: '不稳定土壤电阻率',
         titleEn: 'Unstable Soil Resistivity',
         description: '沙漠或多山地带土壤电阻率变化剧烈，传统接地设计难以保证稳定达标，成为 EPC 交付的最大挑战。',
-        descriptionEn: 'Soil resistivity varies dramatically in desert or mountainous regions. Traditional grounding design struggles to ensure stable compliance, becoming the biggest challenge for EPC delivery.',
+        descriptionEn: 'Soil resistivity varies dramatically in desert or mountainous regions. Traditional grounding design struggles to ensure stable compliance.',
       },
       {
         title: '大规模交付效率',
         titleEn: 'Large-Scale Delivery Efficiency',
         description: '大型光伏电站或变电站项目占地面积大，接地材料需求量巨大，对供应链和施工效率提出极高要求。',
-        descriptionEn: 'Large-scale PV power stations or substation projects cover vast areas with enormous grounding material requirements, placing extremely high demands on supply chain and construction efficiency.',
+        descriptionEn: 'Large-scale PV power stations or substation projects cover vast areas with enormous grounding material requirements.',
       },
       {
         title: '严苛验收标准',
         titleEn: 'Stringent Acceptance Standards',
         description: '500kV 以上电网对接地系统有严格的技术指标要求，任何不达标都可能导致项目延期或返工。',
-        descriptionEn: 'Power grids above 500kV have strict technical requirements for grounding systems. Any non-compliance can lead to project delays or rework.',
+        descriptionEn: 'Power grids above 500kV have strict technical requirements for grounding systems.',
+      },
+      {
+        title: '占地面积巨大',
+        titleEn: 'Massive Coverage Area',
+        description: '光伏、风电项目占地广阔，接地网物料成本及物流压力大。',
+        descriptionEn: 'Solar and wind projects cover vast areas, creating significant pressure on material costs and logistics.',
+      },
+      {
+        title: '50年长寿命要求',
+        titleEn: '50-Year Lifespan Requirement',
+        description: '海外变电站对接地系统有明确的50年长寿命运行要求。',
+        descriptionEn: 'Overseas substations have explicit 50-year long-life operation requirements for grounding systems.',
+      },
+      {
+        title: '极端环境挑战',
+        titleEn: 'Extreme Environment Challenges',
+        description: '沙漠干燥、热带雨林等多变环境对接地系统稳定性要求高。',
+        descriptionEn: 'Variable environments like dry deserts and tropical rainforests demand high grounding system stability.',
       },
     ],
   },
-  insight: {
-    title: '见解',
-    titleEn: 'The Insight',
-    subtitle: '将不确定的地质条件转化为确定的技术指标',
-    subtitleEn: 'Transforming uncertain geological conditions into certain technical indicators',
+  solutions: {
+    title: '见解与专项方案',
+    titleEn: 'Insights & Solutions',
+    description: '将不确定的地质条件转化为确定的技术指标，为电力能源设施提供全方位的防雷保护。',
+    descriptionEn: 'Transforming uncertain geological conditions into certain technical indicators, providing comprehensive lightning protection for power and energy facilities.',
     items: [
       {
         title: '降阻模块组合优化',
         titleEn: 'Resistance Reduction Module Optimization',
         description: '通过降阻模块与深井接地的组合优化，针对不同土壤电阻率提供自适应方案，确保在各种地质条件下都能达到设计目标。',
-        descriptionEn: 'Through combined optimization of resistance reduction modules and deep well grounding, provide adaptive solutions for different soil resistivities, ensuring design targets are met under various geological conditions.',
+        descriptionEn: 'Through combined optimization of resistance reduction modules and deep well grounding, provide adaptive solutions for different soil resistivities.',
       },
       {
         title: '精确设计余裕',
@@ -71,7 +89,25 @@ const solutionContent = {
         title: '降低总体拥有成本',
         titleEn: 'Reducing Total Cost of Ownership',
         description: '在降低总体拥有成本（TCO）的同时，满足 500kV 以上电网的严苛验收标准，为 EPC 总包方创造真正的价值。',
-        descriptionEn: 'While reducing Total Cost of Ownership (TCO), meeting stringent acceptance standards for 500kV+ power grids, creating real value for EPC contractors.',
+        descriptionEn: 'While reducing Total Cost of Ownership (TCO), meeting stringent acceptance standards for 500kV+ power grids.',
+      },
+      {
+        title: '长寿命免维护铜包钢接地网',
+        titleEn: 'Long-Life Maintenance-Free CCS Grounding',
+        description: '50年设计寿命，免维护运行，降低全生命周期成本。',
+        descriptionEn: '50-year design life, maintenance-free operation, reducing total lifecycle cost.',
+      },
+      {
+        title: '定制化高导电接地模块',
+        titleEn: 'Customized High-Conductivity Grounding Modules',
+        description: '针对不同土壤条件定制，优化导电性能与成本。',
+        descriptionEn: 'Customized for different soil conditions, optimizing conductivity and cost.',
+      },
+      {
+        title: '大型阵列综合防雷方案',
+        titleEn: 'Large-Scale Array Integrated Lightning Protection',
+        description: '针对光伏/风电阵列的专业防雷保护体系。',
+        descriptionEn: 'Professional lightning protection system for solar/wind arrays.',
       },
     ],
   },
@@ -180,33 +216,42 @@ export default async function PowerEnergySolutionPage({ params }: { params: Prom
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <span className="inline-block px-4 py-1.5 bg-red-500/20 text-red-400 rounded-full text-sm font-semibold mb-4">
-              {isZh ? solutionContent.challenge.title : solutionContent.challenge.titleEn}
+              {isZh ? solutionContent.challenges.title : solutionContent.challenges.titleEn}
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              {isZh ? solutionContent.challenge.subtitle : solutionContent.challenge.subtitleEn}
+              {isZh ? solutionContent.challenges.description : solutionContent.challenges.descriptionEn}
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {solutionContent.challenge.items.map((item, index) => (
-              <div key={index} className="bg-industrial-800/50 border border-red-500/20 p-8 rounded-2xl">
-                <div className="w-14 h-14 bg-red-500/20 rounded-xl flex items-center justify-center mb-6">
-                  <svg className="w-7 h-7 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {solutionContent.challenges.items.map((item, index) => (
+              <div key={index} className="bg-industrial-800/50 border border-red-500/20 p-6 rounded-xl">
+                <div className="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     {index === 0 && (
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     )}
                     {index === 1 && (
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                     )}
                     {index === 2 && (
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    )}
+                    {index === 3 && (
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                    )}
+                    {index === 4 && (
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    )}
+                    {index === 5 && (
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     )}
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">
+                <h3 className="text-lg font-semibold text-white mb-2">
                   {isZh ? item.title : item.titleEn}
                 </h3>
-                <p className="text-gray-400 leading-relaxed">
+                <p className="text-gray-400 text-sm">
                   {isZh ? item.description : item.descriptionEn}
                 </p>
               </div>
@@ -219,33 +264,42 @@ export default async function PowerEnergySolutionPage({ params }: { params: Prom
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <span className="inline-block px-4 py-1.5 bg-green-electric-500/20 text-green-electric-400 rounded-full text-sm font-semibold mb-4">
-              {isZh ? solutionContent.insight.title : solutionContent.insight.titleEn}
+              {isZh ? solutionContent.solutions.title : solutionContent.solutions.titleEn}
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              {isZh ? solutionContent.insight.subtitle : solutionContent.insight.subtitleEn}
+              {isZh ? solutionContent.solutions.description : solutionContent.solutions.descriptionEn}
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {solutionContent.insight.items.map((item, index) => (
-              <div key={index} className="bg-industrial-800/50 border border-green-electric-500/20 p-8 rounded-2xl">
-                <div className="w-14 h-14 bg-green-electric-500/20 rounded-xl flex items-center justify-center mb-6">
-                  <svg className="w-7 h-7 text-green-electric-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {solutionContent.solutions.items.map((item, index) => (
+              <div key={index} className="bg-industrial-800/50 border border-green-electric-500/20 p-6 rounded-xl">
+                <div className="w-12 h-12 bg-green-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-green-electric-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     {index === 0 && (
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                     )}
                     {index === 1 && (
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 7h6m0 10v3m-3-3h6m-6-3h6m-6 0V7m3 10V7m0 0V4m0 3h.01M9 7V4m0 3h6" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v3m-3-3h6m-6-3h6m-6 0V7m3 10V7m0 0V4m0 3h.01M9 7V4m0 3h6" />
                     )}
                     {index === 2 && (
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.657 0 3 .895 3 2s-1.343 2-3 2m0-8c0-1.11.89-2 2-2h4c1.11 0 2 .89 2 2v12a2 2 0 01-2 2h-4a2 2 0 01-2-2V4z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.657 0 3 .895 3 2s-1.343 2-3 2m0-8c0-1.11.89-2 2-2h4c1.11 0 2 .89 2 2v12a2 2 0 01-2 2h-4a2 2 0 01-2-2V4z" />
+                    )}
+                    {index === 3 && (
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    )}
+                    {index === 4 && (
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                    )}
+                    {index === 5 && (
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
                     )}
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">
+                <h3 className="text-lg font-semibold text-white mb-2">
                   {isZh ? item.title : item.titleEn}
                 </h3>
-                <p className="text-gray-400 leading-relaxed">
+                <p className="text-gray-400 text-sm">
                   {isZh ? item.description : item.descriptionEn}
                 </p>
               </div>

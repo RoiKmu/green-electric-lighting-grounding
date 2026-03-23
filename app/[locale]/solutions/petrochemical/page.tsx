@@ -4,8 +4,8 @@ import type { Metadata } from "next";
 import { Link } from "@/i18n/routing";
 
 export const metadata: Metadata = {
-  title: "Petrochemical Solutions - Green Electric Lightning Protection",
-  description: "Explosion-proof lightning protection solutions for petrochemical facilities, oil depots, and refineries in extreme heat and high corrosion environments.",
+  title: "Petrochemical & Natural Gas Solutions - Green Electric Lightning Protection",
+  description: "Explosion-proof lightning protection solutions for petrochemical & natural gas facilities, oil depots, refineries, and LNG terminals in extreme heat and high corrosion environments.",
 };
 
 export function generateStaticParams() {
@@ -14,20 +14,20 @@ export function generateStaticParams() {
 
 const solutionContent = {
   hero: {
-    badge: '石油与化工',
-    badgeEn: 'Petrochemical',
+    badge: '石化与天然气',
+    badgeEn: 'Petrochemical & Natural Gas',
     title: '聚焦「极端环境与安全合规」',
     titleEn: 'Extreme Environment & Safety Compliance',
     subtitle: '在易燃易爆环境中，每一处连接点都是安全防线。',
     subtitleEn: 'In flammable and explosive environments, every connection point is a safety line.',
-    description: '针对石化储罐区的高腐蚀与高风险特性，我们深谙阿美（Aramco）与 IEC 双重标准。不仅提供高导电率的铜包钢接地体，更强调放热焊接（Exothermic Welding）在极端环境下的分子级连接可靠性，确保系统在 30 年生命周期内免维护，彻底消除静电与感应雷引起的火花风险。',
-    descriptionEn: 'For the high corrosion and high-risk characteristics of petrochemical storage tank areas, we are well-versed in both Aramco and IEC dual standards. We not only provide high-conductivity copper-clad steel grounding bodies, but also emphasize the molecular-level connection reliability of Exothermic Welding in extreme environments, ensuring maintenance-free operation throughout the 30-year lifecycle, completely eliminating spark risks from static electricity and induced lightning.',
+    description: '针对石化与天然气储罐区的高腐蚀与高风险特性，我们深谙阿美（Aramco）与 IEC 双重标准。不仅提供高导电率的铜包钢接地体，更强调放热焊接（Exothermic Welding）在极端环境下的分子级连接可靠性，确保系统在 30 年生命周期内免维护，彻底消除静电与感应雷引起的火花风险。',
+    descriptionEn: 'For the high corrosion and high-risk characteristics of petrochemical & natural gas storage tank areas, we are well-versed in both Aramco and IEC dual standards. We not only provide high-conductivity copper-clad steel grounding bodies, but also emphasize the molecular-level connection reliability of Exothermic Welding in extreme environments, ensuring maintenance-free operation throughout the 30-year lifecycle, completely eliminating spark risks from static electricity and induced lightning.',
   },
-  challenge: {
-    title: '挑战',
-    titleEn: 'The Challenge',
-    subtitle: '石化行业不需要一般的防雷，他们需要的是「绝对的防爆」和「抗腐蚀」。',
-    subtitleEn: 'The petrochemical industry doesn\'t need ordinary lightning protection—they need absolute explosion-proof and corrosion resistance.',
+  challenges: {
+    title: '挑战与行业痛点',
+    titleEn: 'Challenges & Pain Points',
+    description: '石化与天然气行业不需要一般的防雷，他们需要的是「绝对的防爆」和「抗腐蚀」。中东及东南亚沿海地区土壤电阻率极高（沙漠环境），且伴有高盐雾腐蚀；石化与天然气储罐区属于极高风险等级，对防爆、静电消除及接地系统的可靠性有着近乎苛刻的验收标准。',
+    descriptionEn: 'The petrochemical & natural gas industry doesn\'t need ordinary lightning protection—they need absolute explosion-proof and corrosion resistance. Extremely high soil resistivity in Middle East and Southeast Asian coastal regions, combined with high salt-spray corrosion.',
     items: [
       {
         title: '极端环境适应',
@@ -47,31 +47,67 @@ const solutionContent = {
         description: '需同时满足沙特阿美（Aramco）企业标准与 IEC 国际标准的双重认证要求。',
         descriptionEn: 'Must simultaneously meet the dual certification requirements of Saudi Aramco corporate standards and IEC international standards.',
       },
+      {
+        title: '极高土壤电阻率',
+        titleEn: 'Extremely High Soil Resistivity',
+        description: '沙漠环境土壤电阻率极高，传统接地难以达标。',
+        descriptionEn: 'Desert environments have extremely high soil resistivity, making traditional grounding difficult to meet standards.',
+      },
+      {
+        title: '高盐雾腐蚀',
+        titleEn: 'High Salt-Spray Corrosion',
+        description: '波斯湾等沿海地区盐雾腐蚀严重，材料寿命短。',
+        descriptionEn: 'Severe salt-spray corrosion in coastal areas like the Persian Gulf, shortening material lifespan.',
+      },
+      {
+        title: '防爆合规严苛',
+        titleEn: 'Stringent Explosion-Proof Compliance',
+        description: '石化与天然气储罐区对防爆、静电消除有近乎苛刻的验收标准。',
+        descriptionEn: 'Petrochemical & natural gas storage areas have near-stringent acceptance standards for explosion-proof and static elimination.',
+      },
     ],
   },
-  insight: {
-    title: '见解',
-    titleEn: 'The Insight',
-    subtitle: '我们对该问题的技术看法',
-    subtitleEn: 'Our technical perspective on this problem',
+  solutions: {
+    title: '见解与专项方案',
+    titleEn: 'Insights & Solutions',
+    description: '我们对该问题的技术看法与解决方案，为石化与天然气设施提供全方位的防爆防雷保护。',
+    descriptionEn: 'Our technical perspective and solutions for petrochemical & natural gas facilities, providing comprehensive explosion-proof lightning protection.',
     items: [
       {
         title: '分子级连接可靠性',
         titleEn: 'Molecular-Level Connection Reliability',
-        description: '放热焊接（Exothermic Welding）实现导体间的分子级结合，永不松动腐蚀，确保终身导电性。在极端温度变化和振动环境下，传统机械连接可能失效，而放热焊接始终保持稳定。',
-        descriptionEn: 'Exothermic Welding achieves molecular-level bonding between conductors, never loosening or corroding, ensuring lifetime conductivity. Under extreme temperature changes and vibration environments, traditional mechanical connections may fail, while exothermic welding remains stable.',
+        description: '放热焊接（Exothermic Welding）实现导体间的分子级结合，永不松动腐蚀，确保终身导电性。',
+        descriptionEn: 'Exothermic Welding achieves molecular-level bonding between conductors, never loosening or corroding, ensuring lifetime conductivity.',
       },
       {
         title: '高厚度铜包钢材料',
         titleEn: 'High-Thickness Copper-Clad Steel',
-        description: '采用高导电率的铜包钢接地体，铜层厚度达到行业领先水平，抗腐蚀性能卓越，确保 30 年以上使用寿命。特别适用于波斯湾等高盐雾腐蚀环境。',
-        descriptionEn: 'Using high-conductivity copper-clad steel grounding bodies with industry-leading copper layer thickness, excellent corrosion resistance, ensuring 30+ years service life. Particularly suitable for high salt-spray corrosion environments like the Persian Gulf.',
+        description: '采用高导电率的铜包钢接地体，铜层厚度达到行业领先水平，抗腐蚀性能卓越，确保 30 年以上使用寿命。',
+        descriptionEn: 'Using high-conductivity copper-clad steel grounding bodies with industry-leading copper layer thickness, excellent corrosion resistance, ensuring 30+ years service life.',
       },
       {
         title: '全生命周期免维护',
         titleEn: 'Lifecycle Maintenance-Free',
-        description: '系统设计确保在 30 年生命周期内免维护，彻底消除静电与感应雷引起的火花风险。降低 EPC 总包方的后期运维成本和风险。',
-        descriptionEn: 'System design ensures maintenance-free operation throughout the 30-year lifecycle, completely eliminating spark risks from static electricity and induced lightning. Reduces post-operation maintenance costs and risks for EPC contractors.',
+        description: '系统设计确保在 30 年生命周期内免维护，彻底消除静电与感应雷引起的火花风险。',
+        descriptionEn: 'System design ensures maintenance-free operation throughout the 30-year lifecycle, completely eliminating spark risks from static electricity and induced lightning.',
+      },
+      {
+        title: '深井接地技术',
+        titleEn: 'Deep Well Grounding Technology',
+        description: '突破高电阻率土壤限制，实现稳定低电阻接地。',
+        descriptionEn: 'Break through high resistivity soil limitations, achieve stable low-resistance grounding.',
+      },
+      {
+        title: '放热焊接永久连接',
+        titleEn: 'Exothermic Welding Permanent Connection',
+        description: '分子级结合，永不松动腐蚀，确保终身导电性。',
+        descriptionEn: 'Molecular-level bonding, never loosens or corrodes, ensuring lifetime conductivity.',
+      },
+      {
+        title: 'ATEX/IECEx 认证静电防护',
+        titleEn: 'ATEX/IECEx Certified Static Protection',
+        description: '符合国际防爆认证的静电防护体系。',
+        descriptionEn: 'Static protection system compliant with international explosion-proof certifications.',
       },
     ],
   },
@@ -180,33 +216,42 @@ export default async function PetrochemicalSolutionPage({ params }: { params: Pr
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <span className="inline-block px-4 py-1.5 bg-red-500/20 text-red-400 rounded-full text-sm font-semibold mb-4">
-              {isZh ? solutionContent.challenge.title : solutionContent.challenge.titleEn}
+              {isZh ? solutionContent.challenges.title : solutionContent.challenges.titleEn}
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              {isZh ? solutionContent.challenge.subtitle : solutionContent.challenge.subtitleEn}
+              {isZh ? solutionContent.challenges.description : solutionContent.challenges.descriptionEn}
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {solutionContent.challenge.items.map((item, index) => (
-              <div key={index} className="bg-industrial-800/50 border border-red-500/20 p-8 rounded-2xl">
-                <div className="w-14 h-14 bg-red-500/20 rounded-xl flex items-center justify-center mb-6">
-                  <svg className="w-7 h-7 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {solutionContent.challenges.items.map((item, index) => (
+              <div key={index} className="bg-industrial-800/50 border border-red-500/20 p-6 rounded-xl">
+                <div className="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     {index === 0 && (
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     )}
                     {index === 1 && (
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                     )}
                     {index === 2 && (
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    )}
+                    {index === 3 && (
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    )}
+                    {index === 4 && (
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                    )}
+                    {index === 5 && (
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                     )}
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">
+                <h3 className="text-lg font-semibold text-white mb-2">
                   {isZh ? item.title : item.titleEn}
                 </h3>
-                <p className="text-gray-400 leading-relaxed">
+                <p className="text-gray-400 text-sm">
                   {isZh ? item.description : item.descriptionEn}
                 </p>
               </div>
@@ -219,33 +264,42 @@ export default async function PetrochemicalSolutionPage({ params }: { params: Pr
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <span className="inline-block px-4 py-1.5 bg-green-electric-500/20 text-green-electric-400 rounded-full text-sm font-semibold mb-4">
-              {isZh ? solutionContent.insight.title : solutionContent.insight.titleEn}
+              {isZh ? solutionContent.solutions.title : solutionContent.solutions.titleEn}
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              {isZh ? solutionContent.insight.subtitle : solutionContent.insight.subtitleEn}
+              {isZh ? solutionContent.solutions.description : solutionContent.solutions.descriptionEn}
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {solutionContent.insight.items.map((item, index) => (
-              <div key={index} className="bg-industrial-800/50 border border-green-electric-500/20 p-8 rounded-2xl">
-                <div className="w-14 h-14 bg-green-electric-500/20 rounded-xl flex items-center justify-center mb-6">
-                  <svg className="w-7 h-7 text-green-electric-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {solutionContent.solutions.items.map((item, index) => (
+              <div key={index} className="bg-industrial-800/50 border border-green-electric-500/20 p-6 rounded-xl">
+                <div className="w-12 h-12 bg-green-electric-500/20 rounded-lg flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-green-electric-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     {index === 0 && (
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
                     )}
                     {index === 1 && (
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                     )}
                     {index === 2 && (
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    )}
+                    {index === 3 && (
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                    )}
+                    {index === 4 && (
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
+                    )}
+                    {index === 5 && (
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                     )}
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">
+                <h3 className="text-lg font-semibold text-white mb-2">
                   {isZh ? item.title : item.titleEn}
                 </h3>
-                <p className="text-gray-400 leading-relaxed">
+                <p className="text-gray-400 text-sm">
                   {isZh ? item.description : item.descriptionEn}
                 </p>
               </div>
@@ -284,7 +338,7 @@ export default async function PetrochemicalSolutionPage({ params }: { params: Pr
       <section className="py-20 bg-gradient-to-r from-orange-600 to-orange-500">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            {isZh ? '有石化项目需求？' : 'Have a Petrochemical Project?'}
+            {isZh ? '有石化与天然气项目需求？' : 'Have a Petrochemical & Natural Gas Project?'}
           </h2>
           <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto">
             {isZh 

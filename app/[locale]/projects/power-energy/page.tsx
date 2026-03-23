@@ -12,80 +12,26 @@ export function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'zh' }, { locale: 'ar' }];
 }
 
-const industryPainPoints = {
-  title: '行业痛点',
-  titleEn: 'Industry Pain Points',
-  description: '新能源（光伏、风电）占地面积巨大，接地网物料成本及物流压力大；海外变电站对接地系统的 50 年长寿命运行有明确要求。',
-  descriptionEn: 'Renewable energy (solar, wind) projects cover vast areas, creating significant pressure on grounding network material costs and logistics. Overseas substations have explicit requirements for 50-year long-life operation of grounding systems.',
-  items: [
-    {
-      icon: 'area',
-      title: '占地面积巨大',
-      titleEn: 'Massive Coverage Area',
-      description: '光伏、风电项目占地广阔，接地网物料成本及物流压力大',
-      descriptionEn: 'Solar and wind projects cover vast areas, creating significant pressure on material costs and logistics'
-    },
-    {
-      icon: 'lifespan',
-      title: '50年长寿命要求',
-      titleEn: '50-Year Lifespan Requirement',
-      description: '海外变电站对接地系统有明确的50年长寿命运行要求',
-      descriptionEn: 'Overseas substations have explicit 50-year long-life operation requirements for grounding systems'
-    },
-    {
-      icon: 'environment',
-      title: '极端环境挑战',
-      titleEn: 'Extreme Environment Challenges',
-      description: '沙漠干燥、热带雨林等多变环境对接地系统稳定性要求高',
-      descriptionEn: 'Variable environments like dry deserts and tropical rainforests demand high grounding system stability'
-    }
-  ]
-};
-
-const specializedSolutions = {
-  title: '专项方案',
-  titleEn: 'Specialized Solutions',
-  items: [
-    {
-      icon: 'lifespan',
-      title: '长寿命免维护铜包钢接地网',
-      titleEn: 'Long-Life Maintenance-Free CCS Grounding',
-      description: '50年设计寿命，免维护运行，降低全生命周期成本',
-      descriptionEn: '50-year design life, maintenance-free operation, reducing total lifecycle cost'
-    },
-    {
-      icon: 'module',
-      title: '定制化高导电接地模块',
-      titleEn: 'Customized High-Conductivity Grounding Modules',
-      description: '针对不同土壤条件定制，优化导电性能与成本',
-      descriptionEn: 'Customized for different soil conditions, optimizing conductivity and cost'
-    },
-    {
-      icon: 'array',
-      title: '大型阵列综合防雷方案',
-      titleEn: 'Large-Scale Array Integrated Lightning Protection',
-      description: '针对光伏/风电阵列的专业防雷保护体系',
-      descriptionEn: 'Professional lightning protection system for solar/wind arrays'
-    }
-  ]
-};
-
 const projects = [
   {
     id: 'al-dhafra-solar',
-    title: '阿联酋 Al Dhafra 2.1GW 光伏电站',
+    title: '阿联酋 Al Dhafra 光伏电站 (2.1GW)',
     titleEn: 'Al Dhafra 2.1GW Solar PV Plant, UAE',
+    titleAr: 'محطة الطاقة الشمسية الضوئية 2.1 جيجاواط في الظفرة، الإمارات',
     location: '阿联酋',
     locationEn: 'UAE',
-    year: '2024',
-    background: '中国能建/中信博等主导的中东光伏标杆项目。',
-    backgroundEn: 'Middle East solar benchmark project led by CEEC/Arctech and others.',
+    locationAr: 'الإمارات',
+    year: '2023',
+    background: '中国能建 (CEEC) 主导，中东光伏标杆项目。',
+    backgroundEn: 'Led by CEEC, Middle East solar benchmark project.',
+    backgroundAr: 'قيادة CEEC، مشروع طاقة شمسية رائد في الشرق الأوسط.',
     highlight: '交付了定制化接地模块及数万套放热焊接耗材，攻克极端干燥沙漠土壤电阻率调节难题。',
     highlightEn: 'Delivered customized grounding modules and tens of thousands of exothermic welding consumables, overcoming extreme dry desert soil resistivity challenges.',
+    highlightAr: 'تسليم وحدات تأريض مخصصة وعشرات الآلاف من مستهلكات اللحام الحراري، للتغلب على تحديات مقاومة تربة الصحراء الجافة الشديدة.',
     stats: [
-      { value: '2.1 GW', label: '装机容量', labelEn: 'Capacity' },
-      { value: '数万套', label: '放热焊接耗材', labelEn: 'Welding Consumables' },
-      { value: '定制化', label: '接地模块', labelEn: 'Custom Modules' },
+      { value: '2.1 GW', label: '装机容量', labelEn: 'Capacity', labelAr: 'السعة' },
+      { value: '数万套', label: '放热焊接耗材', labelEn: 'Welding Consumables', labelAr: 'مستهلكات اللحام' },
+      { value: '并网', label: '项目状态', labelEn: 'Status', labelAr: 'الحالة' },
     ],
     challenges: [
       '极端干燥沙漠土壤电阻率调节',
@@ -97,6 +43,11 @@ const projects = [
       'Equalizing network for tens of thousands of component arrays',
       'Large-scale material logistics and cost control',
     ],
+    challengesAr: [
+      'تعديل مقاومة تربة الصحراء الجافة الشديدة',
+      'شبكة توازن لعشرات الآلاف من مصفوفات المكونات',
+      'لوجستيات المواد واسعة النطاق والتحكم في التكاليف',
+    ],
     solutions: [
       '定制化接地模块应对高电阻率',
       '放热焊接耗材批量供应',
@@ -107,23 +58,32 @@ const projects = [
       'Batch supply of exothermic welding consumables',
       'Optimized equalizing network design',
     ],
-    image: '/images/hero/hero-3.jpg',
+    solutionsAr: [
+      'وحدات تأريض مخصصة للمقاومة العالية',
+      'توريد دفعات من مستهلكات اللحام الحراري',
+      'تصميم محسن لشبكة التوازن',
+    ],
+    image: '/images/projects/Power & Energy/Image-2-Al-Dhafra-Solar-Project.jpg',
   },
   {
     id: 'hassyan-power',
     title: '迪拜哈斯彦清洁燃煤/天然气电站',
     titleEn: 'Hassyan Clean Coal/Gas Power Plant, Dubai',
+    titleAr: 'محطة حسان للطاقة النظيفة بالفحم/الغاز، دبي',
     location: '迪拜',
     locationEn: 'Dubai',
+    locationAr: 'دبي',
     year: '2023',
-    background: '"一带一路"框架下中东首个清洁煤电站，由哈尔滨电气 EPC 总包。',
+    background: '"一带一路"框架下中东首个清洁煤电站，由哈尔滨电气 (HE) EPC 总包。',
     backgroundEn: 'First clean coal power plant in the Middle East under the Belt and Road framework, EPC by Harbin Electric.',
+    backgroundAr: 'أول محطة طاقة نظيفة بالفحم في الشرق الأوسط ضمن إطار الحزام والطريق، من تنفيذ هاربين إليكتريك.',
     highlight: '提供符合中东电网标准的接地网深化设计配套与高标准铜包钢供应。',
     highlightEn: 'Provided grounding network deepening design support compliant with Middle East grid standards and high-standard copper-clad steel supply.',
+    highlightAr: 'توفير دعم تصميم متعمق لشبكة التأريض متوافق مع معايير شبكة الشرق الأوسط وتوريد فولاذ مكسو بالنحاس عالي المعايير.',
     stats: [
-      { value: '2400 MW', label: '装机容量', labelEn: 'Capacity' },
-      { value: '哈电', label: 'EPC 总包', labelEn: 'EPC Contractor' },
-      { value: '50年', label: '设计寿命', labelEn: 'Design Life' },
+      { value: '2400 MW', label: '装机容量', labelEn: 'Capacity', labelAr: 'السعة' },
+      { value: '哈尔滨电气', label: 'EPC 总包', labelEn: 'EPC Contractor', labelAr: 'مقاول EPC' },
+      { value: '全并网', label: '项目状态', labelEn: 'Status', labelAr: 'الحالة' },
     ],
     challenges: [
       '中东电网标准合规',
@@ -135,6 +95,11 @@ const projects = [
       'Special protection requirements for clean coal power plant',
       'High-standard copper-clad steel supply',
     ],
+    challengesAr: [
+      'الامتثال لمعايير شبكة الشرق الأوسط',
+      'متطلبات الحماية الخاصة بمحطة الطاقة النظيفة بالفحم',
+      'توريد فولاذ مكسو بالنحاس عالي المعايير',
+    ],
     solutions: [
       '接地网深化设计配套',
       '高标准铜包钢材料供应',
@@ -145,59 +110,83 @@ const projects = [
       'High-standard copper-clad steel material supply',
       'Compliant with Middle East grid standards',
     ],
-    image: '/images/hero/hero-1.jpg',
+    solutionsAr: [
+      'دعم تصميم متعمق لشبكة التأريض',
+      'توريد مواد فولاذية مكسوة بالنحاس عالية المعايير',
+      'متوافق مع معايير شبكة الشرق الأوسط',
+    ],
+    image: '/images/projects/Power & Energy/Image-2-Hassyan-Power-Complex.jpg',
   },
   {
-    id: 'java-substation',
-    title: '印尼爪哇岛 500kV 骨干变电站',
-    titleEn: 'Java 500kV Backbone Substation, Indonesia',
-    location: '印度尼西亚',
-    locationEn: 'Indonesia',
-    year: '2023',
-    background: '中国电建参与的东南亚电网升级项目。',
-    backgroundEn: 'Southeast Asian grid upgrade project with participation from PowerChina.',
-    highlight: '针对热带酸性土壤提供高厚度镀铜钢绞线与电解离子接地极。',
-    highlightEn: 'Provided high-thickness copper-clad steel stranded wire and electrolytic ion grounding electrodes for tropical acidic soil.',
+    id: 'al-shuaib-solar',
+    title: '沙特阿尔舒巴赫光伏项目 (2.6GW)',
+    titleEn: 'Al Shuaib Solar Project 2.6GW, Saudi Arabia',
+    titleAr: 'مشروع الطاقة الشمسية الشعيبة 2.6 جيجاواط، السعودية',
+    location: '沙特阿拉伯',
+    locationEn: 'Saudi Arabia',
+    locationAr: 'المملكة العربية السعودية',
+    year: '2024',
+    background: '中国能建 (CEEC) 承建，沙特大型光伏项目。',
+    backgroundEn: 'Constructed by CEEC, large-scale solar project in Saudi Arabia.',
+    backgroundAr: 'من تنفيذ CEEC، مشروع طاقة شمسية واسع النطاق في المملكة العربية السعودية.',
+    highlight: '针对沙漠高温环境提供大规模光伏接地系统解决方案。',
+    highlightEn: 'Provided large-scale solar grounding system solutions for desert high-temperature environment.',
+    highlightAr: 'توفير حلول نظام التأريض للطاقة الشمسية واسع النطاق لبيئة الصحراء ذات درجة الحرارة العالية.',
     stats: [
-      { value: '500 kV', label: '电压等级', labelEn: 'Voltage Level' },
-      { value: '酸性土壤', label: '特殊地质', labelEn: 'Special Geology' },
-      { value: '< 0.5Ω', label: '接地电阻', labelEn: 'Ground Resistance' },
+      { value: '2.6 GW', label: '装机容量', labelEn: 'Capacity', labelAr: 'السعة' },
+      { value: '中国能建', label: 'EPC 总包', labelEn: 'EPC Contractor', labelAr: 'مقاول EPC' },
+      { value: '在建', label: '项目状态', labelEn: 'Status', labelAr: 'الحالة' },
     ],
     challenges: [
-      '热带酸性土壤腐蚀',
-      '500kV高压变电站防护',
-      '东南亚电网标准合规',
+      '沙漠高温环境接地挑战',
+      '大规模光伏场站防护',
+      '沙特电网标准合规',
     ],
     challengesEn: [
-      'Tropical acidic soil corrosion',
-      '500kV high-voltage substation protection',
-      'Southeast Asian grid standard compliance',
+      'Grounding challenges in desert high-temperature environment',
+      'Large-scale solar farm protection',
+      'Saudi grid standard compliance',
+    ],
+    challengesAr: [
+      'تحديات التأريض في بيئة الصحراء ذات درجة الحرارة العالية',
+      'حماية محطات الطاقة الشمسية واسعة النطاق',
+      'الامتثال لمعايير شبكة الكهرباء السعودية',
     ],
     solutions: [
-      '高厚度镀铜钢绞线',
-      '电解离子接地极',
-      '热带环境专用防腐方案',
+      '沙漠环境专用接地材料',
+      '大规模光伏场站防护方案',
+      '符合沙特电网标准',
     ],
     solutionsEn: [
-      'High-thickness copper-clad steel stranded wire',
-      'Electrolytic ion grounding electrodes',
-      'Specialized anti-corrosion solution for tropical environment',
+      'Specialized grounding materials for desert environment',
+      'Large-scale solar farm protection solutions',
+      'Compliant with Saudi grid standards',
     ],
-    image: '/images/hero/hero-2.jpg',
+    solutionsAr: [
+      'مواد تأريض متخصصة لبيئة الصحراء',
+      'حلول حماية محطات الطاقة الشمسية واسعة النطاق',
+      'متوافق مع معايير شبكة الكهرباء السعودية',
+    ],
+    image: '/images/projects/Power & Energy/saudi-arabias-al-shuaibah-1-solar-park-reaches-commercial-operation-1266513.jpg',
   },
 ];
 
 export default async function PowerEnergyPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const isZh = locale === 'zh';
+  
+  const t = (zh: string, en: string, ar: string) => {
+    if (locale === 'zh') return zh;
+    if (locale === 'ar') return ar;
+    return en;
+  };
 
   return (
     <main className="min-h-screen bg-industrial-950">
       <section className="relative min-h-[60vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/hero/hero-3.jpg"
+            src="/images/projects/Substation.jpg"
             alt="Power & Energy Projects"
             fill
             className="object-cover"
@@ -215,7 +204,7 @@ export default async function PowerEnergyPage({ params }: { params: Promise<{ lo
               <svg className="w-5 h-5 me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
-              {isZh ? '返回项目总览' : 'Back to Projects'}
+              {t('返回项目总览', 'Back to Projects', 'العودة إلى المشاريع')}
             </Link>
 
             <div className="flex items-center px-4 py-2 bg-yellow-500/20 backdrop-blur-sm rounded-full mb-6 border border-yellow-500/30 w-fit">
@@ -223,106 +212,32 @@ export default async function PowerEnergyPage({ params }: { params: Promise<{ lo
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
               <span className="text-sm font-semibold text-yellow-300 uppercase tracking-wider">
-                {isZh ? '电力与新能源' : 'Power & Energy'}
+                {t('电力与新能源', 'Power & Energy', 'الطاقة والطاقة المتجددة')}
               </span>
             </div>
 
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white leading-tight">
-              {isZh ? '跨越沙漠与雨林的高压电网与光伏接地体系' : 'High-Voltage Grid & Solar Grounding Across Deserts & Rainforests'}
+              {t('跨越沙漠与雨林的高压电网与光伏接地体系', 'High-Voltage Grid & Solar Grounding Across Deserts & Rainforests', 'شبكات الجهد العالي والتأريض الشمسي عبر الصحاري والغابات')}
             </h1>
             
             <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              {isZh 
-                ? '为特高压变电站和国家电网基础设施提供保护和大规模接地，服务65+项目覆盖12个国家。'
-                : 'UHV substation protection and grid-scale grounding for national power infrastructure. Serving 65+ projects across 12 countries.'
-              }
+              {t(
+                '为特高压变电站和国家电网基础设施提供保护和大规模接地，服务65+项目覆盖12个国家。',
+                'UHV substation protection and grid-scale grounding for national power infrastructure. Serving 65+ projects across 12 countries.',
+                'حماية محطات الجهد الفائق والتأريض على نطاق الشبكة للبنية التحتية للطاقة الوطنية. خدمة أكثر من 65 مشروع في 12 دولة.'
+              )}
             </p>
 
             <div className="flex gap-6">
               <div className="bg-industrial-900/50 backdrop-blur-sm border border-white/10 px-6 py-3 rounded-xl">
                 <div className="text-2xl font-bold text-yellow-400">65+</div>
-                <div className="text-sm text-gray-400">{isZh ? '项目案例' : 'Projects'}</div>
+                <div className="text-sm text-gray-400">{t('项目案例', 'Projects', 'مشروع')}</div>
               </div>
               <div className="bg-industrial-900/50 backdrop-blur-sm border border-white/10 px-6 py-3 rounded-xl">
                 <div className="text-2xl font-bold text-yellow-400">12</div>
-                <div className="text-sm text-gray-400">{isZh ? '服务国家' : 'Countries'}</div>
+                <div className="text-sm text-gray-400">{t('服务国家', 'Countries', 'دولة')}</div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 bg-industrial-900">
-        <div className="container mx-auto px-6">
-          <div className="mb-10">
-            <h2 className="text-2xl font-bold text-white mb-4">
-              {isZh ? industryPainPoints.title : industryPainPoints.titleEn}
-            </h2>
-            <p className="text-gray-300 leading-relaxed max-w-4xl">
-              {isZh ? industryPainPoints.description : industryPainPoints.descriptionEn}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {industryPainPoints.items.map((item, index) => (
-              <div key={index} className="bg-industrial-800/50 border border-red-500/20 p-6 rounded-xl">
-                <div className="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    {item.icon === 'area' && (
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-                    )}
-                    {item.icon === 'lifespan' && (
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    )}
-                    {item.icon === 'environment' && (
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    )}
-                  </svg>
-                </div>
-                <h3 className="text-lg font-semibold text-white mb-2">
-                  {isZh ? item.title : item.titleEn}
-                </h3>
-                <p className="text-gray-400 text-sm">
-                  {isZh ? item.description : item.descriptionEn}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 bg-industrial-950">
-        <div className="container mx-auto px-6">
-          <div className="mb-10">
-            <h2 className="text-2xl font-bold text-white mb-4">
-              {isZh ? specializedSolutions.title : specializedSolutions.titleEn}
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {specializedSolutions.items.map((item, index) => (
-              <div key={index} className="bg-industrial-800/50 border border-green-electric-500/20 p-6 rounded-xl">
-                <div className="w-12 h-12 bg-green-electric-500/20 rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-green-electric-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    {item.icon === 'lifespan' && (
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    )}
-                    {item.icon === 'module' && (
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                    )}
-                    {item.icon === 'array' && (
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
-                    )}
-                  </svg>
-                </div>
-                <h3 className="text-lg font-semibold text-white mb-2">
-                  {isZh ? item.title : item.titleEn}
-                </h3>
-                <p className="text-gray-400 text-sm">
-                  {isZh ? item.description : item.descriptionEn}
-                </p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -331,10 +246,10 @@ export default async function PowerEnergyPage({ params }: { params: Promise<{ lo
         <div className="container mx-auto px-6">
           <div className="mb-12">
             <h2 className="text-3xl font-bold text-white mb-4">
-              {isZh ? '三大标杆案例' : 'Three Landmark Projects'}
+              {t('三大标杆案例', 'Three Landmark Projects', 'ثلاثة مشاريع بارزة')}
             </h2>
             <p className="text-gray-400">
-              {isZh ? '深入了解我们在电力能源行业的标杆项目' : 'Explore our landmark projects in the power & energy sector'}
+              {t('深入了解我们在电力能源行业的标杆项目', 'Explore our landmark projects in the power & energy sector', 'استكشف مشاريعنا البارزة في قطاع الطاقة والكهرباء')}
             </p>
           </div>
 
@@ -348,7 +263,7 @@ export default async function PowerEnergyPage({ params }: { params: Promise<{ lo
                   <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden">
                     <Image
                       src={project.image}
-                      alt={isZh ? project.title : project.titleEn}
+                      alt={t(project.title, project.titleEn, project.titleAr)}
                       fill
                       className="object-cover"
                     />
@@ -367,24 +282,24 @@ export default async function PowerEnergyPage({ params }: { params: Promise<{ lo
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
-                    <span className="text-sm">{isZh ? project.location : project.locationEn}</span>
+                    <span className="text-sm">{t(project.location, project.locationEn, project.locationAr)}</span>
                   </div>
 
                   <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                    {isZh ? project.title : project.titleEn}
+                    {t(project.title, project.titleEn, project.titleAr)}
                   </h3>
 
                   <div className="bg-industrial-800/50 border border-industrial-700 p-4 rounded-xl mb-4">
                     <p className="text-gray-300 text-sm">
-                      <span className="text-yellow-400 font-medium">{isZh ? '背景：' : 'Background: '}</span>
-                      {isZh ? project.background : project.backgroundEn}
+                      <span className="text-yellow-400 font-medium">{t('背景：', 'Background: ', 'الخلفية: ')}</span>
+                      {t(project.background, project.backgroundEn, project.backgroundAr)}
                     </p>
                   </div>
 
                   <div className="bg-green-electric-500/10 border border-green-electric-500/30 p-4 rounded-xl mb-6">
                     <p className="text-gray-300 text-sm">
-                      <span className="text-green-electric-400 font-medium">{isZh ? '亮点：' : 'Highlight: '}</span>
-                      {isZh ? project.highlight : project.highlightEn}
+                      <span className="text-green-electric-400 font-medium">{t('亮点：', 'Highlight: ', 'التميز: ')}</span>
+                      {t(project.highlight, project.highlightEn, project.highlightAr)}
                     </p>
                   </div>
 
@@ -392,7 +307,7 @@ export default async function PowerEnergyPage({ params }: { params: Promise<{ lo
                     {project.stats.map((stat, i) => (
                       <div key={i} className="bg-industrial-800/50 border border-industrial-700 p-4 rounded-xl">
                         <div className="text-xl font-bold text-yellow-400">{stat.value}</div>
-                        <div className="text-xs text-gray-400">{isZh ? stat.label : stat.labelEn}</div>
+                        <div className="text-xs text-gray-400">{t(stat.label, stat.labelEn, stat.labelAr)}</div>
                       </div>
                     ))}
                   </div>
@@ -403,10 +318,10 @@ export default async function PowerEnergyPage({ params }: { params: Promise<{ lo
                         <svg className="w-5 h-5 text-red-400 me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                         </svg>
-                        {isZh ? '项目挑战' : 'Challenges'}
+                        {t('项目挑战', 'Challenges', 'التحديات')}
                       </h4>
                       <ul className="space-y-2">
-                        {(isZh ? project.challenges : project.challengesEn).map((item, i) => (
+                        {(locale === 'zh' ? project.challenges : locale === 'ar' ? project.challengesAr : project.challengesEn).map((item, i) => (
                           <li key={i} className="text-gray-400 text-sm flex items-start">
                             <span className="w-1.5 h-1.5 bg-red-400 rounded-full mt-2 me-2 flex-shrink-0" />
                             {item}
@@ -419,10 +334,10 @@ export default async function PowerEnergyPage({ params }: { params: Promise<{ lo
                         <svg className="w-5 h-5 text-green-electric-400 me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                        {isZh ? '解决方案' : 'Solutions'}
+                        {t('解决方案', 'Solutions', 'الحلول')}
                       </h4>
                       <ul className="space-y-2">
-                        {(isZh ? project.solutions : project.solutionsEn).map((item, i) => (
+                        {(locale === 'zh' ? project.solutions : locale === 'ar' ? project.solutionsAr : project.solutionsEn).map((item, i) => (
                           <li key={i} className="text-gray-400 text-sm flex items-start">
                             <span className="w-1.5 h-1.5 bg-green-electric-400 rounded-full mt-2 me-2 flex-shrink-0" />
                             {item}
@@ -443,21 +358,21 @@ export default async function PowerEnergyPage({ params }: { params: Promise<{ lo
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
               <h3 className="text-xl font-bold text-white mb-2">
-                {isZh ? '探索其他行业项目' : 'Explore Other Industries'}
+                {t('探索其他行业项目', 'Explore Other Industries', 'استكشف مشاريع صناعات أخرى')}
               </h3>
               <p className="text-gray-400">
-                {isZh ? '查看我们在其他行业的项目案例' : 'View our projects in other industries'}
+                {t('查看我们在其他行业的项目案例', 'View our projects in other industries', 'شاهد مشاريعنا في صناعات أخرى')}
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
               <Link href="/projects/petrochemical" className="px-6 py-3 bg-industrial-800 hover:bg-industrial-700 text-white rounded-lg transition-colors">
-                {isZh ? '石油与化工' : 'Petrochemical'}
+                {t('石化与天然气', 'Petrochemical & Natural Gas', 'البتر والكيميائيات والغاز الطبيعي')}
               </Link>
               <Link href="/projects/transportation" className="px-6 py-3 bg-industrial-800 hover:bg-industrial-700 text-white rounded-lg transition-colors">
-                {isZh ? '轨道交通' : 'Transportation'}
+                {t('轨道交通', 'Transportation', 'النقل بالسكك الحديدية')}
               </Link>
               <Link href="/projects/infrastructure" className="px-6 py-3 bg-industrial-800 hover:bg-industrial-700 text-white rounded-lg transition-colors">
-                {isZh ? '基础设施' : 'Infrastructure'}
+                {t('基础设施', 'Infrastructure', 'البنية التحتية')}
               </Link>
             </div>
           </div>
@@ -467,19 +382,20 @@ export default async function PowerEnergyPage({ params }: { params: Promise<{ lo
       <section className="py-20 bg-gradient-to-r from-yellow-600 to-yellow-500">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            {isZh ? '有电力能源项目需求？' : 'Have a Power & Energy Project?'}
+            {t('有电力能源项目需求？', 'Have a Power & Energy Project?', 'لديك مشروع طاقة أو كهرباء؟')}
           </h2>
           <p className="text-xl text-yellow-100 mb-8 max-w-2xl mx-auto">
-            {isZh 
-              ? '联系我们获取专业的高压电网和新能源防雷解决方案'
-              : 'Contact us for professional high-voltage grid and renewable energy lightning protection solutions'
-            }
+            {t(
+              '联系我们获取专业的高压电网和新能源防雷解决方案',
+              'Contact us for professional high-voltage grid and renewable energy lightning protection solutions',
+              'اتصل بنا للحصول على حلول حماية صواعق احترافية لشبكات الجهد العالي والطاقة المتجددة'
+            )}
           </p>
           <Link
             href="/contact"
             className="px-8 py-4 bg-white text-yellow-600 rounded-lg hover:bg-yellow-50 font-semibold text-lg transition-all duration-300 shadow-lg"
           >
-            {isZh ? '提交项目咨询' : 'Submit Project Inquiry'}
+            {t('提交项目咨询', 'Submit Project Inquiry', 'إرسال استفسار المشروع')}
           </Link>
         </div>
       </section>

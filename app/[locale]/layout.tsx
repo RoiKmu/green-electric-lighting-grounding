@@ -5,6 +5,7 @@ import "../globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
+import ScrollAnimationProvider from "@/components/ScrollAnimationProvider";
 
 export const metadata: Metadata = {
   title: "Green Electric Industrial Supply",
@@ -32,10 +33,12 @@ export default async function LocaleLayout({
     <html lang={locale} dir={direction}>
       <body>
         <NextIntlClientProvider messages={messages}>
-          <Header />
-          {children}
-          <Footer />
-          <FloatingButtons />
+          <ScrollAnimationProvider>
+            <Header />
+            {children}
+            <Footer />
+            <FloatingButtons />
+          </ScrollAnimationProvider>
         </NextIntlClientProvider>
       </body>
     </html>
