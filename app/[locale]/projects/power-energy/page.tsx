@@ -29,9 +29,9 @@ const projects = [
     highlightEn: 'Delivered customized grounding modules and tens of thousands of exothermic welding consumables, overcoming extreme dry desert soil resistivity challenges.',
     highlightAr: 'تسليم وحدات تأريض مخصصة وعشرات الآلاف من مستهلكات اللحام الحراري، للتغلب على تحديات مقاومة تربة الصحراء الجافة الشديدة.',
     stats: [
-      { value: '2.1 GW', label: '装机容量', labelEn: 'Capacity', labelAr: 'السعة' },
-      { value: '数万套', label: '放热焊接耗材', labelEn: 'Welding Consumables', labelAr: 'مستهلكات اللحام' },
-      { value: '并网', label: '项目状态', labelEn: 'Status', labelAr: 'الحالة' },
+      { value: '2.1 GW', valueEn: '2.1 GW', valueAr: '2.1 جيجاواط', label: '装机容量', labelEn: 'Capacity', labelAr: 'السعة' },
+      { value: '数万套', valueEn: 'Tens of Thousands', valueAr: 'عشرات الآلاف', label: '放热焊接耗材', labelEn: 'Welding Consumables', labelAr: 'مستهلكات اللحام' },
+      { value: '并网', valueEn: 'Grid Connected', valueAr: 'متصل بالشبكة', label: '项目状态', labelEn: 'Status', labelAr: 'الحالة' },
     ],
     challenges: [
       '极端干燥沙漠土壤电阻率调节',
@@ -81,9 +81,9 @@ const projects = [
     highlightEn: 'Provided grounding network deepening design support compliant with Middle East grid standards and high-standard copper-clad steel supply.',
     highlightAr: 'توفير دعم تصميم متعمق لشبكة التأريض متوافق مع معايير شبكة الشرق الأوسط وتوريد فولاذ مكسو بالنحاس عالي المعايير.',
     stats: [
-      { value: '2400 MW', label: '装机容量', labelEn: 'Capacity', labelAr: 'السعة' },
-      { value: '哈尔滨电气', label: 'EPC 总包', labelEn: 'EPC Contractor', labelAr: 'مقاول EPC' },
-      { value: '全并网', label: '项目状态', labelEn: 'Status', labelAr: 'الحالة' },
+      { value: '2400 MW', valueEn: '2400 MW', valueAr: '2400 ميجاواط', label: '装机容量', labelEn: 'Capacity', labelAr: 'السعة' },
+      { value: '哈尔滨电气', valueEn: 'Harbin Electric', valueAr: 'هاربين إليكتريك', label: 'EPC 总包', labelEn: 'EPC Contractor', labelAr: 'مقاول EPC' },
+      { value: '全并网', valueEn: 'Fully Connected', valueAr: 'متصل بالكامل', label: '项目状态', labelEn: 'Status', labelAr: 'الحالة' },
     ],
     challenges: [
       '中东电网标准合规',
@@ -133,9 +133,9 @@ const projects = [
     highlightEn: 'Provided large-scale solar grounding system solutions for desert high-temperature environment.',
     highlightAr: 'توفير حلول نظام التأريض للطاقة الشمسية واسع النطاق لبيئة الصحراء ذات درجة الحرارة العالية.',
     stats: [
-      { value: '2.6 GW', label: '装机容量', labelEn: 'Capacity', labelAr: 'السعة' },
-      { value: '中国能建', label: 'EPC 总包', labelEn: 'EPC Contractor', labelAr: 'مقاول EPC' },
-      { value: '在建', label: '项目状态', labelEn: 'Status', labelAr: 'الحالة' },
+      { value: '2.6 GW', valueEn: '2.6 GW', valueAr: '2.6 جيجاواط', label: '装机容量', labelEn: 'Capacity', labelAr: 'السعة' },
+      { value: '中国能建', valueEn: 'CEEC', valueAr: 'CEEC', label: 'EPC 总包', labelEn: 'EPC Contractor', labelAr: 'مقاول EPC' },
+      { value: '在建', valueEn: 'In Progress', valueAr: 'قيد التنفيذ', label: '项目状态', labelEn: 'Status', labelAr: 'الحالة' },
     ],
     challenges: [
       '沙漠高温环境接地挑战',
@@ -306,7 +306,7 @@ export default async function PowerEnergyPage({ params }: { params: Promise<{ lo
                   <div className="grid grid-cols-3 gap-4 mb-6">
                     {project.stats.map((stat, i) => (
                       <div key={i} className="bg-industrial-800/50 border border-industrial-700 p-4 rounded-xl">
-                        <div className="text-xl font-bold text-yellow-400">{stat.value}</div>
+                        <div className="text-xl font-bold text-yellow-400">{t(stat.value, stat.valueEn, stat.valueAr)}</div>
                         <div className="text-xs text-gray-400">{t(stat.label, stat.labelEn, stat.labelAr)}</div>
                       </div>
                     ))}

@@ -405,6 +405,10 @@
     "badge": "Products",
     "title": "Professional Lightning Protection & Grounding Solutions",
     "description": "Explore our comprehensive three-tier product system, from flagship technology solutions to core grounding equipment and industrial safety support.",
+    "carousel": {
+      "featuredProduct": "Featured Product",
+      "viewDetails": "View Details"
+    },
     "tiers": {
       "flagship": {
         "title": "Featured Products",
@@ -429,7 +433,7 @@
     "categories": {
       "lightning-capture-warning": {
         "name": "Lightning Capture & Warning Systems",
-        "description": "Early sensing and safe interception - corresponds to ERICO Air Terminals and System 3000 series"
+        "description": "Early sensing and safe interception technology for comprehensive lightning protection"
       },
       "down-conductors-bonding": {
         "name": "Down Conductors & Equipotential Bonding",
@@ -441,7 +445,7 @@
       },
       "exothermic-welding-connections": {
         "name": "Exothermic Welding & Electrical Connections",
-        "description": "Corresponds to ERICO CADWELD series - high profit, high repurchase core consumables"
+        "description": "High-quality molecular-level welding connections for permanent electrical continuity"
       },
       "industrial-static-protection": {
         "name": "Industrial Static Protection",
@@ -449,27 +453,27 @@
       },
       "testing-fasteners-support": {
         "name": "Fasteners, Testing & Support Materials",
-        "description": "Corresponds to ERICO CADDY fastener brand and testing tools"
+        "description": "Professional testing equipment and mounting hardware for engineering support"
       }
     },
     "items": {
       "lightning-warning-system": "Lightning Warning System",
       "ese-air-terminal": "Early Streamer Emission (ESE) Air Terminal",
       "conventional-air-terminal": "Corrosion-Resistant Steel Pipe Air Terminal",
-      "3d-lightning-system": "3D Lightning Protection System",
       "grounding-wire": "Grounding Wire / Down Conductor",
-      "equipotential-connector": "Equipotential Connection Components",
+      "equipotential-connector": "Equipotential Bonding Box",
       "grounding-terminal-box": "Grounding Terminal Box",
       "grounding-terminal-block": "Grounding Terminal Block",
+      "grounding-point": "Grounding Terminal",
       "grounding-busbar": "Grounding Busbar / Grounding Center",
-      "copper-bonded-rod": "Copper-Bonded Steel Grounding Rod",
-      "copper-bonded-electrode": "Copper-Bonded Steel Grounding Electrode",
+      "copper-bonded-rod": "Copper-Bonded Steel Grounding Electrode/Rod",
       "electrolytic-ion-electrode": "Electrolytic Ion Grounding Electrode",
       "nano-carbon-grounding": "All-Around Nano-Carbon Grounding Series",
       "energy-storage-grounding": "Energy Storage Grounding Device",
-      "grounding-column-plate": "Grounding Column Plate",
+      "grounding-plate": "Grounding Plate",
+      "grounding-column": "Grounding Column",
       "exothermic-welding": "Exothermic Welding Series",
-      "remote-igniter": "Remote Exothermic Welding Igniter",
+      "remote-igniter": "Igniter & Welding Powder",
       "mechanical-connector": "Mechanical Connector",
       "rod-clamp": "Rod Clamp",
       "tube-clamp": "Tube Clamp",
@@ -575,6 +579,57 @@
         "class1": "Class I Lightning Protection Buildings",
         "class2": "Class II Lightning Protection Buildings",
         "class3": "Class III Lightning Protection Buildings"
+      },
+      "cbr": {
+        "title": "Copper-Bonded Steel Grounding Rod",
+        "subtitle": "High-Efficiency Grounding Solution",
+        "coreParameterLabel": "Core Parameter",
+        "coreParameterValue": "Copper Thickness 0.25mm",
+        "description": "Perfect combination of high-conductivity copper layer and high-strength steel core, providing durable and reliable grounding performance.",
+        "introduction1": "Green Copper-Bonded Steel Grounding Rod adopts advanced electroplating process to uniformly cover high-purity copper layer on high-quality low-carbon steel core. The copper layer thickness reaches 0.25mm or more, ensuring excellent conductivity and corrosion resistance. The steel core provides strong mechanical strength, enabling the grounding rod to withstand impact force during deep burial installation.",
+        "introduction2": "Copper-bonded steel grounding rod is one of the most commonly used grounding materials in modern grounding systems, widely used in power systems, communication base stations, petrochemical industry, building lightning protection and other fields. Compared with pure copper grounding rods, copper-bonded steel grounding rods have higher cost-effectiveness while maintaining good conductivity and corrosion resistance.",
+        "feature1": "Copper layer thickness ≥0.25mm, excellent conductivity, stable grounding resistance.",
+        "feature2": "Electroplating process, copper-steel molecular bonding, will not peel off.",
+        "feature3": "High strength steel core, can be deeply buried, suitable for various geological conditions.",
+        "feature4": "Strong corrosion resistance, service life up to 30 years or more.",
+        "feature5": "Flexible connection methods, supports exothermic welding, crimping and other connection methods.",
+        "feature6": "Complies with UL467, IEC62561 and other international standards.",
+        "tech1Title": "Electroplating Process",
+        "tech1Desc": "Copper-steel molecular level bonding, ensuring firm bonding between copper layer and steel core, will not peel off",
+        "tech2Title": "High Conductivity",
+        "tech2Desc": "Copper layer purity above 99.9%, conductivity close to pure copper, stable grounding resistance",
+        "tech3Title": "Super Corrosion Resistance",
+        "tech3Desc": "Copper layer forms protective film, effectively resisting soil corrosion, service life up to 30 years",
+        "model": "Model",
+        "diameter": "Diameter",
+        "length": "Length",
+        "copperThickness": "Copper Thickness",
+        "resistance": "Grounding Resistance"
+      },
+      "iwp": {
+        "title": "Igniter & Welding Powder",
+        "subtitle": "Exothermic Welding Solution",
+        "coreParameterLabel": "Core Parameter",
+        "coreParameterValue": "Welding Temperature 2500°C",
+        "description": "Molecular-level welding connection, achieving permanent electrical continuity.",
+        "introduction1": "Green Exothermic Welding System consists of electronic igniter and dedicated welding powder, which is an efficient and reliable electrical connection method. Through the high temperature (about 2500°C) generated by thermite reaction, copper, steel and other metals are melted and fused to form molecular-level connections. The welded joint has the same conductivity as the conductor, will not age, loosen or corrode.",
+        "introduction2": "The electronic igniter provides a safe and convenient remote ignition method, allowing operators to start the welding process from a safe distance, avoiding high temperature burn risks. The welding powder uses high-purity copper oxide and aluminum powder formula to ensure stable and reliable welding quality. Exothermic welding is widely used in grounding systems, lightning protection engineering, power facilities and other fields for conductor connections.",
+        "feature1": "Molecular-level welding, joint resistance close to zero, excellent conductivity.",
+        "feature2": "Welding temperature up to 2500°C, can weld copper, steel and other metals.",
+        "feature3": "Electronic remote ignition, safe operation, avoiding high temperature burn risks.",
+        "feature4": "Welded joint corrosion resistant, service life same as conductor.",
+        "feature5": "No external power required, suitable for various construction environments.",
+        "feature6": "Complies with IEC62561, UL467 and other international standards.",
+        "tech1Title": "Thermite Reaction",
+        "tech1Desc": "Copper oxide and aluminum powder reaction produces 2500°C high temperature, achieving metal fusion connection",
+        "tech2Title": "Molecular Level Bonding",
+        "tech2Desc": "Welded joint forms molecular level bonding with conductor, resistance close to zero",
+        "tech3Title": "Remote Ignition",
+        "tech3Desc": "Electronic igniter achieves safe remote operation, protecting construction personnel safety",
+        "model": "Model",
+        "powderWeight": "Powder Weight",
+        "application": "Application",
+        "connectionType": "Connection Type"
       }
     }
   },

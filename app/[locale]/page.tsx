@@ -215,7 +215,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       categoryId: 'lightning-capture-warning',
       productId: 'lightning-warning-system',
       hoverColor: 'group-hover:text-blue-500',
-      image: '/images/products/materials/Steel Tube/4de48a4b-7087-4c0f-8577-9c97bafa0077.png',
+      image: '/images/products/Lightning Capture & Warning Systems/Lightning Warning System/1252353425432_202606.png',
+      imageFit: 'contain' as const,
     },
     {
       id: 'copper-bonded-steel',
@@ -225,7 +226,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       categoryId: 'earthing-grounding-systems',
       productId: 'copper-bonded-rod',
       hoverColor: 'group-hover:text-amber-600',
-      image: '/images/products/materials/Steel Round Bar/af15a1a9-071d-4f50-ba12-9beac1c7c625.png',
+      image: '/images/products/Earthing  Grounding Systems/Copper-Bonded Steel Grounding Rod/a2cc7cd98d1001e915956eb9b80e7bec55e797de.jpg',
+      imageFit: 'cover' as const,
     },
     {
       id: 'ese-lightning-rod',
@@ -235,7 +237,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       categoryId: 'lightning-capture-warning',
       productId: 'ese-air-terminal',
       hoverColor: 'group-hover:text-green-electric-500',
-      image: '/images/products/materials/Aluminium Plate/2e897f8b-4248-4a89-a6db-7d82b19c8251.png',
+      image: '/images/products/Lightning Capture & Warning Systems/ESE Air Terminal/ese.jpg',
+      imageFit: 'contain' as const,
     },
     {
       id: 'exothermic-welding',
@@ -245,7 +248,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       categoryId: 'exothermic-welding-connections',
       productId: 'exothermic-welding',
       hoverColor: 'group-hover:text-orange-500',
-      image: '/images/products/materials/Stainless Bar/3d99c6d3-daa9-4fb7-93d0-f6fcaea4b1bc.png',
+      image: '/images/products/Exothermic Welding & Electrical Connections/Exothermic Welding Series/Exothermic Welding Series.jpg',
+      imageFit: 'cover' as const,
     },
   ];
 
@@ -492,7 +496,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                       src={product.image}
                       alt={product.title}
                       fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-700"
+                      className={`${product.imageFit === 'contain' ? 'object-contain' : 'object-cover'} group-hover:scale-110 transition-transform duration-700`}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-industrial-900/80 via-industrial-900/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
                     

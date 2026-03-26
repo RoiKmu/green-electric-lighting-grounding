@@ -3,10 +3,13 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from '@/i18n/routing';
 import Image from 'next/image';
-import { getFeaturedProducts, getProductDetailPath, Product } from '@/data/products';
+import { getFeaturedProducts, getProductDetailPath } from '@/data/products';
+import { useTranslations } from 'next-intl';
 
 export default function ProductCarousel() {
   const featuredProducts = getFeaturedProducts();
+  const tItems = useTranslations('products.items');
+  const t = useTranslations('products.carousel');
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
@@ -57,13 +60,15 @@ export default function ProductCarousel() {
           }`}
         >
           <div className="relative w-full h-full group">
-            <Image
-              src={product.image}
-              alt={product.name}
-              fill
-              className="object-cover group-hover:scale-105 transition-transform duration-700"
-              priority={index === 0}
-            />
+            <div className="absolute inset-0 bg-industrial-800">
+              <Image
+                src={product.image}
+                alt={tItems(product.id)}
+                fill
+                className="object-contain group-hover:scale-105 transition-transform duration-700"
+                priority={index === 0}
+              />
+            </div>
             <div className="absolute inset-0 bg-gradient-to-r from-industrial-950/90 via-industrial-900/60 to-transparent" />
             
             <div className="absolute inset-0 flex items-center">
@@ -72,19 +77,13 @@ export default function ProductCarousel() {
                   <div className="inline-flex items-center px-4 py-2 bg-green-electric-600/90 backdrop-blur-sm rounded-full mb-6 border border-green-electric-500/30">
                     <div className="w-2 h-2 bg-green-electric-300 rounded-full mr-3 animate-pulse" />
                     <span className="text-sm font-semibold text-white uppercase tracking-wider">
-                      Featured Product
+                      {t('featuredProduct')}
                     </span>
                   </div>
 
                   <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white leading-tight tracking-tight">
-                    {product.name}
+                    {tItems(product.id)}
                   </h2>
-
-                  {product.nameEn && (
-                    <p className="text-xl md:text-2xl mb-4 text-green-electric-200 font-medium">
-                      {product.nameEn}
-                    </p>
-                  )}
 
                   {product.description && (
                     <p className="text-lg mb-8 text-gray-300 max-w-xl leading-relaxed">
@@ -93,7 +92,7 @@ export default function ProductCarousel() {
                   )}
 
                   <div className="inline-flex items-center px-8 py-4 bg-green-electric-600 text-white rounded-lg font-semibold text-lg transition-all duration-300 shadow-lg shadow-green-electric-900/30 group-hover:bg-green-electric-500">
-                    View Details
+                    {t('viewDetails')}
                     <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>

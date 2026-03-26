@@ -128,15 +128,14 @@ export default function FlagshipProductTemplate({ product }: FlagshipProductTemp
 
             <div className={`relative h-[600px] transform transition-all duration-1200 ease-out delay-200 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-40 opacity-0'}`}>
               <div className="absolute inset-0 bg-gradient-to-br from-green-electric-500/10 to-transparent rounded-3xl blur-3xl" />
-              <div className="relative h-full rounded-3xl overflow-hidden border border-industrial-700/50">
+              <div className="relative h-full rounded-3xl overflow-hidden border border-industrial-700/50 bg-industrial-800">
                 <Image
                   src={product.image}
                   alt={t(product.titleKey)}
                   fill
-                  className="object-cover"
+                  className="object-contain"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-industrial-950/60 to-transparent" />
               </div>
               
               <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-green-electric-500/20 rounded-full blur-2xl" />

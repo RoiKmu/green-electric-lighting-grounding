@@ -18,12 +18,12 @@ function ProductCard({ product, categoryId }: { product: Product; categoryId: st
       href={getProductDetailPath(categoryId, product.id)}
       className="group block bg-white rounded-xl overflow-hidden border border-industrial-200 hover:shadow-xl hover:border-green-electric-300 transition-all duration-300"
     >
-      <div className="h-48 relative overflow-hidden">
+      <div className="h-48 relative overflow-hidden bg-industrial-50">
         <Image
           src={product.image}
           alt={t(product.id)}
           fill
-          className="object-cover group-hover:scale-105 transition-transform duration-500"
+          className="object-contain group-hover:scale-105 transition-transform duration-500"
         />
       </div>
       <div className="p-5">

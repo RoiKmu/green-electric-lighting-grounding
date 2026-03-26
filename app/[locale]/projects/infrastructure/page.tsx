@@ -29,9 +29,9 @@ const projects = [
     highlightEn: 'Provided complete high-rise building lightning protection technical solution and tensile grounding conductors.',
     highlightAr: 'توفير حل تقني كامل لحماية المباني الشاهقة من الصواعق وموصلات تأريض قابلة للشد.',
     stats: [
-      { value: '385m', label: '非洲第一高楼', labelEn: "Africa's Tallest", labelAr: 'أطول مبنى في أفريقيا' },
-      { value: 'CSCEC', label: '承建方', labelEn: 'Contractor', labelAr: 'المقاول' },
-      { value: '在建', label: '项目状态', labelEn: 'Status', labelAr: 'الحالة' },
+      { value: '385m', valueEn: '385m', valueAr: '385م', label: '非洲第一高楼', labelEn: "Africa's Tallest", labelAr: 'أطول مبنى في أفريقيا' },
+      { value: 'CSCEC', valueEn: 'CSCEC', valueAr: 'CSCEC', label: '承建方', labelEn: 'Contractor', labelAr: 'المقاول' },
+      { value: '在建', valueEn: 'In Progress', valueAr: 'قيد التنفيذ', label: '项目状态', labelEn: 'Status', labelAr: 'الحالة' },
     ],
     challenges: [
       '超高层建筑引下线补偿',
@@ -77,13 +77,13 @@ const projects = [
     background: '2022 世界杯决赛主场馆，由中国铁建 (CRCC) 承建。',
     backgroundEn: 'Main venue for the 2022 World Cup Final, constructed by CRCC.',
     backgroundAr: 'الملعب الرئيسي لنهائي كأس العالم 2022، من تنفيذ CRCC.',
-    highlight: '配套供应了高可靠性的等电位连接件与防雷关键组件。',
+    highlight: '配套供应了高可靠性的等电位联结箱与防雷关键组件。',
     highlightEn: 'Supplied high-reliability equipotential bonding components and critical lightning protection components.',
     highlightAr: 'توفير مكونات توصيل متساوي الجهد عالية الموثوقية ومكونات حماية الصواعق الحرجة.',
     stats: [
-      { value: '80,000', label: '观众容量', labelEn: 'Spectator Capacity', labelAr: 'سعة المتفرجين' },
-      { value: '世界杯', label: '决赛场馆', labelEn: 'Final Venue', labelAr: 'ملعب النهائي' },
-      { value: 'CRCC', label: '承建方', labelEn: 'Contractor', labelAr: 'المقاول' },
+      { value: '80,000', valueEn: '80,000', valueAr: '80,000', label: '观众容量', labelEn: 'Spectator Capacity', labelAr: 'سعة المتفرجين' },
+      { value: '世界杯', valueEn: 'World Cup', valueAr: 'كأس العالم', label: '决赛场馆', labelEn: 'Final Venue', labelAr: 'ملعب النهائي' },
+      { value: 'CRCC', valueEn: 'CRCC', valueAr: 'CRCC', label: '承建方', labelEn: 'Contractor', labelAr: 'المقاول' },
     ],
     challenges: [
       '全钢结构大跨度建筑',
@@ -101,7 +101,7 @@ const projects = [
       'معايير عالية للفعاليات الدولية',
     ],
     solutions: [
-      '高可靠性等电位连接件',
+      '高可靠性等电位联结箱',
       '防雷关键组件供应',
       '钢结构雷电流泄放设计',
     ],
@@ -133,9 +133,9 @@ const projects = [
     highlightEn: 'Provided specialized lightning protection solutions for religious architecture, ensuring complex safety.',
     highlightAr: 'توفير حلول حماية صواعق متخصصة للعمارة الدينية، لضمان سلامة المجمع.',
     stats: [
-      { value: '非洲最大', label: '清真寺', labelEn: 'Largest Mosque', labelAr: 'أكبر مسجد' },
-      { value: 'CSCEC', label: '承建方', labelEn: 'Contractor', labelAr: 'المقاول' },
-      { value: '完工', label: '项目状态', labelEn: 'Status', labelAr: 'الحالة' },
+      { value: '非洲最大', valueEn: "Africa's Largest", valueAr: 'الأكبر في أفريقيا', label: '清真寺', labelEn: 'Largest Mosque', labelAr: 'أكبر مسجد' },
+      { value: 'CSCEC', valueEn: 'CSCEC', valueAr: 'CSCEC', label: '承建方', labelEn: 'Contractor', labelAr: 'المقاول' },
+      { value: '完工', valueEn: 'Completed', valueAr: 'مكتمل', label: '项目状态', labelEn: 'Status', labelAr: 'الحالة' },
     ],
     challenges: [
       '宗教建筑特殊防护要求',
@@ -306,7 +306,7 @@ export default async function InfrastructurePage({ params }: { params: Promise<{
                   <div className="grid grid-cols-3 gap-4 mb-6">
                     {project.stats.map((stat, i) => (
                       <div key={i} className="bg-industrial-800/50 border border-industrial-700 p-4 rounded-xl">
-                        <div className="text-xl font-bold text-purple-400">{stat.value}</div>
+                        <div className="text-xl font-bold text-purple-400">{t(stat.value, stat.valueEn, stat.valueAr)}</div>
                         <div className="text-xs text-gray-400">{t(stat.label, stat.labelEn, stat.labelAr)}</div>
                       </div>
                     ))}

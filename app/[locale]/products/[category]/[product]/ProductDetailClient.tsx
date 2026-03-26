@@ -6,6 +6,8 @@ import { Link } from "@/i18n/routing";
 import { getProductDetailPath } from '@/lib/routes';
 import { getCategoryById, getProductById } from '@/data/products';
 import { EarlyDischargeLightningRod, LightningWarningSystem } from '@/components/product-templates';
+import CopperBondedRod from '@/components/product-templates/pages/CopperBondedRod';
+import IgniterWeldingPowder from '@/components/product-templates/pages/IgniterWeldingPowder';
 import { useTranslations } from 'next-intl';
 
 interface ProductDetailClientProps {
@@ -48,6 +50,10 @@ export default function ProductDetailClient({ params }: ProductDetailClientProps
         return <EarlyDischargeLightningRod image={currentProduct.image} />;
       case 'lightning-warning-system':
         return <LightningWarningSystem image={currentProduct.image} />;
+      case 'copper-bonded-rod':
+        return <CopperBondedRod image={currentProduct.image} />;
+      case 'remote-igniter':
+        return <IgniterWeldingPowder image={currentProduct.image} />;
       default:
         return <EarlyDischargeLightningRod image={currentProduct.image} />;
     }

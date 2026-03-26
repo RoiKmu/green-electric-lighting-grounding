@@ -405,6 +405,10 @@
     "badge": "产品中心",
     "title": "专业防雷保护与接地解决方案",
     "description": "探索我们全面的三层产品体系，从旗舰技术解决方案到核心接地设备和工业安全支持。",
+    "carousel": {
+      "featuredProduct": "明星产品",
+      "viewDetails": "查看详情"
+    },
     "tiers": {
       "flagship": {
         "title": "明星产品",
@@ -429,7 +433,7 @@
     "categories": {
       "lightning-capture-warning": {
         "name": "智能预警与接闪系统",
-        "description": "提前感知与安全拦截——对应 ERICO 空域接闪终端和 System 3000 系列"
+        "description": "提前感知与安全拦截技术，提供全面的防雷保护"
       },
       "down-conductors-bonding": {
         "name": "引下与等电位连接方案",
@@ -441,7 +445,7 @@
       },
       "exothermic-welding-connections": {
         "name": "放热焊接与电气连接",
-        "description": "对应 ERICO CADWELD 系列——高利润、高复购核心消耗品"
+        "description": "高质量分子级焊接连接，实现永久性电气连续性"
       },
       "industrial-static-protection": {
         "name": "工业静电防护专区",
@@ -449,27 +453,27 @@
       },
       "testing-fasteners-support": {
         "name": "紧固件、检测与基建辅材",
-        "description": "对应 ERICO CADDY 紧固件品牌及测试工具"
+        "description": "专业检测设备与安装支架，为工程提供全面支持"
       }
     },
     "items": {
       "lightning-warning-system": "雷电预警系统",
       "ese-air-terminal": "提前放电避雷针 (ESE)",
       "conventional-air-terminal": "防腐钢管避雷针",
-      "3d-lightning-system": "3D 防雷系统",
       "grounding-wire": "接地线",
-      "equipotential-connector": "等电位连接件",
+      "equipotential-connector": "等电位联结箱",
       "grounding-terminal-box": "接地端子箱",
-      "grounding-terminal-block": "接地端子排/接地点",
+      "grounding-terminal-block": "接地端子排",
+      "grounding-point": "接地端子",
       "grounding-busbar": "接地汇流排",
-      "copper-bonded-rod": "镀铜钢接地棒",
-      "copper-bonded-electrode": "镀铜钢接地极",
+      "copper-bonded-rod": "铜覆钢接地极/接地棒",
       "electrolytic-ion-electrode": "电解离子接地极",
       "nano-carbon-grounding": "全方位纳米碳接地系列",
       "energy-storage-grounding": "储能接地装置",
-      "grounding-column-plate": "接地柱/板",
+      "grounding-plate": "接地板",
+      "grounding-column": "接地柱",
       "exothermic-welding": "放热焊接系列",
-      "remote-igniter": "电子/远程点火器",
+      "remote-igniter": "点火器与焊粉",
       "mechanical-connector": "连接器",
       "rod-clamp": "接地棒线夹",
       "tube-clamp": "管卡",
@@ -575,6 +579,57 @@
         "class1": "第一类防雷建筑物",
         "class2": "第二类防雷建筑物",
         "class3": "第三类防雷建筑物"
+      },
+      "cbr": {
+        "title": "铜覆钢接地极",
+        "subtitle": "高效接地解决方案",
+        "coreParameterLabel": "核心参数",
+        "coreParameterValue": "铜层厚度 0.25mm",
+        "description": "高导电性铜层与高强度钢芯完美结合，提供持久可靠的接地性能。",
+        "introduction1": "Green铜覆钢接地极采用先进的电镀工艺，将高纯度铜层均匀覆盖在优质低碳钢芯上。铜层厚度达到0.25mm以上，确保了优异的导电性能和耐腐蚀性能。钢芯提供强大的机械强度，使接地极能够承受深埋安装时的冲击力。",
+        "introduction2": "铜覆钢接地极是现代接地系统中最常用的接地材料之一，广泛应用于电力系统、通信基站、石油化工、建筑防雷等领域。相比纯铜接地极，铜覆钢接地极具有更高的性价比，同时保持了良好的导电性能和耐腐蚀性能。",
+        "feature1": "铜层厚度≥0.25mm，导电性能优异，接地电阻稳定。",
+        "feature2": "采用电镀工艺，铜钢分子结合，不会剥落。",
+        "feature3": "钢芯强度高，可深埋安装，适用于各种地质条件。",
+        "feature4": "耐腐蚀性能强，使用寿命长达30年以上。",
+        "feature5": "连接方式灵活，支持放热焊接、压接等多种连接方式。",
+        "feature6": "符合UL467、IEC62561等国际标准。",
+        "tech1Title": "电镀工艺",
+        "tech1Desc": "铜钢分子级结合，确保铜层与钢芯牢固结合，不会剥落",
+        "tech2Title": "高导电性",
+        "tech2Desc": "铜层纯度99.9%以上，导电性能接近纯铜，接地电阻稳定",
+        "tech3Title": "超强耐腐蚀",
+        "tech3Desc": "铜层形成保护膜，有效抵抗土壤腐蚀，使用寿命长达30年",
+        "model": "型号",
+        "diameter": "直径",
+        "length": "长度",
+        "copperThickness": "铜层厚度",
+        "resistance": "接地电阻"
+      },
+      "iwp": {
+        "title": "点火器与焊粉",
+        "subtitle": "放热焊接解决方案",
+        "coreParameterLabel": "核心参数",
+        "coreParameterValue": "焊接温度 2500°C",
+        "description": "分子级焊接连接，实现永久性电气连续性。",
+        "introduction1": "Green放热焊接系统由电子点火器和专用焊粉组成，是一种高效、可靠的电气连接方式。通过铝热反应产生的高温（约2500°C），将铜、钢等金属熔化融合，形成分子级连接。焊接接头具有与导体相同的导电性能，不会老化、松动或腐蚀。",
+        "introduction2": "电子点火器提供安全、便捷的远程点火方式，操作人员可在安全距离外启动焊接过程，避免高温灼伤风险。焊粉采用高纯度氧化铜和铝粉配方，确保焊接质量稳定可靠。放热焊接广泛应用于接地系统、防雷工程、电力设施等领域的导体连接。",
+        "feature1": "分子级焊接，接头电阻接近于零，导电性能优异。",
+        "feature2": "焊接温度高达2500°C，可焊接铜、钢等多种金属。",
+        "feature3": "电子远程点火，操作安全，避免高温灼伤风险。",
+        "feature4": "焊接接头耐腐蚀，使用寿命与导体相同。",
+        "feature5": "无需外部电源，适用于各种施工环境。",
+        "feature6": "符合IEC62561、UL467等国际标准。",
+        "tech1Title": "铝热反应",
+        "tech1Desc": "氧化铜与铝粉反应产生2500°C高温，实现金属熔融连接",
+        "tech2Title": "分子级结合",
+        "tech2Desc": "焊接接头与导体形成分子级结合，电阻接近于零",
+        "tech3Title": "远程点火",
+        "tech3Desc": "电子点火器实现安全远程操作，保护施工人员安全",
+        "model": "型号",
+        "powderWeight": "焊粉重量",
+        "application": "应用场景",
+        "connectionType": "连接类型"
       }
     }
   },

@@ -1,10 +1,17 @@
 "use client";
 
 import Image from "next/image";
-import { getProductsByTier, getProductDetailPath, Product, ProductCategory } from "@/data/products";
+import { getProductsByTier, getProductDetailPath, Product, ProductCategory, ALL_PRODUCTS } from "@/data/products";
 import { Link } from "@/i18n/routing";
 import ProductCarousel from "@/components/ProductCarousel";
 import { useTranslations } from "next-intl";
+
+const FEATURED_PRODUCT_IDS = [
+  'lightning-warning-system',
+  'ese-air-terminal',
+  'copper-bonded-rod',
+  'remote-igniter',
+];
 
 function ProductCard({ product, categoryId }: { product: Product; categoryId: string }) {
   const t = useTranslations('products.items');
@@ -14,12 +21,12 @@ function ProductCard({ product, categoryId }: { product: Product; categoryId: st
       href={getProductDetailPath(categoryId, product.id)}
       className="group block bg-white rounded-xl overflow-hidden border border-industrial-200 hover:shadow-xl hover:border-green-electric-300 transition-all duration-300"
     >
-      <div className="h-48 relative overflow-hidden">
+      <div className="h-48 relative overflow-hidden bg-industrial-50">
         <Image
           src={product.image}
           alt={t(product.id)}
           fill
-          className="object-cover group-hover:scale-105 transition-transform duration-500"
+          className="object-contain group-hover:scale-105 transition-transform duration-500"
         />
       </div>
       <div className="p-5">
@@ -36,6 +43,64 @@ function ProductCard({ product, categoryId }: { product: Product; categoryId: st
   );
 }
 
+function FeaturedProductCard({ product }: { product: Product & { categoryId: string } }) {
+  const t = useTranslations('products');
+  const tItems = useTranslations('products.items');
+
+  return (
+    <div className="bg-white rounded-xl overflow-hidden border border-industrial-200 hover:shadow-lg transition-all duration-300">
+      <Link 
+        href={getProductDetailPath(product.categoryId, product.id)}
+        className="block h-40 relative overflow-hidden group bg-industrial-50"
+      >
+        <Image
+          src={product.image}
+          alt={tItems(product.id)}
+          fill
+          className="object-contain group-hover:scale-105 transition-transform duration-500"
+        />
+      </Link>
+      <div className="p-4">
+        <h4 className="font-bold text-industrial-900 mb-2">{tItems(product.id)}</h4>
+        <p className="text-sm text-industrial-600 mb-4 line-clamp-2">
+          {t(`categories.${product.categoryId}.description`)}
+        </p>
+        <div className="flex flex-wrap gap-2">
+          <Link
+            href={getProductDetailPath(product.categoryId, product.id)}
+            className="text-xs px-3 py-1.5 bg-industrial-100 text-industrial-600 rounded-full hover:bg-green-electric-100 hover:text-green-electric-700 transition-colors"
+          >
+            {tItems(product.id)}
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function FeaturedProductsSection() {
+  const t = useTranslations('products.tiers');
+  
+  const featuredProducts = FEATURED_PRODUCT_IDS
+    .map(id => ALL_PRODUCTS.find(p => p.id === id))
+    .filter((p): p is Product & { categoryId: string } => p !== undefined);
+
+  return (
+    <section className="rounded-2xl p-8 bg-gradient-to-r from-amber-50 to-yellow-50 border border-amber-200">
+      <div className="mb-6">
+        <h2 className="text-2xl font-bold text-amber-700">{t('flagship.title')}</h2>
+        <p className="text-sm text-industrial-500">{t('flagship.description')}</p>
+      </div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {featuredProducts.map((product) => (
+          <FeaturedProductCard key={product.id} product={product} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function CategoryCard({ category }: { category: ProductCategory }) {
   const t = useTranslations('products');
   const tItems = useTranslations('products.items');
@@ -44,22 +109,19 @@ function CategoryCard({ category }: { category: ProductCategory }) {
     <div className="bg-white rounded-xl overflow-hidden border border-industrial-200 hover:shadow-lg transition-all duration-300">
       <Link 
         href={getProductDetailPath(category.id, category.items[0]?.id || '')}
-        className="block h-40 relative overflow-hidden group"
+        className="block h-40 relative overflow-hidden group bg-industrial-50"
       >
         {category.items[0] && (
           <Image
             src={category.items[0].image}
             alt={t(`categories.${category.id}.name`)}
             fill
-            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            className="object-contain group-hover:scale-105 transition-transform duration-500"
           />
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-industrial-900/70 to-transparent" />
-        <div className="absolute bottom-4 start-4 end-4">
-          <h4 className="font-bold text-white text-lg">{t(`categories.${category.id}.name`)}</h4>
-        </div>
       </Link>
       <div className="p-4">
+        <h4 className="font-bold text-industrial-900 mb-2">{t(`categories.${category.id}.name`)}</h4>
         <p className="text-sm text-industrial-600 mb-4 line-clamp-2">
           {t(`categories.${category.id}.description`)}
         </p>
@@ -133,7 +195,6 @@ function TierSection({ tierId, categories }: {
 
 export default function ProductList() {
   const t = useTranslations('products');
-  const flagshipCategories = getProductsByTier('flagship');
   const coreCategories = getProductsByTier('core');
   const supportCategories = getProductsByTier('support');
 
@@ -168,7 +229,7 @@ export default function ProductList() {
 
       <section className="py-24 bg-industrial-50">
         <div className="container mx-auto px-6">
-          <TierSection tierId="flagship" categories={flagshipCategories} />
+          <FeaturedProductsSection />
         </div>
       </section>
 

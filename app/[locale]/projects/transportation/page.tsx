@@ -29,9 +29,9 @@ const projects = [
     highlightEn: 'Delivered precision grounding materials for the "Four Electrification" systems, ensuring absolute safety of HSR command systems in extreme weather.',
     highlightAr: 'تسليم مواد تأريض دقيقة لأنظمة "الكهربة الأربعة"، لضمان السلامة المطلقة لأنظمة قيادة القطارات عالية السرعة في الطقس القاسي.',
     stats: [
-      { value: '142 km', label: '线路长度', labelEn: 'Route Length', labelAr: 'طول المسار' },
-      { value: '350 km/h', label: '设计时速', labelEn: 'Design Speed', labelAr: 'السرعة التصميمية' },
-      { value: '运营', label: '项目状态', labelEn: 'Status', labelAr: 'الحالة' },
+      { value: '142 km', valueEn: '142 km', valueAr: '142 كم', label: '线路长度', labelEn: 'Route Length', labelAr: 'طول المسار' },
+      { value: '350 km/h', valueEn: '350 km/h', valueAr: '350 كم/س', label: '设计时速', labelEn: 'Design Speed', labelAr: 'السرعة التصميمية' },
+      { value: '运营', valueEn: 'Operational', valueAr: 'تشغيل', label: '项目状态', labelEn: 'Status', labelAr: 'الحالة' },
     ],
     challenges: [
       '热带强雷暴区高频雷击',
@@ -81,9 +81,9 @@ const projects = [
     highlightEn: 'Provided adaptive desert environment grounding systems for all communication base stations and control centers along the route.',
     highlightAr: 'توفير أنظمة تأريض متكيفة مع بيئة الصحراء لجميع محطات القاعدة ومراكز التحكم على طول المسار.',
     stats: [
-      { value: '1200 km', label: '线路长度', labelEn: 'Route Length', labelAr: 'طول المسار' },
-      { value: '货运开通', label: '项目状态', labelEn: 'Status', labelAr: 'الحالة' },
-      { value: 'CRCC/CCCC', label: 'EPC 总包', labelEn: 'EPC Contractor', labelAr: 'مقاول EPC' },
+      { value: '1200 km', valueEn: '1200 km', valueAr: '1200 كم', label: '线路长度', labelEn: 'Route Length', labelAr: 'طول المسار' },
+      { value: '货运开通', valueEn: 'Freight Open', valueAr: 'شحن مفتوح', label: '项目状态', labelEn: 'Status', labelAr: 'الحالة' },
+      { value: 'CRCC/CCCC', valueEn: 'CRCC/CCCC', valueAr: 'CRCC/CCCC', label: 'EPC 总包', labelEn: 'EPC Contractor', labelAr: 'مقاول EPC' },
     ],
     challenges: [
       '沙漠环境自适应接地',
@@ -133,9 +133,9 @@ const projects = [
     highlightEn: 'Provided lightning protection grounding solutions compliant with European railway standards, ensuring safe cross-border railway operation.',
     highlightAr: 'توفير حلول تأريض حماية صواعق متوافقة مع معايير السكك الحديدية الأوروبية، لضمان التشغيل الآمن للسكك الحديدية عبر الحدود.',
     stats: [
-      { value: '欧洲标准', label: '技术规范', labelEn: 'Technical Standard', labelAr: 'المعيار الفني' },
-      { value: '首段运营', label: '项目状态', labelEn: 'Status', labelAr: 'الحالة' },
-      { value: '200 km/h', label: '设计时速', labelEn: 'Design Speed', labelAr: 'السرعة التصميمية' },
+      { value: '欧洲标准', valueEn: 'EU Standard', valueAr: 'معيار الاتحاد الأوروبي', label: '技术规范', labelEn: 'Technical Standard', labelAr: 'المعيار الفني' },
+      { value: '首段运营', valueEn: 'First Section Open', valueAr: 'القسم الأول مفتوح', label: '项目状态', labelEn: 'Status', labelAr: 'الحالة' },
+      { value: '200 km/h', valueEn: '200 km/h', valueAr: '200 كم/س', label: '设计时速', labelEn: 'Design Speed', labelAr: 'السرعة التصميمية' },
     ],
     challenges: [
       '欧洲铁路标准合规',
@@ -306,7 +306,7 @@ export default async function TransportationPage({ params }: { params: Promise<{
                   <div className="grid grid-cols-3 gap-4 mb-6">
                     {project.stats.map((stat, i) => (
                       <div key={i} className="bg-industrial-800/50 border border-industrial-700 p-4 rounded-xl">
-                        <div className="text-xl font-bold text-blue-400">{stat.value}</div>
+                        <div className="text-xl font-bold text-blue-400">{t(stat.value, stat.valueEn, stat.valueAr)}</div>
                         <div className="text-xs text-gray-400">{t(stat.label, stat.labelEn, stat.labelAr)}</div>
                       </div>
                     ))}

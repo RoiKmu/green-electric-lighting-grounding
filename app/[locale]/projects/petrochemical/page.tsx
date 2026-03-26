@@ -29,9 +29,9 @@ const projects = [
     highlightEn: 'Provided explosion-proof lightning protection grounding system for desert environment, meeting Saudi Aramco highest safety standards.',
     highlightAr: 'توفير نظام تأريض حماية صواعق مقاوم للانفجار لبيئة الصحراء، يلبي أعلى معايير السلامة لأرامكو السعودية.',
     stats: [
-      { value: 'Aramco', label: '标准认证', labelEn: 'Standard Certification', labelAr: 'شهادة المعيار' },
-      { value: '中石化', label: 'EPC 总包', labelEn: 'EPC Contractor', labelAr: 'مقاول EPC' },
-      { value: '在建', label: '项目状态', labelEn: 'Status', labelAr: 'الحالة' },
+      { value: 'Aramco', valueEn: 'Aramco', valueAr: 'أرامكو', label: '标准认证', labelEn: 'Standard Certification', labelAr: 'شهادة المعيار' },
+      { value: '中石化', valueEn: 'Sinopec', valueAr: 'سينوبك', label: 'EPC 总包', labelEn: 'EPC Contractor', labelAr: 'مقاول EPC' },
+      { value: '在建', valueEn: 'In Progress', valueAr: 'قيد التنفيذ', label: '项目状态', labelEn: 'Status', labelAr: 'الحالة' },
     ],
     challenges: [
       '沙特阿美严苛验收标准',
@@ -81,9 +81,9 @@ const projects = [
     highlightEn: 'Provided full-site lightning protection centralized procurement supply, ensuring grounding resistance continues to meet standards under complex conditions.',
     highlightAr: 'توفير توريد مركزي لحماية الصواعق للموقع بالكامل، لضمان استمرار مقاومة التأريض في تلبية المعايير.',
     stats: [
-      { value: '全厂', label: '防雷集采供应', labelEn: 'Full-Site Supply', labelAr: 'توريد الموقع بالكامل' },
-      { value: '50°C+', label: '极端高温耐受', labelEn: 'Extreme Heat Resistance', labelAr: 'مقاومة الحرارة الشديدة' },
-      { value: '投产', label: '项目状态', labelEn: 'Status', labelAr: 'الحالة' },
+      { value: '全厂', valueEn: 'Full Site', valueAr: 'الموقع بالكامل', label: '防雷集采供应', labelEn: 'Full-Site Supply', labelAr: 'توريد الموقع بالكامل' },
+      { value: '50°C+', valueEn: '50°C+', valueAr: '50°C+', label: '极端高温耐受', labelEn: 'Extreme Heat Resistance', labelAr: 'مقاومة الحرارة الشديدة' },
+      { value: '投产', valueEn: 'Operational', valueAr: 'تشغيل', label: '项目状态', labelEn: 'Status', labelAr: 'الحالة' },
     ],
     challenges: [
       '极端高温下的材料稳定性',
@@ -133,9 +133,9 @@ const projects = [
     highlightEn: 'Provided lightning protection grounding solutions compliant with Saudi Aramco standards, ensuring safe gas station operation.',
     highlightAr: 'توفير حلول تأريض حماية صواعق متوافقة مع معايير أرامكو السعودية، لضمان التشغيل الآمن لمحطة الغاز.',
     stats: [
-      { value: 'CPECC', label: 'EPC 总包', labelEn: 'EPC Contractor', labelAr: 'مقاول EPC' },
-      { value: 'Aramco', label: '标准认证', labelEn: 'Standard Certification', labelAr: 'شهادة المعيار' },
-      { value: '在建', label: '项目状态', labelEn: 'Status', labelAr: 'الحالة' },
+      { value: 'CPECC', valueEn: 'CPECC', valueAr: 'CPECC', label: 'EPC 总包', labelEn: 'EPC Contractor', labelAr: 'مقاول EPC' },
+      { value: 'Aramco', valueEn: 'Aramco', valueAr: 'أرامكو', label: '标准认证', labelEn: 'Standard Certification', labelAr: 'شهادة المعيار' },
+      { value: '在建', valueEn: 'In Progress', valueAr: 'قيد التنفيذ', label: '项目状态', labelEn: 'Status', labelAr: 'الحالة' },
     ],
     challenges: [
       '天然气增压站防爆要求',
@@ -306,7 +306,7 @@ export default async function PetrochemicalPage({ params }: { params: Promise<{ 
                   <div className="grid grid-cols-3 gap-4 mb-6">
                     {project.stats.map((stat, i) => (
                       <div key={i} className="bg-industrial-800/50 border border-industrial-700 p-4 rounded-xl">
-                        <div className="text-xl font-bold text-orange-400">{stat.value}</div>
+                        <div className="text-xl font-bold text-orange-400">{t(stat.value, stat.valueEn, stat.valueAr)}</div>
                         <div className="text-xs text-gray-400">{t(stat.label, stat.labelEn, stat.labelAr)}</div>
                       </div>
                     ))}
