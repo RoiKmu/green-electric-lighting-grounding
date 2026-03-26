@@ -43,7 +43,7 @@ function ProductCard({ product, categoryId }: { product: Product; categoryId: st
   );
 }
 
-function FeaturedProductCard({ product }: { product: Product & { categoryId: string } }) {
+function FeaturedProductCard({ product }: { product: NonNullable<typeof ALL_PRODUCTS[number]> }) {
   const t = useTranslations('products');
   const tItems = useTranslations('products.items');
 
@@ -83,7 +83,7 @@ function FeaturedProductsSection() {
   
   const featuredProducts = FEATURED_PRODUCT_IDS
     .map(id => ALL_PRODUCTS.find(p => p.id === id))
-    .filter((p): p is Product & { categoryId: string } => p !== undefined);
+    .filter((p): p is NonNullable<typeof ALL_PRODUCTS[number]> => p !== undefined);
 
   return (
     <section className="rounded-2xl p-8 bg-gradient-to-r from-amber-50 to-yellow-50 border border-amber-200">

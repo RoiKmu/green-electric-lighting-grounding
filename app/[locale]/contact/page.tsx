@@ -49,8 +49,8 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
                   </div>
                   <div className="ms-6">
                     <h3 className="text-lg font-semibold text-industrial-900 mb-1">{t('info.email.title')}</h3>
-                    <a href="mailto:grace.wang@wuxigreen.com" className="text-green-electric-600 hover:text-green-electric-700 text-lg">
-                      grace.wang@wuxigreen.com
+                    <a href="mailto:greenelectronic1688@gmail.com" className="text-green-electric-600 hover:text-green-electric-700 text-lg">
+                      greenelectronic1688@gmail.com
                     </a>
                     <p className="text-industrial-500 mt-1">{t('info.email.response')}</p>
                   </div>

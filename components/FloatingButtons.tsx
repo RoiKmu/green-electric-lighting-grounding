@@ -117,7 +117,7 @@ export default function FloatingButtons() {
         <Tooltip
           visible={activeButton === "email"}
           title="Email"
-          content="wuxi@wuxigreen.com"
+          content="greenelectronic1688@gmail.com"
           onMouseEnter={() => handleMouseEnter("email")}
           onMouseLeave={handleMouseLeave}
         />
