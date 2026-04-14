@@ -8,7 +8,7 @@
     "allProjects": "All Projects",
     "allProjectsDesc": "View all project cases",
     "petrochemical": "Petrochemical & Natural Gas",
-    "petrochemicalDesc": "Explosion-proof protection for extreme heat and high corrosion environments, covering natural gas storage facilities",
+    "petrochemicalDesc": "Explosion-proof protection for extreme heat and corrosion, covering refineries and gas facilities",
     "powerEnergy": "Power & Energy",
     "powerEnergyDesc": "High-voltage grid and solar grounding systems across deserts and rainforests",
     "transportation": "Transportation",
@@ -46,6 +46,7 @@
   "home": {
     "hero": {
       "badge": "Expert Support for EPC Projects",
+      "badgeSubtitle": "30+ Years  |  100+ Countries  |  1000+ Clients  |  10000+ Projects",
       "title": "Complete Lightning Protection Systems",
       "subtitle": "ESE · Grounding ≤1Ω · Lightning Warning",
       "description": "We deliver integrated engineering solutions that meet IEC 62561 and UL 467 standards — from design to installation support."
@@ -132,7 +133,7 @@
     "industries": {
       "badge": "Industry Solutions",
       "title": "Trusted Across Critical Industries",
-      "description": "We protect the infrastructure that powers modern society — from petrochemical & natural gas facilities to international airports.",
+      "description": "Covering power, energy, petrochemical, transportation, infrastructure and more — providing professional lightning protection and grounding solutions for critical infrastructure worldwide.",
       "viewAllProjects": "View All Projects",
       "sectors": {
         "petrochemical": {
@@ -167,30 +168,48 @@
       "trustedProjects": "Trusted in 300+ Industrial Lightning Protection Projects",
       "servingProjects": "Serving petrochemical & natural gas, power, transportation and infrastructure projects worldwide.",
       "viewAllProjects": "View All Projects",
+      "labels": {
+        "owner": "Owner:",
+        "epc": "EPC Contractor:",
+        "consultant": "Consultant:",
+        "designInstitute": "Design Institute:"
+      },
       "projects": {
         "oilDepot": {
-          "title": "Qinghai LNG Liquefied Natural Gas",
+          "title": "Saudi Jubail Large-Scale Petrochemical Complex",
           "industry": "Petrochemical & Natural Gas",
-          "location": "Qinghai",
-          "description": "Comprehensive lightning protection and grounding system solutions for a large-scale LNG receiving station in Qinghai.",
-          "coverage": "Coverage Area",
-          "safety": "Safety Record"
+          "location": "Jubail, Saudi Arabia",
+          "owner": "Saudi Aramco",
+          "epc": "CSCEC (China State Construction Engineering)",
+          "consultant": "Worley",
+          "designInstitute": "HQCEC (China Huanqiu Contracting & Engineering)",
+          "description": "Customized 316L stainless steel air terminal system and deep-well copper-clad steel grounding solution with 30+ year service life, designed for the extreme salt spray corrosion and strict explosion-proof requirements along the Persian Gulf coast.",
+          "coverage": "Lightning Protection Coverage",
+          "safety": "Zero Lightning Incident Record"
         },
-        "airport": {
-          "title": "International Airport Terminal",
-          "industry": "Transportation",
-          "location": "Major Hub City",
-          "description": "Multi-layer lightning protection ensuring zero disruption to flight operations and passenger safety.",
-          "flights": "Flights/day",
-          "uptime": "Uptime"
+        "infrastructure": {
+          "title": "Middle East Core International Airport Expansion",
+          "industry": "Transportation & Infrastructure",
+          "location": "Abu Dhabi, UAE",
+          "owner": "Abu Dhabi Airports Company (ADAC)",
+          "epc": "International Construction Consortium",
+          "consultant": "Dar Al-Handasah",
+          "designInstitute": "ECADI (East China Architectural Design & Research Institute)",
+          "description": "Multi-layer lightning protection and full-area equipotential bonding, overcoming complex underground pipeline interference to ensure zero disruption to airport weak-current control systems and terminal operations during severe thunderstorms.",
+          "flights": "Daily Flights Protected",
+          "uptime": "System Uptime"
         },
-        "uhv": {
-          "title": "UHV Substation",
+        "powerEnergy": {
+          "title": "Red Sea New City 400MW PV & Storage Microgrid",
           "industry": "Power & Energy",
-          "location": "Xinjiang",
-          "description": "Custom-engineered surge protection for ±800 kV ultra-high voltage infrastructure.",
-          "voltage": "Voltage",
-          "resistance": "Resistance"
+          "location": "Red Sea Coast, Saudi Arabia",
+          "owner": "ACWA Power",
+          "epc": "PowerChina",
+          "consultant": "WSP",
+          "designInstitute": "NWEPDI (Northwest Electric Power Design Institute)",
+          "description": "Exothermic welding electrical connections and comprehensive nano-carbon grounding solution designed for the extremely high soil resistivity and extreme temperature variations in coastal desert areas, ensuring absolute safety for large-scale PV and energy storage systems.",
+          "voltage": "System Voltage Level",
+          "resistance": "Measured Grounding Resistance"
         }
       }
     },
@@ -634,26 +653,37 @@
     }
   },
   "projects": {
-    "badge": "Project Portfolio",
-    "title": "Delivering Excellence Across Industries",
-    "description": "We are deeply involved in landmark EPC projects worldwide, providing high-standard lightning protection and grounding solutions for critical infrastructure.",
-    "viewCaseStudy": "View Case Study",
-    "whyChooseUs": "Why Choose Us",
-    "trackRecord": "Proven Support for Global EPC Deliveries",
-    "trackRecordDescription": "Our expertise spans multiple high-stakes sectors where safety and reliability are non-negotiable.",
+    "badge": "Project Cases",
+    "title": "Engineering Excellence Across Industries",
+    "description": "As a reliable supply chain partner for top-tier global EPC contractors, we have deeply participated in numerous landmark international projects. From the Red Sea coast's new energy microgrid to the Persian Gulf's mega-scale petrochemical facilities, we provide lightning protection and grounding solutions that meet the highest international standards for critical infrastructure.",
+    "viewCaseStudy": "View Case Details",
+    "whyChooseUs": "Why Top EPCs Choose Us",
+    "trackRecord": "Delivery Record Tested in Harsh Environments",
+    "trackRecordDescription": "Our lightning protection and grounding components have been successfully applied in extreme environments including deserts, saline-alkali soils, extreme cold, and highly corrosive marine conditions, meeting the most stringent international safety standards such as IEC 62561, UL 467, and IEEE 80.",
     "stats": {
-      "projects": "Projects Delivered",
-      "countries": "Countries Served",
-      "satisfaction": "Client Satisfaction",
-      "incidents": "Safety Incidents"
+      "projects": "Mega EPC Projects Delivered",
+      "countries": "Countries & Regions Covered",
+      "satisfaction": "EPC Acceptance Rate",
+      "incidents": "Full Lifecycle Safety Incidents"
+    },
+    "details": {
+      "challenges": "Project Challenges & Site Pain Points",
+      "solutions": "Green Electric Solutions",
+      "results": "Implementation Results & Acceptance Metrics"
+    },
+    "filters": {
+      "all": "All Projects",
+      "petrochemical": "Petrochemical & Natural Gas",
+      "power": "Power & New Energy",
+      "infrastructure": "Infrastructure & Transportation"
     },
     "challenges": "Challenges",
     "solutions": "Our Solutions",
-    "readyToStart": "Ready to Start Your Project?",
-    "sendRequirements": "Send us your project requirements — we'll provide a tailored solution within 48 hours.",
-    "contactToday": "Contact us today for competitive pricing and expert consultation.",
-    "submitInquiry": "Submit Project Inquiry",
-    "browseComponents": "Browse Components"
+    "readyToStart": "Ready to Optimize Your Engineering Lightning Protection Design?",
+    "sendRequirements": "Send your BOQ (Bill of Quantities) or project drawings — our technical team will provide compliant detailed design solutions and competitive quotations within 48 hours.",
+    "contactToday": "Contact us today for dedicated technical support and global project consultation.",
+    "submitInquiry": "Submit EPC Project Inquiry",
+    "browseComponents": "Browse Materials & Components"
   },
   "common": {
     "loading": "Loading...",

@@ -10,6 +10,9 @@ import ScrollAnimationProvider from "@/components/ScrollAnimationProvider";
 export const metadata: Metadata = {
   title: "Green Electric Industrial Supply",
   description: "Professional Industrial Supply - Machines, Tools, Raw Materials & Accessories",
+  icons: {
+    icon: '/images/favicon.ico',
+  },
 };
 
 export function generateStaticParams() {

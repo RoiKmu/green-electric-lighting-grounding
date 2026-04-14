@@ -177,32 +177,44 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       industry: t('featuredProjects.projects.oilDepot.industry'),
       industrySlug: 'petrochemical',
       location: t('featuredProjects.projects.oilDepot.location'),
+      owner: t('featuredProjects.projects.oilDepot.owner'),
+      epc: t('featuredProjects.projects.oilDepot.epc'),
+      consultant: t('featuredProjects.projects.oilDepot.consultant'),
+      designInstitute: t('featuredProjects.projects.oilDepot.designInstitute'),
       description: t('featuredProjects.projects.oilDepot.description'),
       image: '/images/projects/xinjianglng.jpg',
       stats: { coverage: '500,000 m²', safety: '100% Incident-Free' },
       statsLabels: { coverage: t('featuredProjects.projects.oilDepot.coverage'), safety: t('featuredProjects.projects.oilDepot.safety') }
     },
     {
-      id: 'airport-project',
-      title: t('featuredProjects.projects.airport.title'),
-      industry: t('featuredProjects.projects.airport.industry'),
+      id: 'infrastructure-project',
+      title: t('featuredProjects.projects.infrastructure.title'),
+      industry: t('featuredProjects.projects.infrastructure.industry'),
       industrySlug: 'infrastructure',
-      location: t('featuredProjects.projects.airport.location'),
-      description: t('featuredProjects.projects.airport.description'),
+      location: t('featuredProjects.projects.infrastructure.location'),
+      owner: t('featuredProjects.projects.infrastructure.owner'),
+      epc: t('featuredProjects.projects.infrastructure.epc'),
+      consultant: t('featuredProjects.projects.infrastructure.consultant'),
+      designInstitute: t('featuredProjects.projects.infrastructure.designInstitute'),
+      description: t('featuredProjects.projects.infrastructure.description'),
       image: '/images/projects/airpot-terminal.jpg',
       stats: { flights: '1000+/day', uptime: '99.99%' },
-      statsLabels: { flights: t('featuredProjects.projects.airport.flights'), uptime: t('featuredProjects.projects.airport.uptime') }
+      statsLabels: { flights: t('featuredProjects.projects.infrastructure.flights'), uptime: t('featuredProjects.projects.infrastructure.uptime') }
     },
     {
-      id: 'xinjiang-uhv',
-      title: t('featuredProjects.projects.uhv.title'),
-      industry: t('featuredProjects.projects.uhv.industry'),
+      id: 'power-energy-project',
+      title: t('featuredProjects.projects.powerEnergy.title'),
+      industry: t('featuredProjects.projects.powerEnergy.industry'),
       industrySlug: 'power-energy',
-      location: t('featuredProjects.projects.uhv.location'),
-      description: t('featuredProjects.projects.uhv.description'),
+      location: t('featuredProjects.projects.powerEnergy.location'),
+      owner: t('featuredProjects.projects.powerEnergy.owner'),
+      epc: t('featuredProjects.projects.powerEnergy.epc'),
+      consultant: t('featuredProjects.projects.powerEnergy.consultant'),
+      designInstitute: t('featuredProjects.projects.powerEnergy.designInstitute'),
+      description: t('featuredProjects.projects.powerEnergy.description'),
       image: '/images/projects/substation%202.jpg',
-      stats: { voltage: '±800 kV', resistance: '< 0.5 Ω' },
-      statsLabels: { voltage: t('featuredProjects.projects.uhv.voltage'), resistance: t('featuredProjects.projects.uhv.resistance') }
+      stats: { voltage: '400 MW', resistance: '< 0.5 Ω' },
+      statsLabels: { voltage: t('featuredProjects.projects.powerEnergy.voltage'), resistance: t('featuredProjects.projects.powerEnergy.resistance') }
     },
   ];
 
@@ -265,9 +277,32 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row justify-between items-end mb-16 gap-8">
             <div className="max-w-3xl">
-              <span className="animate-scale-in inline-block px-4 py-1.5 bg-green-electric-100 text-green-electric-700 rounded-full text-sm font-semibold mb-4">
-                {t('hero.badge')}
-              </span>
+              <div className="flex flex-col items-start mb-4">
+                <span className="animate-scale-in inline-block px-4 py-1.5 bg-green-electric-100 text-green-electric-700 rounded-full text-sm font-semibold">
+                  {t('hero.badge')}
+                </span>
+                <span className="animate-slide-up inline-flex flex-wrap items-center gap-2 md:gap-4 text-sm text-industrial-500 font-medium mt-3 ms-1" style={{ transitionDelay: '50ms' }}>
+                  <span className="flex items-center gap-1">
+                    <span className="text-green-electric-600 font-bold">30+</span>
+                    <span>{locale === 'zh' ? '年经验' : locale === 'ar' ? 'عاماً' : 'Years'}</span>
+                  </span>
+                  <span className="text-industrial-300">|</span>
+                  <span className="flex items-center gap-1">
+                    <span className="text-green-electric-600 font-bold">100+</span>
+                    <span>{locale === 'zh' ? '国家' : locale === 'ar' ? 'دولة' : 'Countries'}</span>
+                  </span>
+                  <span className="text-industrial-300">|</span>
+                  <span className="flex items-center gap-1">
+                    <span className="text-green-electric-600 font-bold">1000+</span>
+                    <span>{locale === 'zh' ? '客户' : locale === 'ar' ? 'عميل' : 'Clients'}</span>
+                  </span>
+                  <span className="text-industrial-300">|</span>
+                  <span className="flex items-center gap-1">
+                    <span className="text-green-electric-600 font-bold">10000+</span>
+                    <span>{locale === 'zh' ? '项目' : locale === 'ar' ? 'مشروع' : 'Projects'}</span>
+                  </span>
+                </span>
+              </div>
               <h2 className="animate-slide-up text-4xl md:text-5xl font-bold text-industrial-900 mb-4" style={{ transitionDelay: '100ms' }}>
                 {t('capabilities.title')}
               </h2>
@@ -441,7 +476,19 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                     <h3 className="text-xl font-bold mb-3 text-industrial-900 group-hover:text-green-electric-600 transition-colors">
                       {project.title}
                     </h3>
-                    <p className="text-industrial-600 leading-relaxed flex-grow text-sm mb-4">
+                    
+                    <div className="grid grid-cols-2 gap-2 mb-3 text-xs">
+                      <div className="flex flex-col">
+                        <span className="text-industrial-400">{t('featuredProjects.labels.owner')}</span>
+                        <span className="text-industrial-700 font-medium truncate">{project.owner}</span>
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-industrial-400">{t('featuredProjects.labels.epc')}</span>
+                        <span className="text-industrial-700 font-medium truncate">{project.epc}</span>
+                      </div>
+                    </div>
+                    
+                    <p className="text-industrial-600 leading-relaxed flex-grow text-sm mb-4 line-clamp-3">
                       {project.description}
                     </p>
                     

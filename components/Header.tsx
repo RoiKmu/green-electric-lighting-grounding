@@ -137,18 +137,7 @@ export default function Header() {
         }`}
       >
         <div className="container mx-auto px-6 pt-6">
-          <div className="grid grid-cols-5 gap-8">
-            <div className="project-category">
-              <Link 
-                href="/projects" 
-                className="text-lg font-semibold text-green-electric-400 hover:text-green-electric-300 mb-4 block"
-              >
-                {t('allProjects')}
-              </Link>
-              <p className="text-industrial-400 text-sm">
-                {t('allProjectsDesc')}
-              </p>
-            </div>
+          <div className="grid grid-cols-4 gap-8">
             <div className="project-category">
               <Link 
                 href="/projects/petrochemical" 

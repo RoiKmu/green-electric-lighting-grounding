@@ -8,7 +8,7 @@
     "allProjects": "项目总览",
     "allProjectsDesc": "查看所有项目案例",
     "petrochemical": "石化与天然气",
-    "petrochemicalDesc": "应对极热与高腐蚀环境的防爆级保护，覆盖天然气存储设施",
+    "petrochemicalDesc": "极热高腐蚀环境防爆保护，覆盖炼油厂与天然气设施",
     "powerEnergy": "电力与新能源",
     "powerEnergyDesc": "跨越沙漠与雨林的高压电网与光伏接地体系",
     "transportation": "轨道交通",
@@ -46,6 +46,7 @@
   "home": {
     "hero": {
       "badge": "EPC总包项目专项防雷配套商",
+      "badgeSubtitle": "30+年经验  |  100+国家  |  1000+客户  |  10000+项目",
       "title": "完整防雷保护系统",
       "subtitle": "ESE提前放电 · 接地≤1Ω · 雷电预警",
       "description": "我们提供满足IEC 62561和UL 467标准的集成工程解决方案——从设计到安装支持。"
@@ -132,7 +133,7 @@
     "industries": {
       "badge": "行业解决方案",
       "title": "值得关键行业信赖",
-      "description": "我们保护驱动现代社会的关键基础设施——从石化与天然气设施到国际机场。",
+      "description": "覆盖电力、能源、石化、交通、基础设施等全行业，为全球关键基础设施提供专业防雷接地解决方案。",
       "viewAllProjects": "查看所有项目",
       "sectors": {
         "petrochemical": {
@@ -167,30 +168,48 @@
       "trustedProjects": "服务300+工业防雷保护项目",
       "servingProjects": "服务石化与天然气、电力、交通和基础设施项目遍布全球。",
       "viewAllProjects": "查看所有项目",
+      "labels": {
+        "owner": "最终业主:",
+        "epc": "EPC总包:",
+        "consultant": "咨询公司:",
+        "designInstitute": "设计单位:"
+      },
       "projects": {
         "oilDepot": {
-          "title": "青海LNG液化天然气",
+          "title": "沙特朱拜勒大型炼化综合体",
           "industry": "石化与天然气",
-          "location": "青海",
-          "description": "为青海大型液化天然气接收站提供综合防雷和接地系统解决方案。",
-          "coverage": "覆盖面积",
-          "safety": "安全记录"
+          "location": "沙特阿拉伯，朱拜勒 (Jubail)",
+          "owner": "Saudi Aramco (沙特阿美)",
+          "epc": "中国建筑集团 (CSCEC)",
+          "consultant": "Worley (沃利)",
+          "designInstitute": "中国寰球工程公司 (HQCEC)",
+          "description": "针对波斯湾沿岸极高盐雾腐蚀与严格的防爆要求，提供定制化 316L 不锈钢接闪系统与使用寿命超 30 年的深井铜覆钢接地解决方案。",
+          "coverage": "防雷覆盖面积",
+          "safety": "零雷击事故记录"
         },
-        "airport": {
-          "title": "国际机场航站楼",
-          "industry": "交通",
-          "location": "主要枢纽城市",
-          "description": "多层防雷保护确保航班运营和旅客安全零中断。",
-          "flights": "每日航班",
-          "uptime": "正常运行时间"
+        "infrastructure": {
+          "title": "中东核心国际机场扩建项目",
+          "industry": "交通与基础设施",
+          "location": "阿联酋，阿布扎比",
+          "owner": "阿布扎比机场公司 (ADAC)",
+          "epc": "跨国建筑联营体",
+          "consultant": "Dar Al-Handasah (达尔集团)",
+          "designInstitute": "华东建筑集团 (ECADI)",
+          "description": "提供多层防雷保护与全区域等电位连接，克服复杂地下管网干扰，确保机场弱电控制系统和航站楼运营在强雷暴天气下的零中断。",
+          "flights": "保障每日航班",
+          "uptime": "系统正常运行时间"
         },
-        "uhv": {
-          "title": "特高压变电站",
+        "powerEnergy": {
+          "title": "红海新城 400MW 光伏与储能微电网",
           "industry": "电力能源",
-          "location": "新疆",
-          "description": "为±800 kV特高压基础设施定制工程浪涌保护。",
-          "voltage": "电压等级",
-          "resistance": "接地电阻"
+          "location": "沙特阿拉伯，红海海岸",
+          "owner": "ACWA Power (沙特国际电力和水务公司)",
+          "epc": "中国电建 (PowerChina)",
+          "consultant": "WSP",
+          "designInstitute": "西北电力设计院 (NWEPDI)",
+          "description": "针对沿海沙漠地带的极高土壤电阻率与极端温差，提供放热焊接电气连接与全方位纳米碳接地解决方案，保障大规模光伏及储能系统的绝对安全。",
+          "voltage": "系统电压等级",
+          "resistance": "实测接地电阻"
         }
       }
     },
@@ -634,26 +653,37 @@
     }
   },
   "projects": {
-    "badge": "项目组合",
-    "title": "跨行业交付卓越",
-    "description": "我们深度参与全球多项标志性 EPC 项目，为关键基础设施提供高标准的防雷接地配套。",
-    "viewCaseStudy": "查看案例研究",
-    "whyChooseUs": "为什么选择我们",
-    "trackRecord": "跨行业 EPC 项目交付经验",
-    "trackRecordDescription": "我们的专业知识跨越多个高风险行业，在这些行业中安全和可靠性是不可妥协的。",
+    "badge": "项目案例",
+    "title": "跨行业工程交付卓越",
+    "description": "作为全球顶级 EPC 承包商的可靠供应链伙伴，我们深度参与了多项标志性国际工程。从红海海岸的新能源微电网到波斯湾的超大型炼化设施，为关键基础设施提供符合最高国际标准的防雷接地配套。",
+    "viewCaseStudy": "查看案例详情",
+    "whyChooseUs": "为什么顶级 EPC 选择我们",
+    "trackRecord": "经受严苛环境考验的交付履历",
+    "trackRecordDescription": "我们的防雷接地组件已成功应用于沙漠、盐碱地、极寒及高腐蚀性海洋等极端环境中，满足 IEC 62561、UL 467 及 IEEE 80 等国际最严苛的安全规范。",
     "stats": {
-      "projects": "已交付项目",
-      "countries": "服务国家",
-      "satisfaction": "客户满意度",
-      "incidents": "安全事故"
+      "projects": "交付超大型 EPC 项目",
+      "countries": "覆盖国家与地区",
+      "satisfaction": "总包方验收通过率",
+      "incidents": "全生命周期安全事故"
+    },
+    "details": {
+      "challenges": "项目挑战与现场痛点",
+      "solutions": "格林电气解决方案",
+      "results": "实施成果与验收指标"
+    },
+    "filters": {
+      "all": "全部项目",
+      "petrochemical": "石化与天然气",
+      "power": "电力与新能源",
+      "infrastructure": "基础设施与交通"
     },
     "challenges": "挑战",
     "solutions": "我们的解决方案",
-    "readyToStart": "准备开始您的项目？",
-    "sendRequirements": "发送您的项目需求——我们将在48小时内提供定制解决方案。",
-    "contactToday": "立即联系我们，获取有竞争力的价格和专业咨询。",
-    "submitInquiry": "提交项目咨询",
-    "browseComponents": "浏览组件"
+    "readyToStart": "准备好优化您的工程防雷设计了吗？",
+    "sendRequirements": "发送您的 BOQ (工程量清单) 或项目图纸——我们的技术团队将在 48 小时内提供合规的深化设计方案与极具竞争力的报价。",
+    "contactToday": "立即联系我们，获取专属技术支持与全球项目咨询。",
+    "submitInquiry": "提交 EPC 项目咨询",
+    "browseComponents": "浏览材料与组件"
   },
   "common": {
     "loading": "加载中...",

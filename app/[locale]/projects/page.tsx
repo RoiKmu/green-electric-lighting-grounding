@@ -20,9 +20,9 @@ const industries = [
     title: '石化与天然气',
     titleEn: 'Petrochemical & Natural Gas',
     titleAr: 'البتر والكيميائيات والغاز الطبيعي',
-    description: '应对极热与高腐蚀环境的防爆级保护，覆盖天然气存储设施',
-    descriptionEn: 'Explosion-proof protection for extreme heat and high corrosion environments, covering natural gas storage facilities',
-    descriptionAr: 'حماية مقاومة للانفجارات للحرارة الشديدة والبيئات شديدة التآكل، تغطي منشآت تخزين الغاز الطبيعي',
+    description: '极热高腐蚀环境防爆保护，覆盖炼油厂与天然气设施',
+    descriptionEn: 'Explosion-proof protection for extreme heat and corrosion, covering refineries and gas facilities',
+    descriptionAr: 'حماية مقاومة للانفجارات للحرارة الشديدة والتآكل، تغطي المصافي ومنشآت الغاز',
     image: '/images/projects/oil.jpg',
     href: '/projects/petrochemical',
     stats: { projects: '80+', countries: '15' },
@@ -66,8 +66,8 @@ const industries = [
 ];
 
 const globalStats = [
-  { value: '265+', label: '头部EPC项目', labelEn: 'Top EPC Projects', labelAr: 'مشاريع EPC الرائدة' },
-  { value: '30+', label: '服务国家', labelEn: 'Countries Served', labelAr: 'دولة نخدمها' },
+  { value: '100+', label: '服务国家', labelEn: 'Countries Served', labelAr: 'دولة نخدمها' },
+  { value: '1000+', label: '服务客户', labelEn: 'Clients Served', labelAr: 'عميل نخدمهم' },
   { value: '100%', label: '验收通过率', labelEn: 'Acceptance Rate', labelAr: 'معدل القبول' },
   { value: '0', label: '安全事故', labelEn: 'Safety Incidents', labelAr: 'حوادث السلامة' },
 ];
