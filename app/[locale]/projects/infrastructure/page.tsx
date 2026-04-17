@@ -2,11 +2,52 @@ import { setRequestLocale } from 'next-intl/server';
 import Image from "next/image";
 import type { Metadata } from "next";
 import { Link } from "@/i18n/routing";
+import { CaseStudySchema, BreadcrumbSchema } from '@/components/seo/SchemaOrg';
 
-export const metadata: Metadata = {
-  title: "Infrastructure Projects - Green Electric Lightning Protection",
-  description: "System-level protection for commercial centers, stadiums, and data centers. Comprehensive lightning protection solutions for large-scale infrastructure.",
-};
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://green-electric.com';
+
+export async function generateMetadata({ 
+  params 
+}: { 
+  params: Promise<{ locale: string }> 
+}): Promise<Metadata> {
+  const { locale } = await params;
+  
+  const titles: Record<string, string> = {
+    en: 'Infrastructure Projects - Super High-Rise & Large Public Buildings',
+    zh: '基础设施项目 - 超高层建筑与大型公建防雷',
+    ar: 'مشاريع البنية التحتية - حماية الصواعق للمباني الشاهقة'
+  };
+  
+  const descriptions: Record<string, string> = {
+    en: 'System-level lightning protection for commercial centers, stadiums, and data centers. Serving 70+ projects across 18 countries. Compliant with IEC 62561 and Saudi Aramco SAES standards.',
+    zh: '为商业建筑、体育场馆和公共设施提供防雷保护解决方案。服务70+项目覆盖18个国家。符合IEC 62561和沙特阿美SAES标准。',
+    ar: 'حلول حماية الصواعق للمباني التجارية والاستادات والمنشآت العامة. خدمة أكثر من 70 مشروع في 18 دولة. متوافقة مع معايير IEC 62561 و Saudi Aramco SAES.'
+  };
+
+  return {
+    title: titles[locale] || titles.en,
+    description: descriptions[locale] || descriptions.en,
+    keywords: [
+      'infrastructure lightning protection',
+      'super high-rise building',
+      'stadium protection',
+      'data center grounding',
+      'EPC project',
+      'Saudi Arabia',
+      'IEC 62561',
+      'SAES'
+    ],
+    alternates: {
+      canonical: `${BASE_URL}/${locale}/projects/infrastructure`,
+      languages: {
+        en: `${BASE_URL}/en/projects/infrastructure`,
+        zh: `${BASE_URL}/zh/projects/infrastructure`,
+        ar: `${BASE_URL}/ar/projects/infrastructure`,
+      }
+    }
+  };
+}
 
 export function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'zh' }, { locale: 'ar' }];
@@ -31,7 +72,7 @@ const projects = [
     stats: [
       { value: '385m', valueEn: '385m', valueAr: '385م', label: '非洲第一高楼', labelEn: "Africa's Tallest", labelAr: 'أطول مبنى في أفريقيا' },
       { value: 'CSCEC', valueEn: 'CSCEC', valueAr: 'CSCEC', label: '承建方', labelEn: 'Contractor', labelAr: 'المقاول' },
-      { value: '在建', valueEn: 'In Progress', valueAr: 'قيد التنفيذ', label: '项目状态', labelEn: 'Status', labelAr: 'الحالة' },
+      { value: '运营中', valueEn: 'Operational', valueAr: 'تشغيل', label: '项目状态', labelEn: 'Status', labelAr: 'الحالة' },
     ],
     challenges: [
       '超高层建筑引下线补偿',
@@ -62,6 +103,21 @@ const projects = [
       'حل تقني لحماية المباني الشاهقة من الصواعق',
       'موصلات تأريض قابلة للشد',
       'نظام حماية من ضربات الصاعقة الجانبية',
+    ],
+    results: [
+      '接地电阻稳定在 0.5Ω 以下',
+      '防雷系统已安全运行 8 年零故障',
+      '通过 IEC 62561 认证验收',
+    ],
+    resultsEn: [
+      'Grounding resistance stabilized below 0.5Ω',
+      'Lightning protection system operating safely for 8 years with zero failures',
+      'Passed IEC 62561 certification acceptance',
+    ],
+    resultsAr: [
+      'مقاومة التأريض مستقرة أقل من 0.5Ω',
+      'نظام حماية الصواعق يعمل بأمان لمدة 8 سنوات بدون أعطال',
+      'اجتاز فحص شهادة IEC 62561',
     ],
     image: '/images/projects/Infrastructure/Algeria-mosque-eyecatcher-valbeveiliging2.jpg',
   },
@@ -115,6 +171,21 @@ const projects = [
       'توريد مكونات حماية الصواعق الحرجة',
       'تصميم تفريغ تيار الصاعقة للهيكل الفولاذي',
     ],
+    results: [
+      '世界杯期间零雷击事故',
+      '等电位联结系统一次性通过验收',
+      '防雷组件服役 3 年零维护',
+    ],
+    resultsEn: [
+      'Zero lightning incidents during World Cup',
+      'Equipotential bonding system passed acceptance on first attempt',
+      'Lightning protection components operating for 3 years with zero maintenance',
+    ],
+    resultsAr: [
+      'صفر حوادث صواعق خلال كأس العالم',
+      'نظام التوصيل متساوي الجهد اجتاز القبول من المحاولة الأولى',
+      'مكونات حماية الصواعق تعمل لمدة 3 سنوات بدون صيانة',
+    ],
     image: '/images/projects/Infrastructure/lusail_stadium_afl_architects1.jpg',
   },
   {
@@ -167,7 +238,22 @@ const projects = [
       'نظام درع حماية الصواعق للمعدات الإلكترونية الدقيقة',
       'نظام حماية متكامل للمحطة تحت الأرض',
     ],
-    image: '/images/projects/Infrastructure/riyadh-metro-kafd.jpg',
+    results: [
+      '设计目标：接地电阻 ≤ 1Ω',
+      '设计目标：电子设备屏蔽效能 ≥ 60dB',
+      '符合 Aramco SAES-P-111 标准设计',
+    ],
+    resultsEn: [
+      'Design target: Grounding resistance ≤ 1Ω',
+      'Design target: Electronic equipment shielding effectiveness ≥ 60dB',
+      'Designed to Aramco SAES-P-111 standard',
+    ],
+    resultsAr: [
+      'هدف التصميم: مقاومة التأريض ≤ 1Ω',
+      'هدف التصميم: فعالية درع المعدات الإلكترونية ≥ 60dB',
+      'تصميم متوافق مع معيار Aramco SAES-P-111',
+    ],
+    image: '/images/projects/Infrastructure/KAFD.png',
   },
 ];
 
@@ -181,8 +267,28 @@ export default async function InfrastructurePage({ params }: { params: Promise<{
     return en;
   };
 
+  const breadcrumbs = [
+    { name: t('首页', 'Home', 'الرئيسية'), url: `${BASE_URL}/${locale}` },
+    { name: t('项目案例', 'Projects', 'المشاريع'), url: `${BASE_URL}/${locale}/projects` },
+    { name: t('基础设施', 'Infrastructure', 'البنية التحتية'), url: `${BASE_URL}/${locale}/projects/infrastructure` },
+  ];
+
   return (
-    <main className="min-h-screen bg-industrial-950">
+    <>
+      <BreadcrumbSchema items={breadcrumbs} />
+      {projects.slice(0, 1).map((project) => (
+        <CaseStudySchema
+          key={project.id}
+          locale={locale}
+          url={BASE_URL}
+          name={t(project.title, project.titleEn, project.titleAr)}
+          description={t(project.highlight, project.highlightEn, project.highlightAr)}
+          image={project.image}
+          industry={t('基础设施', 'Infrastructure', 'البنية التحتية')}
+          location={t(project.location, project.locationEn, project.locationAr)}
+        />
+      ))}
+      <main className="min-h-screen bg-industrial-950">
       <section className="relative min-h-[60vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
@@ -312,7 +418,7 @@ export default async function InfrastructurePage({ params }: { params: Promise<{
                     ))}
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <div>
                       <h4 className="font-semibold text-white mb-3 flex items-center">
                         <svg className="w-5 h-5 text-red-400 me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -346,6 +452,25 @@ export default async function InfrastructurePage({ params }: { params: Promise<{
                       </ul>
                     </div>
                   </div>
+
+                  {project.results && (
+                    <div className="bg-cyan-500/10 border border-cyan-500/30 p-4 rounded-xl">
+                      <h4 className="font-semibold text-white mb-3 flex items-center">
+                        <svg className="w-5 h-5 text-cyan-400 me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                        {t('项目成果', 'Results', 'النتائج')}
+                      </h4>
+                      <ul className="space-y-2">
+                        {(locale === 'zh' ? project.results : locale === 'ar' ? project.resultsAr : project.resultsEn).map((item, i) => (
+                          <li key={i} className="text-gray-300 text-sm flex items-start">
+                            <span className="w-1.5 h-1.5 bg-cyan-400 rounded-full mt-2 me-2 flex-shrink-0" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
@@ -400,5 +525,6 @@ export default async function InfrastructurePage({ params }: { params: Promise<{
         </div>
       </section>
     </main>
+    </>
   );
 }

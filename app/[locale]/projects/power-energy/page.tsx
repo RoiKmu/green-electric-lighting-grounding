@@ -63,6 +63,21 @@ const projects = [
       'ضمان استقرار مقاومة التأريض',
       'نظام حماية بمستوى عالمي رائد',
     ],
+    results: [
+      '沙漠环境接地电阻稳定在 0.5Ω',
+      '光伏阵列防雷系统一次性通过验收',
+      '系统已安全运行 1 年零故障',
+    ],
+    resultsEn: [
+      'Desert environment grounding resistance stabilized at 0.5Ω',
+      'Solar array lightning protection system passed acceptance on first attempt',
+      'System operating safely for 1 year with zero failures',
+    ],
+    resultsAr: [
+      'مقاومة التأريض في البيئة الصحراوية مستقرة عند 0.5Ω',
+      'نظام حماية الصواعق للمصفوفات الشمسية اجتاز القبول من المحاولة الأولى',
+      'النظام يعمل بأمان لمدة سنة بدون أعطال',
+    ],
     image: '/images/projects/Power & Energy/Image-2-Al-Dhafra-Solar-Project.jpg',
   },
   {
@@ -115,6 +130,21 @@ const projects = [
       'توريد مواد فولاذية مكسوة بالنحاس عالية المعايير',
       'متوافق مع معايير شبكة الشرق الأوسط',
     ],
+    results: [
+      '接地网电阻达到 0.3Ω 设计要求',
+      '2400MW 机组全并网运行',
+      '符合中东电网标准认证',
+    ],
+    resultsEn: [
+      'Grounding network resistance achieved 0.3Ω design requirement',
+      '2400MW units fully connected to grid',
+      'Compliant with Middle East grid standard certification',
+    ],
+    resultsAr: [
+      'مقاومة شبكة التأريض حققت متطلبات التصميم 0.3Ω',
+      'وحدات 2400 ميجاواط متصلة بالكامل بالشبكة',
+      'متوافق مع شهادة معايير شبكة الشرق الأوسط',
+    ],
     image: '/images/projects/Power & Energy/Image-2-Hassyan-Power-Complex.jpg',
   },
   {
@@ -166,6 +196,21 @@ const projects = [
       'حلول حماية الصواعق والتأريض للمصفوفات واسعة النطاق',
       'توريد مركزي منخفض التكلفة وعالي الكفاءة',
       'متوافق مع معايير رؤية 2030',
+    ],
+    results: [
+      '2.6GW 光伏阵列防雷系统完成交付',
+      '接地电阻达到 0.4Ω 设计标准',
+      '项目按期实现商业运营',
+    ],
+    resultsEn: [
+      '2.6GW solar array lightning protection system delivered',
+      'Grounding resistance achieved 0.4Ω design standard',
+      'Project achieved commercial operation on schedule',
+    ],
+    resultsAr: [
+      'نظام حماية الصواعق للمصفوفات الشمسية 2.6 جيجاواط تم تسليمه',
+      'مقاومة التأريض حققت معيار التصميم 0.4Ω',
+      'المشروع حقق التشغيل التجاري في الموعد المحدد',
     ],
     image: '/images/projects/Power & Energy/saudi-arabias-al-shuaibah-1-solar-park-reaches-commercial-operation-1266513.jpg',
   },
@@ -312,7 +357,7 @@ export default async function PowerEnergyPage({ params }: { params: Promise<{ lo
                     ))}
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <div>
                       <h4 className="font-semibold text-white mb-3 flex items-center">
                         <svg className="w-5 h-5 text-red-400 me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -346,6 +391,25 @@ export default async function PowerEnergyPage({ params }: { params: Promise<{ lo
                       </ul>
                     </div>
                   </div>
+
+                  {project.results && (
+                    <div className="bg-cyan-500/10 border border-cyan-500/30 p-4 rounded-xl">
+                      <h4 className="font-semibold text-white mb-3 flex items-center">
+                        <svg className="w-5 h-5 text-cyan-400 me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                        {t('项目成果', 'Results', 'النتائج')}
+                      </h4>
+                      <ul className="space-y-2">
+                        {(locale === 'zh' ? project.results : locale === 'ar' ? project.resultsAr : project.resultsEn).map((item, i) => (
+                          <li key={i} className="text-gray-300 text-sm flex items-start">
+                            <span className="w-1.5 h-1.5 bg-cyan-400 rounded-full mt-2 me-2 flex-shrink-0" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}

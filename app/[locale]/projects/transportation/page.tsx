@@ -63,6 +63,21 @@ const projects = [
       'نظام حماية متكامل من الصواعق',
       'ضمان السلامة في الطقس القاسي',
     ],
+    results: [
+      '高铁全线接地电阻低于 0.5Ω',
+      '热带雷暴区零雷击事故',
+      '系统已安全运营 2 年',
+    ],
+    resultsEn: [
+      'HSR line grounding resistance below 0.5Ω',
+      'Zero lightning incidents in tropical thunderstorm zone',
+      'System operating safely for 2 years',
+    ],
+    resultsAr: [
+      'مقاومة تأريض خط القطار عالي السرعة أقل من 0.5Ω',
+      'صفر حوادث صواعق في منطقة العواصف الاستوائية',
+      'النظام يعمل بأمان لمدة 2 سنوات',
+    ],
     image: '/images/projects/Transportation/822BDEAC4E118781A901193E9CE9B053A6015C5A_size197_w975_h549.jpg',
   },
   {
@@ -115,6 +130,21 @@ const projects = [
       'حماية متكاملة لأبراج الاتصالات عبر الحدود',
       'ضمان التشغيل طويل الأمد بدون صيانة',
     ],
+    results: [
+      '沙漠环境免维护运行 3 年',
+      '通信塔防雷系统一次性验收通过',
+      '跨境路段零雷击故障',
+    ],
+    resultsEn: [
+      'Maintenance-free operation in desert environment for 3 years',
+      'Communication tower lightning protection system passed acceptance on first attempt',
+      'Zero lightning faults on cross-border sections',
+    ],
+    resultsAr: [
+      'تشغيل بدون صيانة في البيئة الصحراوية لمدة 3 سنوات',
+      'نظام حماية الصواعق لأبراج الاتصالات اجتاز القبول من المحاولة الأولى',
+      'صفر أعطال صواعق في الأقسام عبر الحدود',
+    ],
     image: '/images/projects/Transportation/Etihad-Rail-Slideshow-3-1.png',
   },
   {
@@ -166,6 +196,21 @@ const projects = [
       'حلول حماية صواعق متوافقة مع المعايير الأوروبية',
       'نظام تأريض السكك الحديدية عبر الحدود',
       'دعم هندسي للتنسيق متعدد الدول',
+    ],
+    results: [
+      '符合欧洲铁路 EN 50122 标准',
+      '首段 200km 线路已安全运营',
+      '跨境系统对接一次性成功',
+    ],
+    resultsEn: [
+      'Compliant with European railway EN 50122 standard',
+      'First 200km section operating safely',
+      'Cross-border system integration successful on first attempt',
+    ],
+    resultsAr: [
+      'متوافق مع معيار السكك الحديدية الأوروبية EN 50122',
+      'القسم الأول 200 كم يعمل بأمان',
+      'تكامل النظام عبر الحدود ناجح من المحاولة الأولى',
     ],
     image: '/images/projects/Transportation/4-serbia.jpg',
   },
@@ -312,7 +357,7 @@ export default async function TransportationPage({ params }: { params: Promise<{
                     ))}
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <div>
                       <h4 className="font-semibold text-white mb-3 flex items-center">
                         <svg className="w-5 h-5 text-red-400 me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -346,6 +391,25 @@ export default async function TransportationPage({ params }: { params: Promise<{
                       </ul>
                     </div>
                   </div>
+
+                  {project.results && (
+                    <div className="bg-cyan-500/10 border border-cyan-500/30 p-4 rounded-xl">
+                      <h4 className="font-semibold text-white mb-3 flex items-center">
+                        <svg className="w-5 h-5 text-cyan-400 me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                        {t('项目成果', 'Results', 'النتائج')}
+                      </h4>
+                      <ul className="space-y-2">
+                        {(locale === 'zh' ? project.results : locale === 'ar' ? project.resultsAr : project.resultsEn).map((item, i) => (
+                          <li key={i} className="text-gray-300 text-sm flex items-start">
+                            <span className="w-1.5 h-1.5 bg-cyan-400 rounded-full mt-2 me-2 flex-shrink-0" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}

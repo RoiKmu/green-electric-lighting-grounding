@@ -49,7 +49,7 @@
       "badgeSubtitle": "30+年经验  |  100+国家  |  1000+客户  |  10000+项目",
       "title": "完整防雷保护系统",
       "subtitle": "ESE提前放电 · 接地≤1Ω · 雷电预警",
-      "description": "我们提供满足IEC 62561和UL 467标准的集成工程解决方案——从设计到安装支持。"
+      "description": "我们提供满足IEC 62561、UL 467、IEEE 80及沙特阿美SAES标准的集成工程解决方案。SASO认证，专为沙特市场打造。"
     },
     "carousel": {
       "slide1": {
@@ -218,9 +218,9 @@
       "title": "防雷保护与接地组件",
       "description": "完整防雷保护系统的关键组件——全部经过国际标准测试认证。",
       "viewSpecifications": "查看规格",
-      "needRawMaterials": "需要原材料？",
-      "rawMaterialsDescription": "钢管、铜卷、不锈钢棒——我们在提供成品组件的同时也供应基础材料。",
-      "browseMaterials": "浏览原材料",
+      "needRawMaterials": "如何选择接地材质？",
+      "rawMaterialsDescription": "304不锈钢、316L不锈钢、铜包钢、纯铜——基于中东地区30+项目数据的技术对比分析。",
+      "browseMaterials": "查看对比表",
       "products": {
         "lightningWarning": {
           "title": "雷电预警系统",
@@ -367,6 +367,10 @@
       "phone": {
         "title": "电话",
         "hours": "周一至周五，上午9:00 - 下午6:00（北京时间）"
+      },
+      "whatsapp": {
+        "title": "WhatsApp",
+        "hours": "随时联系我们，我们会尽快回复"
       },
       "wechat": {
         "title": "微信",
@@ -649,6 +653,32 @@
         "powderWeight": "焊粉重量",
         "application": "应用场景",
         "connectionType": "连接类型"
+      },
+      "ews": {
+        "title": "放热焊接系列",
+        "subtitle": "永久性分子级连接",
+        "coreParameterLabel": "焊接温度",
+        "coreParameterValue": "2500°C",
+        "description": "通过放热反应实现分子级连接，提供永不松动、永不腐蚀的永久性电气连续性。接地系统导体连接的理想解决方案。",
+        "introduction1": "放热焊接是利用金属氧化物与还原剂发生化学反应产生的高温（超过2500°C），将导体熔化融合在一起的工艺。这种工艺形成分子级结合，是永久性的，具有与原导体相同的导电性能。",
+        "introduction2": "与可能随时间松动的机械连接或可能腐蚀的压接连接不同，放热焊接形成的融合结合永远不会松动、腐蚀或增加电阻。焊接接头可承受反复的故障电流，使用寿命与导体本身相同。",
+        "introduction3": "我们的放热焊接系列包括完整的模具、焊粉和点火系统，适用于各种连接类型，包括线对线、线对棒、线对排、排对排等连接。所有产品符合 IEC 62561、UL 467、IEEE 80 标准。",
+        "feature1": "分子级融合结合，接触电阻为零",
+        "feature2": "焊接温度超过2500°C，可熔合铜、钢等多种金属",
+        "feature3": "永久性连接，永不松动、永不腐蚀",
+        "feature4": "可承受反复短路和故障电流冲击",
+        "feature5": "焊接无需外部电源",
+        "feature6": "符合 IEC 62561、UL 467、IEEE 80 标准",
+        "tech1Title": "铝热反应",
+        "tech1Desc": "氧化铜与铝粉反应产生2500°C以上高温，实现完全金属熔合",
+        "tech2Title": "分子级结合",
+        "tech2Desc": "与导体形成永久性分子级结合，电阻与原材料相同",
+        "tech3Title": "耐腐蚀性",
+        "tech3Desc": "焊接接头具有与导体相同的耐腐蚀性，使用寿命超过50年",
+        "model": "型号",
+        "powderWeight": "焊粉重量",
+        "connectionType": "连接类型",
+        "application": "应用场景"
       }
     }
   },

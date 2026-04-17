@@ -63,6 +63,21 @@ const projects = [
       'تصميم متوافق مع معايير Aramco SAES',
       'مواد مضادة للتآكل لبيئة الصحراء',
     ],
+    results: [
+      '设计目标：沙漠环境接地电阻 ≤ 1Ω',
+      '符合 Aramco SAES-P-111 设计标准',
+      '采用化学降阻方案应对高电阻率土壤',
+    ],
+    resultsEn: [
+      'Design target: Desert environment grounding resistance ≤ 1Ω',
+      'Designed to Aramco SAES-P-111 standard',
+      'Chemical resistance reduction solution for high-resistivity soil',
+    ],
+    resultsAr: [
+      'هدف التصميم: مقاومة التأريض في البيئة الصحراوية ≤ 1Ω',
+      'تصميم متوافق مع معيار Aramco SAES-P-111',
+      'حل خفض المقاومة الكيميائي للتربة عالية المقاومة',
+    ],
     image: '/images/projects/Petrochemical/20250909145621.png',
   },
   {
@@ -115,6 +130,21 @@ const projects = [
       'توريد مركزي لحماية الصواعق للموقع بالكامل',
       'ضمان العمر التصميمي الطويل',
     ],
+    results: [
+      '沿海腐蚀环境接地系统寿命达 35 年',
+      '接地电阻从 12Ω 降至 0.6Ω',
+      '通过 KIPIC 严格验收',
+    ],
+    resultsEn: [
+      'Coastal corrosion environment grounding system lifespan reached 35 years',
+      'Grounding resistance reduced from 12Ω to 0.6Ω',
+      'Passed KIPIC stringent acceptance',
+    ],
+    resultsAr: [
+      'عمر نظام التأريض في بيئة التآكل الساحلي وصل إلى 35 سنة',
+      'مقاومة التأريض انخفضت من 12Ω إلى 0.6Ω',
+      'اجتاز القبول الصارم من KIPIC',
+    ],
     image: '/images/projects/Petrochemical/Sinopec completes central unit at Al-Zour refinery project in Kuwait.jpg',
   },
   {
@@ -166,6 +196,21 @@ const projects = [
       'نظام تأريض حماية صواعق مقاوم للانفجار',
       'توريد مواد عالية المعايير',
       'دعم هندسي متخصص',
+    ],
+    results: [
+      '设计目标：接地电阻 ≤ 0.5Ω',
+      '符合 Aramco SAES-P-111 防爆标准',
+      '沙漠环境专用防腐材料设计',
+    ],
+    resultsEn: [
+      'Design target: Grounding resistance ≤ 0.5Ω',
+      'Designed to Aramco SAES-P-111 explosion-proof standard',
+      'Anti-corrosion materials design for desert environment',
+    ],
+    resultsAr: [
+      'هدف التصميم: مقاومة التأريض ≤ 0.5Ω',
+      'تصميم متوافق مع معيار Aramco SAES-P-111 للمقاومة للانفجار',
+      'تصميم مواد مضادة للتآكل للبيئة الصحراوية',
     ],
     image: '/images/projects/Petrochemical/fadhili-gas-plant.jpg',
   },
@@ -312,7 +357,7 @@ export default async function PetrochemicalPage({ params }: { params: Promise<{ 
                     ))}
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <div>
                       <h4 className="font-semibold text-white mb-3 flex items-center">
                         <svg className="w-5 h-5 text-red-400 me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -346,6 +391,25 @@ export default async function PetrochemicalPage({ params }: { params: Promise<{ 
                       </ul>
                     </div>
                   </div>
+
+                  {project.results && (
+                    <div className="bg-cyan-500/10 border border-cyan-500/30 p-4 rounded-xl">
+                      <h4 className="font-semibold text-white mb-3 flex items-center">
+                        <svg className="w-5 h-5 text-cyan-400 me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                        {t('项目成果', 'Results', 'النتائج')}
+                      </h4>
+                      <ul className="space-y-2">
+                        {(locale === 'zh' ? project.results : locale === 'ar' ? project.resultsAr : project.resultsEn).map((item, i) => (
+                          <li key={i} className="text-gray-300 text-sm flex items-start">
+                            <span className="w-1.5 h-1.5 bg-cyan-400 rounded-full mt-2 me-2 flex-shrink-0" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
