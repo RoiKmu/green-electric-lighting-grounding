@@ -8,7 +8,7 @@ import FloatingButtons from "@/components/FloatingButtons";
 import ScrollAnimationProvider from "@/components/ScrollAnimationProvider";
 import { OrganizationSchema, WebSiteSchema, LocalBusinessSchema } from "@/components/seo/SchemaOrg";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://green-electric.com';
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://wuxigreen.com';
 
 export async function generateMetadata({ 
   params 

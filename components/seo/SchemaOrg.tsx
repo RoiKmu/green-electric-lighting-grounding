@@ -10,7 +10,7 @@ export function OrganizationSchema({ locale, url }: OrganizationSchemaProps) {
     "name": "Green Electric Lightning Protection",
     "alternateName": "Green Electric",
     "url": url,
-    "logo": `${url}/images/logo.png`,
+    "logo": `${url}/images/favicon.ico`,
     "description": locale === 'ar' 
       ? "حلول احترافية للحماية من الصواعق والتأريض لمشاريع EPC - متوافقة مع معايير IEC 62561 و UL 467"
       : locale === 'zh'
@@ -30,19 +30,16 @@ export function OrganizationSchema({ locale, url }: OrganizationSchemaProps) {
     "contactPoint": [
       {
         "@type": "ContactPoint",
-        "telephone": "+86-512-6288-6288",
+        "telephone": "+86-177-6635-3591",
         "contactType": "sales",
         "availableLanguage": ["English", "Chinese", "Arabic"]
       },
       {
         "@type": "ContactPoint",
-        "telephone": "+86-512-6288-6288",
+        "telephone": "+86-177-6635-3591",
         "contactType": "technical support",
         "availableLanguage": ["English", "Chinese"]
       }
-    ],
-    "sameAs": [
-      "https://www.linkedin.com/company/green-electric-industrial-supply"
     ],
     "areaServed": {
       "@type": "GeoCircle",
@@ -186,7 +183,7 @@ export function CaseStudySchema({
       "name": "Green Electric Lightning Protection",
       "logo": {
         "@type": "ImageObject",
-        "url": `${url}/images/logo.png`
+        "url": `${url}/images/favicon.ico`
       }
     },
     "mainEntityOfPage": {
@@ -291,8 +288,8 @@ export function LocalBusinessSchema({ locale, url }: LocalBusinessSchemaProps) {
       ? "中东地区 EPC 项目防雷接地材料认证供应商"
       : "Certified Lightning Protection & Grounding Materials Supplier for EPC Projects in Middle East",
     "url": url,
-    "telephone": "+86-512-6288-6288",
-    "email": "info@green-electric.com",
+    "telephone": "+86-177-6635-3591",
+    "email": "sales@wuxigreen.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Industrial Zone",

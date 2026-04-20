@@ -9,8 +9,8 @@ export async function POST(request: Request) {
     const { name, email, subject, message, phone, company } = body;
 
     const { data, error } = await resend.emails.send({
-      from: 'onboarding@resend.dev',
-      to: 'sales@wuxigreen.com',
+      from: process.env.EMAIL_FROM || 'onboarding@resend.dev',
+      to: process.env.EMAIL_TO || 'sales@wuxigreen.com',
       subject: `[Green Electric] New Inquiry: ${subject || 'General'} from ${name}`,
       html: `
         <div style="font-family: sans-serif; padding: 20px; border: 1px solid #eee; max-width: 600px; margin: 0 auto;">

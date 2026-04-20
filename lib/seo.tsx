@@ -1,6 +1,6 @@
 import { CaseStudySchema, BreadcrumbSchema } from '@/components/seo/SchemaOrg';
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://green-electric.com';
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://wuxigreen.com';
 
 interface ProjectSchemaData {
   locale: string;
@@ -78,7 +78,7 @@ export function generateProjectMetadata(
   locale: string,
   industrySlug: string
 ) {
-  const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://green-electric.com';
+  const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://wuxigreen.com';
   
   const title = locale === 'zh' ? project.title 
     : locale === 'ar' ? project.titleAr 
