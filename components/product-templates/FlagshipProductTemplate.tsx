@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Link } from '@/i18n/routing';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import { getRelatedProducts, getProductDetailPath } from '@/data/products';
 
 interface FlagshipProductTemplateProps {
   product: {
@@ -29,6 +30,8 @@ interface FlagshipProductTemplateProps {
         rows: Array<{ label: string; values: (string | number)[] }>;
       }>;
     };
+    productTier?: 'high-performance' | 'engineering-core' | 'compliance-support';
+    productId?: string;
   };
 }
 
@@ -40,6 +43,9 @@ export default function FlagshipProductTemplate({ product }: FlagshipProductTemp
   const techRef = useRef<HTMLDivElement>(null);
   const t = useTranslations('products.flagship');
   const tCommon = useTranslations('products');
+  const tItems = useTranslations('products.items');
+  
+  const relatedProducts = getRelatedProducts(product.productTier, product.productId);
 
   useEffect(() => {
     setIsVisible(true);
@@ -282,6 +288,43 @@ export default function FlagshipProductTemplate({ product }: FlagshipProductTemp
           )}
         </div>
       </div>
+
+      {relatedProducts.length > 0 && (
+        <div className="py-20 bg-industrial-950">
+          <div className="container mx-auto px-6">
+            <h2 className="text-3xl font-bold text-white mb-12 text-center">{tCommon('detail.relatedProducts')}</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {relatedProducts.map((item) => (
+                <Link 
+                  key={item.id} 
+                  href={getProductDetailPath(item.categoryId || '', item.id)} 
+                  className="group"
+                >
+                  <div className="border border-industrial-700 rounded-xl overflow-hidden hover:border-green-electric-500/50 transition-all duration-300 bg-industrial-900">
+                    <div className="h-48 relative">
+                      <Image
+                        src={item.image}
+                        alt={tItems(item.id)}
+                        fill
+                        className="object-contain group-hover:scale-110 transition-transform duration-500"
+                      />
+                    </div>
+                    <div className="p-4">
+                      <h4 className="font-medium text-white mb-2">{tItems(item.id)}</h4>
+                      <div className="text-green-electric-400 hover:text-green-electric-300 font-medium text-sm inline-flex items-center">
+                        {tCommon('detail.viewDetails')}
+                        <svg className="w-4 h-4 ms-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
 
       <div className="py-20 bg-gradient-to-r from-green-electric-900 to-green-electric-800">
         <div className="container mx-auto px-6 text-center">

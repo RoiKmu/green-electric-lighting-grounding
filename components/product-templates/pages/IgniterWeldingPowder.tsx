@@ -41,7 +41,9 @@ export default function IgniterWeldingPowder({ image }: IgniterWeldingPowderProp
         ['IWP-250', '250g', 'Busbar', 'Flat-to-Flat'],
         ['IWP-450', '450g', 'Large Section', 'Cable-to-Cable']
       ]
-    }
+    },
+    productTier: 'high-performance' as const,
+    productId: 'remote-igniter'
   };
 
   return <FlagshipProductTemplate product={product} />;

@@ -42,7 +42,9 @@ export default function ExothermicWelding({ image }: ExothermicWeldingProps) {
         ['F250', '250g', 'Flat-to-Flat', 'Busbar Connection'],
         ['F450', '450g', 'Cable-to-Cable', 'Large Section Connection'],
       ]
-    }
+    },
+    productTier: 'high-performance' as const,
+    productId: 'exothermic-welding'
   };
 
   return <FlagshipProductTemplate product={product} />;

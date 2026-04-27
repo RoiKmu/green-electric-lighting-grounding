@@ -278,78 +278,78 @@
   "about": {
     "hero": {
       "badge": "关于我们",
-      "title": "守护工业安全30年",
-      "subtitle": "从接闪到接地，构建完整防雷保护体系"
+      "title": "三十年匠心，只为做好防雷接地一件事",
+      "subtitle": "从尖端接闪到深地接地，构建永不妥协的工业安全屏障"
     },
     "badge": "关于我们",
-    "title": "构建工业安全坚实防线",
-    "description": "自1993年成立以来，格林电气一直致力于成为全球领先的一站式防雷保护和接地系统供应商，为您的设施提供全面的安全解决方案。",
+    "title": "防雷接地领域的深耕者与领航者",
+    "description": "自1993年成立以来，格林电气始终拒绝多元化的诱惑，坚持深耕防雷保护与接地系统。我们不仅提供产品，更致力于为全球工业设施提供从接闪、引下到接地全产业链的一站式系统化解决方案。",
     "story": {
       "badge": "我们的故事",
-      "title": "三十年匠心，成就系统安全",
-      "paragraph1": "格林电气于1993年在无锡成立，最初专注于电气设备制造。凭借对安全标准的坚定承诺，我们在行业内树立了一流的声誉。",
-      "paragraph2": "随着工业安全需求的发展，我们战略性地整合了防雷保护系统和接地解决方案。我们意识到，真正的安全来自于组件之间的完美协同，而不仅仅是堆砌单个产品。",
-      "paragraph3": "如今，格林电气已成长为 EPC 项目的首选一站式配套专家。从避雷针和电解离子接地极到放热焊接施工配件，乃至支撑基础工程的钢铝型材，我们提供覆盖整个项目生命周期的完整材料支持。",
-      "yearsExcellence": "年工业卓越历程"
+      "title": "跨越三十载，初心如磐，始终如一",
+      "paragraph1": "1993年，格林电气诞生于中国无锡。从公司创立的第一天起，我们就确立了\"专注于防雷接地技术\"的长期发展战略。在过去的三十多年里，无论行业风向如何更替，我们从未偏离这一主航道，凭借对安全标准的极致追求，在工业防护领域树立了专业且纯粹的品牌信誉。",
+      "paragraph2": "我们深知，真正的工业安全不是组件的简单堆砌，而是系统内部的完美协同。因此，我们持续对\"从接闪端子到地底极点\"的每一个物理连接进行深度研发，确保在极端地理与气候条件下，雷电流能够被安全、精准、高效地引入大地。",
+      "paragraph3": "如今，格林电气已成长为全球 EPC 项目首选的专项配套专家。从先进的 ESE 提前放电避雷针、电解离子接地极，到精密的点火器与放热焊接耗材，我们始终聚焦于防雷接地专项物资的深度供应。过去三十年我们以此为本；未来百年，我们初心不改，继续守护每一座关键基础设施的安全。",
+      "yearsExcellence": "年防雷接地专业历程"
     },
     "advantages": {
-      "title": "为 EPC 提供的集成供应价值",
-      "description": "协助总包方降低沟通成本，确保系统完美兼容",
+      "title": "专为 EPC 打造的专项保障价值",
+      "description": "通过极致的专业化，协助总包方消除安全隐患，确保系统符合国际最严苛标准",
       "compatibility": {
-        "title": "系统兼容性保证",
-        "description": "从接闪端子到接地电极，所有组件均按照统一技术规范设计，确保最佳电气连续性和耐腐蚀性。"
+        "title": "全系统技术协同",
+        "description": "我们提供的所有组件均基于统一的防雷物理模型开发，确保从接闪器到接地网的电气连续性与物理兼容性达到最佳状态。"
       },
       "procurement": {
-        "title": "简化 EPC 采购与物料管理",
-        "description": "单一供应商即可覆盖所有防雷耗材、基础钢材和精密配件，显著降低沟通、物流和时间成本。"
+        "title": "专项物资一站式集成",
+        "description": "拒绝零散采购。我们提供覆盖防雷耗材、专项连接件及施工工具的全产业链物资，大幅提升 EPC 项目的物料合规性与管理效率。"
       },
       "engineering": {
-        "title": "专业工程支持",
-        "description": "我们为易燃易爆等危险场所提供专业的静电防护建议，并支持放热焊接等关键工艺的材料匹配方案。"
+        "title": "深地环境技术后盾",
+        "description": "凭借三十年的实战经验，我们针对高抗旱、高盐雾及易燃易爆等极端工况，提供精准的防雷接地材料匹配方案与技术支持。"
       }
     },
     "timeline": {
       "badge": "发展历程",
-      "title": "里程碑",
+      "title": "专注成就里程碑",
       "events": {
         "1993": {
-          "title": "公司成立",
-          "description": "格林电气在无锡成立，专注于电力设备制造和工业电气研发。"
+          "title": "初心启航",
+          "description": "格林电气在无锡成立，正式开启防雷接地技术的探索之路，确立守护工业安全的品牌内核。"
         },
         "2010": {
-          "title": "防雷事业部成立",
-          "description": "开始开发高性能耐腐蚀避雷针和接地体，为基础设施提供安全防护。"
+          "title": "专项深耕与标准引领",
+          "description": "深化高性能耐腐蚀接地体与避雷针的研发，多项产品通过国际主流标准认证，成为基础设施防护的坚实后盾。"
         },
         "2018": {
-          "title": "综合解决方案升级",
-          "description": "推出全方位纳米碳接地系列和自动监控系统，实现产品智能化和系统化。"
+          "title": "系统化方案升级",
+          "description": "推出包含智能预警、物理接闪与高效接地在内的全方位系统化解决方案，标志着从单一材料商向系统集成专家的跨越。"
         },
         "today": {
-          "title": "一站式采购领军者",
-          "description": "服务范围扩展至全球，提供从接闪到接地、从原材料到施工工具的综合解决方案。"
+          "title": "始终如一的全球伙伴",
+          "description": "服务版图横跨 100+ 国家。历经三十年，我们依然专注于防雷接地主业，为全球 EPC 合作伙伴提供最纯粹的专业支持。"
         }
       }
     },
     "values": {
       "badge": "核心价值观",
-      "title": "驱动我们前进的力量",
+      "title": "专业主义驱动未来",
       "safety": {
-        "title": "安全至上",
-        "description": "无论是常规建筑还是石化与天然气设施等高风险场所，我们对质量的承诺始终如一。"
+        "title": "安全之本",
+        "description": "无论是高耸的石油储罐还是偏远的新能源电站，我们对防雷品质的承诺始终如一，绝不退缩。"
       },
       "innovation": {
-        "title": "技术创新",
-        "description": "持续开发电解离子接地、远程控制焊接等新技术，将传统工程提升到技术高度。"
+        "title": "技术定力",
+        "description": "在防雷接地领域持续投入研发，通过电解离子、放热焊接等核心技术的革新，不断刷新工业防护的安全上限。"
       },
       "service": {
-        "title": "综合服务",
-        "description": "完美连接原材料供应与专业防雷组件，提供最省心的B2B采购体验。"
+        "title": "专注服务",
+        "description": "摒弃无关杂项，完美连接专项材料供应与施工工艺，为全球 B2B 客户提供最省心、最专业的专项采购体验。"
       }
     },
     "cta": {
-      "title": "开启您的一站式采购之旅",
-      "description": "体验格林电气的系统化解决方案。立即联系我们，让我们的专业技术团队为您的项目提供全面支持。",
-      "button": "联系我们获取报价",
+      "title": "携手专项专家，共筑安全工程",
+      "description": "体验格林电气三十年积累的专业力量。立即联系我们，让我们的技术团队为您的项目提供深度防雷接地支持。",
+      "button": "获取专项报价",
       "contactUs": "联系我们",
       "browseProducts": "浏览产品"
     }
@@ -426,24 +426,24 @@
   },
   "products": {
     "badge": "产品中心",
-    "title": "专业防雷保护与接地解决方案",
-    "description": "探索我们全面的三层产品体系，从旗舰技术解决方案到核心接地设备和工业安全支持。",
+    "title": "专业雷电防护与接地系统解决方案",
+    "description": "探索符合国际标准的工业级防护体系，从接闪技术到深地接地，为全球关键设施提供永不妥协的安全保障。",
     "carousel": {
-      "featuredProduct": "明星产品",
+      "featuredProduct": "系统核心技术",
       "viewDetails": "查看详情"
     },
     "tiers": {
-      "flagship": {
-        "title": "明星产品",
-        "description": "深受全球客户信赖的热门产品"
+      "high-performance": {
+        "title": "高性能系统",
+        "description": "专为极端环境与关键基础设施设计的尖端防护方案，具备极高的技术门槛与系统集成度"
       },
-      "core": {
-        "title": "核心接地与防雷保护",
-        "description": "工程必备，供应齐全"
+      "engineering-core": {
+        "title": "专业工程组件",
+        "description": "符合国际主流标准的标准化防雷接地组件，为大型工程提供稳定的基础供应支持"
       },
-      "support": {
-        "title": "工业安全与工程支持",
-        "description": "配套设备及辅助工具"
+      "compliance-support": {
+        "title": "系统配套与合规",
+        "description": "确保安装品质、电气连续性及系统合规性的专项配套组件与检测工具"
       }
     },
     "more": "更多",
@@ -454,60 +454,82 @@
     "customSolutionDescription": "我们为您的特定需求提供定制的防雷保护和接地解决方案。",
     "contactForCustomQuote": "联系我们获取报价",
     "categories": {
+      "viewAll": "查看全部产品",
       "lightning-capture-warning": {
-        "name": "智能预警与接闪系统",
-        "description": "提前感知与安全拦截技术，提供全面的防雷保护"
+        "name": "接闪器与雷电预警系统",
+        "description": "采用主动与被动接闪技术，符合 NFC 17-102 与 IEC 62305 规范的直击雷防护方案"
       },
       "down-conductors-bonding": {
-        "name": "引下与等电位连接方案",
-        "description": "安全引导雷电电流入地并消除电位差"
+        "name": "导体系统与等电位连接",
+        "description": "确保雷电流安全路径，消除系统间电位差的核心连接组件"
       },
       "earthing-grounding-systems": {
-        "name": "高性能接地系统",
-        "description": "核心业务线——高效将电流散入大地（IEC: Earthing, IEEE: Grounding）"
+        "name": "接地电极与地下系统",
+        "description": "对标 UL 467 与 IEEE 80 标准，提供高寿命、低阻抗的深地散流解决方案"
       },
       "exothermic-welding-connections": {
-        "name": "放热焊接与电气连接",
-        "description": "高质量分子级焊接连接，实现永久性电气连续性"
+        "name": "分子键合与放热焊接",
+        "description": "实现永久性分子级电气连接，消除接触电阻与电化学腐蚀"
+      },
+      "surge-protection": {
+        "name": "电涌保护系统 (SPD)",
+        "description": "保护内部精密电子设备免受感应雷与操作过电压侵害，符合 IEC 61643 标准"
+      },
+      "ground-enhancement": {
+        "name": "降阻改良与特殊环境接地",
+        "description": "针对高电阻率土壤的永久性降阻方案，确保系统长效稳定"
+      },
+      "specialized-conductors": {
+        "name": "高级导体与屏蔽系统",
+        "description": "解决高频干扰、电化学腐蚀及复杂路径引下的专项导体技术"
       },
       "industrial-static-protection": {
-        "name": "工业静电防护专区",
-        "description": "石化、天然气与能源等工业应用专用设备"
+        "name": "特种工业静电防护",
+        "description": "专为石化、天然气及能源储备区域设计的本质安全型保护装置"
       },
       "testing-fasteners-support": {
-        "name": "紧固件、检测与基建辅材",
-        "description": "专业检测设备与安装支架，为工程提供全面支持"
+        "name": "系统组件与合规检测",
+        "description": "专业安装支架、紧固件及符合标准的现场验测工具"
       }
     },
     "items": {
-      "lightning-warning-system": "雷电预警系统",
-      "ese-air-terminal": "提前放电避雷针 (ESE)",
-      "conventional-air-terminal": "防腐钢管避雷针",
-      "grounding-wire": "接地线",
-      "equipotential-connector": "等电位联结箱",
-      "grounding-terminal-box": "接地端子箱",
-      "grounding-terminal-block": "接地端子排",
-      "grounding-point": "接地端子",
-      "grounding-busbar": "接地汇流排",
-      "copper-bonded-rod": "铜覆钢接地极/接地棒",
-      "electrolytic-ion-electrode": "电解离子接地极",
-      "nano-carbon-grounding": "全方位纳米碳接地系列",
-      "energy-storage-grounding": "储能接地装置",
-      "grounding-plate": "接地板",
-      "grounding-column": "接地柱",
-      "exothermic-welding": "放热焊接系列",
-      "remote-igniter": "点火器与焊粉",
-      "mechanical-connector": "连接器",
-      "rod-clamp": "接地棒线夹",
-      "tube-clamp": "管卡",
-      "static-grounding-alarm": "静电接地报警器",
-      "static-eliminator": "静电消除装置",
-      "rga-floating-tank": "自动收卷浮顶罐接地装置 (RGA)",
-      "mobile-grounding-meter": "移动接地仪",
-      "grounding-detection-well": "接地观测井",
-      "grounding-resistance-meter": "接地电阻测试仪",
-      "soil-resistivity-meter": "土壤电阻率测试仪",
-      "brackets-clamps": "支架与夹具"
+      "lightning-warning-system": "智能大气电场监测与预警系统",
+      "ese-air-terminal": "高性能提前放电 (ESE) 接闪器",
+      "conventional-air-terminal": "工业级耐腐蚀接闪杆",
+      "grounding-wire": "高导电引下线导体",
+      "equipotential-connector": "等电位联结汇流箱",
+      "grounding-terminal-box": "分级接地测试端子箱",
+      "grounding-terminal-block": "高纯铜接地端子排",
+      "grounding-point": "预埋式专用接地端子",
+      "grounding-busbar": "主接地汇流排",
+      "copper-bonded-rod": "分子键合铜包钢接地电极",
+      "electrolytic-ion-electrode": "化学电解离子接地系统",
+      "nano-carbon-grounding": "高导电纳米碳增效接地系列",
+      "energy-storage-grounding": "储能系统专用接地模块",
+      "grounding-plate": "板式接地电极",
+      "grounding-column": "深埋式接地柱",
+      "exothermic-welding": "分子级放热焊接模具",
+      "remote-igniter": "电子远程点火器与专用焊粉",
+      "mechanical-connector": "高强度机械连接器",
+      "rod-clamp": "电极专用高应力线夹",
+      "tube-clamp": "重型管路支撑夹具",
+      "power-spd-t1": "一级电源电涌保护器 (Type 1 - 10/350µs)",
+      "power-spd-t2": "二级电源电涌保护器 (Type 2 - 8/20µs)",
+      "signal-spd": "工业控制信号保护器 (RS485/PLC)",
+      "isolating-spark-gap": "防爆型隔离火花间隙 (ISG)",
+      "gem-material": "永久性降阻改良材料 (GEM)",
+      "grounding-module": "低电阻石墨化接地模块",
+      "shielded-down-conductor": "高压抗干扰屏蔽引下线",
+      "bi-metallic-connector": "铜铝过渡双金属连接件",
+      "flexible-braid": "高频柔性铜编织接地带",
+      "static-grounding-alarm": "本安型静电接地报警仪",
+      "static-eliminator": "工业级主动静电消除装置",
+      "rga-floating-tank": "浮顶罐伸缩式接地补偿装置",
+      "mobile-grounding-meter": "便携式等电位连续性测试仪",
+      "grounding-detection-well": "重型防护接地观测井",
+      "grounding-resistance-meter": "数显精密接地电阻测试仪",
+      "soil-resistivity-meter": "四极法土壤电阻率分析仪",
+      "brackets-clamps": "系统专用支架与紧固组件"
     },
     "detail": {
       "notFound": "产品未找到",

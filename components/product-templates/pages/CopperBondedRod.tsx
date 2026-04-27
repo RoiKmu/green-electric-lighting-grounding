@@ -39,7 +39,9 @@ export default function CopperBondedRod({ image }: CopperBondedRodProps) {
         ['CBR-20.0', '20.0mm', '1.2m / 2.4m / 3.0m', '0.25mm', '< 0.1Ω'],
         ['CBR-25.0', '25.0mm', '1.2m / 2.4m / 3.0m', '0.33mm', '< 0.1Ω']
       ]
-    }
+    },
+    productTier: 'high-performance' as const,
+    productId: 'copper-bonded-rod'
   };
 
   return <FlagshipProductTemplate product={product} />;

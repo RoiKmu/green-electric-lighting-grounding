@@ -64,7 +64,9 @@ export default function LightningWarningSystem({ image }: LightningWarningSystem
           ]
         }
       ]
-    }
+    },
+    productTier: 'high-performance' as const,
+    productId: 'lightning-warning-system'
   };
 
   return <FlagshipProductTemplate product={product} />;

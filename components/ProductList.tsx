@@ -1,17 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { getProductsByTier, getProductDetailPath, Product, ProductCategory, ALL_PRODUCTS } from "@/data/products";
+import { getProductsByTier, getProductDetailPath, Product, ProductCategory, PRODUCT_TIERS, ProductTier } from "@/data/products";
 import { Link } from "@/i18n/routing";
 import ProductCarousel from "@/components/ProductCarousel";
 import { useTranslations } from "next-intl";
-
-const FEATURED_PRODUCT_IDS = [
-  'lightning-warning-system',
-  'ese-air-terminal',
-  'copper-bonded-rod',
-  'remote-igniter',
-];
 
 function ProductCard({ product, categoryId }: { product: Product; categoryId: string }) {
   const t = useTranslations('products.items');
@@ -40,64 +33,6 @@ function ProductCard({ product, categoryId }: { product: Product; categoryId: st
         )}
       </div>
     </Link>
-  );
-}
-
-function FeaturedProductCard({ product }: { product: NonNullable<typeof ALL_PRODUCTS[number]> }) {
-  const t = useTranslations('products');
-  const tItems = useTranslations('products.items');
-
-  return (
-    <div className="bg-white rounded-xl overflow-hidden border border-industrial-200 hover:shadow-lg transition-all duration-300">
-      <Link 
-        href={getProductDetailPath(product.categoryId, product.id)}
-        className="block h-40 relative overflow-hidden group bg-industrial-50"
-      >
-        <Image
-          src={product.image}
-          alt={tItems(product.id)}
-          fill
-          className="object-contain group-hover:scale-105 transition-transform duration-500"
-        />
-      </Link>
-      <div className="p-4">
-        <h4 className="font-bold text-industrial-900 mb-2">{tItems(product.id)}</h4>
-        <p className="text-sm text-industrial-600 mb-4 line-clamp-2">
-          {t(`categories.${product.categoryId}.description`)}
-        </p>
-        <div className="flex flex-wrap gap-2">
-          <Link
-            href={getProductDetailPath(product.categoryId, product.id)}
-            className="text-xs px-3 py-1.5 bg-industrial-100 text-industrial-600 rounded-full hover:bg-green-electric-100 hover:text-green-electric-700 transition-colors"
-          >
-            {tItems(product.id)}
-          </Link>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function FeaturedProductsSection() {
-  const t = useTranslations('products.tiers');
-  
-  const featuredProducts = FEATURED_PRODUCT_IDS
-    .map(id => ALL_PRODUCTS.find(p => p.id === id))
-    .filter((p): p is NonNullable<typeof ALL_PRODUCTS[number]> => p !== undefined);
-
-  return (
-    <section className="rounded-2xl p-8 bg-gradient-to-r from-amber-50 to-yellow-50 border border-amber-200">
-      <div className="mb-6">
-        <h2 className="text-2xl font-bold text-amber-700">{t('flagship.title')}</h2>
-        <p className="text-sm text-industrial-500">{t('flagship.description')}</p>
-      </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {featuredProducts.map((product) => (
-          <FeaturedProductCard key={product.id} product={product} />
-        ))}
-      </div>
-    </section>
   );
 }
 
@@ -146,47 +81,85 @@ function CategoryCard({ category }: { category: ProductCategory }) {
   );
 }
 
-function TierSection({ tierId, categories }: { 
-  tierId: string; 
+function QuickCategoryNav() {
+  const t = useTranslations('products');
+
+  const categories = [
+    { id: 'lightning-capture-warning', icon: '⚡' },
+    { id: 'down-conductors-bonding', icon: '🔗' },
+    { id: 'earthing-grounding-systems', icon: '🌍' },
+    { id: 'exothermic-welding-connections', icon: '🔥' },
+    { id: 'surge-protection', icon: '🛡️' },
+    { id: 'ground-enhancement', icon: '📊' },
+    { id: 'specialized-conductors', icon: '⚡' },
+    { id: 'industrial-static-protection', icon: '🏭' },
+    { id: 'testing-fasteners-support', icon: '🔧' },
+  ];
+
+  return (
+    <div className="flex flex-wrap justify-center gap-3">
+      {categories.map((cat) => (
+        <a
+          key={cat.id}
+          href={`#category-${cat.id}`}
+          className="px-4 py-2 bg-white border border-industrial-200 rounded-full text-sm font-medium text-industrial-700 hover:bg-green-electric-50 hover:border-green-electric-300 hover:text-green-electric-700 transition-all duration-300"
+        >
+          {t(`categories.${cat.id}.name`)}
+        </a>
+      ))}
+    </div>
+  );
+}
+
+function TierSection({ tier, categories }: { 
+  tier: ProductTier; 
   categories: ProductCategory[];
 }) {
   const t = useTranslations('products.tiers');
 
-  const tierColors: Record<string, { bg: string; border: string; text: string; badge: string }> = {
-    flagship: {
+  const tierColors: Record<string, { bg: string; border: string; text: string; badge: string; accent: string }> = {
+    'high-performance': {
       bg: 'bg-gradient-to-r from-amber-50 to-yellow-50',
       border: 'border-amber-200',
       text: 'text-amber-700',
       badge: 'bg-amber-100 text-amber-800',
+      accent: 'border-amber-500',
     },
-    core: {
+    'engineering-core': {
       bg: 'bg-gradient-to-r from-slate-50 to-gray-50',
       border: 'border-slate-200',
       text: 'text-slate-700',
       badge: 'bg-slate-100 text-slate-800',
+      accent: 'border-slate-500',
     },
-    support: {
+    'compliance-support': {
       bg: 'bg-gradient-to-r from-orange-50 to-amber-50',
       border: 'border-orange-200',
       text: 'text-orange-700',
       badge: 'bg-orange-100 text-orange-800',
+      accent: 'border-orange-500',
     },
   };
 
-  const colors = tierColors[tierId] || tierColors.support;
+  const colors = tierColors[tier.id] || tierColors['compliance-support'];
 
   if (categories.length === 0) return null;
 
   return (
     <section className={`rounded-2xl p-8 ${colors.bg} border ${colors.border}`}>
-      <div className="mb-6">
-        <h2 className={`text-2xl font-bold ${colors.text}`}>{t(`${tierId}.title`)}</h2>
-        <p className="text-sm text-industrial-500">{t(`${tierId}.description`)}</p>
+      <div className="flex items-center gap-4 mb-10 border-l-4 ${colors.accent} pl-4">
+        <div>
+          <h2 className={`text-2xl font-bold ${colors.text}`}>{t(`${tier.id}.title`)}</h2>
+          <span className="text-industrial-400 text-sm uppercase tracking-widest">{tier.nameEn}</span>
+        </div>
       </div>
+      <p className="text-sm text-industrial-500 mb-8 -mt-6">{tier.description}</p>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {categories.map((category) => (
-          <CategoryCard key={category.id} category={category} />
+          <div key={category.id} id={`category-${category.id}`}>
+            <CategoryCard category={category} />
+          </div>
         ))}
       </div>
     </section>
@@ -195,8 +168,13 @@ function TierSection({ tierId, categories }: {
 
 export default function ProductList() {
   const t = useTranslations('products');
-  const coreCategories = getProductsByTier('core');
-  const supportCategories = getProductsByTier('support');
+  const highPerformanceCategories = getProductsByTier('high-performance');
+  const coreCategories = getProductsByTier('engineering-core');
+  const supportCategories = getProductsByTier('compliance-support');
+
+  const highPerformanceTier = PRODUCT_TIERS.find(tier => tier.id === 'high-performance')!;
+  const coreTier = PRODUCT_TIERS.find(tier => tier.id === 'engineering-core')!;
+  const supportTier = PRODUCT_TIERS.find(tier => tier.id === 'compliance-support')!;
 
   return (
     <main className="min-h-screen bg-white">
@@ -221,27 +199,23 @@ export default function ProductList() {
         </div>
       </section>
 
-      <section className="py-24">
+      <section className="py-16">
         <div className="container mx-auto px-6">
           <ProductCarousel />
         </div>
       </section>
 
-      <section className="py-24 bg-industrial-50">
+      <section className="py-8 bg-industrial-50 border-y border-industrial-200">
         <div className="container mx-auto px-6">
-          <FeaturedProductsSection />
+          <QuickCategoryNav />
         </div>
       </section>
 
-      <section className="py-24">
-        <div className="container mx-auto px-6">
-          <TierSection tierId="core" categories={coreCategories} />
-        </div>
-      </section>
-
-      <section className="py-24 bg-industrial-50">
-        <div className="container mx-auto px-6">
-          <TierSection tierId="support" categories={supportCategories} />
+      <section className="py-16">
+        <div className="container mx-auto px-6 space-y-16">
+          <TierSection tier={highPerformanceTier} categories={highPerformanceCategories} />
+          <TierSection tier={coreTier} categories={coreCategories} />
+          <TierSection tier={supportTier} categories={supportCategories} />
         </div>
       </section>
 

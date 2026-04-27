@@ -18,7 +18,7 @@ export default function ProductCarousel() {
     if (isAutoPlaying && featuredProducts.length > 1) {
       timerRef.current = setInterval(() => {
         setCurrentSlide((prev) => (prev + 1) % featuredProducts.length);
-      }, 5000);
+      }, 7000);
     }
     return () => {
       if (timerRef.current) {

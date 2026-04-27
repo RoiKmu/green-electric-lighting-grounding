@@ -74,7 +74,9 @@ export default function EarlyDischargeLightningRod({ image }: EarlyDischargeLigh
           ]
         }
       ]
-    }
+    },
+    productTier: 'high-performance' as const,
+    productId: 'ese-air-terminal'
   };
 
   return <FlagshipProductTemplate product={product} />;

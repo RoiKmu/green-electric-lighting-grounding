@@ -44,7 +44,7 @@ export default function ProductDetailClient({ params }: ProductDetailClientProps
     );
   }
 
-  if (currentCategory.tier === 'flagship') {
+  if (currentCategory.tier === 'high-performance') {
     switch (product) {
       case 'ese-air-terminal':
         return <EarlyDischargeLightningRod image={currentProduct.image} />;
