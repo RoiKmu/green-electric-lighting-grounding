@@ -1,6 +1,12 @@
 import { CaseStudySchema, BreadcrumbSchema } from '@/components/seo/SchemaOrg';
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://wuxigreen.com';
+const BASE_URL = 'https://www.wxgreenelectric.com';
+
+const BRAND = {
+  zh: '格林电工 | 无锡市格林电工装备有限公司',
+  en: 'Green Electric | Wuxi Green Electric Equipment Co., Ltd.',
+  ar: 'Green Electric | شركة ووكسي جرين للمعدات الكهربائية'
+};
 
 interface ProjectSchemaData {
   locale: string;
@@ -78,9 +84,9 @@ export function generateProjectMetadata(
   locale: string,
   industrySlug: string
 ) {
-  const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://wuxigreen.com';
+  const titleSuffix = BRAND[locale as keyof typeof BRAND] || BRAND.en;
   
-  const title = locale === 'zh' ? project.title 
+  const currentTitle = locale === 'zh' ? project.title 
     : locale === 'ar' ? project.titleAr 
     : project.titleEn;
   
@@ -89,18 +95,25 @@ export function generateProjectMetadata(
     : project.highlightEn;
 
   return {
-    title,
-    description,
+    title: `${currentTitle} - ${industry} | ${titleSuffix}`,
+    description: `${description}. ${BRAND[locale as keyof typeof BRAND]} provides IEC 62561 compliant grounding materials.`,
     keywords: [
-      title,
-      industry,
-      'lightning protection',
-      'grounding system',
-      'EPC project',
-      'Saudi Arabia',
-      'Middle East',
+      '无锡市格林电工装备有限公司',
+      '格林电工',
+      'Wuxi Green Electric',
+      'wxgreenelectric',
+      '防雷接地',
+      '接地极',
+      '避雷针',
+      'Lightning Protection',
+      'Grounding System',
+      'ESE Lightning Rod',
+      'Aramco SAES',
       'IEC 62561',
-      'Aramco SAES'
+      'UL 467',
+      'Saudi Arabia EPC Supply',
+      currentTitle,
+      industry
     ],
     alternates: {
       canonical: `${BASE_URL}/${locale}/projects/${industrySlug}`,
@@ -135,3 +148,5 @@ export const INDUSTRY_LABELS: Record<string, { en: string; zh: string; ar: strin
     ar: 'النقل بالسكك الحديدية'
   }
 };
+
+export { BASE_URL, BRAND };

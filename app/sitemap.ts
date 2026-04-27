@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next'
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://wuxigreen.com'
+const BASE_URL = 'https://www.wxgreenelectric.com'
 
 const locales = ['en', 'zh', 'ar']
 
@@ -45,19 +45,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const currentDate = new Date()
   
   const staticRoutes: MetadataRoute.Sitemap = locales.flatMap(locale =>
-    staticPages.map(page => ({
-      url: `${BASE_URL}/${locale}${page}`,
-      lastModified: currentDate,
-      changeFrequency: page === '' ? 'daily' : 'weekly' as const,
-      priority: page === '' ? 1 : page === '/products' || page === '/projects' ? 0.9 : 0.8,
-      alternates: {
-        languages: {
-          en: `${BASE_URL}/en${page}`,
-          zh: `${BASE_URL}/zh${page}`,
-          ar: `${BASE_URL}/ar${page}`,
+    staticPages.map(page => {
+      let priority = 0.8
+      if (page === '') priority = 1.0
+      else if (page === '/about' || page === '/contact') priority = 0.9
+      else if (page === '/products' || page === '/projects') priority = 0.9
+
+      return {
+        url: `${BASE_URL}/${locale}${page}`,
+        lastModified: currentDate,
+        changeFrequency: page === '' ? 'daily' : 'weekly' as const,
+        priority: priority,
+        alternates: {
+          languages: {
+            en: `${BASE_URL}/en${page}`,
+            zh: `${BASE_URL}/zh${page}`,
+            ar: `${BASE_URL}/ar${page}`,
+            'x-default': `${BASE_URL}/en${page}`,
+          },
         },
-      },
-    }))
+      }
+    })
   )
 
   const categoryRoutes: MetadataRoute.Sitemap = locales.flatMap(locale =>
@@ -71,6 +79,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
           en: `${BASE_URL}/en/products/${category}`,
           zh: `${BASE_URL}/zh/products/${category}`,
           ar: `${BASE_URL}/ar/products/${category}`,
+          'x-default': `${BASE_URL}/en/products/${category}`,
         },
       },
     }))
@@ -87,6 +96,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
           en: `${BASE_URL}/en/products/${category}/${product}`,
           zh: `${BASE_URL}/zh/products/${category}/${product}`,
           ar: `${BASE_URL}/ar/products/${category}/${product}`,
+          'x-default': `${BASE_URL}/en/products/${category}/${product}`,
         },
       },
     }))

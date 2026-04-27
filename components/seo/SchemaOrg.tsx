@@ -7,15 +7,21 @@ export function OrganizationSchema({ locale, url }: OrganizationSchemaProps) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Green Electric Lightning Protection",
-    "alternateName": "Green Electric",
+    "name": "无锡市格林电工装备有限公司",
+    "alternateName": [
+      "Green Electric",
+      "格林电工",
+      "Wuxi Green Electric Equipment Co., Ltd.",
+      "Green Electric Lightning Protection"
+    ],
+    "legalName": "Wuxi Green Electric Equipment Co., Ltd.",
     "url": url,
-    "logo": `${url}/images/favicon.ico`,
-    "description": locale === 'ar' 
-      ? "حلول احترافية للحماية من الصواعق والتأريض لمشاريع EPC - متوافقة مع معايير IEC 62561 و UL 467"
-      : locale === 'zh'
-      ? "专业防雷接地解决方案供应商 - 符合 IEC 62561 和 UL 467 标准，服务 EPC 工程总承包项目"
-      : "Professional Lightning Protection & Grounding Solutions for EPC Projects - Compliant with IEC 62561, UL 467, IEEE 80, and Saudi Aramco SAES Standards",
+    "logo": `${url}/logo.png`,
+    "description": locale === 'zh' 
+      ? "格林电工（wxgreenelectric.com）是领先的防雷接地系统制造商，专注于为中东、东南亚等全球 EPC 项目提供符合 IEC、UL 标准的材料。"
+      : locale === 'ar'
+      ? "Green Electric (wxgreenelectric.com) is a premier manufacturer of lightning protection and grounding systems for global EPC projects."
+      : "Green Electric (wxgreenelectric.com) is a premier manufacturer of lightning protection and grounding systems for global EPC projects, compliant with IEC 62561, UL 467, and Saudi Aramco SAES standards.",
     "foundingDate": "1993",
     "numberOfEmployees": {
       "@type": "QuantitativeValue",
@@ -24,23 +30,23 @@ export function OrganizationSchema({ locale, url }: OrganizationSchemaProps) {
     },
     "address": {
       "@type": "PostalAddress",
-      "addressCountry": "CN",
-      "addressRegion": "Jiangsu"
+      "streetAddress": "No.9, Su Tie Rd, Binhu District",
+      "addressLocality": "Wuxi",
+      "addressRegion": "Jiangsu",
+      "addressCountry": "CN"
     },
-    "contactPoint": [
-      {
-        "@type": "ContactPoint",
-        "telephone": "+86-177-6635-3591",
-        "contactType": "sales",
-        "availableLanguage": ["English", "Chinese", "Arabic"]
-      },
-      {
-        "@type": "ContactPoint",
-        "telephone": "+86-177-6635-3591",
-        "contactType": "technical support",
-        "availableLanguage": ["English", "Chinese"]
-      }
+    "sameAs": [
+      "https://www.linkedin.com/company/wuxi-green-electric",
+      "https://wxgreenelectric.en.alibaba.com"
     ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+86-177-6635-3591",
+      "contactType": "sales",
+      "email": "sales@wuxigreen.com",
+      "areaServed": ["SA", "AE", "KW", "CN"],
+      "availableLanguage": ["Chinese", "English", "Arabic"]
+    },
     "areaServed": {
       "@type": "GeoCircle",
       "geoMidpoint": {
@@ -61,7 +67,10 @@ export function OrganizationSchema({ locale, url }: OrganizationSchemaProps) {
       "IEEE 80",
       "Saudi Aramco SAES Standards",
       "SASO Standards",
-      "EPC Project Supply"
+      "EPC Project Supply",
+      "防雷接地",
+      "避雷针",
+      "接地极"
     ]
   };
 
@@ -112,7 +121,8 @@ export function ProductSchema({
     },
     "manufacturer": {
       "@type": "Organization",
-      "name": "Green Electric Lightning Protection"
+      "name": "无锡市格林电工装备有限公司",
+      "alternateName": "Wuxi Green Electric Equipment Co., Ltd."
     },
     "category": category,
     "additionalProperty": specifications.map(spec => ({
@@ -130,7 +140,7 @@ export function ProductSchema({
       "priceCurrency": "USD",
       "seller": {
         "@type": "Organization",
-        "name": "Green Electric Lightning Protection"
+        "name": "无锡市格林电工装备有限公司"
       }
     }
   };
@@ -176,14 +186,14 @@ export function CaseStudySchema({
     "image": image.startsWith('http') ? image : `${url}${image}`,
     "author": {
       "@type": "Organization",
-      "name": "Green Electric Lightning Protection"
+      "name": "无锡市格林电工装备有限公司"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Green Electric Lightning Protection",
+      "name": "无锡市格林电工装备有限公司",
       "logo": {
         "@type": "ImageObject",
-        "url": `${url}/images/favicon.ico`
+        "url": `${url}/logo.png`
       }
     },
     "mainEntityOfPage": {
@@ -201,7 +211,9 @@ export function CaseStudySchema({
       "Grounding System",
       industry,
       location,
-      "EPC Project"
+      "EPC Project",
+      "Green Electric",
+      "wxgreenelectric"
     ],
     "inLanguage": locale
   };
@@ -250,7 +262,8 @@ export function WebSiteSchema({ url, locale }: WebSiteSchemaProps) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Green Electric Lightning Protection",
+    "name": "格林电工 | 无锡市格林电工装备有限公司",
+    "alternateName": "Green Electric | Wuxi Green Electric Equipment Co., Ltd.",
     "url": url,
     "inLanguage": locale,
     "potentialAction": {
@@ -281,19 +294,20 @@ export function LocalBusinessSchema({ locale, url }: LocalBusinessSchemaProps) {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": `${url}/#business`,
-    "name": "Green Electric Lightning Protection",
+    "name": "无锡市格林电工装备有限公司",
+    "alternateName": "Green Electric",
     "description": locale === 'ar'
       ? "مورد معتمد لمواد الحماية من الصواعق والتأريض لمشاريع EPC في الشرق الأوسط"
       : locale === 'zh'
-      ? "中东地区 EPC 项目防雷接地材料认证供应商"
-      : "Certified Lightning Protection & Grounding Materials Supplier for EPC Projects in Middle East",
+      ? "中东地区 EPC 项目防雷接地材料认证供应商 - 无锡市格林电工装备有限公司"
+      : "Certified Lightning Protection & Grounding Materials Supplier for EPC Projects in Middle East - Wuxi Green Electric Equipment Co., Ltd.",
     "url": url,
     "telephone": "+86-177-6635-3591",
     "email": "sales@wuxigreen.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Industrial Zone",
-      "addressLocality": "Suzhou",
+      "streetAddress": "No.9, Su Tie Rd, Binhu District",
+      "addressLocality": "Wuxi",
       "addressRegion": "Jiangsu",
       "addressCountry": "CN"
     },

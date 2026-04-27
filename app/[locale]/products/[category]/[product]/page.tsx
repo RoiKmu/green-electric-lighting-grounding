@@ -3,7 +3,7 @@ import ProductDetailClient from './ProductDetailClient';
 import { ProductSchema, BreadcrumbSchema } from '@/components/seo/SchemaOrg';
 import { getCategoryById, getProductById } from '@/data/products';
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://green-electric.com';
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.wxgreenelectric.com';
 
 export async function generateMetadata({ 
   params 
