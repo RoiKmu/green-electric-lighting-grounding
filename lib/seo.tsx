@@ -8,6 +8,12 @@ const BRAND = {
   ar: 'Green Electric | شركة ووكسي جرين للمعدات الكهربائية'
 };
 
+const BRAND_SHORT = {
+  zh: '格林电工',
+  en: 'Green Electric',
+  ar: 'Green Electric'
+};
+
 interface ProjectSchemaData {
   locale: string;
   project: {
@@ -84,7 +90,7 @@ export function generateProjectMetadata(
   locale: string,
   industrySlug: string
 ) {
-  const titleSuffix = BRAND[locale as keyof typeof BRAND] || BRAND.en;
+  const brandShort = BRAND_SHORT[locale as keyof typeof BRAND_SHORT] || BRAND_SHORT.en;
   
   const currentTitle = locale === 'zh' ? project.title 
     : locale === 'ar' ? project.titleAr 
@@ -95,7 +101,7 @@ export function generateProjectMetadata(
     : project.highlightEn;
 
   return {
-    title: `${currentTitle} - ${industry} | ${titleSuffix}`,
+    title: `${currentTitle} | ${brandShort}`,
     description: `${description}. ${BRAND[locale as keyof typeof BRAND]} provides IEC 62561 compliant grounding materials.`,
     keywords: [
       '无锡市格林电工装备有限公司',

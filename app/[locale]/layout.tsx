@@ -106,7 +106,6 @@ export default async function LocaleLayout({
             href={link.href}
           />
         ))}
-        <link rel="canonical" href={`${BASE_URL}/${locale}`} />
         <meta name="geo.region" content="SA" />
         <meta name="geo.placename" content="Middle East" />
         <OrganizationSchema locale={locale} url={BASE_URL} />

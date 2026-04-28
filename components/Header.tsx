@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -10,6 +11,9 @@ export default function Header() {
   const [isProductsOpen, setIsProductsOpen] = useState(false);
   const [isProjectsOpen, setIsProjectsOpen] = useState(false);
   const t = useTranslations('nav');
+  const pathname = usePathname();
+  
+  const isHomePage = pathname === '/' || /^\/(en|zh|ar)\/?$/.test(pathname);
 
   return (
     <header 
@@ -25,10 +29,17 @@ export default function Header() {
           <div className="flex items-center min-w-[180px]">
             <Link href="/" className="flex items-center">
               <div>
-                <h1 className="text-2xl font-bold text-green-electric-400 flex items-start">
-                  Green Electric
-                  <sup className="text-[10px] ms-0.5 mt-1 text-green-electric-400">®</sup>
-                </h1>
+                {isHomePage ? (
+                  <h1 className="text-2xl font-bold text-green-electric-400 flex items-start">
+                    Green Electric
+                    <sup className="text-[10px] ms-0.5 mt-1 text-green-electric-400">®</sup>
+                  </h1>
+                ) : (
+                  <div className="text-2xl font-bold text-green-electric-400 flex items-start">
+                    Green Electric
+                    <sup className="text-[10px] ms-0.5 mt-1 text-green-electric-400">®</sup>
+                  </div>
+                )}
               </div>
             </Link>
           </div>
