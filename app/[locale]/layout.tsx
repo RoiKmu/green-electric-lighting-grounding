@@ -19,14 +19,14 @@ export async function generateMetadata({
   
   const titles: Record<string, string> = {
     en: 'Green Electric | Lightning Protection & Grounding Solutions for EPC Projects',
-    zh: 'Green Electric | EPC项目防雷接地解决方案供应商',
+    zh: '格林电工 | EPC项目防雷接地解决方案供应商',
     ar: 'Green Electric | حلول الحماية من الصواعق والتأريض لمشاريع EPC'
   };
   
   const descriptions: Record<string, string> = {
-    en: 'Professional lightning protection & grounding solutions for EPC projects. Compliant with IEC 62561, UL 467, IEEE 80, and Saudi Aramco SAES standards. Serving petrochemical, power, transportation, and infrastructure sectors.',
-    zh: '专业防雷接地解决方案供应商，服务EPC工程总承包项目。符合IEC 62561、UL 467、IEEE 80及沙特阿美SAES标准。服务石化、电力、交通、基建等行业。',
-    ar: 'حلول احترافية للحماية من الصواعق والتأريض لمشاريع EPC. متوافقة مع معايير IEC 62561 و UL 467 و IEEE 80 و Saudi Aramco SAES. نخدم قطاعات البتروكيميائيات والطاقة والنقل والبنية التحتية.'
+    en: 'Green Electric Equipment Co., Ltd. (Green Electric) specializes in the R&D and manufacturing of anti-corrosion lightning protection and grounding devices. As a professional lightning protection and grounding solution provider, we have been serving EPC projects for a long time. Our products strictly comply with international standards including IEC 62561, UL 467, IEEE 80, and Saudi Aramco SAES. We have been deeply engaged in petrochemical, power, transportation, and infrastructure sectors for over 30 years.',
+    zh: '格林电工装备有限公司（格林电工）是一家专注于防腐型避雷接地装置研发与制造的专业公司，也是防雷接地解决方案供应商，长期服务于EPC工程总承包项目。公司产品严格符合IEC 62561、UL 467、IEEE 80及沙特阿美SAES等国际标准，深耕石化、电力、交通、基建等行业已超过三十年。',
+    ar: 'شركة جرين إلكتريك للمعدات المحدودة (جرين إلكتريك) هي شركة متخصصة في البحث والتطوير والتصنيع لأجهزة الحماية من الصواعق والتأريض المقاومة للتآكل. كمزود محترف لحلول الحماية من الصواعق والتأريض، نخدم مشاريع EPC منذ فترة طويلة. منتجاتنا تتوافق بصرامة مع المعايير الدولية بما في ذلك IEC 62561 و UL 467 و IEEE 80 و Saudi Aramco SAES. نعمل بعمق في قطاعات البتروكيميائيات والطاقة والنقل والبنية التحتية لأكثر من 30 عاماً.'
   };
 
   const alternateLanguages: Record<string, string> = {
