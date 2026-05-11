@@ -1,45 +1,16 @@
 import { MetadataRoute } from 'next'
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.wxgreenelectric.com'
-
 export default function robots(): MetadataRoute.Robots {
+  const baseUrl = 'https://www.wxgreenelectric.com'
+  
   return {
     rules: [
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/_next/', '/admin/'],
-      },
-      {
-        userAgent: 'Googlebot',
-        allow: '/',
-      },
-      {
-        userAgent: 'Bingbot',
-        allow: '/',
-      },
-      {
-        userAgent: 'GPTBot',
-        allow: '/',
-      },
-      {
-        userAgent: 'ChatGPT-User',
-        allow: '/',
-      },
-      {
-        userAgent: 'Claude-Web',
-        allow: '/',
-      },
-      {
-        userAgent: 'Anthropic-AI',
-        allow: '/',
-      },
-      {
-        userAgent: 'PerplexityBot',
-        allow: '/',
+        disallow: ['/api/', '/admin/'],
       },
     ],
-    sitemap: `${BASE_URL}/sitemap.xml`,
-    host: BASE_URL,
+    sitemap: `${baseUrl}/sitemap.xml`,
   }
 }

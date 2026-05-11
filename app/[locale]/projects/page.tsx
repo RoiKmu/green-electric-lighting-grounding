@@ -5,10 +5,30 @@ import { Link } from "@/i18n/routing";
 import WorldMap from "@/components/WorldMap";
 import ProjectsScrollSnapHandler from "@/components/ProjectsScrollSnapHandler";
 
-export const metadata: Metadata = {
-  title: "Projects - Green Electric Lightning Protection & Grounding Solutions",
-  description: "Empowering Global EPC Deliveries - Deep involvement in 265+ landmark EPC projects worldwide, specializing in Middle East and Southeast Asia harsh environment lightning protection delivery.",
-};
+export async function generateMetadata({ 
+  params 
+}: { 
+  params: Promise<{ locale: string }> 
+}): Promise<Metadata> {
+  const { locale } = await params;
+  
+  const titles: Record<string, string> = {
+    en: 'Projects - Green Electric Lightning Protection & Grounding Solutions',
+    zh: '项目案例 - 格林电工防雷接地解决方案',
+    ar: 'المشاريع - جرين إلكتريك لحلول الحماية من الصواعق والتأريض'
+  };
+  
+  const descriptions: Record<string, string> = {
+    en: 'Empowering Global EPC Deliveries - Deep involvement in 265+ landmark EPC projects worldwide, specializing in Middle East and Southeast Asia harsh environment lightning protection delivery.',
+    zh: '赋能全球EPC交付 - 深度参与265+个全球标杆EPC项目，专注于中东和东南亚恶劣环境防雷接地交付。',
+    ar: 'تمكين تسليمات EPC العالمية - مشاركة عميقة في أكثر من 265 مشروع EPC بارز عالمياً، التخصص في تسليم الحماية من الصواعق في البيئات القاسية في الشرق الأوسط وجنوب شرق آسيا.'
+  };
+  
+  return {
+    title: titles[locale] || titles.en,
+    description: descriptions[locale] || descriptions.en,
+  };
+}
 
 export function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'zh' }, { locale: 'ar' }];

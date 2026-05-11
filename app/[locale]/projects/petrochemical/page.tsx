@@ -3,10 +3,30 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { Link } from "@/i18n/routing";
 
-export const metadata: Metadata = {
-  title: "Petrochemical & Natural Gas Projects - Green Electric Lightning Protection",
-  description: "Explosion-proof lightning protection for petrochemical & natural gas facilities, oil depots, refineries, and LNG terminals in extreme heat and high corrosion environments.",
-};
+export async function generateMetadata({ 
+  params 
+}: { 
+  params: Promise<{ locale: string }> 
+}): Promise<Metadata> {
+  const { locale } = await params;
+  
+  const titles: Record<string, string> = {
+    en: 'Petrochemical & Natural Gas Projects - Green Electric Lightning Protection',
+    zh: '石化与天然气项目 - 格林电工防雷接地',
+    ar: 'مشاريع البتروكيميائيات والغاز الطبيعي - جرين إلكتريك للحماية من الصواعق'
+  };
+  
+  const descriptions: Record<string, string> = {
+    en: 'Explosion-proof lightning protection for petrochemical & natural gas facilities, oil depots, refineries, and LNG terminals in extreme heat and high corrosion environments.',
+    zh: '为石化与天然气设施、油库、炼油厂和LNG终端提供防爆防雷保护，适用于极端高温和高腐蚀环境。',
+    ar: 'حماية من الصواعق مقاومة للانفجارات لمنشآت البتروكيميائيات والغاز الطبيعي ومستودعات النفط والمصافي ومحطات الغاز الطبيعي المسال في بيئات الحرارة الشديدة والتآكل العالي.'
+  };
+  
+  return {
+    title: titles[locale] || titles.en,
+    description: descriptions[locale] || descriptions.en,
+  };
+}
 
 export function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'zh' }, { locale: 'ar' }];

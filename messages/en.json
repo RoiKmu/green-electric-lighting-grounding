@@ -17,9 +17,10 @@
     "infrastructureDesc": "System-level protection for commercial centers, stadiums, and data centers"
   },
   "footer": {
-    "companyName": "Green Electric",
+    "companyName": "Wuxi Green Electric Equipment Co., Ltd.",
+    "companyNameShort": "Green Electric",
     "tagline": "Lightning & Grounding Solutions",
-    "description": "Your one-stop partner for advanced lightning protection, precision grounding systems, and industrial materials since 1993. From interception to grounding — complete safety Systems with perfect compatibility.",
+    "description": "Certified Lightning Protection & Grounding Materials Supplier. Fully compliant with IEC 62561, UL 467, and Saudi Aramco SAES standards. Specializing in anti-corrosion grounding devices since 1993.",
     "oneStopSolutions": "One-Stop Solutions",
     "designSupplySupport": "Design · Supply · Support",
     "contactUs": "Contact Us",
@@ -27,11 +28,13 @@
     "phone": "Phone",
     "wechat": "WeChat",
     "location": "Location",
+    "address": "No.9, Su Tie Rd, Binhu District, Wuxi, Jiangsu, China",
     "availableOnRequest": "Available on request",
     "scanQR": "Scan QR code or add by phone number",
     "servingWorldwide": "Serving customers worldwide",
-    "copyright": "© 2026 Green Electric Lightning Protection. All rights reserved.",
+    "copyright": "© 2026 Wuxi Green Electric Equipment Co., Ltd. All Rights Reserved.",
     "specializing": "Specializing in Lightning Protection & Grounding Solutions",
+    "certifications": "Certifications: IEC 62561 | UL 467 | Saudi Aramco SAES",
     "productLinks": {
       "lightningProtection": "Lightning Protection",
       "groundingSystems": "Grounding Systems",
@@ -40,7 +43,8 @@
     },
     "companyLinks": {
       "aboutUs": "About Us",
-      "contact": "Contact"
+      "contact": "Contact",
+      "sitemap": "Sitemap"
     }
   },
   "home": {

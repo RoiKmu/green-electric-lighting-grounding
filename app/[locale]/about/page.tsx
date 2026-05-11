@@ -4,10 +4,30 @@ import type { Metadata } from "next";
 import { Link } from "@/i18n/routing";
 import { getTranslations } from 'next-intl/server';
 
-export const metadata: Metadata = {
-  title: "About Us - Green Electric Professional Lightning Protection & Grounding System Supplier",
-  description: "Learn about Green Electric - Over 30 years focused on providing one-stop lightning protection, grounding systems, and industrial raw material solutions.",
-};
+export async function generateMetadata({ 
+  params 
+}: { 
+  params: Promise<{ locale: string }> 
+}): Promise<Metadata> {
+  const { locale } = await params;
+  
+  const titles: Record<string, string> = {
+    en: 'About Us - Green Electric Professional Lightning Protection & Grounding System Supplier',
+    zh: '关于我们 - 格林电工专业防雷接地系统供应商',
+    ar: 'من نحن - جرين إلكتريك مورد محترف لأنظمة الحماية من الصواعق والتأريض'
+  };
+  
+  const descriptions: Record<string, string> = {
+    en: 'Learn about Green Electric - Over 30 years focused on providing one-stop lightning protection, grounding systems, and industrial raw material solutions.',
+    zh: '了解格林电工 - 30多年专注于提供一站式防雷、接地系统和工业原材料解决方案。',
+    ar: 'تعرف على جرين إلكتريك - أكثر من 30 عاماً من التركيز على توفير حلول شاملة للحماية من الصواعق وأنظمة التأريض والمواد الخام الصناعية.'
+  };
+  
+  return {
+    title: titles[locale] || titles.en,
+    description: descriptions[locale] || descriptions.en,
+  };
+}
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

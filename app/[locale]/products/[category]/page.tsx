@@ -1,6 +1,40 @@
 import { setRequestLocale } from 'next-intl/server';
 import { Suspense } from "react";
+import type { Metadata } from "next";
 import CategoryPageClient from "./CategoryPageClient";
+import { getCategoryById } from "@/data/products";
+
+export async function generateMetadata({ 
+  params 
+}: { 
+  params: Promise<{ locale: string; category: string }> 
+}): Promise<Metadata> {
+  const { locale, category } = await params;
+  const categoryData = getCategoryById(category);
+  
+  if (!categoryData) {
+    return {
+      title: 'Category Not Found',
+    };
+  }
+  
+  const titles: Record<string, string> = {
+    en: `${categoryData.nameEn} - Green Electric Products`,
+    zh: `${categoryData.name} - 格林电工产品`,
+    ar: `${categoryData.nameEn} - منتجات جرين إلكتريك`
+  };
+  
+  const descriptions: Record<string, string> = {
+    en: categoryData.description,
+    zh: categoryData.description,
+    ar: categoryData.description
+  };
+  
+  return {
+    title: titles[locale] || titles.en,
+    description: descriptions[locale] || descriptions.en,
+  };
+}
 
 function CategoryPageLoading() {
   return (

@@ -3,10 +3,30 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { Link } from "@/i18n/routing";
 
-export const metadata: Metadata = {
-  title: "Power & Energy Projects - Green Electric Lightning Protection",
-  description: "High-voltage grid and solar grounding systems across deserts and rainforests. UHV substation protection and grid-scale grounding solutions.",
-};
+export async function generateMetadata({ 
+  params 
+}: { 
+  params: Promise<{ locale: string }> 
+}): Promise<Metadata> {
+  const { locale } = await params;
+  
+  const titles: Record<string, string> = {
+    en: 'Power & Energy Projects - Green Electric Lightning Protection',
+    zh: '电力与能源项目 - 格林电工防雷接地',
+    ar: 'مشاريع الطاقة والكهرباء - جرين إلكتريك للحماية من الصواعق'
+  };
+  
+  const descriptions: Record<string, string> = {
+    en: 'High-voltage grid and solar grounding systems across deserts and rainforests. UHV substation protection and grid-scale grounding solutions.',
+    zh: '跨越沙漠和雨林的高压电网和太阳能接地系统。特高压变电站保护和电网级接地解决方案。',
+    ar: 'أنظمة تأريض شبكات الجهد العالي والطاقة الشمسية عبر الصحاري والغابات المطيرة. حماية محطات التحويل فائقة الجهد وحلول التأريض على مستوى الشبكة.'
+  };
+  
+  return {
+    title: titles[locale] || titles.en,
+    description: descriptions[locale] || descriptions.en,
+  };
+}
 
 export function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'zh' }, { locale: 'ar' }];

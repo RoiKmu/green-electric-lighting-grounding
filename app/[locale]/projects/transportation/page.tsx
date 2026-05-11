@@ -3,10 +3,30 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { Link } from "@/i18n/routing";
 
-export const metadata: Metadata = {
-  title: "Transportation Projects - Green Electric Lightning Protection",
-  description: "Ensuring zero-interruption operation for cross-border HSR and heavy-haul railways. Critical protection for airports, railways, and transit hubs.",
-};
+export async function generateMetadata({ 
+  params 
+}: { 
+  params: Promise<{ locale: string }> 
+}): Promise<Metadata> {
+  const { locale } = await params;
+  
+  const titles: Record<string, string> = {
+    en: 'Transportation Projects - Green Electric Lightning Protection',
+    zh: '交通运输项目 - 格林电工防雷接地',
+    ar: 'مشاريع النقل - جرين إلكتريك للحماية من الصواعق'
+  };
+  
+  const descriptions: Record<string, string> = {
+    en: 'Ensuring zero-interruption operation for cross-border HSR and heavy-haul railways. Critical protection for airports, railways, and transit hubs.',
+    zh: '确保跨境高铁和重载铁路零中断运行。为机场、铁路和交通枢纽提供关键保护。',
+    ar: 'ضمان التشغيل بدون انقطاع لسكك الحديد عالية السرعة عبر الحدود وسكك الحديد ذات الحمولة الثقيلة. حماية حرجة للمطارات والسكك الحديدية ومراكز النقل.'
+  };
+  
+  return {
+    title: titles[locale] || titles.en,
+    description: descriptions[locale] || descriptions.en,
+  };
+}
 
 export function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'zh' }, { locale: 'ar' }];

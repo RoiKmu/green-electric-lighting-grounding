@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 
 export default function Footer() {
   const t = useTranslations('footer');
@@ -8,13 +9,13 @@ export default function Footer() {
   return (
     <footer className="bg-industrial-950 text-white pt-16 pb-8">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
           <div>
             <div className="mb-6">
-              <h3 className="font-bold text-white text-xl">{t('companyName')}</h3>
+              <h3 className="font-bold text-white text-xl">{t('companyNameShort')}</h3>
               <p className="text-green-electric-400 text-sm mt-1">{t('tagline')}</p>
             </div>
-            <p className="text-industrial-400 leading-relaxed text-sm">
+            <p className="text-industrial-400 leading-relaxed text-sm mb-4">
               {t('description')}
             </p>
             <div className="mt-6 flex items-center gap-3">
@@ -57,7 +58,36 @@ export default function Footer() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <span className="text-sm">No.9, Su Tie Rd, Binhu District, Wuxi, China</span>
+                <span className="text-sm">{t('address')}</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-semibold text-white mb-6 flex items-center gap-2">
+              <svg className="w-5 h-5 text-green-electric-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+              </svg>
+              {t('certifications')}
+            </h4>
+            <ul className="space-y-3 text-industrial-400 text-sm">
+              <li className="flex items-center gap-2">
+                <svg className="w-4 h-4 text-green-electric-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                <span>IEC 62561</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <svg className="w-4 h-4 text-green-electric-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                <span>UL 467</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <svg className="w-4 h-4 text-green-electric-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                <span>Saudi Aramco SAES</span>
               </li>
             </ul>
           </div>
@@ -65,9 +95,24 @@ export default function Footer() {
 
         <div className="border-t border-industrial-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-industrial-500 text-sm">
-              {t('copyright')}
-            </p>
+            <div className="flex flex-col md:flex-row items-center gap-4">
+              <p className="text-industrial-500 text-sm">
+                {t('copyright')}
+              </p>
+              <div className="flex items-center gap-4 text-industrial-500 text-sm">
+                <Link href="/about" className="hover:text-green-electric-400 transition-colors">
+                  {t('companyLinks.aboutUs')}
+                </Link>
+                <span>|</span>
+                <Link href="/contact" className="hover:text-green-electric-400 transition-colors">
+                  {t('companyLinks.contact')}
+                </Link>
+                <span>|</span>
+                <a href="/sitemap.xml" className="hover:text-green-electric-400 transition-colors" target="_blank">
+                  {t('companyLinks.sitemap')}
+                </a>
+              </div>
+            </div>
             <div className="flex items-center gap-6 text-industrial-500 text-sm">
               <span>{t('specializing')}</span>
             </div>

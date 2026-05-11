@@ -17,9 +17,10 @@
     "infrastructureDesc": "商业中心、场馆与数据中心的系统级防护"
   },
   "footer": {
-    "companyName": "格林电气",
+    "companyName": "无锡市格林电工装备有限公司",
+    "companyNameShort": "格林电工",
     "tagline": "防雷接地解决方案",
-    "description": "自1993年以来，您的一站式先进防雷保护、精密接地系统和工业材料合作伙伴。从接闪到接地——完美兼容的完整安全系统。",
+    "description": "认证防雷接地材料供应商。完全符合IEC 62561、UL 467和沙特阿美SAES标准。自1993年起专注于防腐型接地装置。",
     "oneStopSolutions": "一站式解决方案",
     "designSupplySupport": "设计 · 供应 · 支持",
     "contactUs": "联系我们",
@@ -27,11 +28,13 @@
     "phone": "电话",
     "wechat": "微信",
     "location": "地址",
+    "address": "中国江苏省无锡市滨湖区苏铁路9号",
     "availableOnRequest": "可应要求提供",
     "scanQR": "扫描二维码或通过手机号添加",
     "servingWorldwide": "服务全球客户",
-    "copyright": "© 2026 格林电气工业供应。保留所有权利。",
+    "copyright": "© 2026 无锡市格林电工装备有限公司 版权所有",
     "specializing": "专注于防雷保护与接地解决方案",
+    "certifications": "认证标准：IEC 62561 | UL 467 | Saudi Aramco SAES",
     "productLinks": {
       "lightningProtection": "防雷保护",
       "groundingSystems": "接地系统",
@@ -40,7 +43,8 @@
     },
     "companyLinks": {
       "aboutUs": "关于我们",
-      "contact": "联系我们"
+      "contact": "联系方式",
+      "sitemap": "网站地图"
     }
   },
   "home": {

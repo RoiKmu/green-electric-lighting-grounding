@@ -4,10 +4,30 @@ import ContactForm from "./ContactForm";
 import EmailCopyButton from "./EmailCopyButton";
 import { getTranslations } from 'next-intl/server';
 
-export const metadata: Metadata = {
-  title: "Contact Us - Green Electric Lightning Protection",
-  description: "Get in touch with Green Electric Industrial Supply for quotes, inquiries, and support.",
-};
+export async function generateMetadata({ 
+  params 
+}: { 
+  params: Promise<{ locale: string }> 
+}): Promise<Metadata> {
+  const { locale } = await params;
+  
+  const titles: Record<string, string> = {
+    en: 'Contact Us - Green Electric Lightning Protection',
+    zh: '联系我们 - 格林电工防雷接地',
+    ar: 'اتصل بنا - جرين إلكتريك للحماية من الصواعق'
+  };
+  
+  const descriptions: Record<string, string> = {
+    en: 'Get in touch with Green Electric Industrial Supply for quotes, inquiries, and support.',
+    zh: '联系格林电工工业供应，获取报价、咨询和技术支持。',
+    ar: 'تواصل مع جرين إلكتريك للإمدادات الصناعية للحصول على عروض الأسعار والاستفسارات والدعم.'
+  };
+  
+  return {
+    title: titles[locale] || titles.en,
+    description: descriptions[locale] || descriptions.en,
+  };
+}
 
 export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

@@ -18,10 +18,10 @@ export function OrganizationSchema({ locale, url }: OrganizationSchemaProps) {
     "url": url,
     "logo": `${url}/logo.png`,
     "description": locale === 'zh' 
-      ? "格林电工（wxgreenelectric.com）是领先的防雷接地系统制造商，专注于为中东、东南亚等全球 EPC 项目提供符合 IEC、UL 标准的材料。"
+      ? "认证防雷接地材料供应商。完全符合IEC 62561、UL 467和沙特阿美SAES标准。自1993年起专注于防腐型接地装置。"
       : locale === 'ar'
-      ? "Green Electric (wxgreenelectric.com) is a premier manufacturer of lightning protection and grounding systems for global EPC projects."
-      : "Green Electric (wxgreenelectric.com) is a premier manufacturer of lightning protection and grounding systems for global EPC projects, compliant with IEC 62561, UL 467, and Saudi Aramco SAES standards.",
+      ? "مورد معتمد لمواد الحماية من الصواعق والتأريض. متوافق تماماً مع معايير IEC 62561 و UL 467 و Saudi Aramco SAES. متخصصون في أجهزة التأريض المقاومة للتآكل منذ عام 1993."
+      : "Certified Lightning Protection & Grounding Materials Supplier. Fully compliant with IEC 62561, UL 467, and Saudi Aramco SAES standards. Specializing in anti-corrosion grounding devices since 1993.",
     "foundingDate": "1993",
     "numberOfEmployees": {
       "@type": "QuantitativeValue",
@@ -297,10 +297,10 @@ export function LocalBusinessSchema({ locale, url }: LocalBusinessSchemaProps) {
     "name": "无锡市格林电工装备有限公司",
     "alternateName": "Green Electric",
     "description": locale === 'ar'
-      ? "مورد معتمد لمواد الحماية من الصواعق والتأريض لمشاريع EPC في الشرق الأوسط"
+      ? "مورد معتمد لمواد الحماية من الصواعق والتأريض. متوافق تماماً مع معايير IEC 62561 و UL 467 و Saudi Aramco SAES. متخصصون في أجهزة التأريض المقاومة للتآكل منذ عام 1993."
       : locale === 'zh'
-      ? "中东地区 EPC 项目防雷接地材料认证供应商 - 无锡市格林电工装备有限公司"
-      : "Certified Lightning Protection & Grounding Materials Supplier for EPC Projects in Middle East - Wuxi Green Electric Equipment Co., Ltd.",
+      ? "认证防雷接地材料供应商。完全符合IEC 62561、UL 467和沙特阿美SAES标准。自1993年起专注于防腐型接地装置。"
+      : "Certified Lightning Protection & Grounding Materials Supplier. Fully compliant with IEC 62561, UL 467, and Saudi Aramco SAES standards. Specializing in anti-corrosion grounding devices since 1993.",
     "url": url,
     "telephone": "+86-177-6635-3591",
     "email": "sales@wuxigreen.com",
