@@ -1,9 +1,22 @@
 import { Metadata } from 'next';
 import ProductDetailClient from './ProductDetailClient';
 import { ProductSchema, BreadcrumbSchema } from '@/components/seo/SchemaOrg';
-import { getCategoryById, getProductById } from '@/data/products';
+import { getCategoryById, getProductById, PRODUCT_CATEGORIES } from '@/data/products';
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.wxgreenelectric.com';
+
+export function generateStaticParams() {
+  const locales = ['en', 'zh', 'ar'];
+  return locales.flatMap(locale =>
+    PRODUCT_CATEGORIES.flatMap(category =>
+      category.items.map(product => ({
+        locale,
+        category: category.id,
+        product: product.id,
+      }))
+    )
+  );
+}
 
 export async function generateMetadata({ 
   params 

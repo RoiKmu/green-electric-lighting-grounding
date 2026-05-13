@@ -2,7 +2,17 @@ import { setRequestLocale } from 'next-intl/server';
 import { Suspense } from "react";
 import type { Metadata } from "next";
 import CategoryPageClient from "./CategoryPageClient";
-import { getCategoryById } from "@/data/products";
+import { getCategoryById, PRODUCT_CATEGORIES } from "@/data/products";
+
+export function generateStaticParams() {
+  const locales = ['en', 'zh', 'ar'];
+  return locales.flatMap(locale =>
+    PRODUCT_CATEGORIES.map(category => ({
+      locale,
+      category: category.id,
+    }))
+  );
+}
 
 export async function generateMetadata({ 
   params 
