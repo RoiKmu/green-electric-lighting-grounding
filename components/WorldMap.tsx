@@ -59,7 +59,6 @@ const animationDelays: Record<string, string> = {
 export default function WorldMap({ locale = 'zh' }: WorldMapProps) {
   const svgRef = useRef<SVGSVGElement>(null);
   const [isClient, setIsClient] = useState(false);
-  const [baseMapLoaded, setBaseMapLoaded] = useState(false);
   const [baseMapPaths, setBaseMapPaths] = useState<{ id: string; d: string }[]>([]);
 
   useEffect(() => {
@@ -82,7 +81,6 @@ export default function WorldMap({ locale = 'zh' }: WorldMapProps) {
         });
         
         setBaseMapPaths(pathData);
-        setBaseMapLoaded(true);
       })
       .catch(err => {
         console.error('Failed to load world map:', err);
@@ -99,8 +97,6 @@ export default function WorldMap({ locale = 'zh' }: WorldMapProps) {
     { from: 'cn', to: 'pk' },
     { from: 'cn', to: 'br' },
   ];
-
-  const highlightedIds = ['CN', 'CN2', 'SA', 'AE', 'ID1', 'ID2', 'ID3', 'ID4', 'ID5', 'ID6', 'ID7', 'ID8', 'ID9', 'ID10', 'ID11', 'ID12', 'ID13', 'MY1', 'MY2', 'NG', 'EG', 'PK', 'BR'];
 
   return (
     <div className="relative w-full h-full bg-[#0f172a]">

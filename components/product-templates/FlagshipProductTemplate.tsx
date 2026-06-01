@@ -304,7 +304,7 @@ export default function FlagshipProductTemplate({ product }: FlagshipProductTemp
                     <div className="h-48 relative">
                       <Image
                         src={item.image}
-                        alt={tItems(item.id)}
+                        alt={item.nameEn || item.name}
                         fill
                         className="object-contain group-hover:scale-110 transition-transform duration-500"
                       />

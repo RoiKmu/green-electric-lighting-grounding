@@ -63,7 +63,7 @@ export default function ProductCarousel() {
             <div className="absolute inset-0 bg-industrial-800">
               <Image
                 src={product.image}
-                alt={tItems(product.id)}
+                alt={product.nameEn || product.name}
                 fill
                 className="object-contain group-hover:scale-105 transition-transform duration-700"
                 priority={index === 0}

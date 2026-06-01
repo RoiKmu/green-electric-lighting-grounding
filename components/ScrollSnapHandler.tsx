@@ -38,7 +38,6 @@ export default function ScrollSnapHandler() {
     const getTargetSectionIndex = (scrollY: number, direction: number, scrollSpeed: number) => {
       const positions = getSectionPositions();
       const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
       
       if (scrollY <= 0) return -1;
       
@@ -65,7 +64,6 @@ export default function ScrollSnapHandler() {
         if (scrollY >= sectionTop && scrollY < sectionBottom) {
           if (isOversized) {
             const visibleBottom = scrollY + windowHeight;
-            const scrollProgress = (scrollY - sectionTop) / (sectionHeight - windowHeight);
             
             if (direction > 0) {
               if (visibleBottom < sectionBottom - 100) {

@@ -252,7 +252,7 @@ export default async function PetrochemicalPage({ params }: { params: Promise<{ 
         <div className="absolute inset-0">
           <Image
             src="/images/projects/oil.jpg"
-            alt="Petrochemical Projects"
+            alt="Petrochemical industry lightning protection for oil storage tanks and refinery facilities"
             fill
             className="object-cover"
             priority

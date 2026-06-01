@@ -293,7 +293,7 @@ export default async function InfrastructurePage({ params }: { params: Promise<{
         <div className="absolute inset-0">
           <Image
             src="/images/projects/Infrastructure/P020220715559196933502.jpg"
-            alt="Infrastructure Projects"
+            alt="Infrastructure lightning protection for stadiums, airports and commercial buildings"
             fill
             className="object-cover"
             priority

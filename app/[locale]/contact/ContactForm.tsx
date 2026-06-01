@@ -28,7 +28,7 @@ export default function ContactForm() {
       
       setIsSuccess(true);
       (e.target as HTMLFormElement).reset();
-    } catch (error) {
+    } catch (_error) {
       setErrorMsg(t('error'));
     } finally {
       setIsSubmitting(false);

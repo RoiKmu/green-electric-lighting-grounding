@@ -559,7 +559,7 @@
       "toggleCategories": "تبديل الفئات"
     },
     "flagship": {
-      "badge": "حلول التكنولوجيا الرائدة",
+      "badge": "حلول التكنولوجيا الأساسية",
       "getQuote": "احصل على عرض سعر",
       "learnTechnology": "تعرف على التكنولوجيا",
       "productIntroduction": "مقدمة المنتج",
@@ -737,6 +737,30 @@
     "contactToday": "اتصل بنا اليوم للحصول على دعم فني مخصص واستشارة المشاريع العالمية.",
     "submitInquiry": "إرسال استفسار مشروع EPC",
     "browseComponents": "تصفح المواد والمكونات"
+  },
+  "productTemplate": {
+    "requestQuote": "طلب عرض سعر",
+    "technicalSpecs": "المواصفات الفنية",
+    "compliantStandards": "المعايير",
+    "applications": "التطبيقات",
+    "keyFeatures": "الخصائص الرئيسية",
+    "faq": "الأسئلة الشائعة",
+    "ctaTitle": "هل تحتاج حلاً مخصصاً؟",
+    "ctaDesc": "يمكن لفريقنا الهندسي توفير الدعم الفني المتخصص والحلول المخصصة.",
+    "contactUs": "اتصل بنا",
+    "aboutLinkText": "شركة حماية من الصواعق",
+    "products": "المنتجات",
+    "relatedProducts": "منتجات ذات صلة",
+    "viewDetails": "عرض التفاصيل",
+    "material": "المادة",
+    "size": "الحجم",
+    "standard": "المعيار",
+    "application": "التطبيق",
+    "intro1": "{productName} هو {feature1} مصمم لـ {app1} و {app2}. {standardText}هذا المكون {material} يضمن استمرارية كهربائية موثوقة.",
+    "intro2": "{feature2}. {sizeText}يدعم طرق توصيل متعددة، مما يجعله مثالياً لمشاريع {app3}.",
+    "intro3": "كـ {aboutLink} رائد، تورد جرين إلكتريك هذا {productNameLower} لمقاولي EPC العالميين ومشاريع البنية التحتية.",
+    "manufacturedIn": "مصنع وفقاً لمعيار {standard}، ",
+    "availableIn": "متوفر بحجم {size}، "
   },
   "common": {
     "loading": "جاري التحميل...",

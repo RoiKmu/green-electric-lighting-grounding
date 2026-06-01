@@ -562,7 +562,7 @@
       "toggleCategories": "Toggle categories"
     },
     "flagship": {
-      "badge": "Flagship Technology Solutions",
+      "badge": "Core Technology Solutions",
       "getQuote": "Get Quote",
       "learnTechnology": "Learn Technology",
       "productIntroduction": "Product Introduction",
@@ -740,6 +740,30 @@
     "contactToday": "Contact us today for dedicated technical support and global project consultation.",
     "submitInquiry": "Submit EPC Project Inquiry",
     "browseComponents": "Browse Materials & Components"
+  },
+  "productTemplate": {
+    "requestQuote": "Request Quote",
+    "technicalSpecs": "Technical Specifications",
+    "compliantStandards": "Compliant Standards",
+    "applications": "Applications",
+    "keyFeatures": "Key Features",
+    "faq": "Frequently Asked Questions",
+    "ctaTitle": "Need a Custom Solution?",
+    "ctaDesc": "Our engineering team can provide professional technical support and customized solutions.",
+    "contactUs": "Contact Us",
+    "aboutLinkText": "lightning protection manufacturer",
+    "products": "Products",
+    "relatedProducts": "Related Products",
+    "viewDetails": "View Details",
+    "material": "Material",
+    "size": "Size",
+    "standard": "Standard",
+    "application": "Application",
+    "intro1": "The {productName} is a {feature1} designed for {app1} and {app2}. {standardText}this {material} component ensures reliable electrical continuity.",
+    "intro2": "{feature2}. {sizeText}it supports various connection methods, making it ideal for {app3} projects.",
+    "intro3": "As a leading {aboutLink}, Green Electric supplies this {productNameLower} to global EPC contractors and infrastructure projects.",
+    "manufacturedIn": "Manufactured in compliance with {standard}, ",
+    "availableIn": "Available in {size}, "
   },
   "common": {
     "loading": "Loading...",

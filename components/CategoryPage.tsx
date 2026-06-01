@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { PRODUCT_CATEGORIES, getCategoryById, getProductDetailPath } from "@/data/products";
-import { PRODUCT_CATEGORY_ROUTES } from "@/lib/routes";
+import { getCategoryById, getProductDetailPath } from "@/data/products";
 import CategoryButton from "@/components/CategoryButton";
 
 interface CategoryPageProps {
@@ -56,7 +55,7 @@ export default function CategoryPage({ categoryId }: CategoryPageProps) {
                     <div className="h-48 relative">
                       <Image
                         src={product.image}
-                        alt={product.name}
+                        alt={product.nameEn || product.name}
                         fill
                         className="object-cover"
                       />

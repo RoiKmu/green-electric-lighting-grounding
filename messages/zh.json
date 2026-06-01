@@ -562,7 +562,7 @@
       "toggleCategories": "切换分类"
     },
     "flagship": {
-      "badge": "明星技术解决方案",
+      "badge": "核心技术解决方案",
       "getQuote": "获取报价",
       "learnTechnology": "了解技术",
       "productIntroduction": "产品介绍",
@@ -740,6 +740,30 @@
     "contactToday": "立即联系我们，获取专属技术支持与全球项目咨询。",
     "submitInquiry": "提交 EPC 项目咨询",
     "browseComponents": "浏览材料与组件"
+  },
+  "productTemplate": {
+    "requestQuote": "获取报价",
+    "technicalSpecs": "技术规格",
+    "compliantStandards": "符合标准",
+    "applications": "应用场景",
+    "keyFeatures": "核心特性",
+    "faq": "常见问题",
+    "ctaTitle": "需要定制解决方案？",
+    "ctaDesc": "我们的工程团队可以为您提供专业的技术支持和定制方案。",
+    "contactUs": "联系我们",
+    "aboutLinkText": "防雷接地制造商",
+    "products": "产品",
+    "relatedProducts": "相关产品",
+    "viewDetails": "查看详情",
+    "material": "材质",
+    "size": "尺寸",
+    "standard": "标准",
+    "application": "应用",
+    "intro1": "{productName}是一款专为{app1}和{app2}设计的{feature1}。{standardText}这款{material}组件确保可靠的电气连续性。",
+    "intro2": "{feature2}。{sizeText}支持多种连接方式，非常适合{app3}项目。",
+    "intro3": "作为领先的{aboutLink}，格林电工为全球EPC承包商和基础设施项目供应这款{productNameLower}。",
+    "manufacturedIn": "符合{standard}标准制造，",
+    "availableIn": "规格{size}，"
   },
   "common": {
     "loading": "加载中...",

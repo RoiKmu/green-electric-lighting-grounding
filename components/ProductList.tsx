@@ -1,40 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { getProductsByTier, getProductDetailPath, Product, ProductCategory, PRODUCT_TIERS, ProductTier } from "@/data/products";
+import { getProductsByTier, getProductDetailPath, ProductCategory, PRODUCT_TIERS, ProductTier } from "@/data/products";
 import { Link } from "@/i18n/routing";
 import ProductCarousel from "@/components/ProductCarousel";
 import { useTranslations } from "next-intl";
-
-function ProductCard({ product, categoryId }: { product: Product; categoryId: string }) {
-  const t = useTranslations('products.items');
-
-  return (
-    <Link 
-      href={getProductDetailPath(categoryId, product.id)}
-      className="group block bg-white rounded-xl overflow-hidden border border-industrial-200 hover:shadow-xl hover:border-green-electric-300 transition-all duration-300"
-    >
-      <div className="h-48 relative overflow-hidden bg-industrial-50">
-        <Image
-          src={product.image}
-          alt={t(product.id)}
-          fill
-          className="object-contain group-hover:scale-105 transition-transform duration-500"
-        />
-      </div>
-      <div className="p-5">
-        <h4 className="font-semibold text-industrial-900 mb-2 group-hover:text-green-electric-600 transition-colors">
-          {t(product.id)}
-        </h4>
-        {product.description && (
-          <p className="text-sm text-industrial-500 line-clamp-2">
-            {product.description}
-          </p>
-        )}
-      </div>
-    </Link>
-  );
-}
 
 function CategoryCard({ category }: { category: ProductCategory }) {
   const t = useTranslations('products');
@@ -49,7 +19,7 @@ function CategoryCard({ category }: { category: ProductCategory }) {
         {category.items[0] && (
           <Image
             src={category.items[0].image}
-            alt={t(`categories.${category.id}.name`)}
+            alt={category.items[0].nameEn || category.items[0].name}
             fill
             className="object-contain group-hover:scale-105 transition-transform duration-500"
           />

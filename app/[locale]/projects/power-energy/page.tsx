@@ -252,7 +252,7 @@ export default async function PowerEnergyPage({ params }: { params: Promise<{ lo
         <div className="absolute inset-0">
           <Image
             src="/images/projects/Substation.jpg"
-            alt="Power & Energy Projects"
+            alt="Power and energy sector lightning protection for substations and solar installations"
             fill
             className="object-cover"
             priority

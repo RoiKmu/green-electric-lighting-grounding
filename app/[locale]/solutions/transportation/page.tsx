@@ -211,7 +211,7 @@ export default async function TransportationSolutionPage({ params }: { params: P
         <div className="absolute inset-0">
           <Image
             src="/images/hero/hero-2.jpg"
-            alt="Transportation Solutions"
+            alt="Lightning protection solutions for transportation infrastructure including high-speed rail and airports"
             fill
             className="object-cover"
             priority

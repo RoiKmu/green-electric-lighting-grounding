@@ -252,7 +252,7 @@ export default async function TransportationPage({ params }: { params: Promise<{
         <div className="absolute inset-0">
           <Image
             src="/images/projects/Transportation/header-tran.jpg"
-            alt="Transportation Projects"
+            alt="Transportation sector lightning protection projects for high-speed rail and metro systems"
             fill
             className="object-cover"
             priority

@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import ProductDetailClient from './ProductDetailClient';
 import { ProductSchema, BreadcrumbSchema } from '@/components/seo/SchemaOrg';
 import { getCategoryById, getProductById, PRODUCT_CATEGORIES } from '@/data/products';
+import { getProductSEO } from '@/lib/product-seo';
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.wxgreenelectric.com';
 
@@ -34,29 +35,43 @@ export async function generateMetadata({
     };
   }
 
+  const seo = getProductSEO(product, currentProduct.nameEn, currentProduct.description, locale);
   const productName = currentProduct.nameEn || currentProduct.name;
   const categoryName = currentCategory.nameEn;
-  const description = currentProduct.description || `Professional ${productName} for lightning protection and grounding systems. Compliant with IEC 62561, UL 467, and Saudi Aramco SAES standards.`;
+
+  const seoTitle = seo.title[locale as keyof typeof seo.title] || seo.title.en;
+  const seoMetaDesc = seo.metaDesc[locale as keyof typeof seo.metaDesc] || seo.metaDesc.en;
+  const seoH1 = seo.h1[locale as keyof typeof seo.h1] || seo.h1.en;
 
   const titles: Record<string, string> = {
-    en: `${productName} | ${categoryName}`,
-    zh: `${currentProduct.name} | ${currentCategory.name}`,
-    ar: `${productName} | ${categoryName}`
+    en: seoTitle,
+    zh: seoTitle,
+    ar: seoTitle
   };
 
   return {
     title: titles[locale] || titles.en,
-    description,
+    description: seoMetaDesc,
     keywords: [
       productName,
       categoryName,
       'lightning protection',
       'grounding system',
+      'earthing materials',
       'IEC 62561',
       'UL 467',
-      'Saudi Aramco',
-      'EPC project'
+      'SPD',
+      'EPC supplier',
+      'Saudi Aramco'
     ],
+    openGraph: {
+      title: seoTitle,
+      description: seoMetaDesc,
+      images: [{
+        url: currentProduct.image,
+        alt: seoH1,
+      }],
+    },
     alternates: {
       canonical: `${BASE_URL}/${locale}/products/${category}/${product}`,
       languages: {

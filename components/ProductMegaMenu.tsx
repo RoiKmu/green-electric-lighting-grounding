@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { PRODUCT_CATEGORIES, getProductDetailPath } from '@/data/products';
 import { Link } from "@/i18n/routing";
 import { useTranslations } from 'next-intl';
@@ -71,11 +72,12 @@ export default function ProductMegaMenu({ isOpen }: ProductMegaMenuProps) {
                 href={getProductDetailPath(currentCategory.id, product.id)}
                 className="group flex flex-col p-2 rounded-lg hover:bg-industrial-900 transition-all duration-200"
               >
-                <div className="w-full aspect-square bg-industrial-800 rounded-lg overflow-hidden border border-industrial-700 mb-1.5 flex items-center justify-center p-1.5">
-                  <img
+                <div className="w-full aspect-square bg-industrial-800 rounded-lg overflow-hidden border border-industrial-700 mb-1.5 flex items-center justify-center p-1.5 relative">
+                  <Image
                     src={product.image}
-                    alt={tItems(product.id)}
-                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                    alt={product.nameEn || product.name}
+                    fill
+                    className="object-contain group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <div className="min-w-0">

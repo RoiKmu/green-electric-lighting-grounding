@@ -92,7 +92,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
               <div className="rounded-2xl overflow-hidden h-96 relative shadow-2xl">
                 <Image
                   src="/images/about/catgirlmutant-jADekDuAPSA-unsplash.jpg"
-                  alt="Green Electric Production Facility"
+                  alt="Green Electric manufacturing facility producing lightning protection and grounding equipment"
                   fill
                   className="object-cover"
                 />

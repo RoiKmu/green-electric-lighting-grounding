@@ -229,7 +229,7 @@ export default async function PetrochemicalSolutionPage({ params }: { params: Pr
         <div className="absolute inset-0">
           <Image
             src="/images/hero/hero-1.jpg"
-            alt="Petrochemical Solutions"
+            alt="Explosion-proof lightning protection for petrochemical plants, oil refineries and natural gas facilities"
             fill
             className="object-cover"
             priority

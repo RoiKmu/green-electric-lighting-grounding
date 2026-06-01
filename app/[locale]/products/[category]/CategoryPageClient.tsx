@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { PRODUCT_CATEGORIES, getProductDetailPath, Product, ProductCategory } from "@/data/products";
+import { PRODUCT_CATEGORIES, getProductDetailPath, Product } from "@/data/products";
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import { notFound } from "next/navigation";
@@ -21,7 +21,7 @@ function ProductCard({ product, categoryId }: { product: Product; categoryId: st
       <div className="h-48 relative overflow-hidden bg-industrial-50">
         <Image
           src={product.image}
-          alt={t(product.id)}
+          alt={product.nameEn || product.name}
           fill
           className="object-contain group-hover:scale-105 transition-transform duration-500"
         />

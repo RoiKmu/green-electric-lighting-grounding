@@ -229,7 +229,7 @@ export default async function InfrastructureSolutionPage({ params }: { params: P
         <div className="absolute inset-0">
           <Image
             src="/images/hero/hero-2.jpg"
-            alt="Infrastructure Solutions"
+            alt="Lightning protection systems for large-scale infrastructure including stadiums and commercial buildings"
             fill
             className="object-cover"
             priority

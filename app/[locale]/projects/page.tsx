@@ -120,7 +120,7 @@ export default async function ProjectsPage({ params }: { params: Promise<{ local
         <div className="absolute inset-0">
           <Image
             src="/images/projects/golbalepc.jpg"
-            alt="Global EPC Projects"
+            alt="Green Electric global EPC lightning protection projects across multiple countries and industries"
             fill
             className="object-cover"
             priority

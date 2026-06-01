@@ -229,7 +229,7 @@ export default async function PowerEnergySolutionPage({ params }: { params: Prom
         <div className="absolute inset-0">
           <Image
             src="/images/hero/hero-3.jpg"
-            alt="Power & Energy Solutions"
+            alt="Lightning protection and grounding systems for power substations and renewable energy facilities"
             fill
             className="object-cover"
             priority
